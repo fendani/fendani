@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fendani — dictionnaire muséal</title>
+    <!-- Polices : Prata, Crimson Pro, Syne -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,500;1,500&family=Prata&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f5f3ee;
+            --text-main: #141816;
+            --text-muted: #525c56;
+            --accent: #9c7b2f;
+            --floral-pink: #c86d6b;
+            --floral-green: #3f5e44;
+            --apple-green: #76ff03; 
+            --border: rgba(156, 123, 47, 0.2);
+        }
+
+        .custom-cursor {
+            position: fixed;
+            top: 0; left: 0;
+            width: 10px; height: 10px;
+            background-color: var(--apple-green);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 10000;
+            box-shadow: 0 0 10px rgba(118, 255, 3, 0.6);
+        }
+
+        .trail-dot {
+            position: fixed;
+            top: 0; left: 0;
+            width: 3px; height: 3px;
+            background-color: var(--apple-green);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            opacity: 0.35;
+            z-index: 9999;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        * { box-sizing: border-box; cursor: none !important; }
+
+        body { 
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text-main);
+            display: flex; 
+            flex-direction: column; 
+            min-height: 100vh; 
+            -webkit-font-smoothing: antialiased; 
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* HEADER HARMONISÉ */
+        header {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            padding: 20px 5%;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            background: rgba(245, 243, 238, 0.85);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+        }
+
+        .brand-logo {
+            grid-column: 2;
+            justify-self: center;
+        }
+        .brand-logo img { height: 32px; width: auto; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .brand-logo:hover img { transform: rotate(-6deg) scale(1.03); }
+
+        .nav-links { 
+            grid-column: 1;
+            display: flex; 
+            gap: 25px; 
+            list-style: none; 
+            margin: 0; 
+            padding: 0; 
+        }
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-family: 'Syne', sans-serif;
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s, transform 0.3s;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--text-main); }
+        .nav-links a::after {
+            content: '';
+            position: absolute; bottom: -3px; left: 0; width: 0; height: 1px;
+            background: var(--floral-pink);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+
+        .lang-selector {
+            grid-column: 3;
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .lang-item {
+            font-family: 'Syne', sans-serif;
+            font-weight: 500;
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+        }
+        .lang-item:hover, .lang-item.active { color: var(--text-main); }
+
+        /* CONTENU PRINCIPAL */
+        main { 
+            flex: 1; max-width: 1040px; width: 100%; margin: 10rem auto 6rem auto; padding: 0 3.2rem; 
+            display: grid; grid-template-columns: 1fr 1.8fr; gap: 4.4rem; align-items: start; 
+            position: relative; z-index: 2;
+        }
+        
+        .dict-header-block { text-align: left; position: sticky; top: 8.5rem; border-right: 1px dashed var(--border); padding-right: 2.8rem; }
+        .dict-main-title { font-family: 'Prata', serif; font-size: 1.8rem; font-weight: 400; color: var(--text-main); margin-bottom: 0.8rem; line-height: 1.2; }
+        .dict-description { font-family: 'Crimson Pro', serif; font-weight: 500; font-size: 1.15rem; color: var(--text-muted); line-height: 1.75; text-align: left; }
+
+        .search-and-results-block { display: flex; flex-direction: column; width: 100%; }
+        
+        .direction-switch { display: flex; justify-content: center; gap: 1.6rem; margin-bottom: 2rem; }
+        .dir-link { font-family: 'Syne', sans-serif; font-weight: 500; font-size: 0.65rem; text-decoration: none; color: var(--text-muted); transition: color 0.3s ease; text-transform: uppercase; letter-spacing: 0.1em; }
+        .dir-link.active { color: var(--text-main); border-bottom: 1px solid var(--floral-pink); padding-bottom: 2px; }
+
+        .search-form { display: flex; align-items: center; justify-content: center; margin-bottom: 3.2rem; position: relative; }
+        .search-input { font-family: 'Crimson Pro', serif; font-size: 1.4rem; color: var(--text-main); background: none; border: none; outline: none; width: 100%; text-align: center; padding-bottom: 0.4rem; border-bottom: 1px solid var(--border); }
+        .search-input::placeholder { color: var(--text-muted); opacity: 0.6; }
+        .search-btn { background: none; border: none; font-size: 1.2rem; cursor: pointer; color: var(--text-main); position: absolute; right: 0; bottom: 0.6rem; }
+
+        .result-container { text-align: left; }
+        .word-card { display: none; animation: fadeIn 0.4s ease-out; } 
+        .word-card.visible { display: block; }
+        
+        .word-header-block { text-align: center; margin-bottom: 2.4rem; }
+        .word-title { font-family: 'Prata', serif; font-size: 2.2rem; font-weight: 400; color: var(--text-main); line-height: 1; margin-bottom: 0.4rem; }
+        .word-meta { font-family: 'Syne', sans-serif; text-transform: uppercase; font-size: 0.6rem; font-weight: 700; color: var(--text-muted); letter-spacing: 0.1em; }
+        
+        .museum-section { border-top: 1px solid var(--border); padding: 1.4rem 0; display: grid; grid-template-columns: 1fr 2.5fr; gap: 1.2rem; }
+        .section-label { font-family: 'Syne', sans-serif; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; color: var(--floral-green); letter-spacing: 0.1em; }
+        .section-content { font-family: 'Crimson Pro', serif; font-size: 1.15rem; font-weight: 500; line-height: 1.6; color: var(--text-muted); }
+        .section-content.main-def { font-size: 1.2rem; color: var(--text-main); }
+        
+        .list-inline { display: flex; flex-wrap: wrap; gap: 0.8rem; list-style: none; padding: 0; margin: 0; }
+        .list-inline li { padding: 0.15rem 0.6rem; border-radius: 2px; font-family: 'Syne', sans-serif; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; }
+        
+        .synonymes-list li { color: var(--floral-green) !important; background-color: rgba(63, 94, 68, 0.08) !important; }
+        .antonymes-list li { color: var(--floral-pink) !important; background-color: rgba(200, 109, 107, 0.08) !important; }
+
+        .conjugation-table { width: 100%; max-width: 240px; border-collapse: collapse; font-size: 1.1rem; font-family: 'Crimson Pro', serif; }
+        .conjugation-table tr { border-bottom: 1px dashed var(--border); } 
+        .conjugation-table td { padding: 0.4rem 0; }
+        .conjugation-table td.pronoun { color: var(--text-muted); width: 40%; font-family: 'Syne', sans-serif; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; } 
+        .conjugation-table td.verb-form { font-weight: 500; color: var(--text-main); }
+
+        .no-result-msg { display: none; font-family: 'Crimson Pro', serif; font-style: italic; font-size: 1.15rem; color: var(--text-muted); text-align: center; }
+        .no-result-msg.visible { display: block; }
+
+        /* PIED DE PAGE HARMONISÉ */
+        footer { 
+            position: relative; z-index: 2;
+            padding: 50px 5%;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-family: 'Syne', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            background: rgba(245, 243, 238, 0.9);
+        }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+        
+        @media (max-width: 900px) { 
+            main { grid-template-columns: 1fr; gap: 3.2rem; padding: 0 1.6rem; margin-top: 130px; } 
+            .dict-header-block { border-right: none; padding-right: 0; position: static; } 
+            .nav-links, .lang-selector { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="custom-cursor" id="cursor"></div>
+
+    <!-- EN-TÊTE FIXE HARMONISÉ -->
+    <header>
+        <ul class="nav-links">
+            <li><a href="expositions-et-festivals.html">Expositions et festivals</a></li>
+            <li><a href="beaux-arts.html">Encyclopédie</a></li>
+            <li><a href="dictionnaire.html" class="active">Dictionnaire</a></li>
+            <li><a href="actualites.html">Actualités</a></li>
+        </ul>
+        
+        <a href="index.html" class="brand-logo">
+            <img src="log6.png" alt="Fendani Logo">
+        </a>
+
+        <ul class="lang-selector">
+            <li><a href="#" class="lang-item active">FR</a></li>
+            <li><a href="#" class="lang-item">PT</a></li>
+            <li><a href="#" class="lang-item">ESP</a></li>
+        </ul>
+    </header>
+
+    <!-- CORPS DU DICTIONNAIRE -->
+    <main>
+        <!-- COLONNE GAUCHE -->
+        <div class="dict-header-block">
+            <h1 class="dict-main-title">Le dictionnaire <i>Fendani</i></h1>
+            <p style="font-family: 'Syne', sans-serif; font-size: 0.6rem; font-weight: 700; color: var(--floral-green); text-transform: uppercase; margin-bottom: 0.8rem; letter-spacing: 0.1em;">Version numérique, 2025-</p>
+            <p class="dict-description">
+                Ce dictionnaire est le résultat d’un grand travail de préservation. Plus qu'une simple liste de mots, il propose des règles claires pour permettre à tout le monde de parler et d'écrire le caló de la même façon. Autrefois menacée de disparaître, cette langue retrouve ici toute sa force et son unité pour s'affirmer comme une véritable culture accessible à tous.
+            </p>
+        </div>
+
+        <!-- COLONNE DROITE -->
+        <div class="search-and-results-block">
+            <div class="direction-switch">
+                <a href="dictionnaire.html" class="dir-link active">Français ➔ Caló</a>
+                <a href="dictionnaire-ca-fr.html" class="dir-link">Caló ➔ Français</a>
+            </div>
+
+            <div class="search-form">
+                <input type="text" id="search-input" class="search-input" placeholder="Inscrire un terme ici..." autocomplete="off">
+                <button class="search-btn" id="submit-btn">⟶</button>
+            </div>
+
+            <div class="result-container">
+                <div id="msg-default" class="no-result-msg"></div>
+                
+                <!-- FICHE 1 : VERITE -->
+                <div id="card-verite" class="word-card">
+                    <div class="word-header-block">
+                        <div class="word-title">Chachipen</div>
+                        <div class="word-meta">Substantif • Féminin</div>
+                    </div>
+                    <div class="museum-section">
+                        <div class="section-label">Étymologie</div>
+                        <div class="section-content">Dérivé structurel de l'adjectif romani commun *čaćo* (vrai) combiné au suffixe de substantivation *-ipen*. Lié historiquement au sanskrit antique *satya*.</div>
+                    </div>
+                    <div class="museum-section">
+                        <div class="section-label">Synonymes</div>
+                        <div class="section-content">
+                            <ul class="list-inline synonymes-list"><li>Sincérité</li><li>Exactitude</li><li>Certitude</li></ul>
+                        </div>
+                    </div>
+                    <div class="museum-section">
+                        <div class="section-label">Antonymes</div>
+                        <div class="section-content">
+                            <ul class="list-inline antonymes-list"><li>Mensonge</li><li>Illusion</li></ul>
+                        </div>
+                    </div>
+                    <div class="museum-section">
+                        <div class="section-label">Définition</div>
+                        <div class="section-content main-def">La vérité ou la réalité factuelle. Notion fondamentale employée pour sceller un serment ou témoigner d'une intention pure et sincère.</div>
+                    </div>
+                    <div class="museum-section">
+                        <div class="section-label">Exemple d'usage</div>
+                        <div class="section-content" style="font-style: italic;">"Prakar o chachipen" — Dire et faire respecter la vérité.</div>
+                    </div>
+                </div>
+
+                <!-- FICHE 2 : PARLER -->
+                <div id="card-parler" class="word-card">
+                    <div class="word-header-block">
+                        <div class="word-title">Prakar</div>
+                        <div class="word-meta">Verbe • Forme Régulière</div>
+                    </div>
+                    <div class="museum-section">
+                        <div class="section-label">Étymologie</div>
+                        <div class="section-content">Du romani commun *phrakar-*, issu des racines historiques indo-aryennes de l'expression vocale.</div>
+                    </div>
+                    <div class="museum-section">
+                        <div class="section-label">Synonymes</div>
+                        <div class="section-content">
+                            <ul class="list-inline synonymes-list"><li>Pénave</li><li>Exprimer</li><li>Échanger</li></ul>
+                        </div>
+                    </div>
+                    <div class="museum-section">
+                        <div class="section-label">Antonymes</div>
+                        <div class="section-content">
+                            <ul class="list-inline antonymes-list"><li>Se taire</li><li>Mutisme</li></ul>
+                        </div>
+                    </div>
+                    <div class="museum-section">
+                        <div class="section-label">Définition</div>
+                        <div class="section-content main-def">Exprimer sa pensée à voix haute, faire usage de la parole et assurer la transmission orale.</div>
+                    </div>
+                    <div class="museum-section">
+                        <div class="section-label">Exemple d'usage</div>
+                        <div class="section-content" style="font-style: italic;">"Merve prakar caló" — Je sais m'exprimer en langue caló.</div>
+                    </div>
+                    <div class="museum-section">
+                        <div class="section-label">Conjugaison</div>
+                        <div class="section-content">
+                            <table class="conjugation-table">
+                                <tr><td class="pronoun">Je</td><td class="verb-form">prak<span style="color: var(--floral-green);">e</span></td></tr>
+                                <tr><td class="pronoun">Tu</td><td class="verb-form">prak<span style="color: var(--floral-green);">es</span></td></tr>
+                                <tr><td class="pronoun">Il / Elle</td><td class="verb-form">prak<span style="color: var(--floral-green);">e</span></td></tr>
+                                <tr><td class="pronoun">Nous</td><td class="verb-form">prak<span style="color: var(--floral-green);">ons</span></td></tr>
+                                <tr><td class="pronoun">Vous</td><td class="verb-form">prak<span style="color: var(--floral-green);">ez</span></td></tr>
+                                <tr><td class="pronoun">Ils / Elles</td><td class="verb-form">prak<span style="color: var(--floral-green);">ent</span></td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="msg-error" class="no-result-msg"><p>Ce terme n'est pas encore documenté au sein de notre lexique.</p></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- PIED DE PAGE HARMONISÉ -->
+    <footer>
+        <p>Fendani — Atlas Nomade © 2026. Édition Internationale Paris / New York.</p>
+    </footer>
+
+    <!-- SCRIPT DE RECHERCHE ET CURSEUR -->
+    <script>
+        const cursor = document.getElementById('cursor');
+        let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
+
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            cursor.style.top = mouseY + 'px';
+            cursor.style.left = mouseX + 'px';
+
+            if (Math.random() > 0.6) {
+                createTrailDot(mouseX, mouseY);
+            }
+        });
+
+        function createTrailDot(x, y) {
+            const dot = document.createElement('div');
+            dot.className = 'trail-dot';
+            dot.style.top = y + 'px';
+            dot.style.left = x + 'px';
+            document.body.appendChild(dot);
+
+            setTimeout(() => {
+                dot.style.transform = 'translate(-50%, -50%) scale(0.1)';
+                dot.style.opacity = '0';
+            }, 20);
+
+            setTimeout(() => {
+                dot.remove();
+            }, 400);
+        }
+
+        function executerRecherche() {
+            const saisie = document.getElementById('search-input').value.trim().toLowerCase();
+            document.getElementById('msg-default').classList.remove('visible');
+            document.getElementById('msg-error').classList.remove('visible');
+            document.getElementById('card-verite').classList.remove('visible');
+            document.getElementById('card-parler').classList.remove('visible');
+
+            if (saisie === 'verite' || saisie === 'vérité') {
+                document.getElementById('card-verite').classList.add('visible');
+            } else if (saisie === 'parler') {
+                document.getElementById('card-parler').classList.add('visible');
+            } else if (saisie === '') {
+                document.getElementById('msg-default').classList.add('visible');
+            } else {
+                document.getElementById('msg-error').classList.add('visible');
+            }
+        }
+        document.getElementById('submit-btn').addEventListener('click', executerRecherche);
+        document.getElementById('search-input').addEventListener('keyup', function(e) {
+            if (e.key === 'Enter') executerRecherche();
+        });
+        window.addEventListener('load', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const searchWord = urlParams.get('search');
+            if (searchWord) {
+                document.getElementById('search-input').value = decodeURIComponent(searchWord);
+                executerRecherche();
+            }
+        });
+    </script>
+</body>
+</html>

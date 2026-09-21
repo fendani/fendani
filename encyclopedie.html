@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fendani — encyclopédie culturelle</title>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:ital,wght@0,300;0,500;0,700;1,300&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #faf9f6; --text-color: #111111; --text-muted: #8e8e8e; --border-color: #e2e1de;
+            --font-main: 'Inter', sans-serif; --font-editorial: 'Crimson Pro', serif;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; letter-spacing: -0.01em; }
+        body { font-family: var(--font-main); color: var(--text-color); background-color: var(--bg-color); display: flex; flex-direction: column; min-height: 100vh; -webkit-font-smoothing: antialiased; }
+        
+        header { background-color: var(--bg-color); border-bottom: 1px solid var(--border-color); }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: baseline; padding: 2rem; }
+        .logo { font-family: var(--font-editorial); font-size: 2.6rem; font-weight: 400; text-transform: lowercase; color: var(--text-color); text-decoration: none; letter-spacing: -0.03em; }
+        .nav-tabs { display: flex; list-style: none; gap: 2.5rem; }
+        .tab-link { font-family: var(--font-editorial); font-style: italic; font-weight: 400; font-size: 1.25rem; color: var(--text-color); text-decoration: none; position: relative; padding-bottom: 0.2rem; }
+        .tab-link::after { content: ''; position: absolute; width: 100%; transform: scaleX(0); height: 1.5px; bottom: 0; left: 0; background-color: var(--text-color); transform-origin: bottom right; transition: transform 0.25s ease-out; }
+        .tab-link:hover::after, .tab-link.active::after { transform: scaleX(1); transform-origin: bottom left; }
+
+        /* STRUCTURE DE PAGE EN DEUX COLONNES JNALISTIQUES */
+        main { flex: 1; max-width: 1200px; width: 100%; margin: 4rem auto 6rem auto; padding: 0 2rem; display: grid; grid-template-columns: 3fr 1fr; gap: 4rem; }
+        
+        .article-card { text-align: left; animation: fadeIn 0.5s ease-out; }
+        h1 { font-family: var(--font-main); font-size: 3.5rem; font-weight: 700; color: var(--text-color); letter-spacing: -0.04em; margin-bottom: 0.5rem; line-height: 1; }
+        .lead { font-family: var(--font-editorial); font-size: 1.6rem; color: var(--text-muted); margin-bottom: 3rem; font-style: italic; line-height: 1.3; }
+        .article-body { font-family: var(--font-editorial); font-size: 1.4rem; line-height: 1.6; color: #222222; }
+        .article-body p { margin-bottom: 1.8rem; text-align: justify; }
+
+        /* NAVIGATEUR THÉMATIQUE (BARRE LATÉRALE) */
+        .sidebar { text-align: left; border-left: 1px solid var(--border-color); padding-left: 2.5rem; height: fit-content; position: sticky; top: 8rem; }
+        .sidebar-title { font-family: var(--font-main); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-color); letter-spacing: 0.08em; margin-bottom: 1.5rem; }
+        .category-list { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
+        .category-list a { font-family: var(--font-editorial); font-style: italic; font-size: 1.25rem; color: var(--text-muted); text-decoration: none; transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease; display: block; }
+        .category-list a:hover { color: var(--text-color); padding-left: 4px; }
+        .category-list li.active a { color: var(--text-color); font-weight: 600; }
+
+        footer { padding: 4rem 2rem; border-top: 1px solid var(--border-color); font-size: 0.8rem; color: var(--text-muted); text-align: center; font-family: var(--font-main); text-transform: uppercase; letter-spacing: 0.05em; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 900px) { main { grid-template-columns: 1fr; gap: 3rem; } .sidebar { border-left: none; padding-left: 0; border-top: 1px solid var(--border-color); padding-top: 2rem; } .nav-container { flex-direction: column; align-items: center; gap: 1.5rem; } h1 { font-size: 2.8rem; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">fendani</a>
+            <nav>
+                <ul class="nav-tabs">
+                    <li><a href="dictionnaire.html" class="tab-link">Dictionnaire</a></li>
+                    <li><a href="beaux-arts.html" class="tab-link active">Encyclopédie</a></li>
+                    <li><a href="actualites.html" class="tab-link">Actualités</a></li>
+                    <li><a href="qui-sommes-nous.html" class="tab-link">Qui sommes-nous ?</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- COLONNE GAUCHE : DOSSIER TEXTUEL -->
+        <article class="article-card">
+            <!-- ⚠️ ZONE EDITABLE : TEXTES À MODIFIER SUR VOS AUTRES PAGES -->
+            <h1>Beaux-Arts</h1>
+            <p class="lead">Mouvements plastiques, esthétique et mémoire visuelle.</p>
+            
+            <div class="article-body">
+                <p>Cet espace est dédié à la richesse artistique et aux arts plastiques de la communauté. Des œuvres picturales historiques aux créations contemporaines de l'année 2026, explorez l'évolution des formes, des couleurs et des symboles.</p>
+                <p>À travers des analyses de collections et des fiches thématiques, Fendani dresse l'inventaire d'un patrimoine visuel unique au monde.</p>
+            </div>
+            <!-- ⚠️ FIN DE LA ZONE EDITABLE -->
+        </article>
+
+        <!-- COLONNE DROITE : NAVIGATION DES 11 THÉMATIQUES -->
+        <aside class="sidebar">
+            <h2 class="sidebar-title">Thématiques</h2>
+            <ul class="category-list">
+                <!-- Changez simplement la classe 'class="active"' selon la page où vous vous trouvez -->
+                <li class="active"><a href="beaux-arts.html">Beaux-Arts</a></li>
+                <li><a href="theatre.html">Théâtre</a></li>
+                <li><a href="musique.html">Musique</a></li>
+                <li><a href="litterature.html">Littérature</a></li>
+                <li><a href="sciences.html">Sciences</a></li>
+                <li><a href="mode.html">Mode</a></li>
+                <li><a href="sports.html">Sports</a></li>
+                <li><a href="droits-civiques.html">Droits civiques</a></li>
+                <li><a href="gastronomie.html">Gastronomie</a></li>
+                <li><a href="histoire.html">Histoire</a></li>
+                <li><a href="technologie.html">Technologie</a></li>
+            </ul>
+        </aside>
+    </main>
+    <footer>
+        <p>fendani — archive culturelle &copy; 2026</p>
+    </footer>
+</body>
+</html>

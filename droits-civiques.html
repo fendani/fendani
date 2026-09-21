@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fendani — encyclopédie culturelle : droits civiques</title>
+    <!-- Polices : Prata, Crimson Pro, Syne -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,500;1,500&family=Prata&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f5f3ee;
+            --text-main: #141816;
+            --text-muted: #525c56;
+            --accent: #9c7b2f;
+            --floral-pink: #c86d6b;
+            --floral-green: #3f5e44;
+            --apple-green: #76ff03; 
+            --border: rgba(156, 123, 47, 0.2);
+        }
+
+        .custom-cursor {
+            position: fixed;
+            top: 0; left: 0;
+            width: 10px; height: 10px;
+            background-color: var(--apple-green);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 10000;
+            box-shadow: 0 0 10px rgba(118, 255, 3, 0.6);
+        }
+
+        .trail-dot {
+            position: fixed;
+            top: 0; left: 0;
+            width: 3px; height: 3px;
+            background-color: var(--apple-green);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            opacity: 0.35;
+            z-index: 9999;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        * { box-sizing: border-box; cursor: none !important; }
+
+        body { 
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text-main);
+            display: flex; 
+            flex-direction: column; 
+            min-height: 100vh; 
+            -webkit-font-smoothing: antialiased; 
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* HEADER HARMONISÉ STRICTEMENT */
+        header {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            padding: 20px 5%;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            background: rgba(245, 243, 238, 0.85);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+        }
+
+        .brand-logo {
+            grid-column: 2;
+            justify-self: center;
+        }
+        .brand-logo img { height: 32px; width: auto; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .brand-logo:hover img { transform: rotate(-6deg) scale(1.03); }
+
+        .nav-links { 
+            grid-column: 1;
+            display: flex; 
+            gap: 25px; 
+            list-style: none; 
+            margin: 0; 
+            padding: 0; 
+        }
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-family: 'Syne', sans-serif;
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s, transform 0.3s;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--text-main); }
+        .nav-links a::after {
+            content: '';
+            position: absolute; bottom: -3px; left: 0; width: 0; height: 1px;
+            background: var(--floral-pink);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+
+        /* SÉLECTEUR DE LANGUE HARMONISÉ */
+        .lang-selector {
+            grid-column: 3;
+            display: flex;
+            gap: 0.8rem;
+            justify-content: flex-end;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            flex-wrap: nowrap;
+        }
+        .lang-item {
+            font-family: 'Syne', sans-serif;
+            font-weight: 500;
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+        }
+        .lang-item:hover, .lang-item.active { color: var(--text-main); }
+
+        /* STRUCTURE DE PAGE EN DEUX COLONNES */
+        main { 
+            flex: 1; max-width: 1400px; width: 100%; margin: 10px auto 60px auto; padding: 130px 5% 0; 
+            display: grid; grid-template-columns: 3fr 1fr; gap: 4rem; 
+            position: relative; z-index: 2;
+        }
+        
+        .article-card { text-align: left; animation: fadeIn 0.5s ease-out; }
+        
+        h1 { 
+            font-family: 'Prata', serif; 
+            font-size: 3.2rem; 
+            font-weight: 400; 
+            color: var(--text-main); 
+            margin-bottom: 0.6rem; 
+            line-height: 1.1; 
+        }
+        
+        .lead { 
+            font-family: 'Crimson Pro', serif; 
+            font-style: italic; 
+            font-weight: 500; 
+            font-size: 1.4rem; 
+            color: var(--text-muted); 
+            margin-bottom: 3rem; 
+            line-height: 1.4; 
+        }
+        
+        .article-body { font-family: 'Crimson Pro', serif; font-size: 1.2rem; line-height: 1.75; color: var(--text-muted); }
+        .article-body p { margin-bottom: 1.8rem; text-align: justify; }
+
+        /* NAVIGATEUR THÉMATIQUE (BARRE LATÉRALE) */
+        .sidebar { 
+            text-align: left; 
+            border-left: 1px solid var(--border); 
+            padding-left: 2.5rem; 
+            height: fit-content; 
+            position: sticky; 
+            top: 130px; 
+        }
+        
+        .sidebar-title { 
+            font-family: 'Syne', sans-serif; 
+            font-size: 0.6rem; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            color: var(--floral-green); 
+            letter-spacing: 0.1em; 
+            margin-bottom: 1.5rem; 
+        }
+        
+        .category-list { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; padding: 0; margin: 0; }
+        
+        .category-list a { 
+            font-family: 'Crimson Pro', serif; 
+            font-style: italic; 
+            font-size: 1.15rem; 
+            color: var(--text-muted); 
+            text-decoration: none; 
+            transition: color 0.3s ease; 
+            display: block; 
+        }
+        
+        .category-list a:hover { color: var(--text-main); padding-left: 4px; }
+        .category-list li.active a { color: var(--floral-pink); font-weight: 600; }
+
+        /* PIED DE PAGE HARMONISÉ */
+        footer { 
+            position: relative; z-index: 2;
+            padding: 50px 5%;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-family: 'Syne', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            background: rgba(245, 243, 238, 0.9);
+            max-width: 1400px; 
+            margin: 0 auto; 
+            width: 100%; 
+        }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        @media (max-width: 1024px) { 
+            main { grid-template-columns: 1fr; gap: 3rem; padding-top: 130px; } 
+            .sidebar { border-left: none; padding-left: 0; border-top: 1px solid var(--border); padding-top: 2rem; position: static; } 
+            .nav-links, .lang-selector { display: none; }
+            h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="custom-cursor" id="cursor"></div>
+
+    <!-- EN-TÊTE FIXE HARMONISÉ -->
+    <header>
+        <ul class="nav-links">
+            <li><a href="expositions-et-festivals.html" data-i18n="nav_expo">Expositions et festivals</a></li>
+            <li><a href="beaux-arts.html" class="active" data-i18n="nav_encyclo">Encyclopédie</a></li>
+            <li><a href="dictionnaire.html" data-i18n="nav_dict">Dictionnaire</a></li>
+            <li><a href="actualites.html" data-i18n="nav_news">Actualités</a></li>
+        </ul>
+        
+        <a href="index.html" class="brand-logo">
+            <img src="log6.png" alt="Fendani Logo">
+        </a>
+
+        <ul class="lang-selector">
+            <li><a onclick="changerLangue('fr')" id="btn-fr" class="lang-item active">FR</a></li>
+            <li><a onclick="changerLangue('en')" id="btn-en" class="lang-item">EN</a></li>
+            <li><a onclick="changerLangue('pt')" id="btn-pt" class="lang-item">PT</a></li>
+            <li><a onclick="changerLangue('esp')" id="btn-esp" class="lang-item">ESP</a></li>
+            <li><a onclick="changerLangue('it')" id="btn-it" class="lang-item">IT</a></li>
+            <li><a onclick="changerLangue('ro')" id="btn-ro" class="lang-item">RO</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <!-- COLONNE GAUCHE : DOSSIER TEXTUEL -->
+        <article class="article-card">
+            <h1 data-i18n="art_title">Droits Civiques</h1>
+            <p class="lead" data-i18n="art_lead">Luttes émancipatrices, justice sociale et mémoire des libertés.</p>
+            
+            <div class="article-body">
+                <p data-i18n="art_p1">Cet espace est dédié à l'histoire des luttes pour l'égalité, la dignité humaine et la reconnaissance des libertés fondamentales. Des mouvements historiques majeurs aux dynamiques contemporaines de l'année 2026, explorez l'évolution des textes, des engagements et des voix qui ont façonné les sociétés modernes.</p>
+                <p data-i18n="art_p2">À travers des analyses documentaires et des fiches thématiques, Fendani met en lumière les jalons essentiels de la citoyenneté et de la justice à travers le monde.</p>
+            </div>
+        </article>
+
+        <!-- COLONNE DROITE : NAVIGATION DES THÉMATIQUES -->
+        <aside class="sidebar">
+            <h2 class="sidebar-title" data-i18n="sidebar_themes">Thématiques</h2>
+            <ul class="category-list">
+                <li><a href="beaux-arts.html" data-i18n="theme_fine_arts">Beaux-Arts</a></li>
+                <li><a href="theatre.html" data-i18n="theme_theatre">Théâtre</a></li>
+                <li><a href="musique.html" data-i18n="theme_music">Musique</a></li>
+                <li><a href="litterature.html" data-i18n="theme_lit">Littérature</a></li>
+                <li><a href="sciences.html" data-i18n="theme_science">Sciences</a></li>
+                <li><a href="mode.html" data-i18n="theme_fashion">Mode</a></li>
+                <li><a href="sports.html" data-i18n="theme_sports">Sports</a></li>
+                <li class="active"><a href="droits-civiques.html" data-i18n="theme_rights">Droits Civiques</a></li>
+                <li><a href="gastronomie.html" data-i18n="theme_gastronomy">Gastronomie</a></li>
+                <li><a href="histoire.html" data-i18n="theme_history">Histoire</a></li>
+                <li><a href="technologie.html" data-i18n="theme_tech">Technologie</a></li>
+            </ul>
+        </aside>
+    </main>
+
+    <!-- PIED DE PAGE HARMONISÉ -->
+    <footer>
+        <p data-i18n="footer_text">Fendani — Atlas Nomade © 2026. Édition Internationale Paris / New York.</p>
+    </footer>
+
+    <!-- SCRIPT DE TRADUCTION ET INTERACTIONS -->
+    <script>
+        const traductions = {
+            fr: {
+                nav_expo: "Expositions et festivals",
+                nav_encyclo: "Encyclopédie",
+                nav_dict: "Dictionnaire",
+                nav_news: "Actualités",
+                art_title: "Droits Civiques",
+                art_lead: "Luttes émancipatrices, justice sociale et mémoire des libertés.",
+                art_p1: "Cet espace est dédié à l'histoire des luttes pour l'égalité, la dignité humaine et la reconnaissance des libertés fondamentales. Des mouvements historiques majeurs aux dynamiques contemporaines de l'année 2026, explorez l'évolution des textes, des engagements et des voix qui ont façonné les sociétés modernes.",
+                art_p2: "À travers des analyses documentaires et des fiches thématiques, Fendani met en lumière les jalons essentiels de la citoyenneté et de la justice à travers le monde.",
+                sidebar_themes: "Thématiques",
+                theme_fine_arts: "Beaux-Arts",
+                theme_theatre: "Théâtre",
+                theme_music: "Musique",
+                theme_lit: "Littérature",
+                theme_science: "Sciences",
+                theme_fashion: "Mode",
+                theme_sports: "Sports",
+                theme_rights: "Droits Civiques",
+                theme_gastronomy: "Gastronomie",
+                theme_history: "Histoire",
+                theme_tech: "Technologie",
+                footer_text: "Fendani — Atlas Nomade © 2026. Édition Internationale Paris / New York."
+            },
+            en: {
+                nav_expo: "Exhibitions and festivals",
+                nav_encyclo: "Encyclopedia",
+                nav_dict: "Dictionary",
+                nav_news: "News",
+                art_title: "Civil Rights",
+                art_lead: "Emancipatory struggles, social justice, and the memory of freedoms.",
+                art_p1: "This space is dedicated to the history of struggles for equality, human dignity, and the recognition of fundamental freedoms. From major historical movements to contemporary dynamics in 2026, explore the evolution of texts, commitments, and voices that shaped modern societies.",
+                art_p2: "Through documentary analyses and thematic files, Fendani highlights the essential milestones of citizenship and justice around the world.",
+                sidebar_themes: "Themes",
+                theme_fine_arts: "Fine Arts",
+                theme_theatre: "Theatre",
+                theme_music: "Music",
+                theme_lit: "Literature",
+                theme_science: "Sciences",
+                theme_fashion: "Fashion",
+                theme_sports: "Sports",
+                theme_rights: "Civil Rights",
+                theme_gastronomy: "Gastronomy",
+                theme_history: "History",
+                theme_tech: "Technology",
+                footer_text: "Fendani — Nomad Atlas © 2026. International Edition Paris / New York."
+            },
+            pt: {
+                nav_expo: "Exposições e festivais",
+                nav_encyclo: "Enciclopédia",
+                nav_dict: "Dicionário",
+                nav_news: "Notícias",
+                art_title: "Direitos Cívicos",
+                art_lead: "Lutas emancipatórias, justiça social e memória das liberdades.",
+                art_p1: "Este espaço é dedicado à história das lutas pela igualdade, dignidade humana e reconhecimento das liberdades fundamentais. Desde os principais movimentos históricos até às dinâmicas contemporâneas do ano 2026, explore a evolução dos textos, dos compromissos e das vozes que moldaram as sociedades modernas.",
+                art_p2: "Através de análises documentais e dossiês temáticos, a Fendani destaca os marcos essenciais da cidadania e da justiça em todo o mundo.",
+                sidebar_themes: "Temáticas",
+                theme_fine_arts: "Belas-Artes",
+                theme_theatre: "Teatro",
+                theme_music: "Música",
+                theme_lit: "Literatura",
+                theme_science: "Ciências",
+                theme_fashion: "Moda",
+                theme_sports: "Desportos",
+                theme_rights: "Direitos Cívicos",
+                theme_gastronomy: "Gastronomia",
+                theme_history: "História",
+                theme_tech: "Tecnologia",
+                footer_text: "Fendani — Atlas Nómada © 2026. Edição Internacional Paris / Nova Iorque."
+            },
+            esp: {
+                nav_expo: "Exposiciones y festivales",
+                nav_encyclo: "Enciclopedia",
+                nav_dict: "Diccionario",
+                nav_news: "Noticias",
+                art_title: "Derechos Cívicos",
+                art_lead: "Luchas emancipadoras, justicia social y memoria de las libertades.",
+                art_p1: "Este espacio está dedicado a la historia de las luchas por la igualdad, la dignidad humana y el reconocimiento de las libertades fundamentales. Desde los principales movimientos históricos hasta las dinámicas contemporáneas del año 2026, explora la evolución de los textos, compromisos y voces que moldearon las sociedades modernas.",
+                art_p2: "A través de análisis documentales y expedientes temáticos, Fendani destaca los hitos esenciales de la ciudadanía y la justicia en todo el mundo.",
+                sidebar_themes: "Temáticas",
+                theme_fine_arts: "Bellas Artes",
+                theme_theatre: "Teatro",
+                theme_music: "Música",
+                theme_lit: "Literatura",
+                theme_science: "Ciencias",
+                theme_fashion: "Moda",
+                theme_sports: "Deportes",
+                theme_rights: "Derechos Cívicos",
+                theme_gastronomy: "Gastronomía",
+                theme_history: "Historia",
+                theme_tech: "Tecnología",
+                footer_text: "Fendani — Atlas Nómada © 2026. Edición Internacional París / Nueva York."
+            },
+            it: {
+                nav_expo: "Mostre e festival",
+                nav_encyclo: "Enciclopedia",
+                nav_dict: "Dizionario",
+                nav_news: "Notizie",
+                art_title: "Diritti Civili",
+                art_lead: "Lotte emancipatrici, giustizia sociale e memoria delle libertà.",
+                art_p1: "Questo spazio è dedicato alla storia delle lotte per l'uguaglianza, la dignità umana e il riconoscimento delle libertà fondamentali. Dai principali movimenti storici alle dinamiche contemporanee del 2026, esplora l'evoluzione dei testi, degli impegni e delle voci che hanno plasmato le società moderne.",
+                art_p2: "Attraverso analisi documentarie e dossier tematici, Fendani mette in luce le tappe fondamentali della cittadinanza e della giustizia in tutto il mondo.",
+                sidebar_themes: "Tematiche",
+                theme_fine_arts: "Belle Arti",
+                theme_theatre: "Teatro",
+                theme_music: "Musica",
+                theme_lit: "Letteratura",
+                theme_science: "Scienze",
+                theme_fashion: "Moda",
+                theme_sports: "Sport",
+                theme_rights: "Diritti Civili",
+                theme_gastronomy: "Gastronomia",
+                theme_history: "Storia",
+                theme_tech: "Tecnologia",
+                footer_text: "Fendani — Atlante Nomade © 2026. Edizione Internazionale Parigi / New York."
+            },
+            ro: {
+                nav_expo: "Expoziții și festivaluri",
+                nav_encyclo: "Enciclopedie",
+                nav_dict: "Dicționar",
+                nav_news: "Știri",
+                art_title: "Drepturi Civice",
+                art_lead: "Lupte emancipatoare, justiție socială și memoria libertăților.",
+                art_p1: "Acest spațiu este dedicat istoriei luptelor pentru egalitate, demnitate umană și recunoașterea libertăților fundamentale. De la principalele mișcări istorice la dinamica contemporană a anului 2026, explorați evoluția textelor, angajamentelor și vocilor care au modelat societățile moderne.",
+                art_p2: "Prin analize documentare și dosare tematice, Fendani evidențiază reperele esențiale ale cetățeniei și justiției din întreaga lume.",
+                sidebar_themes: "Tematici",
+                theme_fine_arts: "Arte Frumoase",
+                theme_theatre: "Teatru",
+                theme_music: "Muzică",
+                theme_lit: "Literatură",
+                theme_science: "Științe",
+                theme_fashion: "Modă",
+                theme_sports: "Sporturi",
+                theme_rights: "Drepturi Civice",
+                theme_gastronomy: "Gastronomie",
+                theme_history: "Istorie",
+                theme_tech: "Tehnologie",
+                footer_text: "Fendani — Atlas Nomad © 2026. Ediția Internațională Paris / New York."
+            }
+        };
+
+        function changerLangue(lang) {
+            // Sauvegarde de la préférence linguistique dans le localStorage
+            localStorage.setItem('fendani_lang', lang);
+
+            document.querySelectorAll('.lang-item').forEach(el => el.classList.remove('active'));
+            const btnActive = document.getElementById('btn-' + lang);
+            if (btnActive) btnActive.classList.add('active');
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const cle = el.getAttribute('data-i18n');
+                if (traductions[lang] && traductions[lang][cle]) {
+                    el.textContent = traductions[lang][cle];
+                }
+            });
+
+            document.documentElement.lang = lang;
+        }
+
+        // Application automatique de la langue enregistrée au chargement de la page
+        document.addEventListener('DOMContentLoaded', () => {
+            const langueSauvegardee = localStorage.getItem('fendani_lang') || 'fr';
+            changerLangue(langueSauvegardee);
+        });
+
+        const cursor = document.getElementById('cursor');
+        let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
+
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            cursor.style.top = mouseY + 'px';
+            cursor.style.left = mouseX + 'px';
+
+            if (Math.random() > 0.6) {
+                createTrailDot(mouseX, mouseY);
+            }
+        });
+
+        function createTrailDot(x, y) {
+            const dot = document.createElement('div');
+            dot.className = 'trail-dot';
+            dot.style.top = y + 'px';
+            dot.style.left = x + 'px';
+            document.body.appendChild(dot);
+
+            setTimeout(() => {
+                dot.style.transform = 'translate(-50%, -50%) scale(0.1)';
+                dot.style.opacity = '0';
+            }, 20);
+
+            setTimeout(() => {
+                dot.remove();
+            }, 400);
+        }
+    </script>
+</body>
+</html>

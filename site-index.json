@@ -1,0 +1,38 @@
+{
+  "dictionnaire": {
+    "verite": { "type": "mot", "target": "dictionnaire.html" },
+    "vérité": { "type": "mot", "target": "dictionnaire.html" },
+    "parler": { "type": "mot", "target": "dictionnaire.html" },
+    "regarder": { "type": "mot", "target": "dictionnaire.html" },
+    "voler": { "type": "mot", "target": "dictionnaire.html" },
+    "argent": { "type": "mot", "target": "dictionnaire.html" },
+    "chachipen": { "type": "mot", "target": "dictionnaire-ca-fr.html" },
+    "prakar": { "type": "mot", "target": "dictionnaire-ca-fr.html" },
+    "dicave": { "type": "mot", "target": "dictionnaire-ca-fr.html" },
+    "chouraver": { "type": "mot", "target": "dictionnaire-ca-fr.html" },
+    "love": { "type": "mot", "target": "dictionnaire-ca-fr.html" }
+  },
+  "encyclopedie": {
+    "beaux-arts": "beaux-arts.html",
+    "peinture": "beaux-arts.html",
+    "theatre": "theatre.html",
+    "théâtre": "theatre.html",
+    "musique": "musique.html",
+    "guitare": "musique.html",
+    "flamenco": "musique.html",
+    "litterature": "litterature.html",
+    "littérature": "litterature.html",
+    "sciences": "sciences.html",
+    "mode": "mode.html",
+    "vêtements": "mode.html",
+    "economie": "economie.html",
+    "économie": "economie.html",
+    "droits civiques": "droits-civiques.html",
+    "gastronomie": "gastronomie.html",
+    "cuisine": "gastronomie.html",
+    "histoire": "histoire.html",
+    "origines": "histoire.html",
+    "technologie": "technologie.html",
+    "numérique": "technologie.html"
+  }
+}

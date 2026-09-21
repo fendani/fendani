@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fendani - Dictionnaire</title>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,300;1,400&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #003351;
+            --bg-light: #f8f9fa;
+            --text-main: #222222;
+            --text-muted: #555555;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+            --font-headings: 'Inter', sans-serif;
+            --font-body: 'Crimson Pro', serif;
+            --letter-spacing-global: -0.019em;
+            --letter-spacing-logo: -0.025em;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; letter-spacing: var(--letter-spacing-global); }
+        body { font-family: var(--font-body); font-size: 1.15rem; line-height: 1.6; color: var(--text-main); background-color: var(--bg-light); display: flex; flex-direction: column; min-height: 100vh; }
+        header { background-color: var(--primary); box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
+        .logo { font-family: var(--font-body); font-size: 2.1rem; font-weight: 700; text-transform: lowercase; color: var(--white); letter-spacing: var(--letter-spacing-logo); text-decoration: none; }
+        .nav-tabs { display: flex; list-style: none; gap: 0.5rem; }
+        .tab-link { font-family: var(--font-body); font-style: italic; font-weight: 300; padding: 0.4rem 1.2rem; font-size: 1.2rem; color: rgba(255, 255, 255, 0.75); text-decoration: none; border-radius: 4px; transition: var(--transition); }
+        .tab-link:hover { color: var(--white); background-color: rgba(255, 255, 255, 0.1); }
+        .tab-link.active { color: var(--white); background-color: rgba(255, 255, 255, 0.2); font-weight: 400; }
+        main { flex: 1; max-width: 1200px; width: 100%; margin: 2rem auto; padding: 0 2rem; }
+        .page-card { background-color: var(--white); padding: 2.5rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        h1 { font-family: var(--font-headings); color: var(--primary); margin-bottom: 1.2rem; font-size: 2.4rem; font-weight: 700; }
+        .lead { font-size: 1.35rem; color: var(--text-muted); margin-bottom: 1.5rem; font-style: italic; }
+        .search-box { display: flex; gap: 0.5rem; margin: 2rem 0; }
+        .search-input { font-family: var(--font-body); font-size: 1.15rem; padding: 0.8rem 1rem; flex: 1; border: 1px solid #cccccc; border-radius: 4px; }
+        .search-btn { font-family: var(--font-headings); background-color: var(--primary); color: var(--white); border: none; padding: 0.8rem 1.5rem; font-size: 1rem; font-weight: 500; border-radius: 4px; cursor: pointer; transition: var(--transition); }
+        .search-btn:hover { opacity: 0.9; }
+        .word-entry { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #eeeeee; }
+        .word-title { font-family: var(--font-headings); font-size: 1.6rem; color: var(--primary); }
+        .word-type { font-style: italic; color: var(--text-muted); font-size: 1rem; margin-bottom: 0.5rem; }
+        footer { font-family: var(--font-headings); background-color: var(--primary); color: var(--white); text-align: center; padding: 1.5rem; margin-top: auto; font-size: 0.85rem; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        @media (max-width: 768px) { .nav-container { flex-direction: column; gap: 1rem; padding: 1rem; } .nav-tabs { width: 100%; flex-direction: column; gap: 0.2rem; } .tab-link { width: 100%; text-align: center; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="dictionnaire.html" class="logo">fendani</a>
+            <nav>
+                <ul class="nav-tabs">
+                    <li><a href="dictionnaire.html" class="tab-link active">Dictionnaire</a></li>
+                    <li><a href="encyclopedie.html" class="tab-link">Encyclopédie</a></li>
+                    <li><a href="actualites.html" class="tab-link">Actualités</a></li>
+                    <li><a href="qui-sommes-nous.html" class="tab-link">Qui sommes-nous ?</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="page-card">
+            <h1>Dictionnaire Fendani</h1>
+            <p class="lead">Explorez les définitions, l'origine et l'évolution des mots avec précision.</p>
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="Rechercher un mot ou une expression...">
+                <button class="search-btn">Chercher</button>
+            </div>
+            <div class="word-entry">
+                <div class="word-title">Érudition</div>
+                <div class="word-type">nom féminin — du latin eruditio</div>
+                <p>Savoir approfondi et étendu, puisé aux sources originales et structuré de manière critique, en particulier dans les matières historiques, littéraires ou philosophiques.</p>
+            </div>
+        </div>
+    </main>
+    <footer><p>&copy; 2026 Fendani. Tous droits réservés.</p></footer>
+</body>
+</html>

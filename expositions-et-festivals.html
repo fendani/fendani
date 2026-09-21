@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FENDANI — Agenda & Atlas Nomade (Édition Paris / New York)</title>
+    <!-- Polices : Prata, Crimson Pro, Syne -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,500;1,500&family=Prata&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f5f3ee;
+            --text-main: #141816;
+            --text-muted: #525c56;
+            --accent: #9c7b2f;
+            --floral-pink: #c86d6b;
+            --floral-green: #3f5e44;
+            --apple-green: #76ff03; 
+            --border: rgba(156, 123, 47, 0.2);
+        }
+
+        .custom-cursor {
+            position: fixed;
+            top: 0; left: 0;
+            width: 10px; height: 10px;
+            background-color: var(--apple-green);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 10000;
+            box-shadow: 0 0 10px rgba(118, 255, 3, 0.6);
+        }
+
+        .trail-dot {
+            position: fixed;
+            top: 0; left: 0;
+            width: 3px; height: 3px;
+            background-color: var(--apple-green);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            opacity: 0.35;
+            z-index: 9999;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        * { box-sizing: border-box; cursor: none !important; }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text-main);
+            overflow-x: hidden;
+            position: relative;
+            transition: background-color 1.5s ease;
+        }
+
+        .living-garden-bg {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+            background: radial-gradient(circle at 20% 20%, rgba(220, 210, 190, 0.35) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 80%, rgba(200, 190, 210, 0.3) 0%, transparent 45%);
+        }
+
+        .floral-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(140px);
+            opacity: 0.55;
+            transition: background 1.8s ease, transform 1.8s ease;
+            animation: wanderOrb 24s ease-in-out infinite alternate;
+        }
+
+        body.section-hero .orb-1 { width: 550px; height: 550px; background: rgba(185, 210, 180, 0.45); top: -100px; left: 10%; }
+        body.section-hero .orb-2 { width: 650px; height: 650px; background: rgba(210, 190, 215, 0.35); top: 35%; right: -100px; }
+        body.section-chap1 .orb-1 { width: 600px; height: 600px; background: rgba(200, 215, 195, 0.45); top: 15%; left: 5%; }
+        body.section-chap1 .orb-2 { width: 550px; height: 550px; background: rgba(230, 205, 195, 0.4); top: 55%; right: 10%; }
+        body.section-chap2 .orb-1 { width: 650px; height: 650px; background: rgba(225, 200, 205, 0.4); top: 20%; left: 15%; }
+        body.section-chap2 .orb-2 { width: 600px; height: 600px; background: rgba(195, 210, 220, 0.35); top: 50%; right: 5%; }
+        body.section-chap3 .orb-1 { width: 600px; height: 600px; background: rgba(200, 220, 215, 0.45); top: 10%; right: 15%; }
+        body.section-chap3 .orb-2 { width: 600px; height: 600px; background: rgba(215, 200, 225, 0.4); top: 45%; left: 10%; }
+
+        @keyframes wanderOrb {
+            0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+            100% { transform: translate(50px, 70px) scale(1.1) rotate(8deg); }
+        }
+
+        #preloader {
+            position: fixed;
+            inset: 0;
+            background: #f0eee7;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        .watch-wrapper {
+            position: relative;
+            width: 260px;
+            height: 260px;
+            transition: transform 1.8s cubic-bezier(0.77, 0, 0.175, 1), opacity 1s ease;
+            transform-origin: center;
+        }
+
+        .watch-case {
+            position: absolute;
+            inset: 0;
+            border: 1.5px solid var(--accent);
+            border-radius: 50%;
+            background: #ffffff;
+            box-shadow: 0 20px 40px rgba(20, 24, 22, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .watch-logo-bg {
+            position: absolute;
+            width: 130px; height: 130px;
+            background: url('log6.png') no-repeat center center;
+            background-size: contain;
+            opacity: 0.85;
+            z-index: 1;
+        }
+
+        .watch-ticks {
+            position: absolute; inset: 8px; border-radius: 50%;
+            background: repeating-conic-gradient(from 0deg, rgba(156, 123, 47, 0.35) 0deg 1deg, transparent 1deg 6deg);
+            -webkit-mask-image: radial-gradient(circle, transparent 72%, black 73%);
+            mask-image: radial-gradient(circle, transparent 72%, black 73%);
+            z-index: 2;
+        }
+
+        .roman-num {
+            position: absolute;
+            font-family: 'Syne', sans-serif;
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 700;
+            z-index: 3;
+        }
+        .num-12 { top: 16px; left: calc(50% - 6px); }
+        .num-3  { right: 20px; top: calc(50% - 9px); }
+        .num-6  { bottom: 16px; left: calc(50% - 5px); }
+        .num-9  { left: 20px; top: calc(50% - 9px); }
+
+        .hand-hour { position: absolute; bottom: 50%; left: calc(50% - 1px); width: 2px; height: 60px; background: var(--text-main); border-radius: 2px; transform-origin: bottom center; animation: rotateHour 10s linear infinite; z-index: 4; }
+        .hand-minute { position: absolute; bottom: 50%; left: calc(50% - 0.75px); width: 1.5px; height: 85px; background: var(--accent); border-radius: 2px; transform-origin: bottom center; animation: rotateMinute 3s linear infinite; z-index: 4; }
+        .hand-second { position: absolute; bottom: 50%; left: calc(50% - 0.5px); width: 1px; height: 95px; background: var(--floral-pink); border-radius: 2px; transform-origin: bottom center; animation: rotateSecond 1s linear infinite; z-index: 4; }
+        .watch-center { position: absolute; width: 7px; height: 7px; background: var(--accent); border-radius: 50%; z-index: 5; }
+
+        @keyframes rotateHour { to { transform: rotate(360deg); } }
+        @keyframes rotateMinute { to { transform: rotate(360deg); } }
+        @keyframes rotateSecond { to { transform: rotate(360deg); } }
+
+        .preloader-counter {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-top: 22px;
+            letter-spacing: -0.03em;
+        }
+
+        header {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            padding: 20px 5%;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            background: rgba(245, 243, 238, 0.85);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+        }
+
+        .brand-logo {
+            grid-column: 2;
+            justify-self: center;
+        }
+        .brand-logo img { height: 32px; width: auto; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .brand-logo:hover img { transform: rotate(-6deg) scale(1.03); }
+
+        .nav-links { 
+            grid-column: 1;
+            display: flex; 
+            gap: 25px; 
+            list-style: none; 
+            margin: 0; 
+            padding: 0; 
+        }
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-family: 'Syne', sans-serif;
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s, transform 0.3s;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--text-main); }
+        .nav-links a::after {
+            content: '';
+            position: absolute; bottom: -3px; left: 0; width: 0; height: 1px;
+            background: var(--floral-pink);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+
+        .lang-selector {
+            grid-column: 3;
+            display: flex;
+            gap: 0.8rem;
+            justify-content: flex-end;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            flex-wrap: nowrap;
+        }
+        .lang-item {
+            font-family: 'Syne', sans-serif;
+            font-weight: 500;
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+        }
+        .lang-item:hover, .lang-item.active { color: var(--text-main); }
+
+        /* BLOCS LATÉRAUX */
+        .side-sidebar {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 140px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 50;
+            font-family: 'Syne', sans-serif;
+            font-size: 0.55rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--text-muted);
+            pointer-events: none;
+        }
+
+        .side-sidebar.left { left: 3%; }
+        .side-sidebar.right { right: 3%; text-align: right; }
+
+        .side-sidebar span {
+            opacity: 0.6;
+            transition: opacity 0.3s, color 0.3s;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            padding: 160px 5% 100px;
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 180px;
+        }
+
+        .hero-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            min-height: 50vh;
+            justify-content: center;
+        }
+
+        .hero-text h1,
+        .chapter-header h2,
+        .text-box h3 {
+            font-family: 'Prata', serif;
+            font-weight: 400;
+        }
+
+        .hero-text .editorial-kicker,
+        .chapter-tag {
+            font-family: 'Syne', sans-serif;
+            font-size: 0.65rem; 
+            color: var(--text-main) !important;
+            text-transform: uppercase;
+            letter-spacing: 0.03em !important;
+            font-weight: 500;
+            margin-bottom: 6px !important;
+        }
+
+        .hero-text .editorial-kicker { display: block; }
+
+        .hero-text h1 {
+            font-size: clamp(2.8rem, 5vw, 4.8rem);
+            line-height: 1.05;
+            margin: 0 0 20px 0;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-text h1 span {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .hero-text p,
+        .text-box p {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            line-height: 1.75;
+            letter-spacing: -0.01em;
+            font-family: 'Crimson Pro', serif;
+            font-weight: 500;
+        }
+
+        .hero-text p {
+            max-width: 650px;
+            margin: 0 auto 30px auto;
+        }
+
+        .hero-frame {
+            width: 100%;
+            height: 420px;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+            background: #fff;
+            box-shadow: 0 20px 40px rgba(20, 24, 22, 0.08);
+            border: 1px solid var(--border);
+            margin-top: 25px;
+        }
+
+        .hero-frame img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .hero-frame:hover img { transform: scale(1.02); }
+
+        .floating-blason-box {
+            position: absolute;
+            bottom: 20px; left: 20px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+            padding: 15px;
+            border-radius: 50%;
+            width: 75px; height: 75px;
+            display: flex; justify-content: center; align-items: center;
+            box-shadow: 0 8px 20px rgba(156, 123, 47, 0.15);
+        }
+        .floating-blason-box img { width: 40px; height: auto; }
+
+        .chapter-section {
+            scroll-margin-top: 130px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .chapter-section.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .chapter-header {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+        }
+
+        .chapter-header h2 {
+            font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+            margin: 0;
+            letter-spacing: -0.01em;
+        }
+
+        .event-card-centered {
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 35px;
+            box-shadow: 0 15px 35px rgba(20, 24, 22, 0.04);
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            backdrop-filter: blur(10px);
+            text-align: left;
+        }
+
+        .media-box {
+            width: 100%;
+            height: 350px;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+            background: #fff;
+            border: 1px solid var(--border);
+        }
+
+        .media-box img, .media-box video {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .media-box:hover img, .media-box:hover video { transform: scale(1.02); }
+
+        .media-badge-tag {
+            position: absolute;
+            bottom: 15px; right: 15px;
+            background: rgba(245, 243, 238, 0.9);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-family: 'Syne', sans-serif;
+            font-size: 0.55rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+            z-index: 10;
+        }
+
+        .text-box { display: flex; flex-direction: column; }
+
+        .event-meta {
+            display: flex; gap: 15px;
+            font-family: 'Syne', sans-serif;
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--floral-green);
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .text-box h3 {
+            font-size: clamp(2rem, 3vw, 2.6rem);
+            line-height: 1.1;
+            margin: 0 0 14px 0;
+            letter-spacing: -0.01em;
+            transition: color 0.3s;
+        }
+        .text-box h3:hover { color: var(--floral-pink); }
+
+        .text-box p {
+            font-size: 1.1rem;
+            margin: 0 0 25px 0;
+            text-align: justify;
+        }
+
+        .event-footer {
+            display: flex; align-items: center; justify-content: space-between;
+            border-top: 1px solid var(--border);
+            padding-top: 15px;
+        }
+
+        .date-val { 
+            font-family: 'Syne', sans-serif;
+            font-size: 0.75rem; 
+            font-weight: 400;
+            color: var(--text-main); 
+            text-transform: uppercase;
+            letter-spacing: 0.12em; 
+        }
+
+        .gps-button {
+            display: inline-flex; align-items: center; gap: 6px;
+            color: var(--text-main);
+            background: rgba(118, 255, 3, 0.08);
+            border: 1px solid rgba(118, 255, 3, 0.3);
+            padding: 8px 18px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-family: 'Syne', sans-serif;
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .gps-button:hover {
+            background: var(--apple-green);
+            border-color: var(--apple-green);
+            color: #141816;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 12px rgba(118, 255, 3, 0.2);
+        }
+
+        footer {
+            position: relative; z-index: 2;
+            padding: 50px 5%;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-family: 'Syne', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            background: rgba(245, 243, 238, 0.9);
+        }
+
+        @media (max-width: 1200px) {
+            .side-sidebar { display: none; }
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 130px 4% 80px; }
+            .hero-frame, .media-box { height: 260px; }
+            .nav-links, .lang-selector { display: none; }
+            .event-card-centered { padding: 20px; }
+        }
+    </style>
+</head>
+<body class="section-hero">
+
+    <div class="custom-cursor" id="cursor"></div>
+
+    <!-- COLONNE LATÉRALE GAUCHE : THÉMATIQUES -->
+    <div class="side-sidebar left">
+        <span data-i18n="side_themes">// Thématiques</span>
+        <span data-i18n="side_music">Musiques & Scènes</span>
+        <span data-i18n="side_fashion">Haute Couture</span>
+        <span data-i18n="side_docs">Regards Docs</span>
+    </div>
+
+    <!-- COLONNE LATÉRALE DROITE : CHRONOLOGIE -->
+    <div class="side-sidebar right">
+        <span data-i18n="side_chrono">// Chronologie</span>
+        <span data-i18n="side_vol">2026 / Vol. IV</span>
+        <span data-i18n="side_july">Juillet</span>
+        <span data-i18n="side_oct">Octobre</span>
+    </div>
+
+    <div class="living-garden-bg">
+        <div class="floral-orb orb-1"></div>
+        <div class="floral-orb orb-2"></div>
+    </div>
+
+    <div id="preloader">
+        <div class="watch-wrapper" id="watchWrapper">
+            <div class="watch-case">
+                <div class="watch-logo-bg"></div>
+                <div class="watch-ticks"></div>
+                <span class="roman-num num-12">XII</span>
+                <span class="roman-num num-3">III</span>
+                <span class="roman-num num-6">VI</span>
+                <span class="roman-num num-9">IX</span>
+                <div class="hand-hour"></div>
+                <div class="hand-minute"></div>
+                <div class="hand-second"></div>
+                <div class="watch-center"></div>
+            </div>
+        </div>
+        <div class="preloader-counter" id="counter">0%</div>
+    </div>
+
+    <header>
+        <ul class="nav-links">
+            <li><a href="expositions-et-festivals.html" class="active" data-i18n="nav_expo">Expositions et festivals</a></li>
+            <li><a href="beaux-arts.html" data-i18n="nav_encyclo">Encyclopédie</a></li>
+            <li><a href="dictionnaire.html" data-i18n="nav_dict">Dictionnaire</a></li>
+            <li><a href="actualites.html" data-i18n="nav_news">Actualités</a></li>
+        </ul>
+        
+        <a href="index.html" class="brand-logo">
+            <img src="log6.png" alt="Fendani Logo">
+        </a>
+
+        <ul class="lang-selector">
+            <li><a onclick="changerLangue('fr')" id="btn-fr" class="lang-item active">FR</a></li>
+            <li><a onclick="changerLangue('en')" id="btn-en" class="lang-item">EN</a></li>
+            <li><a onclick="changerLangue('pt')" id="btn-pt" class="lang-item">PT</a></li>
+            <li><a onclick="changerLangue('esp')" id="btn-esp" class="lang-item">ESP</a></li>
+            <li><a onclick="changerLangue('it')" id="btn-it" class="lang-item">IT</a></li>
+            <li><a onclick="changerLangue('ro')" id="btn-ro" class="lang-item">RO</a></li>
+        </ul>
+    </header>
+
+    <main class="container">
+        
+        <section id="hero-section" class="hero-section observer-target" data-section="section-hero">
+            <div class="hero-text">
+                <span class="editorial-kicker" data-i18n="hero_kicker">CURATION ET MANIFESTE CULTUREL</span>
+                <h1><span data-i18n="hero_title_part1">L'Atlas Nomade</span> <span data-i18n="hero_title_part2">des Cultures Vivantes</span></h1>
+                <p data-i18n="hero_desc">Une sélection exclusive d'événements et de festivals incontournables à visiter. Conçu comme une revue d'art contemporain, ce carnet décloisonne les traditions mondiales à travers le prisme de l'avant-garde.</p>
+                <a href="#chapitre-1" class="gps-button" data-i18n="hero_btn">Explorer l'agenda ↓</a>
+            </div>
+            <div class="hero-frame">
+                <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1200&q=80" alt="Arty Craft">
+                <a href="index.html" class="floating-blason-box">
+                    <img src="log6.png" alt="Blason">
+                </a>
+            </div>
+        </section>
+
+        <section id="chapitre-1" class="chapter-section observer-target" data-section="section-chap1">
+            <div class="chapter-header">
+                <span class="chapter-tag" data-i18n="chap1_tag">01 / CHAPITRE PREMIER</span>
+                <h2 data-i18n="chap1_title">Vibrations & Musiques</h2>
+            </div>
+            <div class="event-card-centered">
+                <div class="media-box">
+                    <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1200&q=80" alt="Flamenco">
+                    <span class="media-badge-tag" data-i18n="badge_photo">Photographie</span>
+                </div>
+                <div class="text-box">
+                    <div class="event-meta">
+                        <span data-i18n="ev1_country">Espagne</span>
+                        <span data-i18n="ev1_city">Cordoue</span>
+                    </div>
+                    <h3 data-i18n="ev1_title">Festival international de guitare</h3>
+                    <p data-i18n="ev1_desc">Un sommet artistique mondial ancré dans les traditions andalouses, célébrant la puissance universelle du Flamenco et de ses maîtres à travers des notes d'une profonde intensité.</p>
+                    <div class="event-footer">
+                        <span class="date-val" data-i18n="ev1_date">Juillet</span>
+                        <a href="https://maps.google.com/?q=Cordoba+Guitar+Festival" target="_blank" class="gps-button" data-i18n="btn_locate">Localiser ↗</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="chapitre-2" class="chapter-section observer-target" data-section="section-chap2">
+            <div class="chapter-header">
+                <span class="chapter-tag" data-i18n="chap2_tag">02 / CHAPITRE SECOND</span>
+                <h2 data-i18n="chap2_title">Créations & Haute Couture</h2>
+            </div>
+            <div class="event-card-centered">
+                <div class="media-box">
+                    <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1200&q=80" alt="Mode">
+                    <span class="media-badge-tag" data-i18n="badge_fashion">Défilé</span>
+                </div>
+                <div class="text-box">
+                    <div class="event-meta">
+                        <span data-i18n="ev2_country">Hongrie</span>
+                        <span data-i18n="ev2_city">Pécs</span>
+                    </div>
+                    <h3 data-i18n="ev2_title">Romani Design Fashion Show</h3>
+                    <p data-i18n="ev2_desc">La haute couture réinventée à travers un artisanat novateur, bousculant les codes par l'audace stylistique et la valorisation des patrimoines visuels.</p>
+                    <div class="event-footer">
+                        <span class="date-val" data-i18n="ev2_date">Octobre</span>
+                        <a href="https://maps.google.com/?q=Pecs+Hungary" target="_blank" class="gps-button" data-i18n="btn_locate">Localiser ↗</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="chapitre-3" class="chapter-section observer-target" data-section="section-chap3">
+            <div class="chapter-header">
+                <span class="chapter-tag" data-i18n="chap3_tag">03 / CHAPITRE TROISIÈME</span>
+                <h2 data-i18n="chap3_title">Regards Documentaires</h2>
+            </div>
+            <div class="event-card-centered">
+                <div class="media-box">
+                    <video autoplay muted loop playsinline>
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-man-playing-acoustic-guitar-43120-large.mp4" type="video/mp4">
+                    </video>
+                    <span class="media-badge-tag" data-i18n="badge_video">Immersion Vidéo</span>
+                </div>
+                <div class="text-box">
+                    <div class="event-meta">
+                        <span data-i18n="ev3_country">Roumanie</span>
+                        <span data-i18n="ev3_city">Sibiu</span>
+                    </div>
+                    <h3 data-i18n="ev3_title">ASTRA International Film Festival</h3>
+                    <p data-i18n="ev3_desc">Un regard documentaire affûté et sans concession, mettant à l'honneur des récits cinématographiques percutants, des mémoires et des réalités d'Europe.</p>
+                    <div class="event-footer">
+                        <span class="date-val" data-i18n="ev3_date">Octobre</span>
+                        <a href="https://maps.google.com/?q=Sibiu+Romania" target="_blank" class="gps-button" data-i18n="btn_locate">Localiser ↗</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p data-i18n="footer_text">Fendani — Atlas Nomade © 2026. Édition Internationale Paris / New York.</p>
+    </footer>
+
+    <!-- SCRIPT DE TRADUCTION ET INTERACTIONS -->
+    <script>
+        const traductions = {
+            fr: {
+                nav_expo: "Expositions et festivals",
+                nav_encyclo: "Encyclopédie",
+                nav_dict: "Dictionnaire",
+                nav_news: "Actualités",
+                side_themes: "// Thématiques",
+                side_music: "Musiques & Scènes",
+                side_fashion: "Haute Couture",
+                side_docs: "Regards Docs",
+                side_chrono: "// Chronologie",
+                side_vol: "2026 / Vol. IV",
+                side_july: "Juillet",
+                side_oct: "Octobre",
+                hero_kicker: "CURATION ET MANIFESTE CULTUREL",
+                hero_title_part1: "L'Atlas Nomade",
+                hero_title_part2: "des Cultures Vivantes",
+                hero_desc: "Une sélection exclusive d'événements et de festivals incontournables à visiter. Conçu comme une revue d'art contemporain, ce carnet décloisonne les traditions mondiales à travers le prisme de l'avant-garde.",
+                hero_btn: "Explorer l'agenda ↓",
+                chap1_tag: "01 / CHAPITRE PREMIER",
+                chap1_title: "Vibrations & Musiques",
+                badge_photo: "Photographie",
+                ev1_country: "Espagne",
+                ev1_city: "Cordoue",
+                ev1_title: "Festival international de guitare",
+                ev1_desc: "Un sommet artistique mondial ancré dans les traditions andalouses, célébrant la puissance universelle du Flamenco et de ses maîtres à travers des notes d'une profonde intensité.",
+                ev1_date: "Juillet",
+                btn_locate: "Localiser ↗",
+                chap2_tag: "02 / CHAPITRE SECOND",
+                chap2_title: "Créations & Haute Couture",
+                badge_fashion: "Défilé",
+                ev2_country: "Hongrie",
+                ev2_city: "Pécs",
+                ev2_title: "Romani Design Fashion Show",
+                ev2_desc: "La haute couture réinventée à travers un artisanat novateur, bousculant les codes par l'audace stylistique et la valorisation des patrimoines visuels.",
+                ev2_date: "Octobre",
+                chap3_tag: "03 / CHAPITRE TROISIÈME",
+                chap3_title: "Regards Documentaires",
+                badge_video: "Immersion Vidéo",
+                ev3_country: "Roumanie",
+                ev3_city: "Sibiu",
+                ev3_title: "ASTRA International Film Festival",
+                ev3_desc: "Un regard documentaire affûté et sans concession, mettant à l'honneur des récits cinématographiques percutants, des mémoires et des réalités d'Europe.",
+                ev3_date: "Octobre",
+                footer_text: "Fendani — Atlas Nomade © 2026. Édition Internationale Paris / New York."
+            },
+            en: {
+                nav_expo: "Exhibitions and festivals",
+                nav_encyclo: "Encyclopedia",
+                nav_dict: "Dictionary",
+                nav_news: "News",
+                side_themes: "// Themes",
+                side_music: "Music & Stages",
+                side_fashion: "High Fashion",
+                side_docs: "Doc Perspectives",
+                side_chrono: "// Chronology",
+                side_vol: "2026 / Vol. IV",
+                side_july: "July",
+                side_oct: "October",
+                hero_kicker: "CURATION AND CULTURAL MANIFESTO",
+                hero_title_part1: "The Nomad Atlas",
+                hero_title_part2: "of Living Cultures",
+                hero_desc: "An exclusive selection of must-visit events and festivals. Conceived as a contemporary art review, this notebook breaks down global traditions through the lens of the avant-garde.",
+                hero_btn: "Explore the agenda ↓",
+                chap1_tag: "01 / FIRST CHAPTER",
+                chap1_title: "Vibrations & Music",
+                badge_photo: "Photography",
+                ev1_country: "Spain",
+                ev1_city: "Cordoba",
+                ev1_title: "International Guitar Festival",
+                ev1_desc: "A global artistic summit rooted in Andalusian traditions, celebrating the universal power of Flamenco and its masters through deeply intense notes.",
+                ev1_date: "July",
+                btn_locate: "Locate ↗",
+                chap2_tag: "02 / SECOND CHAPTER",
+                chap2_title: "Creations & High Fashion",
+                badge_fashion: "Fashion Show",
+                ev2_country: "Hungary",
+                ev2_city: "Pécs",
+                ev2_title: "Romani Design Fashion Show",
+                ev2_desc: "High fashion reinvented through innovative craftsmanship, challenging codes through stylistic audacity and the enhancement of visual heritages.",
+                ev2_date: "October",
+                chap3_tag: "03 / THIRD CHAPTER",
+                chap3_title: "Documentary Perspectives",
+                badge_video: "Video Immersion",
+                ev3_country: "Romania",
+                ev3_city: "Sibiu",
+                ev3_title: "ASTRA International Film Festival",
+                ev3_desc: "A sharp and uncompromising documentary perspective, highlighting impactful cinematic narratives, memories, and European realities.",
+                ev3_date: "October",
+                footer_text: "Fendani — Nomad Atlas © 2026. International Edition Paris / New York."
+            },
+            pt: {
+                nav_expo: "Exposições e festivais",
+                nav_encyclo: "Enciclopédia",
+                nav_dict: "Dicionário",
+                nav_news: "Notícias",
+                side_themes: "// Temáticas",
+                side_music: "Músicas & Cenas",
+                side_fashion: "Alta-Costura",
+                side_docs: "Olhares Docs",
+                side_chrono: "// Cronologia",
+                side_vol: "2026 / Vol. IV",
+                side_july: "Julho",
+                side_oct: "Outubro",
+                hero_kicker: "CURADORIA E MANIFESTO CULTURAL",
+                hero_title_part1: "O Atlas Nómada",
+                hero_title_part2: "das Culturas Vivas",
+                hero_desc: "Uma seleção exclusiva de eventos e festivais imperdíveis para visitar. Concebido como uma revista de arte contemporânea, este caderno desmistifica as tradições mundiais através do prisma da vanguarda.",
+                hero_btn: "Explorar a agenda ↓",
+                chap1_tag: "01 / CAPITULO PRIMEIRO",
+                chap1_title: "Vibrações & Músicas",
+                badge_photo: "Fotografia",
+                ev1_country: "Espanha",
+                ev1_city: "Córdova",
+                ev1_title: "Festival Internacional de Guitarra",
+                ev1_desc: "Uma cimeira artística mundial ancorada nas tradições andaluzas, celebrando o poder universal do Flamenco e dos seus mestres através de notas de profunda intensidade.",
+                ev1_date: "Julho",
+                btn_locate: "Localizar ↗",
+                chap2_tag: "02 / CAPITULO SEGUNDO",
+                chap2_title: "Criações & Alta-Costura",
+                badge_fashion: "Desfile",
+                ev2_country: "Hungria",
+                ev2_city: "Pécs",
+                ev2_title: "Romani Design Fashion Show",
+                ev2_desc: "A alta-costura reinventada através de um artesanato inovador, desafiando os códigos através da audácia estilística e da valorização dos patrimónios visuais.",
+                ev2_date: "Outubro",
+                chap3_tag: "03 / CAPITULO TERCEIRO",
+                chap3_title: "Olhares Documentais",
+                badge_video: "Imersão Vídeo",
+                ev3_country: "Roménia",
+                ev3_city: "Sibiu",
+                ev3_title: "ASTRA International Film Festival",
+                ev3_desc: "Um olhar documental apurado e sem concessões, destacando narrativas cinematográficas impactantes, memórias e realidades da Europa.",
+                ev3_date: "Outubro",
+                footer_text: "Fendani — Atlas Nómada © 2026. Edição Internacional Paris / Nova Iorque."
+            },
+            esp: {
+                nav_expo: "Exposiciones y festivales",
+                nav_encyclo: "Enciclopedia",
+                nav_dict: "Diccionario",
+                nav_news: "Noticias",
+                side_themes: "// Temáticas",
+                side_music: "Músicas y Escenas",
+                side_fashion: "Alta Costura",
+                side_docs: "Miradas Docs",
+                side_chrono: "// Cronología",
+                side_vol: "2026 / Vol. IV",
+                side_july: "Julio",
+                side_oct: "Octubre",
+                hero_kicker: "CURADURÍA Y MANIFIESTO CULTURAL",
+                hero_title_part1: "El Atlas Nómada",
+                hero_title_part2: "de las Culturas Vivas",
+                hero_desc: "Una selección exclusiva de eventos y festivales imperdibles para visitar. Concebido como una revista de arte contemporáneo, este cuaderno rompe fronteras en las tradiciones mundiales a través de la vanguardia.",
+                hero_btn: "Explorar la agenda ↓",
+                chap1_tag: "01 / CAPÍTULO PRIMERO",
+                chap1_title: "Vibraciones y Músicas",
+                badge_photo: "Fotografía",
+                ev1_country: "España",
+                ev1_city: "Córdoba",
+                ev1_title: "Festival Internacional de Guitarra",
+                ev1_desc: "Una cumbre artística mundial anclada en las tradiciones andaluzas, celebrando el poder universal del Flamenco y de sus maestros a través de notas de profunda intensidad.",
+                ev1_date: "Julio",
+                btn_locate: "Localizar ↗",
+                chap2_tag: "02 / CAPÍTULO SEGUNDO",
+                chap2_title: "Creaciones y Alta Costura",
+                badge_fashion: "Desfile",
+                ev2_country: "Hungría",
+                ev2_city: "Pécs",
+                ev2_title: "Romani Design Fashion Show",
+                ev2_desc: "La alta costura reinventada a través de una artesanía innovadora, desafiando los códigos mediante la audacia estilística y la valorización de los patrimonios visuales.",
+                ev2_date: "Octubre",
+                chap3_tag: "03 / CAPÍTULO TERCERO",
+                chap3_title: "Miradas Documentales",
+                badge_video: "Inmersión Vídeo",
+                ev3_country: "Rumanía",
+                ev3_city: "Sibiu",
+                ev3_title: "ASTRA International Film Festival",
+                ev3_desc: "Una mirada documental aguda y sin concesiones, que rinde homenaje a relatos cinematográficos impactantes, memorias y realidades de Europa.",
+                ev3_date: "Octubre",
+                footer_text: "Fendani — Atlas Nómada © 2026. Edición Internacional París / Nueva York."
+            },
+            it: {
+                nav_expo: "Mostre e festival",
+                nav_encyclo: "Enciclopedia",
+                nav_dict: "Dizionario",
+                nav_news: "Notizie",
+                side_themes: "// Tematiche",
+                side_music: "Musica e Scene",
+                side_fashion: "Alta Moda",
+                side_docs: "Sguardi Documentari",
+                side_chrono: "// Cronologia",
+                side_vol: "2026 / Vol. IV",
+                side_july: "Luglio",
+                side_oct: "Ottobre",
+                hero_kicker: "CURATELA E MANIFESTO CULTURALE",
+                hero_title_part1: "L'Atlante Nomade",
+                hero_title_part2: "delle Culture Viventi",
+                hero_desc: "Una selezione esclusiva di eventi e festival imperdibili da visitare. Concepito come una rivista d'arte contemporanea, questo carnet supera i confini delle tradizioni globali attraverso il prisma dell'avanguardia.",
+                hero_btn: "Esplora l'agenda ↓",
+                chap1_tag: "01 / CAPITOLO PRIMO",
+                chap1_title: "Vibrazioni e Musica",
+                badge_photo: "Fotografia",
+                ev1_country: "Spagna",
+                ev1_city: "Cordova",
+                ev1_title: "Festival internazionale di chitarra",
+                ev1_desc: "Un vertice artistico mondiale radicato nelle tradizioni andaluse, che celebra il potere universale del Flamenco e dei suoi maestri attraverso note di profonda intensità.",
+                ev1_date: "Luglio",
+                btn_locate: "Localizza ↗",
+                chap2_tag: "02 / CAPITOLO SECONDO",
+                chap2_title: "Creazioni e Alta Moda",
+                badge_fashion: "Sfilata",
+                ev2_country: "Ungheria",
+                ev2_city: "Pécs",
+                ev2_title: "Romani Design Fashion Show",
+                ev2_desc: "L'alta moda reinventata attraverso un artigianato innovativo, che sfida i codici con audacia stilistica e valorizzazione dei patrimoni visivi.",
+                ev2_date: "Ottobre",
+                chap3_tag: "03 / CAPITOLO TERZO",
+                chap3_title: "Sguardi Documentari",
+                badge_video: "Immersione Video",
+                ev3_country: "Romania",
+                ev3_city: "Sibiu",
+                ev3_title: "ASTRA International Film Festival",
+                ev3_desc: "Uno sguardo documentario acuto e senza compromessi, che mette in risalto narrazioni cinematografiche d'impatto, memorie e realtà europee.",
+                ev3_date: "Ottobre",
+                footer_text: "Fendani — Atlante Nomade © 2026. Edizione Internazionale Parigi / New York."
+            },
+            ro: {
+                nav_expo: "Expoziții și festivaluri",
+                nav_encyclo: "Enciclopedie",
+                nav_dict: "Dicționar",
+                nav_news: "Știri",
+                side_themes: "// Tematici",
+                side_music: "Muzică și Scene",
+                side_fashion: "Modă și Design",
+                side_docs: "Perspective Documentare",
+                side_chrono: "// Cronologie",
+                side_vol: "2026 / Vol. IV",
+                side_july: "Iulie",
+                side_oct: "Octombrie",
+                hero_kicker: "CURARE ȘI MANIFEST CULTURAL",
+                hero_title_part1: "Atlasul Nomad",
+                hero_title_part2: "al Culturilor Vii",
+                hero_desc: "O selecție exclusivă de evenimente și festivaluri esențiale de vizitat. Conceput ca o revistă de artă contemporană, acest carnet deschide granițele tradițiilor mondiale prin prisma avangardei.",
+                hero_btn: "Explorează agenda ↓",
+                chap1_tag: "01 / CAPITOLUL ÎNTÂI",
+                chap1_title: "Vibrații și Muzică",
+                badge_photo: "Fotografie",
+                ev1_country: "Spania",
+                ev1_city: "Cordoba",
+                ev1_title: "Festivalul Internațional de Chitară",
+                ev1_desc: "Un summit artistic mondial ancorat în tradițiile andaluze, celebrând puterea universală a Flamencou-lui și a maeștrilor săi prin note de o intensitate profundă.",
+                ev1_date: "Iulie",
+                btn_locate: "Localizează ↗",
+                chap2_tag: "02 / CAPITOLUL DOI",
+                chap2_title: "Creații și Haute Couture",
+                badge_fashion: "Prezentare",
+                ev2_country: "Ungaria",
+                ev2_city: "Pécs",
+                ev2_title: "Romani Design Fashion Show",
+                ev2_desc: "Înalta modă reinventată printr-o meșteșugăreală inovatoare, contestând codurile prin curaj stilistic și punerea în valoare a patrimoniilor vizuale.",
+                ev2_date: "Octombrie",
+                chap3_tag: "03 / CAPITOLUL TREI",
+                chap3_title: "Perspective Documentare",
+                badge_video: "Imersiune Video",
+                ev3_country: "România",
+                ev3_city: "Sibiu",
+                ev3_title: "ASTRA International Film Festival",
+                ev3_desc: "O privire documentară ascuțită și fără concesii, punând în valoare narațiuni cinematografice de impact, memorii și realități ale Europei.",
+                ev3_date: "Octombrie",
+                footer_text: "Fendani — Atlas Nomad © 2026. Ediția Internațională Paris / New York."
+            }
+        };
+
+        function changerLangue(lang) {
+            // Enregistrement du choix de langue dans le localStorage
+            localStorage.setItem('fendani_lang', lang);
+
+            document.querySelectorAll('.lang-item').forEach(el => el.classList.remove('active'));
+            const btnActive = document.getElementById('btn-' + lang);
+            if (btnActive) btnActive.classList.add('active');
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const cle = el.getAttribute('data-i18n');
+                if (traductions[lang] && traductions[lang][cle]) {
+                    el.textContent = traductions[lang][cle];
+                }
+            });
+
+            document.documentElement.lang = lang;
+        }
+
+        // Application automatique de la langue enregistrée au chargement de la page
+        document.addEventListener('DOMContentLoaded', () => {
+            const langueSauvegardee = localStorage.getItem('fendani_lang') || 'fr';
+            changerLangue(langueSauvegardee);
+        });
+
+        const cursor = document.getElementById('cursor');
+        let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
+
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            cursor.style.top = mouseY + 'px';
+            cursor.style.left = mouseX + 'px';
+
+            if (Math.random() > 0.6) {
+                createTrailDot(mouseX, mouseY);
+            }
+        });
+
+        function createTrailDot(x, y) {
+            const dot = document.createElement('div');
+            dot.className = 'trail-dot';
+            dot.style.top = y + 'px';
+            dot.style.left = x + 'px';
+            document.body.appendChild(dot);
+
+            setTimeout(() => {
+                dot.style.transform = 'translate(-50%, -50%) scale(0.1)';
+                dot.style.opacity = '0';
+            }, 20);
+
+            setTimeout(() => {
+                dot.remove();
+            }, 400);
+        }
+
+        let count = 0;
+        const counterElement = document.getElementById('counter');
+        const preloader = document.getElementById('preloader');
+        const watchWrapper = document.getElementById('watchWrapper');
+
+        let interval = setInterval(() => {
+            count += Math.floor(Math.random() * 3) + 1; 
+            if (count >= 100) {
+                count = 100;
+                clearInterval(interval);
+                
+                watchWrapper.style.transform = 'scale(35)';
+                watchWrapper.style.opacity = '0';
+                counterElement.style.opacity = '0';
+                
+                setTimeout(() => {
+                    preloader.style.opacity = '0';
+                    setTimeout(() => {
+                        preloader.style.visibility = 'hidden';
+                    }, 1200);
+                }, 800);
+            }
+            counterElement.textContent = count + '%';
+        }, 35);
+
+        const observerOptions = { threshold: 0.35 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    const sectionClass = entry.target.getAttribute('data-section');
+                    if (sectionClass) {
+                        document.body.className = sectionClass;
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.observer-target').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

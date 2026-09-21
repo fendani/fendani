@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fendani — archive visuelle</title>
+    <!-- Polices : Prata, Crimson Pro, Syne -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,500;1,500&family=Prata&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f5f3ee;
+            --text-main: #141816;
+            --text-muted: #525c56;
+            --accent: #9c7b2f;
+            --floral-pink: #c86d6b;
+            --floral-green: #3f5e44;
+            --apple-green: #76ff03; 
+            --border: rgba(156, 123, 47, 0.2);
+            --gold-beads: #9c7b2f;
+        }
+
+        .custom-cursor {
+            position: fixed;
+            top: 0; left: 0;
+            width: 10px; height: 10px;
+            background-color: var(--apple-green);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 10000;
+            box-shadow: 0 0 10px rgba(118, 255, 3, 0.6);
+        }
+
+        .trail-dot {
+            position: fixed;
+            top: 0; left: 0;
+            width: 3px; height: 3px;
+            background-color: var(--apple-green);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            opacity: 0.35;
+            z-index: 9999;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        * { box-sizing: border-box; cursor: none !important; }
+
+        body { 
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text-main);
+            display: flex; 
+            flex-direction: column; 
+            min-height: 100vh; 
+            -webkit-font-smoothing: antialiased; 
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* HEADER HARMONISÉ STRICTEMENT */
+        header {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            padding: 20px 5%;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            background: rgba(245, 243, 238, 0.85);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+        }
+
+        .brand-logo {
+            grid-column: 2;
+            justify-self: center;
+        }
+        .brand-logo img { height: 32px; width: auto; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .brand-logo:hover img { transform: rotate(-6deg) scale(1.03); }
+
+        .nav-links { 
+            grid-column: 1;
+            display: flex; 
+            gap: 25px; 
+            list-style: none; 
+            margin: 0; 
+            padding: 0; 
+        }
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-family: 'Syne', sans-serif;
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s, transform 0.3s;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--text-main); }
+        .nav-links a::after {
+            content: '';
+            position: absolute; bottom: -3px; left: 0; width: 0; height: 1px;
+            background: var(--floral-pink);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+
+        /* SÉLECTEUR DE LANGUE HARMONISÉ */
+        .lang-selector {
+            grid-column: 3;
+            display: flex;
+            gap: 0.8rem;
+            justify-content: flex-end;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            flex-wrap: nowrap;
+        }
+        .lang-item {
+            font-family: 'Syne', sans-serif;
+            font-weight: 500;
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+        }
+        .lang-item:hover, .lang-item.active { color: var(--text-main); }
+
+        /* DECOUPAGE DES TROIS COLONNES */
+        main { 
+            flex: 1; max-width: 1400px; width: 100%; margin: 10px auto 60px auto; padding: 130px 5% 0; 
+            display: grid; grid-template-columns: 1fr 2.5fr 1fr; gap: 4rem; 
+            position: relative; z-index: 2;
+        }
+        
+        .gallery-intro { text-align: center; margin-bottom: 1.5rem; }
+        
+        h1 { 
+            font-family: 'Prata', serif; 
+            font-style: normal;                 
+            font-size: 2.8rem;                  
+            font-weight: 400;                   
+            line-height: 1.1; 
+            color: var(--text-main);         
+            margin-bottom: 0.6rem;  
+        }
+        
+        .lead { 
+            font-family: 'Crimson Pro', serif; 
+            font-style: italic; 
+            font-weight: 500; 
+            font-size: 1.35rem; 
+            color: var(--text-muted); 
+            line-height: 1.4; 
+        }
+
+        /* RAILS CENTRAUX DES ARTICLES */
+        .gallery-column { display: flex; flex-direction: column; gap: 3.5rem; }
+        .gallery-item { display: flex; flex-direction: column; width: 100%; transition: opacity 0.4s ease; }
+        .gallery-item.hidden { display: none; }
+
+        /* CARTELS */
+        .item-caption { text-align: left; margin-bottom: 1.2rem; }
+        .item-num { font-size: 0.6rem; font-weight: 700; color: var(--floral-green); display: block; margin-bottom: 0.4rem; letter-spacing: 0.1em; font-family: 'Syne', sans-serif; text-transform: uppercase; }
+        
+        .item-title { font-family: 'Prata', serif; font-size: 1.8rem; font-weight: 400; color: var(--text-main); margin-bottom: 0.5rem; line-height: 1.2; }
+        
+        .item-meta { font-family: 'Crimson Pro', serif; font-style: italic; font-size: 1.15rem; color: var(--text-muted); line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+        /* LIGNE DE PERLES */
+        .beaded-divider { display: flex; justify-content: flex-start; gap: 4px; padding-top: 0.8rem; width: 100%; opacity: 0.7; }
+        .bead { width: 3px; height: 3px; background-color: var(--accent); border-radius: 50%; display: inline-block; }
+
+        /* CADRE PHOTO CLIQUABLE */
+        .image-link { display: block; width: 100%; text-decoration: none; cursor: pointer; }
+        .image-frame { width: 100%; overflow: hidden; background-color: rgba(0,0,0,0.03); border: 1px solid var(--border); transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease; }
+        .image-link:hover .image-frame { transform: translateY(-4px); box-shadow: 0 15px 35px rgba(156,123,47,0.1); }
+        .image-frame img { width: 100%; height: auto; display: block; transition: filter 0.4s ease; }
+        .image-link:hover img { filter: contrast(1.02); }
+
+        /* COMMUTATEURS LATÉRAUX FIXED */
+        .sidebar { text-align: left; height: fit-content; position: sticky; top: 130px; }
+        .sidebar.left { border-right: 1px solid var(--border); padding-right: 2.5rem; }
+        .sidebar.right { border-left: 1px solid var(--border); padding-left: 2.5rem; }
+        
+        .sidebar-title { 
+            font-family: 'Syne', sans-serif; 
+            font-size: 0.6rem; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            color: var(--floral-green); 
+            letter-spacing: 0.1em; 
+            margin-bottom: 1.5rem; 
+        }
+        
+        .archive-list { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; padding: 0; margin: 0; }
+        
+        .archive-list li a { 
+            font-family: 'Crimson Pro', serif; 
+            font-style: italic; 
+            font-size: 1.15rem; 
+            color: var(--text-muted); 
+            text-decoration: none; 
+            transition: color 0.3s ease; 
+            display: block; 
+        }
+        
+        .archive-list li a:hover, .archive-list li.active a { color: var(--text-main); }
+        .archive-list li.active a { font-weight: 600; color: var(--floral-pink); }
+        .archive-list li a:hover { padding-left: 4px; }
+
+        /* PIED DE PAGE HARMONISÉ */
+        footer { 
+            position: relative; z-index: 2;
+            padding: 50px 5%;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-family: 'Syne', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            background: rgba(245, 243, 238, 0.9);
+            max-width: 1400px; 
+            margin: 0 auto; 
+            width: 100%; 
+        }
+
+        @media (max-width: 1024px) { 
+            main { grid-template-columns: 1fr; gap: 4rem; padding-top: 130px; } 
+            .sidebar { border: none !important; padding: 0 !important; position: static; margin-top: 2rem; } 
+            .nav-links, .lang-selector { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="custom-cursor" id="cursor"></div>
+
+    <!-- EN-TÊTE FIXE HARMONISÉ -->
+    <header>
+        <ul class="nav-links">
+            <li><a href="expositions-et-festivals.html" data-i18n="nav_expo">Expositions et festivals</a></li>
+            <li><a href="beaux-arts.html" data-i18n="nav_encyclo">Encyclopédie</a></li>
+            <li><a href="dictionnaire.html" data-i18n="nav_dict">Dictionnaire</a></li>
+            <li><a href="actualites.html" class="active" data-i18n="nav_news">Actualités</a></li>
+        </ul>
+        
+        <a href="index.html" class="brand-logo">
+            <img src="log6.png" alt="Fendani Logo">
+        </a>
+
+        <ul class="lang-selector">
+            <li><a onclick="changerLangue('fr')" id="btn-fr" class="lang-item active">FR</a></li>
+            <li><a onclick="changerLangue('en')" id="btn-en" class="lang-item">EN</a></li>
+            <li><a onclick="changerLangue('pt')" id="btn-pt" class="lang-item">PT</a></li>
+            <li><a onclick="changerLangue('esp')" id="btn-esp" class="lang-item">ESP</a></li>
+            <li><a onclick="changerLangue('it')" id="btn-it" class="lang-item">IT</a></li>
+            <li><a onclick="changerLangue('ro')" id="btn-ro" class="lang-item">RO</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <!-- 1. BARRE COMPARTIMENTS GAUCHE -->
+        <aside class="sidebar left">
+            <h2 class="sidebar-title" data-i18n="side_index">Indexation</h2>
+            <ul class="archive-list" id="filter-cat">
+                <li class="active" onclick="filtrerGalerie('cat', 'all', this)"><a href="#" data-i18n="cat_all">Toutes les matières</a></li>
+                <li onclick="filtrerGalerie('cat', 'art', this)"><a href="#" data-i18n="cat_art">Beaux-Arts</a></li>
+                <li onclick="filtrerGalerie('cat', 'histoire', this)"><a href="#" data-i18n="cat_history">Histoire</a></li>
+                <li onclick="filtrerGalerie('cat', 'mode', this)"><a href="#" data-i18n="cat_fashion">Mode & Apparat</a></li>
+            </ul>
+        </aside>
+
+        <!-- 2. ZONE CENTRALE PARCOURUE -->
+        <div class="gallery-column">
+            <div class="gallery-intro">
+                <h1 data-i18n="main_title">Actualités</h1>
+                <p class="lead" data-i18n="main_lead">fragments visuels, esthétique moderne et archives documentaires de la mémoire gitane.</p>
+            </div>
+            
+            <!-- NOUVEL ARTICLE : LATIN GRAMMY AWARDS -->
+            <div class="gallery-item" data-category="art" data-date="septembre">
+                <div class="item-caption">
+                    <span class="item-num" data-i18n="item5_num">// MUSIQUE-05 • SEPTEMBRE 2026</span>
+                    <h2 class="item-title" data-i18n="item5_title">flamenco aux latin grammys</h2>
+                    <p class="item-meta" data-i18n="item5_meta">José Mercé, Niña Pastori et Yerai Cortés nommés pour la 27e édition des Latin Grammy Awards qui se tiendra le 12 novembre 2026 à Las Vegas.</p>
+                    <div class="beaded-divider">
+                        <span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span>
+                    </div>
+                </div>
+                <a href="chronologie.html#latin-grammys" class="image-link">
+                    <div class="image-frame">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Latin_Grammy.jpg" alt="Latin Grammy Awards">
+                    </div>
+                </a>
+            </div>
+
+            <!-- ŒUVRE 1 -->
+            <div class="gallery-item" data-category="mode" data-date="septembre">
+                <div class="item-caption">
+                    <span class="item-num" data-i18n="item1_num">// ARCHIVE-01 • SEPTEMBRE 2026</span>
+                    <h2 class="item-title" data-i18n="item1_title">regard oblique</h2>
+                    <p class="item-meta" data-i18n="item1_meta">Photographie argentique d'auteur en clair-obscur. Analyse des perspectives physiques, étude des lignes de force du visage et géométrie du geste.</p>
+                    <div class="beaded-divider">
+                        <span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span>
+                    </div>
+                </div>
+                <a href="chronologie.html#regard-oblique" class="image-link">
+                    <div class="image-frame">
+                        <img src="https://www.fluxurymagazine.com/wp-content/uploads/2026/09/01-entrevista-capa-vicente-gil-dior-galeria-819x1024.jpg" alt="Regard oblique">
+                    </div>
+                </a>
+            </div>
+
+            <!-- ŒUVRE 2 -->
+            <div class="gallery-item" data-category="mode" data-date="aout">
+                <div class="item-caption">
+                    <span class="item-num" data-i18n="item2_num">// APPARAT-MODE-02 • AOÛT 2026</span>
+                    <h2 class="item-title" data-i18n="item2_title">parure d'or et de scène</h2>
+                    <p class="item-meta" data-i18n="item2_meta">Focus sur l'artiste finlandaise Mirella. Analyse anthropologique des parures textiles et réinterprétation contemporaine des ornements de cérémonie.</p>
+                    <div class="beaded-divider">
+                        <span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span>
+                    </div>
+                </div>
+                <a href="chronologie.html#parure-or" class="image-link">
+                    <div class="image-frame">
+                        <img src="https://images.vs-static.com/zgzPp_o89oaWUcJE1qzwSCCujnY=/1900x0/Get_ready_with_Mirella_for_the_2025_Emma_Gaala_181e31c16f/Get_ready_with_Mirella_for_the_2025_Emma_Gaala_181e31c16f.jpg" alt="Parure d'or">
+                    </div>
+                </a>
+            </div>
+
+            <!-- ŒUVRE 3 -->
+            <div class="gallery-item" data-category="art" data-date="juillet">
+                <div class="item-caption">
+                    <span class="item-num" data-i18n="item3_num">// BEAUX-ARTS-03 • JUILLET 2026</span>
+                    <h2 class="item-title" data-i18n="item3_title">radiation chromatique</h2>
+                    <p class="item-meta" data-i18n="item3_meta">Étude de l'oeuvre de Jérémy Demester. Exploration des puissances telluriques, de la mémoire rituelle et de la vibration des pigments purs.</p>
+                    <div class="beaded-divider">
+                        <span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span>
+                    </div>
+                </div>
+                <a href="chronologie.html#radiation-chromatique" class="image-link">
+                    <div class="image-frame">
+                        <img src="https://togeth-her.com/wp-content/uploads/2020/11/jeremy-demester-cynthia-fleury-artistes-a-la-une-togeth-her-2020.jpg" alt="Radiation chromatique">
+                    </div>
+                </a>
+            </div>
+
+            <!-- ŒUVRE 4 -->
+            <div class="gallery-item" data-category="histoire" data-date="juillet">
+                <div class="item-caption">
+                    <span class="item-num" data-i18n="item4_num">// DOSSIER-HISTOIRE-04 • JUILLET 2026</span>
+                    <h2 class="item-title" data-i18n="item4_title">charlie chaplin</h2>
+                    <p class="item-meta" data-i18n="item4_meta">Analyse d'archive sur la jeunesse de l'acteur. Restitution des correspondances familiales mettant en lumière ses racines familiales calos du Royaume-Uni.</p>
+                    <div class="beaded-divider">
+                        <span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span><span class="bead"></span>
+                    </div>
+                </div>
+                <a href="chronologie.html#charlie-chaplin" class="image-link">
+                    <div class="image-frame">
+                        <img src="https://www.osr.ch/fileadmin/_processed_/7/c/csm_CharlieChaplinJeune__c_RoyExportSAS_3d7e016691.jpg" alt="Charlie Chaplin">
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- 3. CHRONOLOGIE DROITE -->
+        <aside class="sidebar right">
+            <h2 class="sidebar-title" data-i18n="side_chrono">Chronologie</h2>
+            <ul class="archive-list" id="filter-date">
+                <li class="active" onclick="filtrerGalerie('date', 'all', this)"><a href="#" data-i18n="date_all">Toute l'année 2026</a></li>
+                <li onclick="filtrerGalerie('date', 'septembre', this)"><a href="#" data-i18n="date_sept">Septembre</a></li>
+                <li onclick="filtrerGalerie('date', 'aout', this)"><a href="#" data-i18n="date_aug">Août</a></li>
+                <li onclick="filtrerGalerie('date', 'juillet', this)"><a href="#" data-i18n="date_july">Juillet</a></li>
+            </ul>
+        </aside>
+    </main>
+
+    <!-- PIED DE PAGE HARMONISÉ -->
+    <footer>
+        <p data-i18n="footer_text">Fendani — Atlas Nomade © 2026. Édition Internationale Paris / New York.</p>
+    </footer>
+
+    <!-- SCRIPT DE TRADUCTION ET INTERACTIONS -->
+    <script>
+        const traductions = {
+            fr: {
+                nav_expo: "Expositions et festivals",
+                nav_encyclo: "Encyclopédie",
+                nav_dict: "Dictionnaire",
+                nav_news: "Actualités",
+                side_index: "Indexation",
+                cat_all: "Toutes les matières",
+                cat_art: "Beaux-Arts",
+                cat_history: "Histoire",
+                cat_fashion: "Mode & Apparat",
+                main_title: "Actualités",
+                main_lead: "fragments visuels, esthétique moderne et archives documentaires de la mémoire gitane.",
+                item5_num: "// MUSIQUE-05 • SEPTEMBRE 2026",
+                item5_title: "flamenco aux latin grammys",
+                item5_meta: "José Mercé, Niña Pastori et Yerai Cortés nommés pour la 27e édition des Latin Grammy Awards qui se tiendra le 12 novembre 2026 à Las Vegas.",
+                item1_num: "// ARCHIVE-01 • SEPTEMBRE 2026",
+                item1_title: "regard oblique",
+                item1_meta: "Photographie argentique d'auteur en clair-obscur. Analyse des perspectives physiques, étude des lignes de force du visage et géométrie du geste.",
+                item2_num: "// APPARAT-MODE-02 • AOÛT 2026",
+                item2_title: "parure d'or et de scène",
+                item2_meta: "Focus sur l'artiste finlandaise Mirella. Analyse anthropologique des parures textiles et réinterprétation contemporaine des ornements de cérémonie.",
+                item3_num: "// BEAUX-ARTS-03 • JUILLET 2026",
+                item3_title: "radiation chromatique",
+                item3_meta: "Étude de l'oeuvre de Jérémy Demester. Exploration des puissances telluriques, de la mémoire rituelle et de la vibration des pigments purs.",
+                item4_num: "// DOSSIER-HISTOIRE-04 • JUILLET 2026",
+                item4_title: "charlie chaplin",
+                item4_meta: "Analyse d'archive sur la jeunesse de l'acteur. Restitution des correspondances familiales mettant en lumière ses racines familiales calos du Royaume-Uni.",
+                side_chrono: "Chronologie",
+                date_all: "Toute l'année 2026",
+                date_sept: "Septembre",
+                date_aug: "Août",
+                date_july: "Juillet",
+                footer_text: "Fendani — Atlas Nomade © 2026. Édition Internationale Paris / New York."
+            },
+            en: {
+                nav_expo: "Exhibitions and festivals",
+                nav_encyclo: "Encyclopedia",
+                nav_dict: "Dictionary",
+                nav_news: "News",
+                side_index: "Indexation",
+                cat_all: "All subjects",
+                cat_art: "Fine Arts",
+                cat_history: "History",
+                cat_fashion: "Fashion & Regalia",
+                main_title: "News",
+                main_lead: "visual fragments, modern aesthetics, and documentary archives of Romani memory.",
+                item5_num: "// MUSIC-05 • SEPTEMBER 2026",
+                item5_title: "flamenco at the latin grammys",
+                item5_meta: "José Mercé, Niña Pastori, and Yerai Cortés nominated for the 27th Latin Grammy Awards taking place on November 12, 2026 in Las Vegas.",
+                item1_num: "// ARCHIVE-01 • SEPTEMBER 2026",
+                item1_title: "oblique gaze",
+                item1_meta: "Author chiaroscuro film photography. Analysis of physical perspectives, study of facial force lines, and geometry of gesture.",
+                item2_num: "// REGALIA-FASHION-02 • AUGUST 2026",
+                item2_title: "gold and stage adornment",
+                item2_meta: "Focus on Finnish artist Mirella. Anthropological analysis of textile adornments and contemporary reinterpretation of ceremonial ornaments.",
+                item3_num: "// FINE-ARTS-03 • JULY 2026",
+                item3_title: "chromatic radiation",
+                item3_meta: "Study of Jérémy Demester's work. Exploration of telluric powers, ritual memory, and the vibration of pure pigments.",
+                item4_num: "// HISTORY-FILE-04 • JULY 2026",
+                item4_title: "charlie chaplin",
+                item4_meta: "Archival analysis of the actor's youth. Restitution of family correspondence highlighting his Calé Romani roots from the United Kingdom.",
+                side_chrono: "Chronology",
+                date_all: "Full year 2026",
+                date_sept: "September",
+                date_aug: "August",
+                date_july: "July",
+                footer_text: "Fendani — Nomad Atlas © 2026. International Edition Paris / New York."
+            },
+            pt: {
+                nav_expo: "Exposições e festivais",
+                nav_encyclo: "Enciclopédia",
+                nav_dict: "Dicionário",
+                nav_news: "Notícias",
+                side_index: "Indexação",
+                cat_all: "Todas as matérias",
+                cat_art: "Belas-Artes",
+                cat_history: "História",
+                cat_fashion: "Moda & Aparato",
+                main_title: "Notícias",
+                main_lead: "fragmentos visuais, estética moderna e arquivos documentais da memória cigana.",
+                item5_num: "// MÚSICA-05 • SETEMBRO 2026",
+                item5_title: "flamenco nos latin grammys",
+                item5_meta: "José Mercé, Niña Pastori e Yerai Cortés nomeados para a 27ª edição dos Latin Grammy Awards a realizar a 12 de novembro de 2026 em Las Vegas.",
+                item1_num: "// ARQUIVO-01 • SETEMBRO 2026",
+                item1_title: "olhar oblíquo",
+                item1_meta: "Fotografia analógica de autor em claro-escuro. Análise das perspectivas físicas, estudo das linhas de força do rosto e geometria do gesto.",
+                item2_num: "// APARATO-MODA-02 • AGOSTO 2026",
+                item2_title: "paramenta de ouro e de cena",
+                item2_meta: "Foco na artista finlandesa Mirella. Análise antropológica das paramentas têxteis e reinterpretação contemporânea dos ornamentos de cerimónia.",
+                item3_num: "// BELAS-ARTES-03 • JULHO 2026",
+                item3_title: "radiação cromática",
+                item3_meta: "Estudo da obra de Jérémy Demester. Exploração das potências telúricas, da memória ritual e da vibração dos pigmentos puros.",
+                item4_num: "// DOSSIÊ-HISTÓRIA-04 • JULHO 2026",
+                item4_title: "charlie chaplin",
+                item4_meta: "Análise de arquivo sobre a juventude do ator. Restituição das correspondências familiares destacando as suas raízes familiares calos do Reino Unido.",
+                side_chrono: "Cronologia",
+                date_all: "Todo o ano de 2026",
+                date_sept: "Setembro",
+                date_aug: "Agosto",
+                date_july: "Julho",
+                footer_text: "Fendani — Atlas Nómada © 2026. Edição Internacional Paris / Nova Iorque."
+            },
+            esp: {
+                nav_expo: "Exposiciones y festivales",
+                nav_encyclo: "Enciclopedia",
+                nav_dict: "Diccionario",
+                nav_news: "Noticias",
+                side_index: "Indexación",
+                cat_all: "Todas las materias",
+                cat_art: "Bellas Artes",
+                cat_history: "Historia",
+                cat_fashion: "Moda y Aparato",
+                main_title: "Noticias",
+                main_lead: "fragmentos visuales, estética moderna y archivos documentales de la memoria gitana.",
+                item5_num: "// MÚSICA-05 • SEPTIEMBRE 2026",
+                item5_title: "el flamenco en los latin grammy",
+                item5_meta: "José Mercé, Niña Pastori y Yerai Cortés nominados a la 27ª edición de los Latin Grammy Awards que se celebrará el 12 de noviembre de 2026 en Las Vegas.",
+                item1_num: "// ARCHIVO-01 • SEPTIEMBRE 2026",
+                item1_title: "mirada oblicua",
+                item1_meta: "Fotografía analógica de autor en claroscuro. Análisis de las perspectivas físicas, estudio de las líneas de fuerza del rostro y geometría del gesto.",
+                item2_num: "// APARATO-MODA-02 • AGOSTO 2026",
+                item2_title: "atuendo de oro y de escena",
+                item2_meta: "Enfoque en la artista finlandesa Mirella. Análisis antropológico de los adornos textiles y reinterpretación contemporánea de los ornamentos ceremoniales.",
+                item3_num: "// BELLAS-ARTES-03 • JULIO 2026",
+                item3_title: "radiación cromática",
+                item3_meta: "Estudio de la obra de Jérémy Demester. Exploración de las potencias telúricas, de la memoria ritual y de la vibración de los pigmentos puros.",
+                item4_num: "// DOSIER-HISTORIA-04 • JULIO 2026",
+                item4_title: "charlie chaplin",
+                item4_meta: "Análisis de archivo sobre la juventud del actor. Restitución de las correspondencias familiares destacando sus raíces familiares calós del Reino Unido.",
+                side_chrono: "Cronología",
+                date_all: "Todo el año 2026",
+                date_sept: "Septiembre",
+                date_aug: "Agosto",
+                date_july: "Julio",
+                footer_text: "Fendani — Atlas Nómada © 2026. Edición Internacional París / Nueva York."
+            },
+            it: {
+                nav_expo: "Mostre e festival",
+                nav_encyclo: "Enciclopedia",
+                nav_dict: "Dizionario",
+                nav_news: "Notizie",
+                side_index: "Indicizzazione",
+                cat_all: "Tutti gli argomenti",
+                cat_art: "Belle Arti",
+                cat_history: "Storia",
+                cat_fashion: "Moda & Apparato",
+                main_title: "Notizie",
+                main_lead: "frammenti visivi, estetica moderna e archivi documentari della memoria gitana.",
+                item5_num: "// MUSICA-05 • SETTEMBRE 2026",
+                item5_title: "il flamenco ai latin grammy",
+                item5_meta: "José Mercé, Niña Pastori e Yerai Cortés candidati per la 27ª edizione dei Latin Grammy Awards che si terrà il 12 novembre 2026 a Las Vegas.",
+                item1_num: "// ARCHIVIO-01 • SETTEMBRE 2026",
+                item1_title: "sguardo obliquo",
+                item1_meta: "Fotografia d'autore in bianco e nero/chiaroscuro. Analisi delle prospettive fisiche, studio delle linee di forza del volto e geometria del gesto.",
+                item2_num: "// APPARATO-MODA-02 • AGOSTO 2026",
+                item2_title: "paratura d'oro e di scena",
+                item2_meta: "Focus sull'artista finlandese Mirella. Analisi antropologica degli ornamenti tessili e reinterpretazione contemporanea delle decorazioni cerimoniali.",
+                item3_num: "// BELLE-ARTI-03 • LUGLIO 2026",
+                item3_title: "radiazione cromatica",
+                item3_meta: "Studio dell'opera di Jérémy Demester. Esplorazione delle potenze telluriche, della memoria rituale e della vibrazione dei pigmenti puri.",
+                item4_num: "// DOSSIER-STORIA-04 • LUGLIO 2026",
+                item4_title: "charlie chaplin",
+                item4_meta: "Analisi d'archivio sulla giovinezza dell'attore. Restituzione delle corrispondenze familiari che evidenziano le sue radici familiari calé del Regno Unito.",
+                side_chrono: "Cronologia",
+                date_all: "Tutto l'anno 2026",
+                date_sept: "Settembre",
+                date_aug: "Agosto",
+                date_july: "Luglio",
+                footer_text: "Fendani — Atlante Nomade © 2026. Edizione Internazionale Parigi / New York."
+            },
+            ro: {
+                nav_expo: "Expoziții și festivaluri",
+                nav_encyclo: "Enciclopedie",
+                nav_dict: "Dicționar",
+                nav_news: "Știri",
+                side_index: "Indexare",
+                cat_all: "Toate materiile",
+                cat_art: "Arte Frumoase",
+                cat_history: "Istorie",
+                cat_fashion: "Modă & Aparat",
+                main_title: "Știri",
+                main_lead: "fragmente vizuale, estetică modernă și arhive documentare ale memoriei rome.",
+                item5_num: "// MUZICĂ-05 • SEPTEMBRIE 2026",
+                item5_title: "flamenco la latin grammy",
+                item5_meta: "José Mercé, Niña Pastori și Yerai Cortés nominalizați la a 27-a ediție a galei Latin Grammy Awards, care va avea loc pe 12 noiembrie 2026 în Las Vegas.",
+                item1_num: "// ARHIVĂ-01 • SEPTEMBRIE 2026",
+                item1_title: "privire oblică",
+                item1_meta: "Fotografie analogică de autor în clar-obscur. Analiza perspectivelor fizice, studiul liniilor de forță ale feței și geometria gestului.",
+                item2_num: "// APARAT-MODĂ-02 • AUGUST 2026",
+                item2_title: "podoabă de aur și de scenă",
+                item2_meta: "Focus pe artista finlandeză Mirella. Analiză antropologică a podoabelor textile și reinterpretație contemporană a ornamentelor ceremoniale.",
+                item3_num: "// ARTE-FRUMOASE-03 • IULIE 2026",
+                item3_title: "radiație cromatică",
+                item3_meta: "Studiul operei lui Jérémy Demester. Explorarea puterilor telurice, a memoriei rituale și a vibrației pigmenților puri.",
+                item4_num: "// DOSAR-ISTORIE-04 • IULIE 2026",
+                item4_title: "charlie chaplin",
+                item4_meta: "Analiză de arhivă privind tinereța actorului. Restituirea corespondenței de familie care evidențiază rădăcinile sale calé din Regatul Unit.",
+                side_chrono: "Cronologie",
+                date_all: "Tot anul 2026",
+                date_sept: "Septembrie",
+                date_aug: "August",
+                date_july: "Iulie",
+                footer_text: "Fendani — Atlas Nomad © 2026. Ediția Internațională Paris / New York."
+            }
+        };
+
+        function changerLangue(lang) {
+            localStorage.setItem('fendani_lang', lang);
+
+            document.querySelectorAll('.lang-item').forEach(el => el.classList.remove('active'));
+            const btnActive = document.getElementById('btn-' + lang);
+            if (btnActive) btnActive.classList.add('active');
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const cle = el.getAttribute('data-i18n');
+                if (traductions[lang] && traductions[lang][cle]) {
+                    el.textContent = traductions[lang][cle];
+                }
+            });
+
+            document.documentElement.lang = lang;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const langueSauvegardee = localStorage.getItem('fendani_lang') || 'fr';
+            changerLangue(langueSauvegardee);
+        });
+
+        const cursor = document.getElementById('cursor');
+        let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
+
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            cursor.style.top = mouseY + 'px';
+            cursor.style.left = mouseX + 'px';
+
+            if (Math.random() > 0.6) {
+                createTrailDot(mouseX, mouseY);
+            }
+        });
+
+        function createTrailDot(x, y) {
+            const dot = document.createElement('div');
+            dot.className = 'trail-dot';
+            dot.style.top = y + 'px';
+            dot.style.left = x + 'px';
+            document.body.appendChild(dot);
+
+            setTimeout(() => {
+                dot.style.transform = 'translate(-50%, -50%) scale(0.1)';
+                dot.style.opacity = '0';
+            }, 20);
+
+            setTimeout(() => {
+                dot.remove();
+            }, 400);
+        }
+
+        let filtreActifCat = 'all';
+        let filtreActifDate = 'all';
+
+        function filtrerGalerie(type, valeur, elementActif) {
+            const zoneParent = elementActif.parentNode.parentNode;
+            const elementsLi = zoneParent.querySelectorAll('li');
+            elementsLi.forEach(li => li.classList.remove('active'));
+            elementActif.classList.add('active');
+
+            if (type === 'cat') filtreActifCat = valeur;
+            if (type === 'date') filtreActifDate = valeur;
+
+            const items = document.querySelectorAll('.gallery-item');
+            
+            items.forEach(item => {
+                const itemCat = item.getAttribute('data-category');
+                const itemDate = item.getAttribute('data-date');
+
+                const correspondCat = (filtreActifCat === 'all' || itemCat === filtreActifCat);
+                const correspondDate = (filtreActifDate === 'all' || itemDate === filtreActifDate);
+
+                if (correspondCat && correspondDate) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

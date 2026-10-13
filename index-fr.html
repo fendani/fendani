@@ -1,0 +1,459 @@
+<script src="dictionary.js"></script>
+<div id="dictionary-index"></div>
+
+<script>
+const container = document.getElementById("dictionary-index");
+
+container.innerHTML = `
+  <header class="dictionary-header">
+
+    <div class="language-switch">
+        <span class="language-active">FR</span>
+        <span class="language-arrow">→</span>
+        <a href="index-calo.html">CALÓ</a>
+    </div>
+
+    <a href="index.html" class="logo">Retour</a>
+
+    <h1 class="dictionary-title">Dictionnaire français-caló</h1>
+
+    <p class="dictionary-subtitle">
+        Ce dictionnaire recense <span id="word-count"></span> mots, expressions et traductions
+    </p>
+</header>
+
+
+    <nav class="dictionary-alphabet-index" aria-label="Index alphabétique"></nav>
+    <div class="dictionary-content"></div>
+`;
+
+// Trier les entrées par mot français
+const words = [...dictionary].sort((a, b) =>
+    a.fr.localeCompare(b.fr, "fr", { sensitivity: "base" })
+);
+document.getElementById("word-count").textContent = dictionary.reduce((total, mot) => {
+    const boldWords = (mot.senses || []).reduce((count, sense) => {
+        const html = sense.b || "";
+        const matches = html.match(/<(?:strong|b)\b[^>]*>[\s\S]*?<\/(?:strong|b)>/gi) || [];
+
+        return count + matches.reduce((sum, match) => {
+            const text = match.replace(/<[^>]*>/g, "").trim();
+            return sum + (text.match(/\b[\p{L}\p{N}]+(?:['’\-][\p{L}\p{N}]+)*/gu) || []).length;
+        }, 0);
+    }, 0);
+
+    return total + 1 + boldWords;
+}, 0);
+// Fonction de normalisation pour la première lettre (gère les ligatures comme 'Œ' -> 'O' et les accents)
+function getNormalizedLetter(str) {
+    let first = str.trim().charAt(0).toUpperCase();
+    // Gérer spécifiquement les ligatures (ex: Œil -> O)
+    if (first === "Œ" || first === "œ") return "O";
+    // Normaliser les autres accents
+    return first.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
+// Regrouper par première lettre
+const groups = {};
+words.forEach(word => {
+    const letter = getNormalizedLetter(word.fr);
+    if (!groups[letter]) {
+        groups[letter] = [];
+    }
+    groups[letter].push(word);
+});
+
+const alphabetNav = container.querySelector(".dictionary-alphabet-index");
+const contentContainer = container.querySelector(".dictionary-content");
+
+// Alphabet de A à Z
+const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+const sortedLetters = Object.keys(groups);
+
+alphabet.forEach(letter => {
+    const navLink = document.createElement("a");
+    navLink.textContent = letter;
+    
+    if (groups[letter]) {
+        navLink.href = `#lettre-${letter}`;
+        navLink.className = "nav-active";
+    } else {
+        navLink.className = "nav-disabled";
+        navLink.setAttribute("aria-disabled", "true");
+    }
+    alphabetNav.appendChild(navLink);
+});
+
+// Affichage des sections existantes
+sortedLetters.sort().forEach(letter => {
+    const section = document.createElement("section");
+    section.id = `lettre-${letter}`;
+    section.className = "dictionary-section";
+
+    const title = document.createElement("h2");
+    title.textContent = letter;
+    section.appendChild(title);
+
+    const grid = document.createElement("div");
+    grid.className = "dictionary-grid";
+
+    const items = groups[letter];
+
+    // Répartition équilibrée sur 4 colonnes
+    const part = Math.ceil(items.length / 4);
+    const columns = [
+        items.slice(0, part),
+        items.slice(part, part * 2),
+        items.slice(part * 2, part * 3),
+        items.slice(part * 3)
+    ];
+
+    columns.forEach(column => {
+        const col = document.createElement("div");
+        col.className = "dictionary-column";
+
+        column.forEach(word => {
+            const link = document.createElement("a");
+            link.href = `index.html?mot=${encodeURIComponent(word.b)}`;
+            link.innerHTML = `<strong>${word.fr}</strong> · <span>${word.b}</span>`;
+            col.appendChild(link);
+        });
+
+        grid.appendChild(col);
+    });
+
+    section.appendChild(grid);
+    contentContainer.appendChild(section);
+});
+</script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Manrope:wght@200..800&display=swap');
+/* Structure globale */
+#dictionary-index {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px 140px 40px;
+}
+
+/* En-tête (strictement conservé) */
+.dictionary-title {
+    font-family: "Newsreader", serif;
+    color: black;
+    font-size: 50px;
+    font-style: regular;
+    font-weight: 200;
+    letter-spacing: -3px;
+    text-align: center;
+    margin: 120px 0 4px 0;
+}
+
+.dictionary-subtitle {
+    font-family: "Newsreader", serif;
+    color: #aaa;
+font-weight: 300;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 60px;
+}
+
+body {
+  background:
+    radial-gradient(
+      ellipse at 15% 10%,
+      #F0F3E9 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 90% 85%,
+      #F8ECE6 0%,
+      transparent 55%
+    ),
+    #FFFEFA;
+  background-attachment: fixed;
+}
+
+
+/* Barre de navigation alphabétique professionnelle de A à Z */
+.dictionary-alphabet-index {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 80px;
+    padding: 16px 24px;
+    background: linear-gradient(to bottom, #ffffff, #faf8f5);
+    border: 1px solid #eae5dc;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 93, 76, 0.03);
+}
+
+.dictionary-alphabet-index a {
+    font-family: "Newsreader", sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dictionary-alphabet-index a.nav-active {
+    color: black;
+    background: #f0ece1;
+}
+
+.dictionary-alphabet-index a.nav-active:hover {
+    background: black;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 93, 76, 0.2);
+}
+
+.dictionary-alphabet-index a.nav-disabled {
+    color: #d1cbd4;
+    background: transparent;
+    cursor: default;
+    pointer-events: none;
+}
+
+/* Sections par lettre */
+.dictionary-section {
+    margin-bottom: 70px;
+    scroll-margin-top: 40px;
+}
+
+#dictionary-index h2 {
+    font-family: "Newsreader", serif;
+    font-size: 46px;
+font-weight: 150;
+    color: black;
+    margin: 0 0 25px 0;
+    margin-left: 10px;
+    position: relative;
+}
+
+.language-switch {
+    position: absolute;
+    top: 8px;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-family: "Bellota Text", sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.dictionary-header {
+    position: relative;
+}
+
+.language-active {
+    color: black;
+    font-weight: bold;
+}
+
+.language-arrow {
+    color: #ccc;
+}
+
+.language-switch a {
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.language-switch a:hover {
+    color: black;
+}
+
+
+/* Ligne subtile de séparation par lettre */
+#dictionary-index h2::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: black;
+    opacity: 0.3;
+}
+
+/* Grille à 4 colonnes */
+.dictionary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px 30px;
+}
+
+.dictionary-column {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Liens des mots (marge de 70px conservée) */
+.dictionary-grid a {
+    display: block;
+    text-decoration: none;
+    padding: 3px 12px;
+    border-radius: 6px;
+    margin-left: 15px;
+    background: transparent;
+    transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.dictionary-grid a:hover {
+    background-color: #f5f2eb;
+    transform: translateX(4px);
+}
+
+.dictionary-grid a strong {
+    font-family: "Newsreader";
+    color: black;
+    font-size: 15px;
+font-weight: 350;
+}
+
+
+
+.dictionary-grid a {
+    font-family: "Newsreader";
+    color: #aaa;
+    font-size: 14px;
+font-weight: 350;
+}
+
+.logo {
+    display: block;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+
+    background: transparent;
+    color: black;
+
+    font-family: "Bellota Text", sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    text-decoration: none;
+}
+
+/* Empêcher tout débordement horizontal */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    overflow-x: clip;
+}
+
+/* Conteneur principal cadré sur la largeur de la page */
+#dictionary-index {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px 140px;
+}
+
+/* Barre Retour : ne pas dépasser la largeur de l'écran */
+.logo {
+    display: block;
+    width: 100%;
+    margin-left: 0;
+}
+
+/* Grille sans débordement */
+.dictionary-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: 100%;
+}
+
+.dictionary-column {
+    min-width: 0;
+}
+
+.dictionary-grid a {
+    overflow-wrap: anywhere;
+}
+
+/* Tablettes et mobiles */
+@media (max-width: 1024px) {
+    #dictionary-index {
+        padding: 0 20px 60px;
+    }
+
+    .dictionary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    #dictionary-index {
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+
+    .dictionary-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .dictionary-title {
+        font-size: clamp(30px, 8vw, 42px);
+        letter-spacing: -1.5px;
+        overflow-wrap: break-word;
+    }
+
+    .dictionary-alphabet-index {
+        padding: 12px 8px;
+        gap: 4px;
+    }
+
+    .dictionary-alphabet-index a {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .dictionary-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #dictionary-index {
+        padding: 0 20px 60px 20px;
+    }
+    .dictionary-grid a, #dictionary-index h2 {
+        margin-left: 0;
+    }
+    #dictionary-index h2::after {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .dictionary-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>

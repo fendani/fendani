@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mots — Fendani</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap');
+
+    :root {
+      --bg: #f5f3ee;
+      --text: #171717;
+      --muted: #8b8881;
+      --line: #dedbd3;
+      --soft: #a09d96;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", sans-serif;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      width: 100%;
+      height: 82px;
+      padding: 0 42px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .logo {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      font-size: 12px;
+      color: var(--text);
+      transition: color .2s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--muted);
+    }
+
+    main {
+      width: min(100% - 48px, 920px);
+      margin: 0 auto;
+      padding: 110px 0 130px;
+    }
+
+    .intro {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 40px;
+      margin-bottom: 72px;
+    }
+
+    .eyebrow {
+      margin-bottom: 18px;
+      font-family: "DM Mono", monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      color: var(--muted);
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: .95;
+      font-weight: 500;
+      letter-spacing: -0.065em;
+    }
+
+    .counter {
+      text-align: right;
+    }
+
+    .counter-number {
+      display: block;
+      font-family: "DM Mono", monospace;
+      font-size: 34px;
+      line-height: 1;
+      letter-spacing: -.05em;
+    }
+
+    .counter-label {
+      display: block;
+      margin-top: 8px;
+      font-size: 10px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+
+  
+
+    .tools {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      padding-bottom: 14px;
+      margin-bottom: 28px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .search {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      color: var(--text);
+      font-family: "Inter", sans-serif;
+      font-size: 14px;
+    }
+
+    .search::placeholder {
+      color: var(--muted);
+    }
+
+    .alphabet {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 7px;
+    }
+
+    .letter {
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font-family: "DM Mono", monospace;
+      font-size: 10px;
+      cursor: pointer;
+    }
+
+    .letter:hover,
+    .letter.active {
+      color: var(--text);
+    }
+
+    .word-list {
+      list-style: none;
+    }
+
+    .word {
+      padding: 22px 0 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .word-main {
+      display: grid;
+      grid-template-columns: 48px 1fr auto;
+      align-items: baseline;
+      gap: 15px;
+    }
+
+    .word-letter {
+      font-family: "DM Mono", monospace;
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    .word-name {
+      font-size: 17px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+
+    .word-fr {
+      margin-left: 12px;
+      color: #aaa7a0;
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    .word-index {
+      font-family: "DM Mono", monospace;
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    .details {
+      margin-left: 48px;
+      margin-top: 14px;
+      max-width: 720px;
+      font-family: "Newsreader", serif;
+      font-size: 16px;
+      line-height: 1.55;
+      color: #66635d;
+    }
+
+    .detail-row {
+      margin-top: 5px;
+    }
+
+    .detail-label {
+      font-family: "DM Mono", monospace;
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: #9b9891;
+      margin-right: 8px;
+    }
+
+    .detail-example {
+      font-style: regular;
+    }
+
+    .related {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .related span {
+      color: #77746e;
+    }
+
+    .related span:not(:last-child)::after {
+      content: " ·";
+    }
+
+    .empty {
+      display: none;
+      padding: 50px 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .error {
+      padding: 40px 0;
+      color: #9b4035;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 42px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .footer-left {
+      font-family: "DM Mono", monospace;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .footer-right {
+      display: flex;
+      gap: 20px;
+    }
+
+    footer a:hover {
+      color: var(--text);
+    }
+
+    @media (max-width: 650px) {
+
+      header {
+        height: 68px;
+        padding: 0 22px;
+      }
+
+      nav {
+        gap: 16px;
+      }
+
+      main {
+        width: min(100% - 36px, 920px);
+        padding: 70px 0 90px;
+      }
+
+      .intro {
+        display: block;
+        margin-bottom: 55px;
+      }
+
+      .counter {
+        margin-top: 30px;
+        text-align: left;
+      }
+
+      .counter-number {
+        font-size: 28px;
+      }
+
+      .central-point {
+        margin-bottom: 55px;
+      }
+
+      .tools {
+        display: block;
+      }
+
+      .search {
+        margin-bottom: 20px;
+      }
+
+      .alphabet {
+        justify-content: flex-start;
+      }
+
+      .word-main {
+        grid-template-columns: 32px 1fr auto;
+      }
+
+      .word-name {
+        font-size: 16px;
+      }
+
+      .word-fr {
+        display: block;
+        margin-left: 0;
+        margin-top: 3px;
+        font-size: 13px;
+      }
+
+      .details {
+        margin-left: 32px;
+        font-size: 15px;
+      }
+
+      footer {
+        padding: 24px 22px;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <header>
+
+    <a href="wtfter.html" class="logo">
+      Fendani
+    </a>
+
+    <nav>
+      <a href="mots.html" class="active">
+        FR
+      </a>
+
+      <a href="suatos.html">
+        CALÓ
+      </a>
+    </nav>
+
+  </header>
+
+
+  <main>
+
+    <section class="intro">
+
+      <div>
+
+        <div class="eyebrow">
+          Padave Fendani
+        </div>
+
+        <h1>
+          Samos suatos. Até.
+        </h1>
+
+      </div>
+
+      <div class="counter">
+
+        <a
+          href="wtfter.html"
+          class="counter-number"
+          id="totalWords"
+        >
+          —
+        </a>
+
+        <span class="counter-label">
+          suatos guenimados
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <div class="central-point"></div>
+
+
+    <section class="tools">
+
+      <input
+        type="search"
+        id="search"
+        class="search"
+        placeholder="Rodear yo suato…"
+        autocomplete="off"
+        aria-label="Rechercher un mot"
+      >
+
+      <div
+        class="alphabet"
+        id="alphabet"
+      ></div>
+
+    </section>
+
+
+    <ul
+      class="word-list"
+      id="wordList"
+    ></ul>
+
+
+    <div
+      class="empty"
+      id="empty"
+    >
+      Aucun mot ne correspond à votre recherche.
+    </div>
+
+
+    <div
+      class="error"
+      id="error"
+      style="display:none;"
+    >
+      Impossible de charger le dictionnaire.
+      Vérifie que <strong>dictionary.js</strong>
+      se trouve bien dans le même dossier que cette page.
+    </div>
+
+  </main>
+
+
+  <footer>
+
+    <div class="footer-left">
+      Fendani
+    </div>
+
+    <div class="footer-right">
+
+      <a href="wtfter.html">
+        Accueil
+      </a>
+
+      <a href="#">
+        À propos
+      </a>
+
+    </div>
+
+  </footer>
+
+
+  <!-- DICTIONNAIRE -->
+
+  <script src="dictionary.js"></script>
+
+
+  <script>
+
+    const wordList = document.getElementById("wordList");
+    const search = document.getElementById("search");
+    const alphabet = document.getElementById("alphabet");
+    const empty = document.getElementById("empty");
+    const error = document.getElementById("error");
+    const totalWords = document.getElementById("totalWords");
+
+    if (typeof dictionary === "undefined") {
+
+      error.style.display = "block";
+
+    } else {
+
+      totalWords.textContent = dictionary.length;
+
+
+      function escapeHTML(value) {
+
+        if (value === undefined || value === null) {
+          return "";
+        }
+
+        return String(value)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#039;");
+      }
+
+
+      function renderDetails(mot) {
+
+        let html = "";
+
+
+        if (mot.type) {
+
+          html += `
+            <div class="detail-row">
+              <span class="detail-label">Nature</span>
+              ${escapeHTML(mot.type)}
+            </div>
+          `;
+
+        }
+
+
+        if (mot.gender) {
+
+          html += `
+            <div class="detail-row">
+              <span class="detail-label">Genre</span>
+              ${escapeHTML(mot.gender)}
+            </div>
+          `;
+
+        }
+
+
+        if (mot.plural) {
+
+          html += `
+            <div class="detail-row">
+              <span class="detail-label">Pluriel</span>
+              ${escapeHTML(mot.plural)}
+            </div>
+          `;
+
+        }
+
+
+        if (mot.phonetic) {
+
+          html += `
+            <div class="detail-row">
+              <span class="detail-label">Prononciation</span>
+              ${escapeHTML(mot.phonetic)}
+            </div>
+          `;
+
+        }
+
+if (mot.audio) {
+
+  html += `
+    <div class="detail-row audio-row">
+      <span class="detail-label">Audio</span>
+      <audio controls preload="none">
+        <source src="${escapeHTML(mot.audio)}" type="audio/mpeg">
+        Votre navigateur ne prend pas en charge l'audio.
+      </audio>
+    </div>
+  `;
+
+}
+
+
+
+        if (mot.definition) {
+
+          html += `
+            <div class="detail-row">
+              <span class="detail-label">Définition</span>
+              ${escapeHTML(mot.definition)}
+            </div>
+          `;
+
+        }
+
+
+        if (mot.example) {
+
+          html += `
+            <div class="detail-row detail-example">
+              <span class="detail-label">Exemple</span>
+              ${escapeHTML(mot.example)}
+            </div>
+          `;
+
+        }
+
+
+
+
+      if (mot.etymology) {
+
+  const etymologies = Array.isArray(mot.etymology)
+    ? mot.etymology
+    : [mot.etymology];
+
+  etymologies.forEach((etymology) => {
+
+    if (etymology.source || etymology.meaning) {
+      html += `
+        <div class="detail-row">
+          <span class="detail-label">Étymologie</span>
+          ${escapeHTML(etymology.source || "")}
+          ${etymology.meaning
+            ? " — " + escapeHTML(etymology.meaning)
+            : ""}
+        </div>
+      `;
+    }
+
+    if (etymology.author) {
+      html += `
+        <div class="detail-row">
+          <span class="detail-label">Auteur</span>
+          ${escapeHTML(etymology.author)}
+        </div>
+      `;
+    }
+
+    if (etymology.book) {
+      html += `
+        <div class="detail-row">
+          <span class="detail-label">Œuvre</span>
+          <em>${escapeHTML(etymology.book)}</em>
+        </div>
+      `;
+    }
+
+    if (etymology.date) {
+      html += `
+        <div class="detail-row">
+          <span class="detail-label">Date</span>
+          ${escapeHTML(etymology.date)}
+        </div>
+      `;
+    }
+
+    if (etymology.language) {
+      html += `
+        <div class="detail-row">
+          <span class="detail-label">Langue</span>
+          ${escapeHTML(etymology.language)}
+        </div>
+      `;
+    }
+
+    if (etymology.page) {
+      html += `
+        <div class="detail-row">
+          <span class="detail-label">Page</span>
+          ${escapeHTML(etymology.page)}
+        </div>
+      `;
+    }
+
+    if (etymology.publisher) {
+      html += `
+        <div class="detail-row">
+          <span class="detail-label">Éditeur</span>
+          ${escapeHTML(etymology.publisher)}
+        </div>
+      `;
+    }
+
+    if (etymology.place) {
+      html += `
+        <div class="detail-row">
+          <span class="detail-label">Lieu</span>
+          ${escapeHTML(etymology.place)}
+        </div>
+      `;
+    }
+
+    if (etymology.relation) {
+      html += `
+        <div class="detail-row">
+          <span class="detail-label">Relation</span>
+          ${escapeHTML(etymology.relation)}
+        </div>
+      `;
+    }
+
+    if (etymology.note) {
+      html += `
+        <div class="detail-row">
+          <span class="detail-label">Note</span>
+          ${escapeHTML(etymology.note)}
+        </div>
+      `;
+    }
+
+  });
+
+}
+
+
+
+
+
+        if (mot.label && mot.label.length) {
+
+          html += `
+            <div class="detail-row">
+              <span class="detail-label">Label</span>
+              ${mot.label.map(escapeHTML).join(" · ")}
+            </div>
+          `;
+
+        }
+
+
+        if (mot.related && mot.related.length) {
+
+          html += `
+            <div class="detail-row">
+              <span class="detail-label">Associés</span>
+              <span class="related">
+                ${mot.related
+                  .map(item => `<span>${escapeHTML(item)}</span>`)
+                  .join("")}
+              </span>
+            </div>
+          `;
+
+        }
+
+if (mot.register) {
+  html += `
+    <div class="detail-row">
+      <span class="detail-label">Registre</span>
+      ${escapeHTML(mot.register)}
+    </div>
+  `;
+}
+
+if (mot.domain) {
+  html += `
+    <div class="detail-row">
+      <span class="detail-label">Domaine</span>
+      ${escapeHTML(mot.domain)}
+    </div>
+  `;
+}
+
+
+        if (mot.verb) {
+
+          html += `
+            <div class="detail-row">
+              <span class="detail-label">Verbe</span>
+              ${escapeHTML(mot.verb.infinitive || "")}
+              ${mot.verb.class
+                ? " · classe " + escapeHTML(mot.verb.class)
+                : ""}
+              ${mot.verb.participle
+                ? " · participe " + escapeHTML(mot.verb.participle)
+                : ""}
+            </div>
+          `;
+
+        }
+
+
+        return html;
+      }
+
+
+      function render(list) {
+
+        wordList.innerHTML = "";
+
+        empty.style.display =
+          list.length ? "none" : "block";
+
+
+        list.forEach((mot, index) => {
+
+          const li = document.createElement("li");
+
+          li.className = "word";
+
+
+          const firstLetter =
+            (mot.fr || mot.b || "")
+              .charAt(0)
+              .toUpperCase();
+
+
+          li.innerHTML = `
+
+            <div class="word-main">
+
+              <div class="word-letter">
+                ${escapeHTML(firstLetter)}
+              </div>
+
+              <div>
+
+                <span class="word-name">
+                  ${escapeHTML(mot.b)}
+                </span>
+
+                <span class="word-fr">
+                  ${escapeHTML(mot.fr)}
+                </span>
+
+              </div>
+
+              <div class="word-index">
+                ${String(index + 1).padStart(3, "0")}
+              </div>
+
+            </div>
+
+
+            <div class="details">
+
+              ${renderDetails(mot)}
+
+            </div>
+
+          `;
+
+
+          wordList.appendChild(li);
+
+        });
+
+      }
+
+
+      const sortedDictionary =
+        [...dictionary].sort((a, b) =>
+          (a.b || "").localeCompare(
+            b.b || "",
+            "fr",
+            { sensitivity: "base" }
+          )
+        );
+
+
+    const letters = [
+  ...new Set(
+    sortedDictionary.map(mot =>
+      (mot.b || "")
+        .charAt(0)
+        .toUpperCase()
+    )
+  )
+];
+
+
+
+      letters.forEach(letter => {
+
+        const button =
+          document.createElement("button");
+
+        button.className = "letter";
+
+        button.textContent = letter;
+
+
+        button.addEventListener("click", () => {
+
+          search.value = "";
+
+         render(
+  sortedDictionary.filter(mot =>
+    (mot.b || "")
+      .charAt(0)
+      .toUpperCase() === letter
+  )
+);
+
+
+
+          document
+            .querySelectorAll(".letter")
+            .forEach(item =>
+              item.classList.remove("active")
+            );
+
+          button.classList.add("active");
+
+        });
+
+
+        alphabet.appendChild(button);
+
+      });
+
+
+      search.addEventListener("input", () => {
+
+        const query =
+          search.value
+            .trim()
+            .toLowerCase();
+
+
+        document
+          .querySelectorAll(".letter")
+          .forEach(item =>
+            item.classList.remove("active")
+          );
+
+
+        if (!query) {
+
+          render(sortedDictionary);
+
+          return;
+
+        }
+
+
+        const filtered =
+          sortedDictionary.filter(mot => {
+
+            const fr =
+              (mot.fr || "").toLowerCase();
+
+            const b =
+              (mot.b || "").toLowerCase();
+
+            const definition =
+              (mot.definition || "").toLowerCase();
+
+            return (
+              fr.includes(query) ||
+              b.includes(query) ||
+              definition.includes(query)
+            );
+
+          });
+
+
+        render(filtered);
+
+      });
+
+
+      render(sortedDictionary);
+
+    }
+
+  </script>
+
+</body>
+
+</html>

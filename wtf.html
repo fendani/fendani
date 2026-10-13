@@ -1,0 +1,3558 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>fendani · dictionnaire français-caló</title>
+
+
+<!-- =====================================================
+     POLICES
+===================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Bellota+Text:wght@300;400;500&family=Newsreader:opsz,wght@6..72,300;6..72,350;6..72,400;6..72,500&display=swap"
+    rel="stylesheet"
+>
+
+
+<style>
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+
+    --bg: #f7f6f2;
+
+    --text: #1b1b18;
+
+    --muted: #98968e;
+
+    --line: #d9d7d0;
+
+    --gold: #b59a55;
+
+    /* RAL 6036 — Perlopalgrün / Pearl opal green */
+    --result-green: #005D4C;
+
+    --serif: "Newsreader", serif;
+
+    --sans: "Bellota Text", sans-serif;
+
+    --ease: cubic-bezier(.2,.8,.2,1);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+
+    background: var(--bg);
+
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 28%,
+            rgba(255,255,255,.72),
+            transparent 54%
+        ),
+        var(--bg);
+
+    color: var(--text);
+
+    font-family: var(--sans);
+
+    -webkit-font-smoothing: antialiased;
+}
+
+
+body::after {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 100;
+
+    opacity: .018;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 76px;
+
+    padding: 0 3.2vw;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: #ffffff;
+
+    z-index: 30;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+
+    display: flex;
+
+    align-items: baseline;
+
+    font-family: var(--serif);
+
+    font-weight: 400;
+
+    line-height: 1;
+}
+
+
+.logo-name {
+
+    color: var(--text);
+
+    font-size: 21px;
+
+    letter-spacing: -.045em;
+
+    line-height: 1;
+}
+
+
+.logo-dot {
+
+    color: var(--gold);
+
+    font-size: 17px;
+
+    line-height: 1;
+
+    margin-left: 6px;
+
+    margin-right: 9.7px;
+}
+
+
+.logo-subtitle {
+
+    color: #8f8d87;
+
+    font-family: var(--serif);
+
+    font-size: 11px;
+
+    font-weight: 400;
+
+    letter-spacing: -.02em;
+
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   LANGUES
+========================================================= */
+
+.language {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    font-family: var(--sans);
+
+    font-size: 9px;
+
+    letter-spacing: .08em;
+
+    color: var(--muted);
+}
+
+
+.language button {
+
+    border: 0;
+
+    background: none;
+
+    padding: 0;
+
+    color: inherit;
+
+    font: inherit;
+
+    cursor: pointer;
+
+    transition: color .25s ease;
+}
+
+
+.language button:hover,
+.language button.active {
+
+    color: var(--text);
+}
+
+
+.separator {
+
+    width: 13px;
+
+    height: 1px;
+
+    background: var(--line);
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+main {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   MOTEUR
+========================================================= */
+
+.search-zone {
+
+    width: min(690px, 76vw);
+
+    margin-top: 36vh;
+
+    transform: translateY(-50%);
+
+    transition:
+        margin-top .75s var(--ease),
+        transform .75s var(--ease);
+}
+
+
+main:has(.result.visible) .search-zone {
+
+    margin-top: 21vh;
+
+    transform: none;
+}
+
+
+main:has(.result.visible) .result {
+
+    margin-top: 4vh;
+}
+
+
+/* =========================================================
+   KICKER
+========================================================= */
+
+.kicker {
+
+    margin-bottom: 16px;
+
+    color: var(--muted);
+
+    font-size: 8px;
+
+    line-height: 1;
+
+    letter-spacing: .16em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   RECHERCHE
+========================================================= */
+
+.search-line {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    border-bottom: 1px solid var(--text);
+}
+
+
+.search-line::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -1px;
+
+    width: 0;
+
+    height: 1px;
+
+    background: var(--text);
+
+    transition: width .65s var(--ease);
+}
+
+
+.search-line:focus-within::after {
+
+    width: 100%;
+}
+
+
+.search-icon {
+
+    position: relative;
+
+    width: 17px;
+
+    height: 17px;
+
+    margin-right: 17px;
+
+    flex: 0 0 auto;
+}
+
+
+.search-icon::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 9px;
+
+    height: 9px;
+
+    top: 1px;
+
+    left: 1px;
+
+    border: 1px solid var(--muted);
+
+    border-radius: 50%;
+}
+
+
+.search-icon::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 6px;
+
+    height: 1px;
+
+    top: 11px;
+
+    left: 10px;
+
+    background: var(--muted);
+
+    transform: rotate(45deg);
+}
+
+
+input {
+
+    width: 100%;
+
+    border: 0;
+
+    outline: 0;
+
+    background: transparent;
+
+    padding: 0 0 12px;
+
+    color: var(--text);
+
+    font-family: var(--serif);
+
+    font-size: clamp(45px, 5.4vw, 72px);
+
+    font-weight: 400;
+
+    line-height: .82;
+
+    letter-spacing: -.045em;
+
+    font-optical-sizing: auto;
+}
+
+
+input::placeholder {
+
+    color: #bbb9b1;
+}
+
+
+.search-meta {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 9px;
+
+    color: var(--muted);
+
+    font-size: 8px;
+
+    letter-spacing: .04em;
+}
+
+
+.swap {
+
+    border: 0;
+
+    background: none;
+
+    padding: 0;
+
+    color: var(--muted);
+
+    font: inherit;
+
+    cursor: pointer;
+
+    transition:
+        color .2s ease,
+        transform .35s var(--ease);
+}
+
+
+.swap:hover {
+
+    color: var(--text);
+
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   RESULTAT
+========================================================= */
+
+.result {
+
+    display: none;
+
+    width: min(1120px, 87vw);
+
+    margin-top: 4vh;
+
+    padding-bottom: 150px;
+}
+
+
+.result.visible {
+
+    display: block;
+
+    animation:
+        reveal .9s var(--ease) both;
+}
+
+
+@keyframes reveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(22px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+.result-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 52px;
+
+    color: var(--muted);
+
+    font-family: var(--sans);
+
+    font-size: 8px;
+
+    letter-spacing: .13em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   MOT PRINCIPAL
+========================================================= */
+
+.word-layout {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        270px;
+
+    gap: 90px;
+
+    align-items: end;
+}
+
+
+.word {
+
+    margin: 0;
+
+    color: var(--result-green);
+
+    font-family: var(--serif);
+
+    font-size: clamp(96px, 11.5vw, 175px);
+
+    font-weight: 350;
+
+    line-height: .78;
+
+    letter-spacing: -.065em;
+
+    font-optical-sizing: auto;
+}
+
+
+.phonetic {
+
+    margin-top: 25px;
+
+    color: var(--muted);
+
+    font-family: var(--sans);
+
+    font-size: 10px;
+
+    letter-spacing: .02em;
+}
+
+
+/* =========================================================
+   TRADUCTION
+========================================================= */
+
+.translation {
+
+    padding-bottom: 4px;
+}
+
+
+.translation-label {
+
+    margin-bottom: 13px;
+
+    color: var(--muted);
+
+    font-family: var(--sans);
+
+    font-size: 8px;
+
+    letter-spacing: .13em;
+
+    text-transform: uppercase;
+}
+
+
+.translation-word {
+
+    font-family: var(--serif);
+
+    font-size: clamp(38px, 4vw, 59px);
+
+    font-weight: 400;
+
+    line-height: .82;
+
+    letter-spacing: -.045em;
+
+    font-optical-sizing: auto;
+}
+
+
+/* =========================================================
+   DEFINITION
+========================================================= */
+
+.definition-block {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        270px;
+
+    gap: 90px;
+
+    margin-top: 95px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid var(--line);
+}
+
+
+.definition-label {
+
+    color: var(--muted);
+
+    font-size: 8px;
+
+    letter-spacing: .13em;
+
+    text-transform: uppercase;
+}
+
+
+.definition {
+
+    max-width: 490px;
+
+    color: #55534d;
+
+    font-size: 17px;
+
+    line-height: 1.55;
+
+    font-weight: 300;
+}
+
+
+/* =========================================================
+   EXEMPLE
+========================================================= */
+
+.example {
+
+    width: 75%;
+
+    margin-top: 80px;
+
+    margin-left: auto;
+
+    color: #77756e;
+
+    font-size: 14px;
+
+    line-height: 1.65;
+}
+
+
+.example em {
+
+    color: var(--text);
+
+    font-family: var(--serif);
+
+    font-size: 20px;
+
+    font-style: italic;
+
+    letter-spacing: -.015em;
+}
+
+
+/* =========================================================
+   MOTS VOISINS
+========================================================= */
+
+.related {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px 27px;
+
+    margin-top: 80px;
+
+    padding-top: 14px;
+
+    border-top: 1px solid var(--line);
+}
+
+
+.related-label {
+
+    width: 100%;
+
+    margin-bottom: 4px;
+
+    color: var(--muted);
+
+    font-size: 8px;
+
+    letter-spacing: .13em;
+
+    text-transform: uppercase;
+}
+
+
+.related button {
+
+    border: 0;
+
+    background: none;
+
+    padding: 0;
+
+    color: var(--text);
+
+    font-family: var(--serif);
+
+    font-size: 17px;
+
+    line-height: 1;
+
+    letter-spacing: -.02em;
+
+    cursor: pointer;
+
+    transition:
+        color .2s ease,
+        transform .3s var(--ease);
+}
+
+
+.related button:hover {
+
+    color: var(--muted);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   CONJUGAISON
+========================================================= */
+
+.conjugation {
+
+    display: none;
+
+    margin-top: 100px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid var(--line);
+}
+
+
+.conjugation.visible {
+
+    display: block;
+
+    animation:
+        reveal .7s var(--ease) both;
+}
+
+
+.conjugation-head {
+
+    display: flex;
+
+    align-items: baseline;
+
+    justify-content: space-between;
+
+    margin-bottom: 48px;
+}
+
+
+.conjugation-title {
+
+    color: var(--muted);
+
+    font-family: var(--sans);
+
+    font-size: 8px;
+
+    line-height: 1;
+
+    letter-spacing: .13em;
+
+    font-weight: 400;
+
+    text-transform: uppercase;
+}
+
+
+.conjugation-meta {
+
+    color: var(--muted);
+
+    font-family: var(--sans);
+
+    font-size: 8px;
+
+    letter-spacing: .13em;
+
+    text-transform: uppercase;
+}
+
+
+.conjugation-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(280px, .72fr)
+        minmax(0, 1fr);
+
+    gap: clamp(70px, 9vw, 150px);
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.conjugation-navigation {
+
+    display: grid;
+
+    grid-template-columns: max-content max-content;
+
+    column-gap: 45px;
+
+    row-gap: 38px;
+
+}
+
+
+.conjugation-navigation .conjugation-mode:nth-child(1) {
+
+    grid-column: 1 / -1;
+
+    grid-row: 1;
+
+    padding-bottom: 20px;
+    border-bottom: 1px solid #b8b6af;
+
+}
+
+
+.conjugation-navigation .conjugation-mode:nth-child(2) {
+
+    grid-column: 1 / -1;
+
+    grid-row: 2;
+
+    padding-bottom: 20px;
+    border-bottom: 1px solid #b8b6af;
+
+}
+
+
+.conjugation-navigation .conjugation-mode:nth-child(3) {
+
+    grid-column: 1;
+
+    grid-row: 3;
+
+}
+
+
+.conjugation-navigation .conjugation-mode:nth-child(4) {
+
+    grid-column: 1;
+
+    grid-row: 4;
+
+}
+
+
+.conjugation-navigation .conjugation-mode:nth-child(5) {
+
+    grid-column: 1;
+
+    grid-row: 5;
+
+}
+
+
+.conjugation-navigation .conjugation-mode:nth-child(6) {
+
+    grid-column: 2;
+
+    grid-row: 3;
+
+}
+
+
+.conjugation-navigation .conjugation-mode:nth-child(7) {
+
+    grid-column: 2;
+
+    grid-row: 4;
+
+}
+
+
+
+.conjugation-mode {
+
+    margin: 0;
+}
+
+
+.mode-title {
+
+    margin-bottom: 15px;
+
+    color: black;
+
+    font-family: var(--sans);
+
+    font-size: 8px;
+
+    font-weight: 400;
+
+    letter-spacing: .15em;
+
+    line-height: 1;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   TEMPS
+========================================================= */
+
+.tense-tabs {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, max-content);
+
+    gap: 11px 25px;
+
+    margin: 0;
+
+    max-width: 100%;
+}
+
+
+.tense-tab {
+
+    position: relative;
+
+    width: max-content;
+
+    border: 0;
+
+    background: none;
+
+    padding: 0 0 7px;
+
+    color: var(--muted);
+
+    font-family: var(--serif);
+
+    font-size: 11px;
+
+    font-style: regular;
+
+    font-weight: 350;
+
+    letter-spacing: -.015em;
+
+    line-height: 1.05;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition: color .25s ease;
+}
+
+
+.tense-tab::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    height: 1px;
+
+    background: var(--text);
+
+    transform: scaleX(0);
+
+    transform-origin: left;
+
+    transition:
+        transform .4s var(--ease);
+}
+
+
+.tense-tab:hover {
+
+    color: var(--text);
+}
+
+
+.tense-tab.active {
+
+    color: var(--text);
+}
+
+
+.tense-tab.active::after {
+
+    transform: scaleX(1);
+}
+
+
+/* =========================================================
+   AFFICHAGE
+========================================================= */
+
+.conjugation-display {
+
+    min-width: 0;
+}
+
+
+.conjugation-current {
+
+    margin-bottom: 25px;
+
+    color: var(--text);
+
+    font-family: var(--serif);
+
+    font-size: 25px;
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    letter-spacing: -.035em;
+}
+
+
+.conjugation-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    table-layout: fixed;
+}
+
+
+.conjugation-table tr {
+
+    border-top: 1px solid var(--line);
+
+    transition: background .25s ease;
+}
+
+
+.conjugation-table tr:last-child {
+
+    border-bottom: 1px solid var(--line);
+}
+
+
+.conjugation-table tr:hover {
+
+    background:
+        rgba(255,255,255,.38);
+}
+
+
+.conjugation-table td {
+
+    padding: 17px 10px;
+
+    vertical-align: middle;
+}
+
+
+.conjugation-table td:first-child {
+
+    width: 34%;
+
+    color: var(--muted);
+
+    font-family: var(--sans);
+
+    font-size: 8px;
+
+    letter-spacing: .08em;
+
+    text-transform: uppercase;
+}
+
+
+.conjugation-table td:last-child {
+
+    color: var(--text);
+
+    font-family: var(--serif);
+
+    font-size: 23px;
+
+    line-height: 1;
+
+    letter-spacing: -.025em;
+
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   NOTE
+========================================================= */
+
+.conjugation-note {
+
+    margin-top: 17px;
+
+    color: black;
+
+    font-family: var(--serif);
+
+    font-size: 8px;
+
+    font-style: normal;
+
+    font-weight: 550;
+
+    letter-spacing: .08em;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   AUCUN RESULTAT
+========================================================= */
+
+.empty {
+
+    display: none;
+
+    width: min(1120px, 87vw);
+
+    margin-top: 6vh;
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+.empty.visible {
+
+    display: block;
+
+    animation:
+        reveal .6s var(--ease);
+}
+
+
+.empty strong {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--text);
+
+    font-family: var(--serif);
+
+    font-size: 55px;
+
+    line-height: .75;
+
+    letter-spacing: -.055em;
+
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    position: fixed;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 40px;
+
+    padding: 0 3.2vw;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: #ffffff;
+
+    z-index: 30;
+}
+
+
+footer span {
+
+    color: var(--muted);
+
+    font-size: 7px;
+
+    font-family: var(--serif);
+
+    letter-spacing: .08em;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 0 6vw;
+    }
+
+
+    .logo-name {
+        font-size: 19px;
+    }
+
+
+    .logo-dot {
+
+        font-size: 15px;
+
+        margin-left: 5px;
+
+        margin-right: 8px;
+    }
+
+
+    .logo-subtitle {
+        display: none;
+    }
+
+
+    footer {
+        padding: 0 6vw;
+    }
+
+
+    .search-zone {
+
+        width: 82vw;
+
+        margin-top: 34vh;
+    }
+
+
+    main:has(.result.visible) .search-zone {
+        margin-top: 18vh;
+    }
+
+
+    .result {
+
+        width: 82vw;
+
+        margin-top: 4vh;
+    }
+
+
+    .word-layout {
+        display: block;
+    }
+
+
+    .word {
+
+        font-size: 23vw;
+
+        line-height: .78;
+    }
+
+
+    .translation {
+        margin-top: 48px;
+    }
+
+
+    .definition-block {
+
+        display: block;
+
+        margin-top: 70px;
+    }
+
+
+    .definition {
+
+        margin-top: 17px;
+
+        font-size: 15px;
+    }
+
+
+    .example {
+
+        width: 100%;
+
+        margin-top: 60px;
+    }
+
+
+    .related {
+        margin-top: 65px;
+    }
+
+
+    .conjugation {
+        margin-top: 75px;
+    }
+
+
+    .conjugation-head {
+
+        display: block;
+
+        margin-bottom: 35px;
+    }
+
+
+    .conjugation-meta {
+        margin-top: 9px;
+    }
+
+
+    .conjugation-grid {
+        display: block;
+    }
+
+
+    .conjugation-navigation {
+
+        gap: 32px;
+
+        margin-bottom: 60px;
+    }
+
+
+    .tense-tabs {
+
+        grid-template-columns:
+            repeat(2, max-content);
+
+        gap: 11px 24px;
+    }
+
+
+    .conjugation-current {
+
+        font-size: 23px;
+
+        margin-bottom: 22px;
+    }
+
+
+    .conjugation-table td {
+        padding: 14px 5px;
+    }
+
+
+    .conjugation-table td:first-child {
+
+        width: 35%;
+
+        font-size: 8px;
+    }
+
+
+    .conjugation-table td:last-child {
+        font-size: 19px;
+    }
+
+
+    footer span:nth-child(2) {
+        display: none;
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITE
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation: none !important;
+
+        transition: none !important;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="logo">
+
+        <span class="logo-name">
+            fendani
+        </span>
+
+        <span class="logo-dot">
+            ·
+        </span>
+
+        <span class="logo-subtitle">
+            dictionnaire français-caló · dictionnaire caló-français
+        </span>
+
+    </div>
+
+
+    <div class="language">
+
+        <button
+            id="fr"
+            class="active"
+        >
+            FR
+        </button>
+
+        <span class="separator"></span>
+
+        <button id="b">
+            CALÓ
+        </button>
+
+    </div>
+
+</header>
+
+
+<main>
+
+
+    <section class="search-zone">
+
+        <div class="kicker">
+            français → caló
+        </div>
+
+
+        <div class="search-line">
+
+            <div class="search-icon"></div>
+
+
+            <input
+                id="search"
+                type="text"
+                placeholder="chercher"
+                autocomplete="off"
+                spellcheck="false"
+            >
+
+        </div>
+
+
+        <div class="search-meta">
+
+            <span id="hint">
+                un mot, simplement
+            </span>
+
+
+            <button
+                class="swap"
+                id="swap"
+            >
+                inverser ↗
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <section
+        class="result"
+        id="result"
+    >
+
+        <div class="result-top">
+
+            <span>
+                résultat
+            </span>
+
+
+            <span id="type">
+                nom
+            </span>
+
+        </div>
+
+
+        <div class="word-layout">
+
+            <div>
+
+                <h1
+                    class="word"
+                    id="word"
+                >
+                    ailleurs
+                </h1>
+
+
+                <div
+                    class="phonetic"
+                    id="phonetic"
+                >
+                    /ɛ.jœʁ/
+                </div>
+
+            </div>
+
+
+            <div class="translation">
+
+                <div class="translation-label">
+                    traduction
+                </div>
+
+
+                <div
+                    class="translation-word"
+                    id="translation"
+                >
+                    otre
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="definition-block">
+
+            <div class="definition-label">
+                définition
+            </div>
+
+
+            <div
+                class="definition"
+                id="definition"
+            >
+                Dans un autre lieu, réel ou imaginé.
+            </div>
+
+        </div>
+
+
+        <div class="example">
+
+            <em id="example">
+                « Il regardait ailleurs,
+                comme si quelque chose
+                l'attendait. »
+            </em>
+
+        </div>
+
+
+        <div
+            class="related"
+            id="related"
+        >
+
+            <div class="related-label">
+                mots voisins
+            </div>
+
+        </div>
+
+
+        <section
+            class="conjugation"
+            id="conjugation"
+        >
+
+            <div class="conjugation-head">
+
+                <div class="conjugation-title">
+                    conjugaison
+                </div>
+
+
+                <div
+                    class="conjugation-meta"
+                    id="conjugationMeta"
+                >
+                    verbe
+                </div>
+
+            </div>
+
+
+            <div class="conjugation-grid">
+
+
+                <nav
+                    class="conjugation-navigation"
+                    id="conjugationModes"
+                ></nav>
+
+
+                <div class="conjugation-display">
+
+
+                    <div
+                        class="conjugation-current"
+                        id="conjugationCurrent"
+                    >
+                    </div>
+
+
+                    <table class="conjugation-table">
+
+                        <tbody
+                            id="conjugationBody"
+                        ></tbody>
+
+                    </table>
+
+
+                    <div
+                        class="conjugation-note"
+                        id="conjugationNote"
+                    ></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </section>
+
+
+    <section
+        class="empty"
+        id="empty"
+    >
+
+        <strong>
+            rien ici.
+        </strong>
+
+        Essayez un autre mot.
+
+    </section>
+
+
+</main>
+
+
+<footer>
+
+    <span>
+        FENDANI
+    </span>
+
+
+    <span>
+        2026
+    </span>
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   FENDANI — MOTEUR DU DICTIONNAIRE
+   ---------------------------------------------------------
+   Classes verbales :
+   1. -ar
+   2. -ear
+   3. -nar
+
+   13 personnes :
+   Mene / Tú / Huno-Hira / Hire / Oste / He /
+   Mane / Sane / Soldue / Hunos-Hiras / Hires / Ostes / Hes
+========================================================= */
+
+
+/* =========================================================
+   DICTIONNAIRE
+========================================================= */
+
+const dictionary = [
+
+    {
+        fr: "ailleurs",
+        b: "otre",
+        type: "adverbe",
+        phonetic: "/ɛ.jœʁ/",
+        definition:
+            "Dans un autre lieu, réel ou imaginé.",
+        example:
+            "« Il regardait ailleurs, comme si quelque chose l'attendait. »",
+        related: [
+            "horizon",
+            "absence",
+            "partir",
+            "loin",
+            "sillage"
+        ]
+    },
+
+
+    {
+        fr: "lueur",
+        b: "clarí",
+        type: "nom",
+        phonetic: "/lɥœʁ/",
+        definition:
+            "Lumière faible, souvent brève ou vacillante.",
+        example:
+            "« Une lueur traversait encore la fenêtre. »",
+        related: [
+            "éclat",
+            "ombre",
+            "aurore",
+            "feu",
+            "briller"
+        ]
+    },
+
+
+    {
+        fr: "silence",
+        b: "silencio",
+        type: "nom",
+        phonetic: "/si.lɑ̃s/",
+        definition:
+            "Absence de bruit, de parole ou de mouvement sonore.",
+        example:
+            "« Le silence avait quelque chose de profond. »",
+        related: [
+            "calme",
+            "écouter",
+            "vide",
+            "nuit",
+            "immobile"
+        ]
+    },
+
+
+    {
+        fr: "éphémère",
+        b: "efímero",
+        type: "adjectif",
+        phonetic: "/e.fe.mɛʁ/",
+        definition:
+            "Qui ne dure qu'un temps très court.",
+        example:
+            "« Une beauté éphémère, presque impossible à retenir. »",
+        related: [
+            "instant",
+            "fragile",
+            "passage",
+            "mémoire",
+            "fugace"
+        ]
+    },
+
+
+    /* =====================================================
+       SENAR — ÊTRE
+    ===================================================== */
+
+    {
+        fr: "être",
+        b: "senar",
+        type: "verbe",
+        phonetic: "/se.nar/",
+        definition:
+            "Être, exister, posséder une identité ou une nature.",
+        example:
+            "« Il est calme. »",
+        related: [
+            "être",
+            "se situer",
+            "exister",
+            "devenir"
+        ],
+
+        verb: {
+            infinitive: "senar",
+            class: "nar",
+            stem: "sen",
+            subjStem: "señ",
+            participle: "senado",
+            irregularPresent: true
+        }
+    },
+
+
+    /* =====================================================
+       SENEAR — ÊTRE / SE SITUER
+    ===================================================== */
+
+    {
+        fr: "se situer",
+        b: "senear",
+        type: "verbe",
+        phonetic: "/se.ne.ar/",
+        definition:
+            "Être situé dans un lieu ou dans une position donnée.",
+        example:
+            "« Nous sommes à Paris. »",
+        related: [
+            "être",
+            "se trouver",
+            "se situer"
+        ],
+
+        verb: {
+            infinitive: "senear",
+            class: "ear",
+            stem: "sene",
+            subjStem: "senes",
+            participle: "seneado"
+        }
+    },
+
+
+    /* =====================================================
+       LINAR — ÉCRIRE
+    ===================================================== */
+
+    {
+        fr: "écrire",
+        b: "linar",
+        type: "verbe",
+        phonetic: "/li.nar/",
+        definition:
+            "Tracer des mots ou des signes afin de communiquer.",
+        example:
+            "« Elle écrit une lettre. »",
+        related: [
+            "lire",
+            "lettre",
+            "texte"
+        ],
+
+        verb: {
+            infinitive: "linar",
+            class: "nar",
+            stem: "lin",
+            subjStem: "liñ",
+            participle: "linado"
+        }
+    },
+
+
+    /* =====================================================
+       PLEANAR — SOURCILLER
+    ===================================================== */
+
+    {
+        fr: "sourciller",
+        b: "pleanar",
+        type: "verbe",
+        phonetic: "/ple.a.nar/",
+        definition:
+            "Relever ou contracter les sourcils, notamment pour exprimer l'étonnement ou le doute.",
+        example:
+            "« Il ne sourcilla pas. »",
+        related: [
+            "sourcil",
+            "regarder",
+            "étonnement"
+        ],
+
+        verb: {
+            infinitive: "pleanar",
+            class: "nar",
+            stem: "plean",
+            subjStem: "pleañ",
+            participle: "pleanado"
+        }
+    },
+
+
+    /* =====================================================
+       LONGUINAR — DÉVORER DES YEUX
+    ===================================================== */
+
+    {
+        fr: "dévorer des yeux",
+        b: "longuinar",
+        type: "verbe",
+        phonetic: "/lon.gi.nar/",
+        definition:
+            "Regarder quelqu'un ou quelque chose avec une attention intense et insistante.",
+        example:
+            "« Il la dévorait des yeux. »",
+        related: [
+            "regarder",
+            "observer",
+            "regard"
+        ],
+
+        verb: {
+            infinitive: "longuinar",
+            class: "nar",
+            stem: "longuin",
+            subjStem: "longuiñ",
+            participle: "longuinado"
+        }
+    },
+
+
+    /* =====================================================
+       MEDUAR — ENTREVOIR
+    ===================================================== */
+
+    {
+        fr: "entrevoir",
+        b: "meduar",
+        type: "verbe",
+        phonetic: "/me.du.ar/",
+        definition:
+            "Apercevoir brièvement ou imparfaitement.",
+        example:
+            "« J'ai entrevu une silhouette dans la brume. »",
+        related: [
+            "voir",
+            "apercevoir",
+            "regard"
+        ],
+
+        verb: {
+            infinitive: "meduar",
+            class: "ar",
+            stem: "medu",
+            subjStem: "meduy",
+            participle: "meduado"
+        }
+    }
+
+];
+
+
+/* =========================================================
+   PERSONNES
+========================================================= */
+
+const persons = [
+    "Mene",
+    "Tú",
+    "Huno / Hira",
+    "Hire",
+    "Oste",
+    "He",
+    "Mane",
+    "Sane",
+    "Soldue",
+    "Hunos / Hiras",
+    "Hires",
+    "Ostes",
+    "Hes"
+];
+
+
+/* =========================================================
+   TERMINAISONS
+========================================================= */
+
+const endings = {
+
+    present: [
+        "o", "as", "a", "e", "ea", "eo",
+        "amo", "ai", "ei", "an", "en",
+        "ean", "eon"
+    ],
+
+    imperfect: [
+        "avo", "avas", "ava", "ave", "avea", "aveo",
+        "avamo", "avai", "avei", "avan", "aven",
+        "avean", "aveon"
+    ],
+
+    pastSimple: [
+        "omo", "omas", "oma", "ome", "omea", "omeo",
+        "omamo", "omai", "omei", "oman", "omen",
+        "omean", "omeon"
+    ],
+
+    future: [
+        "aró", "arás", "ará", "aré", "area", "areo",
+        "aramo", "arai", "arei", "arán", "arén",
+        "areán", "areón"
+    ],
+
+    subjPresent: [
+        "o", "as", "a", "e", "ea", "eo",
+        "amo", "ai", "ei", "an", "en",
+        "ean", "eon"
+    ],
+
+    subjImperfect: [
+        "avo", "avas", "ava", "ave", "avea", "aveo",
+        "avamo", "avai", "avei", "avan", "aven",
+        "avean", "aveon"
+    ],
+
+    subjPastSimple: [
+        "omo", "omas", "oma", "ome", "omea", "omeo",
+        "omamo", "omai", "omei", "oman", "omen",
+        "omean", "omeon"
+    ],
+
+    subjFuture: [
+        "aró", "arás", "ará", "aré", "area", "areo",
+        "aramo", "arai", "arei", "arán", "arén",
+        "areán", "areón"
+    ]
+};
+
+
+/* =========================================================
+   AUXILIAIRE ANAR
+========================================================= */
+
+const auxiliary = {
+
+    present: [
+        "ho", "has", "ha", "he", "hea", "heo",
+        "anamo", "anai", "anei", "han", "hen",
+        "hean", "heon"
+    ],
+
+    imperfect: [
+        "anavo", "anavas", "anava", "anave", "anavea", "anaveo",
+        "anavamo", "anavai", "anavei", "anavan", "anaven",
+        "anavean", "anaveon"
+    ],
+
+    pastSimple: [
+        "amo", "amas", "ama", "ame", "amea", "ameo",
+        "anamamo", "anamai", "anamei", "aman", "amen",
+        "amean", "ameon"
+    ],
+
+    future: [
+        "avró", "avrás", "avrá", "avré", "avrea", "avreo",
+        "avramo", "avrai", "avrei", "avrán", "avrén",
+        "avreán", "avreón"
+    ],
+
+    subjPresent: [
+        "año", "añas", "aña", "añe", "añea", "añeo",
+        "añamo", "añai", "añei", "añan", "añen",
+        "añean", "añeon"
+    ],
+
+    subjImperfect: [
+        "añavo", "añavas", "añava", "añave", "añavea", "añaveo",
+        "añavamo", "añavai", "añavei", "añavan", "añaven",
+        "añavean", "añaveon"
+    ],
+
+    subjPastAnterior: [
+        "amio", "amias", "amia", "amie", "amiea", "amieo",
+        "anamiamo", "anamiai", "anamiei", "amian", "amien",
+        "amiean", "amieon"
+    ],
+
+    subjFutureAnterior: [
+        "aviró", "avirás", "avirá", "avire", "avirea", "avireo",
+        "aviramo", "avirai", "avirei", "avirán", "avirén",
+        "avireán", "avireón"
+    ]
+};
+
+
+/* =========================================================
+   LIBELLÉS
+========================================================= */
+
+const modeLabels = {
+
+    indicatif: "indicatif",
+    subjonctif: "subjonctif",
+    conditionnel: "conditionnel",
+    gerondif: "gérondif",
+    participe: "participe",
+    infinitif: "infinitif",
+    imperatif: "impératif"
+
+};
+
+
+const tenseLabels = {
+
+    present: "présent",
+    imperfect: "imparfait",
+    pastSimple: "passé simple",
+    future: "futur simple",
+
+    pastCompound: "passé composé",
+    pluperfect: "plus-que-parfait",
+    pastAnterior: "passé antérieur",
+    futureAnterior: "futur antérieur",
+
+    subjPresent: "présent",
+    subjImperfect: "imparfait",
+    subjPastSimple: "passé simple",
+    subjFuture: "futur simple",
+    subjPast: "passé",
+    subjPluperfect: "plus-que-parfait",
+    subjPastAnterior: "passé antérieur",
+    subjFutureAnterior: "futur antérieur",
+
+    conditionalPresent: "présent",
+    conditionalPast: "passé",
+
+    gerundPresent: "présent",
+    gerundPast: "passé",
+
+    participlePresent: "présent",
+    participlePast: "passé",
+
+    infinitivePresent: "présent",
+    infinitivePast: "passé",
+
+    imperativePresent: "présent",
+    imperativePast: "passé"
+};
+
+
+/* =========================================================
+   ÉTAT
+========================================================= */
+
+let direction = "fr";
+
+let currentMode = "indicatif";
+
+let currentTense = "present";
+
+let currentVerb = null;
+
+
+/* =========================================================
+   ÉLÉMENTS
+========================================================= */
+
+const search =
+    document.getElementById("search");
+
+const result =
+    document.getElementById("result");
+
+const empty =
+    document.getElementById("empty");
+
+const word =
+    document.getElementById("word");
+
+const translation =
+    document.getElementById("translation");
+
+const definition =
+    document.getElementById("definition");
+
+const phonetic =
+    document.getElementById("phonetic");
+
+const type =
+    document.getElementById("type");
+
+const example =
+    document.getElementById("example");
+
+const related =
+    document.getElementById("related");
+
+const conjugation =
+    document.getElementById("conjugation");
+
+const conjugationBody =
+    document.getElementById("conjugationBody");
+
+const conjugationModes =
+    document.getElementById("conjugationModes");
+
+const conjugationCurrent =
+    document.getElementById("conjugationCurrent");
+
+const conjugationNote =
+    document.getElementById("conjugationNote");
+
+const conjugationMeta =
+    document.getElementById("conjugationMeta");
+
+const logoSubtitle =
+    document.querySelector(".logo-subtitle");
+
+const swapButton =
+    document.getElementById("swap");
+
+
+/* =========================================================
+   NORMALISATION
+========================================================= */
+
+function normalize(text) {
+
+    return text
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+
+}
+
+
+/* =========================================================
+   CONJUGAISON D'UN VERBE RÉGULIER
+========================================================= */
+
+function regularPresent(verb) {
+
+    return endings.present.map(
+        ending => verb.stem + ending
+    );
+
+}
+
+
+/* =========================================================
+   PRÉSENT DE SENAR
+========================================================= */
+
+function senarPresent() {
+
+    return [
+        "seno",
+        "senas",
+        "sena",
+        "sé",
+        "sea",
+        "seo",
+        "senamo",
+        "senai",
+        "senei",
+        "senan",
+        "senen",
+        "senean",
+        "seneon"
+    ];
+
+}
+
+
+/* =========================================================
+   RADICAL SUBJONCTIF
+========================================================= */
+
+function subjStem(verb) {
+
+    const stem =
+        verb.stem.replace(/-$/, "");
+
+    const lastLetter =
+        stem.slice(-1);
+
+    const vowels =
+        "aeiouyàâäéèêëîïôöùûüÿ";
+
+    if (verb.class === "nar") {
+
+        return stem.replace(
+            /n$/,
+            "ñ"
+        );
+
+    }
+
+    if (verb.class === "ear") {
+
+        return stem + "s";
+
+    }
+
+    if (verb.class === "ar") {
+
+        return vowels.includes(
+            lastLetter.toLowerCase()
+        )
+            ? stem + "y"
+            : stem + "i";
+
+    }
+
+    return stem;
+
+}
+
+
+
+/* =========================================================
+   FORME SIMPLE
+========================================================= */
+
+function simpleForms(
+    stem,
+    endingSet
+) {
+
+    return endingSet.map(
+        ending => stem + ending
+    );
+
+}
+
+
+/* =========================================================
+   CONJUGAISON COMPLÈTE
+========================================================= */
+
+function buildConjugation(verb) {
+
+    const data = {};
+
+
+    /* -----------------------------------------------------
+       INDICATIF
+    ----------------------------------------------------- */
+
+    const present =
+        verb.irregularPresent
+            ? senarPresent()
+            : regularPresent(verb);
+
+
+    data.indicatif = {
+
+        present: present,
+
+        imperfect:
+            simpleForms(
+                verb.stem,
+                endings.imperfect
+            ),
+
+        pastSimple:
+            simpleForms(
+                verb.stem,
+                endings.pastSimple
+            ),
+
+        future:
+            simpleForms(
+                verb.stem,
+                endings.future
+            ),
+
+        pastCompound:
+            auxiliary.present.map(
+                (a) => `${a} ${verb.participle}`
+            ),
+
+        pluperfect:
+            auxiliary.imperfect.map(
+                (a) => `${a} ${verb.participle}`
+            ),
+
+        pastAnterior:
+            auxiliary.pastSimple.map(
+                (a) => `${a} ${verb.participle}`
+            ),
+
+        futureAnterior:
+            auxiliary.future.map(
+                (a) => `${a} ${verb.participle}`
+            )
+
+    };
+
+
+    /* -----------------------------------------------------
+       SUBJONCTIF
+    ----------------------------------------------------- */
+
+    data.subjonctif = {
+
+        present:
+            simpleForms(
+                subjStem(verb),
+                endings.subjPresent
+            ),
+
+        imperfect:
+            simpleForms(
+                subjStem(verb),
+                endings.subjImperfect
+            ),
+
+        pastSimple:
+            simpleForms(
+                subjStem(verb),
+                endings.subjPastSimple
+            ),
+
+        future:
+            simpleForms(
+                subjStem(verb),
+                endings.subjFuture
+            ),
+
+        subjPast:
+            auxiliary.subjPresent.map(
+                (a) => `${a} ${verb.participle}`
+            ),
+
+        subjPluperfect:
+            auxiliary.subjImperfect.map(
+                (a) => `${a} ${verb.participle}`
+            ),
+
+        subjPastAnterior:
+            auxiliary.subjPastAnterior.map(
+                (a) => `${a} ${verb.participle}`
+            ),
+
+        subjFutureAnterior:
+            auxiliary.subjFutureAnterior.map(
+                (a) => `${a} ${verb.participle}`
+            )
+
+    };
+
+
+    /* -----------------------------------------------------
+       CONDITIONNEL
+    ----------------------------------------------------- */
+
+    data.conditionnel = {
+
+        conditionalPresent:
+            conditionalPresent(verb),
+
+        conditionalPast:
+            conditionalPast(verb)
+
+    };
+
+
+    /* -----------------------------------------------------
+       PARTICIPE
+    ----------------------------------------------------- */
+
+    data.participe = {
+
+        participlePresent: [
+            presentParticiple(verb)
+        ],
+
+        participlePast: [
+            verb.participle,
+            verb.participle.replace(
+                /o$/,
+                "a"
+            ),
+            verb.participle + "s",
+            verb.participle
+                .replace(/o$/, "a") + "s",
+            verb.participle
+                .replace(/o$/, "e") + "s"
+        ]
+
+    };
+
+
+    /* -----------------------------------------------------
+       GÉRONDIF
+    ----------------------------------------------------- */
+
+    data.gerondif = {
+
+        gerundPresent: [
+            `neo ${presentParticiple(verb)}`,
+            `${presentParticiple(verb)}ne`
+        ],
+
+        gerundPast: [
+            `neo anato ${verb.participle}`,
+            `${presentParticiple(verb)}ne anato`
+        ]
+
+    };
+
+
+    /* -----------------------------------------------------
+       INFINITIF
+    ----------------------------------------------------- */
+
+    data.infinitif = {
+
+        infinitivePresent: [
+            verb.infinitive
+        ],
+
+        infinitivePast: [
+            `anar ${verb.participle}`
+        ]
+
+    };
+
+
+    /* -----------------------------------------------------
+       IMPÉRATIF
+    ----------------------------------------------------- */
+
+    data.imperatif = {
+
+        imperativePresent:
+            imperativePresent(verb),
+
+        imperativePast:
+            imperativePast(verb)
+
+    };
+
+
+    return data;
+
+}
+
+
+/* =========================================================
+   PARTICIPE PRÉSENT
+========================================================= */
+
+function presentParticiple(verb) {
+
+    /*
+       Pour les verbes fournis :
+       - senar → senato
+       - senear → seneato
+       - linar → linato
+       - etc.
+    */
+
+    return verb.stem + "ato";
+
+}
+
+
+/* =========================================================
+   CONDITIONNEL
+========================================================= */
+
+function conditionalPresent(verb) {
+
+    const endingsConditional = [
+
+        "ío",
+        "ías",
+        "ía",
+        "íe",
+        "yea",
+        "yeo",
+        "íamo",
+        "íai",
+        "iei",
+        "ían",
+        "íen",
+        "yean",
+        "yeon"
+
+    ];
+
+
+    /*
+       Senar :
+       senarío, senarías, senaría...
+
+       Senear :
+       senearío, senearías, senearía...
+       avec les formes en -íe / -aryea / -aryeo
+       selon la morphologie fournie.
+    */
+
+    return endingsConditional.map(
+        ending =>
+            verb.infinitive + ending
+    );
+
+}
+
+
+function conditionalPast(verb) {
+
+    const endings = [
+
+        "ío",
+        "ías",
+        "ía",
+        "íe",
+        "yea",
+        "yeo",
+        "íamo",
+        "íai",
+        "iei",
+        "ían",
+        "íen",
+        "yean",
+        "yeon"
+
+    ];
+
+
+    return endings.map(
+        (ending, index) =>
+            `${conditionalAuxiliary(ending, index)} ${verb.participle}`
+    );
+
+}
+
+
+function conditionalAuxiliary(
+    ending,
+    index
+) {
+
+    const forms = [
+
+        "avrío",
+        "avrías",
+        "avría",
+        "avríe",
+        "avriyea",
+        "avriyeo",
+        "avríamo",
+        "avríai",
+        "avriei",
+        "avrían",
+        "avríen",
+        "avriyean",
+        "avriyeon"
+
+    ];
+
+    return forms[index];
+
+}
+
+
+/* =========================================================
+   IMPÉRATIF
+========================================================= */
+
+function imperativePresent(verb) {
+
+  if (verb.infinitive === "senar") {
+
+        return [
+            "sé", "senamo", "senai", "senea", "senan"
+        ];
+
+    }
+
+  if (verb.infinitive === "senear") {
+
+        return [
+            "sene", "seneamo", "seneai", "seneya", "senean"
+        ];
+
+    }
+
+
+    const stem =
+        verb.stem.replace(/-$/, "");
+
+    const accentedStem =
+        stem.replace(
+            /([aeiou])([^aeiou]*)$/i,
+            (match, vowel, ending) => {
+
+                const accents = {
+                    a: "á",
+                    e: "é",
+                    i: "í",
+                    o: "ó",
+                    u: "ú"
+                };
+
+                return (
+                    accents[vowel.toLowerCase()] +
+                    ending
+                );
+
+            }
+        );
+
+
+    return [
+
+        accentedStem + "ea",
+        verb.stem + "eamo",
+        verb.stem + "eai",
+        verb.stem + "ea",
+        verb.stem + "ean"
+
+    ];
+
+}
+
+
+
+function imperativePast(verb) {
+
+    return [
+
+        `ánea ${verb.participle}`,
+        `aneamo ${verb.participle}`,
+        `aneai ${verb.participle}`,
+        `anea ${verb.participle}`,
+        `anean ${verb.participle}`
+
+    ];
+
+}
+
+
+/* =========================================================
+   TRANSFORMER LES FORMES EN TABLEAU
+========================================================= */
+
+function rows(forms) {
+
+    return forms.map(
+        (form, index) => [
+            persons[index],
+            form
+        ]
+    );
+
+}
+
+
+/* =========================================================
+   RENDRE LA CONJUGAISON
+========================================================= */
+
+function renderConjugation(
+    data,
+    note
+) {
+
+    if (!data[currentMode]) {
+
+        currentMode =
+            Object.keys(data)[0];
+
+    }
+
+
+    if (!data[currentMode][currentTense]) {
+
+        currentTense =
+            Object.keys(
+                data[currentMode]
+            )[0];
+
+    }
+
+
+    conjugationModes.innerHTML =
+        "";
+
+
+    Object.keys(data).forEach(
+        mode => {
+
+            const modeSection =
+                document.createElement("div");
+
+            modeSection.className =
+                "conjugation-mode";
+
+
+            const title =
+                document.createElement("div");
+
+            title.className =
+                "mode-title";
+
+            title.textContent =
+                modeLabels[mode] || mode;
+
+
+            modeSection.appendChild(title);
+
+
+            const tabs =
+                document.createElement("div");
+
+            tabs.className =
+                "tense-tabs";
+
+
+            Object.keys(
+                data[mode]
+            ).forEach(
+                tense => {
+
+                    const button =
+                        document.createElement(
+                            "button"
+                        );
+
+                    button.type =
+                        "button";
+
+                    button.className =
+                        "tense-tab";
+
+
+                    if (
+                        mode === currentMode &&
+                        tense === currentTense
+                    ) {
+
+                        button.classList.add(
+                            "active"
+                        );
+
+                    }
+
+
+                    button.textContent =
+                        tenseLabels[tense] ||
+                        tense;
+
+
+                    button.addEventListener(
+                        "click",
+                        () => {
+
+                            currentMode =
+                                mode;
+
+                            currentTense =
+                                tense;
+
+                            renderConjugation(
+                                data,
+                                note
+                            );
+
+                        }
+                    );
+
+
+                    tabs.appendChild(
+                        button
+                    );
+
+                }
+            );
+
+
+            modeSection.appendChild(
+                tabs
+            );
+
+
+            conjugationModes.appendChild(
+                modeSection
+            );
+
+        }
+    );
+
+
+    conjugationCurrent.textContent =
+        tenseLabels[currentTense] ||
+        currentTense;
+
+
+    conjugationBody.innerHTML =
+        "";
+
+
+    let forms =
+        data[currentMode][currentTense];
+
+
+    /*
+       Les données simples deviennent
+       automatiquement un tableau de 13 personnes.
+    */
+
+    if (
+        Array.isArray(forms) &&
+        typeof forms[0] === "string"
+    ) {
+
+        /*
+           Certains temps n'ont pas 13 formes
+           (impératif, participe, infinitif).
+        */
+
+        if (
+            forms.length === persons.length
+        ) {
+
+            forms =
+                rows(forms);
+
+        } else {
+
+            forms =
+                forms.map(
+                    form => ["", form]
+                );
+
+        }
+
+    }
+
+
+    forms.forEach(
+        row => {
+
+            const tr =
+                document.createElement("tr");
+
+            const person =
+                document.createElement("td");
+
+            const form =
+                document.createElement("td");
+
+
+            person.textContent =
+                row[0];
+
+            form.textContent =
+                row[1];
+
+
+            tr.appendChild(person);
+            tr.appendChild(form);
+
+            conjugationBody.appendChild(tr);
+
+        }
+    );
+
+
+    conjugationNote.textContent =
+        note || "";
+
+}
+
+
+/* =========================================================
+   AFFICHER UN RÉSULTAT
+========================================================= */
+
+function render(item) {
+
+    const source =
+        direction === "fr"
+            ? item.fr
+            : item.b;
+
+
+    const target =
+        direction === "fr"
+            ? item.b
+            : item.fr;
+
+
+    word.textContent =
+        source;
+
+    translation.textContent =
+        target;
+
+    type.textContent =
+        item.type;
+
+    phonetic.textContent =
+        item.phonetic;
+
+    definition.textContent =
+        item.definition;
+
+    example.textContent =
+        item.example;
+
+
+    /*
+       Mots voisins
+    */
+
+    related
+        .querySelectorAll("button")
+        .forEach(
+            button => button.remove()
+        );
+
+
+    item.related.forEach(
+        name => {
+
+            const button =
+                document.createElement(
+                    "button"
+                );
+
+            button.type =
+                "button";
+
+            button.textContent =
+                name;
+
+
+            button.addEventListener(
+                "click",
+                () => {
+
+                    search.value =
+                        name;
+
+                    find(name);
+
+                }
+            );
+
+
+            related.appendChild(
+                button
+            );
+
+        }
+    );
+
+
+    /*
+       Conjugaison
+    */
+
+    if (item.verb) {
+
+        currentVerb =
+            item.verb;
+
+        currentMode =
+            "indicatif";
+
+        currentTense =
+            "present";
+
+
+        conjugation.classList.add(
+            "visible"
+        );
+
+
+        conjugationMeta.textContent =
+            "verbe · " +
+            item.verb.class;
+
+
+        const data =
+            buildConjugation(
+                item.verb
+            );
+
+
+        renderConjugation(
+            data,
+            getConjugationNote(item)
+        );
+
+    } else {
+
+        currentVerb =
+            null;
+
+        conjugation.classList.remove(
+            "visible"
+        );
+
+    }
+
+
+    result.classList.add(
+        "visible"
+    );
+
+    empty.classList.remove(
+        "visible"
+    );
+
+}
+
+
+/* =========================================================
+   NOTE DE CONJUGAISON
+========================================================= */
+
+function getConjugationNote(item) {
+
+    if (
+        item.b === "senar"
+    ) {
+
+        return "Verbe irrégulier au présent de l'indicatif.";
+
+    }
+
+
+    if (
+        item.b === "senear"
+    ) {
+
+        return "Verbe en -ear · deuxième classe.";
+
+    }
+
+
+    if (
+        item.verb?.class === "nar"
+    ) {
+
+        return "Verbe régulier en -nar · troisième classe.";
+
+    }
+
+
+    if (
+        item.verb?.class === "ear"
+    ) {
+
+        return "Verbe régulier en -ear · deuxième classe.";
+
+    }
+
+
+    if (
+        item.verb?.class === "ar"
+    ) {
+
+        return "Verbe régulier en -ar · première classe.";
+
+    }
+
+
+    return "";
+
+}
+
+
+/* =========================================================
+   RECHERCHE
+========================================================= */
+
+function find(value) {
+
+    const query =
+        normalize(
+            value.trim()
+        );
+
+
+    if (!query) {
+
+        result.classList.remove(
+            "visible"
+        );
+
+        empty.classList.remove(
+            "visible"
+        );
+
+        return;
+
+    }
+
+
+    const item =
+        dictionary.find(
+            entry => {
+
+                const source =
+                    direction === "fr"
+                        ? entry.fr
+                        : entry.b;
+
+                const target =
+                    direction === "fr"
+                        ? entry.b
+                        : entry.fr;
+
+
+                return (
+                    normalize(source)
+                        .includes(query)
+                    ||
+                    normalize(target)
+                        .includes(query)
+                );
+
+            }
+        );
+
+
+    if (!item) {
+
+        result.classList.remove(
+            "visible"
+        );
+
+        empty.classList.add(
+            "visible"
+        );
+
+        return;
+
+    }
+
+
+    render(item);
+
+}
+
+
+/* =========================================================
+   SAISIE
+========================================================= */
+
+search.addEventListener(
+    "input",
+    event => {
+
+        find(
+            event.target.value
+        );
+
+    }
+);
+
+
+/* =========================================================
+   CHANGER DE LANGUE
+========================================================= */
+
+function switchDirection(lang) {
+
+    direction =
+        lang;
+
+
+    document
+        .getElementById("fr")
+        .classList.toggle(
+            "active",
+            lang === "fr"
+        );
+
+
+    document
+        .getElementById("b")
+        .classList.toggle(
+            "active",
+            lang === "b"
+        );
+
+
+    document
+        .querySelector(".kicker")
+        .textContent =
+            lang === "fr"
+                ? "français → caló"
+                : "caló → fransiano";
+
+
+    search.placeholder =
+        lang === "fr"
+            ? "chercher"
+            : "faustar";
+
+search.placeholder =
+    lang === "fr"
+        ? "chercher"
+        : "faustar";
+
+document.getElementById("hint").textContent =
+    lang === "fr"
+        ? "un mot, simplement"
+        : "yo alavio, mancanome";
+
+swapButton.textContent =
+    lang === "fr"
+        ? "inverser ↗"
+        : "aludar ↗";
+
+
+swapButton.textContent =
+    lang === "fr"
+        ? "inverser ↗"
+        : "aludar ↗";
+
+
+logoSubtitle.textContent =
+    lang === "fr"
+        ? "dictionnaire français-caló · dictionnaire caló-français"
+        : "abeviaro fransiano-caló · abeviaro caló-fransiano";
+
+
+
+    if (search.value) {
+
+        find(
+            search.value
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   BOUTONS DE LANGUE
+========================================================= */
+
+document
+    .getElementById("fr")
+    .addEventListener(
+        "click",
+        () => switchDirection("fr")
+    );
+
+
+document
+    .getElementById("b")
+    .addEventListener(
+        "click",
+        () => switchDirection("b")
+    );
+
+
+/* =========================================================
+   BOUTON INVERSER
+========================================================= */
+
+document
+    .getElementById("swap")
+    .addEventListener(
+        "click",
+        () => {
+
+            switchDirection(
+                direction === "fr"
+                    ? "b"
+                    : "fr"
+            );
+
+        }
+    );
+
+
+/* =========================================================
+   RACCOURCIS
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if (
+            event.key === "/" &&
+            document.activeElement !== search
+        ) {
+
+            event.preventDefault();
+
+            search.focus();
+
+        }
+
+
+        if (
+            event.key === "Escape"
+        ) {
+
+            search.value = "";
+
+            result.classList.remove(
+                "visible"
+            );
+
+            empty.classList.remove(
+                "visible"
+            );
+
+            search.blur();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   FIN
+========================================================= */
+
+</script>
+
+</body>
+
+</html>

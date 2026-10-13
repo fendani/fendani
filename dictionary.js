@@ -753,7 +753,7 @@ etymology: {
 
 {
         fr: "abat-jour",
-        b: "penao",
+        b: "campasio",
         type: "nom",
 gender: "féminin",
         phonetic: "",

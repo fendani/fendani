@@ -2145,6 +2145,30 @@ audio1: "audio-angomusio.mp3",
         ]
     },
 
+    {
+        fr: "abat-jour",
+        b: "capasio",
+        type: "nom",
+        gender: "masculin",
+        phonetic: "",
+image: "avantbras.jpg",
+        etymology: {
+            date: "XXIe s.",
+            author: "Romlex",
+            language: "Bugurdži Rromani",
+            source: "<em>lampakoro kapaci</em>",
+            meaning: "abat-jour"
+},
+credit: "Unsplash © Engin Akyurt",
+        definition: "Partie du membre supérieur humain située entre le coude et le poignet. Anatomiquement, ce segment est constitué de deux os parallèles, le radius et l'ulna (cubitus), entourés de muscles qui commandent les mouvements de la main et des doigts. Sur le plan fonctionnel, il sert de levier mécanique indispensable pour effectuer les gestes du quotidien, la saisie d'objets et la rotation du poignet.",
+        example: "",
+audio1: "audio-angomusio.mp3",
+        related: [
+            "bras",
+            "coude",
+            "main"
+        ]
+    },
 
     {
         fr: "main",

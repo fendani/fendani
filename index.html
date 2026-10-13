@@ -417,6 +417,74 @@ letter-spacing: 0px;
       color: var(--text);
     }
 
+/* ==========================================
+   CORRECTIONS INDISPENSABLES POUR MOBILES 
+   ========================================== */
+
+/* 1. Chargement de la police manquante Newsreader */
+@import url('https://googleapis.com');
+
+@media (max-width: 768px) {
+  /* Réorganisation du header pour mobile */
+  header {
+    height: auto;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative; /* Évite que le header écrase le contenu */
+  }
+
+  .logo {
+    transform: none;
+    text-align: center;
+  }
+
+  /* Redonne de la place et de l'importance à la barre de recherche */
+  .header-search-container {
+    width: 100%;
+  }
+
+  .header-search {
+    max-width: 100%;
+    font-size: 22px; /* Plus grand pour taper facilement au doigt */
+    border-bottom: 1px solid var(--line); /* Ligne visible pour le mobile */
+    padding-bottom: 5px;
+  }
+
+  .header-actions {
+    align-items: center;
+    width: 100%;
+  }
+
+  /* Déblocage du corps de la page */
+  main {
+    height: auto; /* Supprime la hauteur bloquée de l'ordinateur */
+    min-height: auto;
+    padding: 20px 20px 40px;
+  }
+
+  /* Réalignement des mots du dictionnaire */
+  .word-main {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .word-name {
+    font-size: 28px;
+  }
+
+  .word-fr {
+    font-size: 18px;
+  }
+  
+  /* Ajustement de la grille de l'alphabet */
+  .alphabet-grid {
+    justify-content: center;
+  }
+}
+    
     /* MODE PAGE INDIVIDUELLE */
     body.single-mode .hero-section {
       display: none !important;

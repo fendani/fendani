@@ -1,0 +1,1684 @@
+mdp: Prats19911994-irjp,cofnmsxm:sc,oksdprg--
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fendani — Dictionnaire français-caló</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap');
+
+:root {
+  --bg: #fff;
+  --text: #111;
+  --green: #005d4c;
+  --gold: #c8b89a;
+  --muted: #8b8b8b;
+  --line: #e9e9e9;
+  --soft: #f5f5f3;
+  --image-width: 400px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --------------------------------------------------
+   HEADER
+-------------------------------------------------- */
+
+header {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+
+  display: grid;
+  grid-template-columns: 220px 1fr 300px;
+  align-items: center;
+
+  padding: 0 50px;
+
+  background: rgba(255,255,255,.94);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--line);
+}
+
+.logo {
+  font-family: "Instrument Serif", serif;
+  font-size: 28px;
+  font-style: italic;
+  color: var(--green);
+  text-decoration: none;
+}
+
+/* recherche */
+
+.search-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.search-box {
+  width: min(460px, 100%);
+  position: relative;
+}
+
+#search {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+
+  background: transparent;
+
+  padding: 7px 35px 7px 4px;
+
+  font-family: "Instrument Serif", serif;
+  font-style: italic;
+  font-size: 19px;
+
+  text-align: center;
+}
+
+#search:focus {
+  border-color: var(--green);
+}
+
+.search-clear {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+
+  cursor: pointer;
+  display: none;
+}
+
+/* statistiques */
+
+.header-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.stat-number {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+}
+
+.stat-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 7px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* --------------------------------------------------
+   LAYOUT
+-------------------------------------------------- */
+
+.page {
+  padding-top: 90px;
+}
+
+.content {
+  width: calc(100% - var(--image-width));
+  min-height: calc(100vh - 90px);
+  padding: 70px 55px 80px;
+}
+
+.image-panel {
+  position: fixed;
+  top: 90px;
+  right: 0;
+
+  width: var(--image-width);
+  height: calc(100vh - 90px);
+
+  background: #eee center / cover no-repeat;
+
+  display: none;
+}
+
+.image-panel.visible {
+  display: block;
+}
+
+.image-credit {
+  position: absolute;
+  right: 14px;
+  bottom: 12px;
+
+  color: white;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 8px;
+  letter-spacing: .06em;
+
+  text-shadow: 0 1px 4px rgba(0,0,0,.5);
+}
+
+/* --------------------------------------------------
+   ACCUEIL
+-------------------------------------------------- */
+
+.home {
+  max-width: 1000px;
+}
+
+.eyebrow {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 8px;
+  letter-spacing: .2em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.home h1 {
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(55px, 7vw, 100px);
+  line-height: .82;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--green);
+  max-width: 700px;
+}
+
+.home-intro {
+  margin-top: 35px;
+  max-width: 550px;
+
+  font-family: "Instrument Serif", serif;
+  font-size: 22px;
+  line-height: 1.3;
+  color: var(--muted);
+}
+
+/* --------------------------------------------------
+   INDEX
+-------------------------------------------------- */
+
+.index {
+  margin-top: 70px;
+}
+
+.index-tabs {
+  display: flex;
+  gap: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.index-tab {
+  border: 0;
+  background: transparent;
+
+  padding: 10px 0;
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.index-tab.active {
+  color: var(--green);
+  border-bottom: 1px solid var(--green);
+}
+
+.alphabet {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 18px;
+}
+
+.letter {
+  border: 1px solid var(--line);
+  background: transparent;
+
+  padding: 6px 9px;
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 9px;
+
+  cursor: pointer;
+}
+
+.letter:hover,
+.letter.active {
+  background: var(--green);
+  border-color: var(--green);
+  color: white;
+}
+
+/* --------------------------------------------------
+   LISTE
+-------------------------------------------------- */
+
+.results {
+  margin-top: 50px;
+}
+
+.result-count {
+  margin-bottom: 15px;
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 8px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .15em;
+}
+
+.result {
+  border-top: 1px solid var(--line);
+  padding: 20px 0;
+
+  cursor: pointer;
+}
+
+.result:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.result:hover {
+  padding-left: 10px;
+}
+
+.result-fr {
+  color: var(--gold);
+  font-family: "Instrument Serif", serif;
+  font-size: 27px;
+  font-style: italic;
+}
+
+.result-arrow {
+  margin: 0 12px;
+  color: #ccc;
+}
+
+.result-calo {
+  color: var(--green);
+  font-size: 23px;
+  font-weight: 600;
+}
+
+.result-register {
+  margin-left: 15px;
+}
+
+/* --------------------------------------------------
+   PASTILLES
+-------------------------------------------------- */
+
+.pill {
+  display: inline-block;
+
+  padding: 4px 9px;
+  margin: 3px 4px 3px 0;
+
+  border-radius: 20px;
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 7px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.register {
+  background: #eee;
+  color: #666;
+}
+
+.theme {
+  background: #e7f0ed;
+  color: var(--green);
+  text-decoration: none;
+}
+
+.theme:hover {
+  background: var(--green);
+  color: white;
+}
+
+/* --------------------------------------------------
+   FICHE
+-------------------------------------------------- */
+
+.entry {
+  display: none;
+}
+
+.entry.visible {
+  display: block;
+}
+
+.entry-header {
+  border-bottom: 1px solid var(--text);
+  padding-bottom: 20px;
+
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.entry-title {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+}
+
+.entry-fr {
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(45px, 6vw, 75px);
+  font-style: italic;
+  color: var(--gold);
+}
+
+.entry-language {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 8px;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.back {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 8px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.back:hover {
+  color: var(--green);
+}
+
+/* sens */
+
+.senses {
+  margin-top: 35px;
+}
+
+.sense {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 35px;
+
+  padding: 28px 0;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.sense-number {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 9px;
+  color: var(--muted);
+}
+
+.sense-calo {
+  color: var(--green);
+  font-size: 34px;
+  font-weight: 600;
+}
+
+.sense-definition {
+  margin-top: 12px;
+
+  max-width: 700px;
+
+  font-family: "Instrument Serif", serif;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.sense-example {
+  margin-top: 14px;
+
+  color: var(--muted);
+
+  font-family: "Instrument Serif", serif;
+  font-style: italic;
+  font-size: 16px;
+}
+
+.metadata {
+  margin-top: 18px;
+}
+
+/* --------------------------------------------------
+   ÉTAT VIDE
+-------------------------------------------------- */
+
+.empty {
+  display: none;
+
+  margin-top: 70px;
+
+  font-family: "Instrument Serif", serif;
+  font-size: 25px;
+  font-style: italic;
+  color: var(--muted);
+}
+
+/* --------------------------------------------------
+   THÈME
+-------------------------------------------------- */
+
+.theme-page {
+  display: none;
+}
+
+.theme-page.visible {
+  display: block;
+}
+
+.theme-title {
+  font-family: "Instrument Serif", serif;
+  font-size: 60px;
+  color: var(--green);
+  font-style: italic;
+}
+
+/* --------------------------------------------------
+   MOBILE
+-------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+  :root {
+    --image-width: 0px;
+  }
+
+  header {
+    grid-template-columns: 100px 1fr 80px;
+    padding: 0 20px;
+  }
+
+  .header-right {
+    gap: 8px;
+  }
+
+  .stat-label {
+    display: none;
+  }
+
+  .content {
+    width: 100%;
+    padding: 45px 20px 60px;
+  }
+
+  .image-panel {
+    position: relative;
+    top: auto;
+    right: auto;
+
+    width: 100%;
+    height: 300px;
+
+    margin-top: 90px;
+  }
+
+  .page {
+    padding-top: 0;
+  }
+
+  .image-panel.visible {
+    display: block;
+  }
+
+  .sense {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .entry-header {
+    align-items: flex-start;
+  }
+
+  .entry-title {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .header-right .stat:first-child {
+    display: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+  <a href="#" class="logo" id="logo">Fendani</a>
+
+  <div class="search-wrap">
+    <div class="search-box">
+      <input
+        id="search"
+        type="search"
+        placeholder="Rechercher en français ou en caló…"
+        autocomplete="off"
+      >
+      <button class="search-clear" id="clearSearch">×</button>
+    </div>
+  </div>
+
+  <div class="header-right">
+
+    <div class="stat">
+      <span class="stat-number" id="frCount">0</span>
+      <span class="stat-label">français</span>
+    </div>
+
+    <div class="stat">
+      <span class="stat-number" id="caloCount">0</span>
+      <span class="stat-label">caló</span>
+    </div>
+
+  </div>
+
+</header>
+
+
+<div class="page">
+
+  <!-- IMAGE -->
+  <aside class="image-panel" id="imagePanel">
+    <div class="image-credit" id="imageCredit"></div>
+  </aside>
+
+
+  <main class="content">
+
+    <!-- ACCUEIL -->
+
+    <section class="home" id="home">
+
+      <div class="eyebrow">
+        DICTIONNAIRE FRANÇAIS — CALÓ
+      </div>
+
+      <h1>
+        Tous les mots.<br>
+        Tous leurs sens.
+      </h1>
+
+      <p class="home-intro">
+        Un dictionnaire bilingue qui distingue les différents sens
+        d'un mot sans multiplier inutilement les entrées.
+      </p>
+
+
+      <div class="index">
+
+        <div class="index-tabs">
+
+          <button class="index-tab active" data-index="fr">
+            Français → Caló
+          </button>
+
+          <button class="index-tab" data-index="calo">
+            Caló → Français
+          </button>
+
+        </div>
+
+        <div class="alphabet" id="alphabet"></div>
+
+      </div>
+
+    </section>
+
+
+    <!-- RESULTATS -->
+
+    <section class="results" id="results">
+
+      <div class="result-count" id="resultCount"></div>
+
+      <div id="resultList"></div>
+
+      <div class="empty" id="empty">
+        Aucun mot trouvé.
+      </div>
+
+    </section>
+
+
+    <!-- FICHE -->
+
+    <section class="entry" id="entry">
+
+      <div class="entry-header">
+
+        <div class="entry-title">
+
+          <span class="entry-fr" id="entryFr"></span>
+
+          <span class="entry-language">
+            français
+          </span>
+
+        </div>
+
+        <button class="back" id="back">
+          ← Index
+        </button>
+
+      </div>
+
+      <div class="senses" id="senses"></div>
+
+    </section>
+
+
+    <!-- PAGE THEME -->
+
+    <section class="theme-page" id="themePage">
+
+      <div class="eyebrow">
+        THÈME
+      </div>
+
+      <h2 class="theme-title" id="themeTitle"></h2>
+
+      <div class="results">
+        <div id="themeResults"></div>
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
+
+
+<script src="dictionary.js"></script>
+
+<script>
+
+/* ==================================================
+   DONNÉES
+================================================== */
+
+if (typeof dictionary === "undefined") {
+
+  document.body.innerHTML = `
+    <div style="
+      padding:60px;
+      font-family:Arial;
+    ">
+      <h2>dictionary.js introuvable</h2>
+      <p>
+        Vérifie que <strong>dictionary.js</strong>
+        se trouve dans le même dossier que index.html.
+      </p>
+    </div>
+  `;
+
+  throw new Error("dictionary.js introuvable");
+
+}
+
+
+/* ==================================================
+   ÉLÉMENTS
+================================================== */
+
+const home = document.getElementById("home");
+const results = document.getElementById("results");
+const entry = document.getElementById("entry");
+const themePage = document.getElementById("themePage");
+
+const search = document.getElementById("search");
+const clearSearch = document.getElementById("clearSearch");
+
+const resultList = document.getElementById("resultList");
+const resultCount = document.getElementById("resultCount");
+const empty = document.getElementById("empty");
+
+const alphabet = document.getElementById("alphabet");
+
+const entryFr = document.getElementById("entryFr");
+const senses = document.getElementById("senses");
+
+const imagePanel = document.getElementById("imagePanel");
+const imageCredit = document.getElementById("imageCredit");
+
+const themeTitle = document.getElementById("themeTitle");
+const themeResults = document.getElementById("themeResults");
+
+const frCount = document.getElementById("frCount");
+const caloCount = document.getElementById("caloCount");
+
+
+/* ==================================================
+   OUTILS
+================================================== */
+
+function normalize(value) {
+
+  return String(value || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+
+}
+
+
+function slugify(value) {
+
+  return normalize(value)
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+}
+
+
+function escapeHTML(value) {
+
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+
+}
+
+
+/* ==================================================
+   NORMALISATION DES DONNÉES
+================================================== */
+
+/*
+   Chaque entrée française peut avoir plusieurs sens.
+
+   Exemple :
+
+   {
+     fr: "eau",
+
+     senses: [
+       {
+         calo: "pani",
+         ...
+       },
+       {
+         calo: "xal",
+         ...
+       }
+     ]
+   }
+
+   On accepte également une entrée avec un seul
+   sens pour simplifier le dictionary.js.
+*/
+
+const entries = dictionary.map((entry, index) => {
+
+  let senses = Array.isArray(entry.senses)
+    ? entry.senses
+    : [{
+        calo: entry.b || "",
+        definition: entry.definition || "",
+        example: entry.example || "",
+        register: entry.register || "",
+        themes: entry.themes || [],
+        image: entry.image || entry.photo || "",
+        credit: entry.credit || "",
+        audio1: entry.audio1 || "",
+        etymology: entry.etymology || null
+      }];
+
+  return {
+    ...entry,
+    id: entry.id || slugify(entry.fr) || `entry-${index}`,
+    senses
+  };
+
+});
+
+
+/* ==================================================
+   COMPTEURS
+================================================== */
+
+const uniqueFrench = new Set();
+
+const uniqueCalo = new Set();
+
+entries.forEach(entry => {
+
+  uniqueFrench.add(normalize(entry.fr));
+
+  entry.senses.forEach(sense => {
+
+    if (sense.calo) {
+      uniqueCalo.add(normalize(sense.calo));
+    }
+
+  });
+
+});
+
+frCount.textContent = uniqueFrench.size;
+caloCount.textContent = uniqueCalo.size;
+
+
+/* ==================================================
+   INDEX
+================================================== */
+
+let currentIndex = "fr";
+let currentLetter = "";
+
+
+function buildAlphabet() {
+
+  alphabet.innerHTML = "";
+
+  const letters = new Set();
+
+  if (currentIndex === "fr") {
+
+    entries.forEach(entry => {
+
+      const letter = normalize(entry.fr).charAt(0);
+
+      if (letter) letters.add(letter.toUpperCase());
+
+    });
+
+  } else {
+
+    entries.forEach(entry => {
+
+      entry.senses.forEach(sense => {
+
+        const letter = normalize(sense.calo).charAt(0);
+
+        if (letter) letters.add(letter.toUpperCase());
+
+      });
+
+    });
+
+  }
+
+
+  [...letters]
+    .sort((a,b) => a.localeCompare(b))
+    .forEach(letter => {
+
+      const button = document.createElement("button");
+
+      button.className = "letter";
+
+      button.textContent = letter;
+
+      button.onclick = () => {
+
+        currentLetter =
+          currentLetter === letter ? "" : letter;
+
+        document
+          .querySelectorAll(".letter")
+          .forEach(btn => btn.classList.remove("active"));
+
+        if (currentLetter) {
+          button.classList.add("active");
+        }
+
+        showIndex();
+
+      };
+
+      alphabet.appendChild(button);
+
+    });
+
+}
+
+
+/* ==================================================
+   LISTE FR
+================================================== */
+
+function buildFrenchResults() {
+
+  let list = [...entries];
+
+  if (currentLetter) {
+
+    list = list.filter(entry =>
+      normalize(entry.fr).charAt(0).toUpperCase()
+      === currentLetter
+    );
+
+  }
+
+  list.sort((a,b) =>
+    a.fr.localeCompare(b.fr, "fr", {
+      sensitivity: "base"
+    })
+  );
+
+
+  resultList.innerHTML = "";
+
+  resultCount.textContent =
+    `${list.length} entrée${list.length > 1 ? "s" : ""}`;
+
+
+  empty.style.display =
+    list.length ? "none" : "block";
+
+
+  list.forEach(entry => {
+
+    const div = document.createElement("div");
+
+    div.className = "result";
+
+    const caloPreview =
+      entry.senses
+        .map(s => s.calo)
+        .filter(Boolean)
+        .join(" · ");
+
+
+    div.innerHTML = `
+      <span class="result-fr">
+        ${escapeHTML(entry.fr)}
+      </span>
+
+      <span class="result-arrow">→</span>
+
+      <span class="result-calo">
+        ${escapeHTML(caloPreview)}
+      </span>
+    `;
+
+
+    div.onclick = () =>
+      openEntry(entry.id);
+
+
+    resultList.appendChild(div);
+
+  });
+
+}
+
+
+/* ==================================================
+   LISTE CALÓ
+================================================== */
+
+function buildCaloResults() {
+
+  const rows = [];
+
+
+  entries.forEach(entry => {
+
+    entry.senses.forEach((sense, index) => {
+
+      if (!sense.calo) return;
+
+      rows.push({
+        entry,
+        sense,
+        index
+      });
+
+    });
+
+  });
+
+
+  let filtered = rows;
+
+  if (currentLetter) {
+
+    filtered = rows.filter(row =>
+      normalize(row.sense.calo)
+        .charAt(0)
+        .toUpperCase()
+        === currentLetter
+    );
+
+  }
+
+
+  filtered.sort((a,b) =>
+    a.sense.calo.localeCompare(
+      b.sense.calo,
+      "fr",
+      { sensitivity: "base" }
+    )
+  );
+
+
+  resultList.innerHTML = "";
+
+  resultCount.textContent =
+    `${filtered.length} terme${filtered.length > 1 ? "s" : ""}`;
+
+
+  empty.style.display =
+    filtered.length ? "none" : "block";
+
+
+  filtered.forEach(row => {
+
+    const div = document.createElement("div");
+
+    div.className = "result";
+
+    div.innerHTML = `
+      <span class="result-calo">
+        ${escapeHTML(row.sense.calo)}
+      </span>
+
+      <span class="result-arrow">→</span>
+
+      <span class="result-fr">
+        ${escapeHTML(row.entry.fr)}
+      </span>
+    `;
+
+
+    div.onclick = () =>
+      openEntry(row.entry.id);
+
+
+    resultList.appendChild(div);
+
+  });
+
+}
+
+
+/* ==================================================
+   INDEX
+================================================== */
+
+function showIndex() {
+
+  home.style.display = "block";
+  results.style.display = "block";
+
+  entry.classList.remove("visible");
+  themePage.classList.remove("visible");
+
+  imagePanel.classList.remove("visible");
+
+  buildAlphabet();
+
+  if (currentIndex === "fr") {
+    buildFrenchResults();
+  } else {
+    buildCaloResults();
+  }
+
+}
+
+
+/* ==================================================
+   IMAGE
+================================================== */
+
+function showImage(sense) {
+
+  if (!sense || !sense.image) {
+
+    imagePanel.classList.remove("visible");
+
+    imagePanel.style.backgroundImage = "none";
+
+    imageCredit.textContent = "";
+
+    return;
+
+  }
+
+
+  imagePanel.style.backgroundImage =
+    `url("${sense.image}")`;
+
+  imageCredit.textContent =
+    sense.credit || "";
+
+  imagePanel.classList.add("visible");
+
+}
+
+
+/* ==================================================
+   FICHE
+================================================== */
+
+function openEntry(id) {
+
+  const entryData =
+    entries.find(entry => entry.id === id);
+
+  if (!entryData) return;
+
+
+  home.style.display = "none";
+  results.style.display = "none";
+
+  themePage.classList.remove("visible");
+
+  entry.classList.add("visible");
+
+
+  entryFr.textContent =
+    entryData.fr;
+
+
+  senses.innerHTML = "";
+
+
+  entryData.senses.forEach((sense, index) => {
+
+    const article =
+      document.createElement("article");
+
+    article.className = "sense";
+
+
+    let registerHTML = "";
+
+    if (sense.register) {
+
+      registerHTML = `
+        <span class="pill register">
+          ${escapeHTML(sense.register)}
+        </span>
+      `;
+
+    }
+
+
+    let themesHTML = "";
+
+    const themes =
+      Array.isArray(sense.themes)
+        ? sense.themes
+        : [];
+
+
+    themes.forEach(theme => {
+
+      themesHTML += `
+        <a
+          href="#theme/${slugify(theme)}"
+          class="pill theme"
+          data-theme="${escapeHTML(theme)}"
+        >
+          ${escapeHTML(theme)}
+        </a>
+      `;
+
+    });
+
+
+    article.innerHTML = `
+
+      <div class="sense-number">
+        ${String(index + 1).padStart(2,"0")}
+      </div>
+
+      <div>
+
+        <div class="sense-calo">
+          ${escapeHTML(sense.calo)}
+        </div>
+
+        <div class="metadata">
+          ${registerHTML}
+          ${themesHTML}
+        </div>
+
+        ${
+          sense.definition
+          ? `
+            <div class="sense-definition">
+              ${sense.definition}
+            </div>
+          `
+          : ""
+        }
+
+        ${
+          sense.example
+          ? `
+            <div class="sense-example">
+              ${escapeHTML(sense.example)}
+            </div>
+          `
+          : ""
+        }
+
+      </div>
+
+    `;
+
+
+    senses.appendChild(article);
+
+
+    article
+      .querySelectorAll("[data-theme]")
+      .forEach(link => {
+
+        link.addEventListener("click", event => {
+
+          event.preventDefault();
+
+          showTheme(
+            link.dataset.theme
+          );
+
+        });
+
+      });
+
+  });
+
+
+  /*
+     L'image principale de la fiche est celle
+     du premier sens qui possède une image.
+  */
+
+  const imageSense =
+    entryData.senses.find(s => s.image);
+
+  showImage(imageSense);
+
+}
+
+
+/* ==================================================
+   THÈME
+================================================== */
+
+function showTheme(theme) {
+
+  home.style.display = "none";
+  results.style.display = "none";
+  entry.classList.remove("visible");
+
+  themePage.classList.add("visible");
+
+  themeTitle.textContent = theme;
+
+  themeResults.innerHTML = "";
+
+
+  const matches = [];
+
+
+  entries.forEach(entry => {
+
+    entry.senses.forEach(sense => {
+
+      const themes =
+        Array.isArray(sense.themes)
+          ? sense.themes
+          : [];
+
+      if (
+        themes.some(
+          t => normalize(t) === normalize(theme)
+        )
+      ) {
+
+        matches.push({
+          entry,
+          sense
+        });
+
+      }
+
+    });
+
+  });
+
+
+  matches.forEach(match => {
+
+    const div =
+      document.createElement("div");
+
+    div.className = "result";
+
+    div.innerHTML = `
+      <span class="result-fr">
+        ${escapeHTML(match.entry.fr)}
+      </span>
+
+      <span class="result-arrow">→</span>
+
+      <span class="result-calo">
+        ${escapeHTML(match.sense.calo)}
+      </span>
+    `;
+
+    div.onclick = () =>
+      openEntry(match.entry.id);
+
+    themeResults.appendChild(div);
+
+  });
+
+}
+
+
+/* ==================================================
+   RECHERCHE
+================================================== */
+
+search.addEventListener("input", () => {
+
+  const query =
+    normalize(search.value);
+
+  clearSearch.style.display =
+    query ? "block" : "none";
+
+
+  if (!query) {
+
+    showIndex();
+
+    return;
+
+  }
+
+
+  home.style.display = "none";
+  results.style.display = "block";
+
+  entry.classList.remove("visible");
+  themePage.classList.remove("visible");
+
+  imagePanel.classList.remove("visible");
+
+
+  const matches = [];
+
+
+  entries.forEach(entry => {
+
+    /*
+       Recherche dans le français
+    */
+
+    if (
+      normalize(entry.fr).includes(query)
+    ) {
+
+      matches.push({
+        entry,
+        sense: null
+      });
+
+    }
+
+
+    /*
+       Recherche dans TOUS les sens caló
+    */
+
+    entry.senses.forEach(sense => {
+
+      if (
+        normalize(sense.calo)
+          .includes(query)
+      ) {
+
+        matches.push({
+          entry,
+          sense
+        });
+
+      }
+
+    });
+
+  });
+
+
+  /*
+     Suppression des doublons
+  */
+
+  const unique =
+    matches.filter((match, index, array) => {
+
+      return array.findIndex(other =>
+
+        other.entry.id === match.entry.id &&
+        (
+          other.sense?.calo ||
+          ""
+        ) === (
+          match.sense?.calo ||
+          ""
+        )
+
+      ) === index;
+
+    });
+
+
+  resultList.innerHTML = "";
+
+  resultCount.textContent =
+    `${unique.length} résultat${unique.length > 1 ? "s" : ""}`;
+
+
+  empty.style.display =
+    unique.length ? "none" : "block";
+
+
+  unique.forEach(match => {
+
+    const div =
+      document.createElement("div");
+
+    div.className = "result";
+
+
+    const calo =
+      match.sense
+        ? match.sense.calo
+        : match.entry.senses
+            .map(s => s.calo)
+            .filter(Boolean)
+            .join(" · ");
+
+
+    div.innerHTML = `
+      <span class="result-fr">
+        ${escapeHTML(match.entry.fr)}
+      </span>
+
+      <span class="result-arrow">→</span>
+
+      <span class="result-calo">
+        ${escapeHTML(calo)}
+      </span>
+    `;
+
+
+    div.onclick = () =>
+      openEntry(match.entry.id);
+
+
+    resultList.appendChild(div);
+
+  });
+
+});
+
+
+/* ==================================================
+   EFFACER RECHERCHE
+================================================== */
+
+clearSearch.onclick = () => {
+
+  search.value = "";
+
+  clearSearch.style.display = "none";
+
+  showIndex();
+
+};
+
+
+/* ==================================================
+   ONGLETS INDEX
+================================================== */
+
+document
+  .querySelectorAll(".index-tab")
+  .forEach(tab => {
+
+    tab.addEventListener("click", () => {
+
+      document
+        .querySelectorAll(".index-tab")
+        .forEach(t =>
+          t.classList.remove("active")
+        );
+
+      tab.classList.add("active");
+
+      currentIndex =
+        tab.dataset.index;
+
+      currentLetter = "";
+
+      showIndex();
+
+    });
+
+  });
+
+
+/* ==================================================
+   RETOUR
+================================================== */
+
+document.getElementById("back")
+  .onclick = () => {
+
+    history.pushState({}, "", "#");
+
+    showIndex();
+
+  };
+
+
+document.getElementById("logo")
+  .onclick = event => {
+
+    event.preventDefault();
+
+    search.value = "";
+
+    showIndex();
+
+  };
+
+
+/* ==================================================
+   HASH
+================================================== */
+
+window.addEventListener("hashchange", () => {
+
+  const hash =
+    location.hash.substring(1);
+
+
+  if (hash.startsWith("theme/")) {
+
+    const theme =
+      decodeURIComponent(
+        hash.substring(6)
+      );
+
+    showTheme(theme);
+
+    return;
+
+  }
+
+
+  showIndex();
+
+});
+
+
+/* ==================================================
+   INITIALISATION
+================================================== */
+
+showIndex();
+
+</script>
+
+</body>
+</html>

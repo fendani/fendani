@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mots par domaine</title>
+    <!-- Importation de votre quatuor typographique d'exception -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Bellota+Text:ital,wght@0,300;0,400;1,300&family=Instrument+Serif:ital@0;1&family=Inter:wght@200;400;500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Esthétique Éditoriale Haute Couture */
+        body { 
+            font-family: 'Newsreader', Georgia, serif; 
+            padding: 60px 40px 100px 40px; 
+            line-height: 1.8; 
+            background-color: #fcfbfa; 
+            color: #121212; 
+            max-width: 780px; 
+            margin: 0 auto;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Fil d'Ariane en Bellota Text */
+        .back-link { 
+            font-family: 'Bellota Text', sans-serif;
+            display: inline-flex; 
+            align-items: center;
+            margin-bottom: 40px; 
+            color: #8c8a84; 
+            text-decoration: none; 
+            font-size: 0.85em;
+            letter-spacing: 0.5px;
+            transition: color 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .back-link:hover {
+            color: #121212;
+            transform: translateX(-6px);
+        }
+
+        /* Grand Titre Monumental en Instrument Serif */
+        h1 { 
+            font-family: 'Instrument Serif', serif;
+            color: #121212; 
+            text-transform: capitalize; 
+            font-size: 5em;
+            font-weight: 400;
+            margin-bottom: 20px; 
+            line-height: 0.95;
+            letter-spacing: -1px;
+        }
+
+        /* Liste des autres thèmes (Badges horizontaux) */
+        .themes-nav-container {
+            margin-bottom: 50px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #e8e7e1;
+        }
+        .themes-nav-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7em;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #9c9a94;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .themes-nav-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .theme-nav-item {
+            font-family: 'Bellota Text', sans-serif;
+            font-size: 0.85em;
+            color: #5d5241;
+            background-color: #f4f1ea;
+            padding: 4px 12px;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .theme-nav-item:hover {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        
+        /* Index alphabétique ancré (Inter) */
+        .alphabet-nav {
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            gap: 12px;
+            margin-bottom: 60px;
+            font-size: 0.9em;
+            font-weight: 400;
+            color: #b3b1aa;
+        }
+        .alphabet-nav a {
+            color: #121212;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .alphabet-nav a:hover {
+            color: #a3967f;
+        }
+        
+        /* Séparateur Index en Inter (Ligne d'encre avec ancrage pour le défilement) */
+        .lettre-separator { 
+            font-family: 'Inter', sans-serif;
+            font-size: 1.8em; 
+            font-weight: 200; 
+            color: #d1cfc8; 
+            margin: 90px 0 35px 0; 
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e8e7e1;
+            letter-spacing: 3px;
+            scroll-margin-top: 20px;
+        }
+        
+        /* Fiches de mots */
+        .mot-item { 
+            margin-bottom: 60px; 
+            padding-bottom: 45px; 
+            border-bottom: 1px dashed #e8e7e1; 
+        }
+        .mot-item:last-child { border-bottom: none; }
+
+        .mot-titre { 
+            font-family: 'Inter', sans-serif;
+            font-weight: 500; 
+            font-size: 1.2em;
+            letter-spacing: -0.3px;
+        }
+        .mot-titre a { transition: color 0.3s ease; }
+        .mot-titre a:hover { color: #a3967f !important; }
+        .mot-titre span {
+            font-family: 'Bellota Text', sans-serif !important;
+            font-size: 0.85em !important;
+            letter-spacing: 0px;
+        }
+
+        .mot-type { 
+            font-family: 'Inter', sans-serif;
+            font-style: italic; 
+            color: #9c9a94; 
+            margin-left: 10px; 
+            font-size: 0.8em;
+            font-weight: 400;
+        }
+
+        .theme-row {
+            display: grid; 
+            grid-template-columns: 130px 1fr; 
+            gap: 20px; 
+            margin-top: 18px; 
+            align-items: start;
+        }
+        .theme-label {
+            font-family: 'Inter', sans-serif; 
+            font-size: 0.72em; 
+            text-transform: uppercase; 
+            letter-spacing: 1.5px; 
+            color: #9c9a94; 
+            padding-top: 5px;
+            font-weight: 400;
+        }
+        .mot-def { 
+            font-family: 'Newsreader', serif;
+            color: #2b2b2b; 
+            margin: 0;
+            font-size: 1.15em;
+            font-weight: 300;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="mots.html" class="back-link">← Retour au dictionnaire</a>
+    <h1 id="titre-domaine">Chargement...</h1>
+    
+    <!-- Liste des autres thèmes (Aliment, Anatomie, Économie...) -->
+    <div class="themes-nav-container">
+        <span class="themes-nav-label">Explorer d'autres domaines</span>
+        <div class="themes-nav-list" id="navigation-themes"></div>
+    </div>
+
+    <!-- Index Alphabétique Dynamique -->
+    <div class="alphabet-nav" id="navigation-alphabet"></div>
+
+    <div id="liste-mots"></div>
+
+    <!-- On charge ton fichier de mots -->
+    <script src="dictionary.js"></script>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const domaineRecherche = params.get('nom');
+
+        if (domaineRecherche) {
+            let motsFiltres = dictionary.filter(m => m.domain && m.domain.toLowerCase() === domaineRecherche.toLowerCase());
+
+            // Label de marge épuré en Inter
+            document.getElementById('titre-domaine').innerHTML = `${domaineRecherche} <span style="font-family: 'Inter', sans-serif; font-size: 0.18em; color: #9c9a94; font-weight: 400; font-style: normal; vertical-align: bottom; margin-left: 25px; letter-spacing: 2px; text-transform: uppercase;">/ ${motsFiltres.length} mots répertoriés</span>`;
+
+            motsFiltres.sort((a, b) => a.fr.localeCompare(b.fr));
+
+            // GENERATION DYNAMIQUE DE LA NAVIGATION DES THÈMES
+            let tousLesDomaines = [...new Set(dictionary.map(m => m.domain).filter(Boolean))].sort();
+            let themesContainer = document.getElementById('navigation-themes');
+            tousLesDomaines.forEach(dom => {
+                if (dom.toLowerCase() !== domaineRecherche.toLowerCase()) {
+                    themesContainer.innerHTML += `<a href="domaine.html?nom=${encodeURIComponent(dom)}" class="theme-nav-item">${dom}</a>`;
+                }
+            });
+
+            // COMPILATION DE L'ALPHABET DYNAMIQUE
+            let lettresPresentes = [...new Set(motsFiltres.map(m => m.fr.charAt(0).toUpperCase()))].sort();
+            let alphabetContainer = document.getElementById('navigation-alphabet');
+            let lettersHtml = "";
+            lettresPresentes.forEach(lettre => {
+                lettersHtml += `<a href="#lettre-${lettre}">${lettre}</a>`;
+            });
+            alphabetContainer.innerHTML = lettersHtml ? `Aller à : &nbsp; ${lettersHtml}` : "";
+
+            let htmlContainer = document.getElementById('liste-mots');
+            
+            if (motsFiltres.length > 0) {
+                let derniereLettre = "";
+
+                motsFiltres.forEach(mot => {
+                    let premiereLettre = mot.fr.charAt(0).toUpperCase();
+
+                    if (premiereLettre !== derniereLettre) {
+                        derniereLettre = premiereLettre;
+                        htmlContainer.innerHTML += `<div class="lettre-separator" id="lettre-${derniereLettre}">${derniereLettre}</div>`;
+                    }
+
+                    let htmlDefinition = "";
+                    if (Array.isArray(mot.definitions)) {
+                        htmlDefinition = mot.definitions.map(d => `
+                            <div class="theme-row">
+                                <span class="theme-label">${d.theme}</span>
+                                <p class="mot-def">${d.text}</p>
+                            </div>
+                        `).join('');
+                    } else {
+                        htmlDefinition = `
+                            <div class="theme-row">
+                                <span class="theme-label">Définition</span>
+                                <p class="mot-def">${mot.definition || ''}</p>
+                            </div>`;
+                    }
+
+                    htmlContainer.innerHTML += `
+                        <div class="mot-item">
+                            <span class="mot-titre">
+                                <a href="mots.html?mot=${encodeURIComponent(mot.b)}" style="text-decoration: none; color: #121212;">${mot.fr}</a> 
+                                <span style="font-size: 0.75em; color: #8c8a84; font-weight: 300; font-style: italic; margin-left: 8px;">(${mot.b})</span>
+                            </span>
+                            <span class="mot-type">(${mot.type})</span>
+                            ${htmlDefinition}
+                        </div>
+                    `;
+                });
+            } else {
+                htmlContainer.innerHTML = "<p>Aucun mot trouvé pour ce domaine.</p>";
+            }
+        } else {
+            document.getElementById('titre-domaine').textContent = "Aucun domaine spécifié.";
+        }
+    </script>
+</body>
+</html>

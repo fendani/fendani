@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fendani — Dictionnaire Caló</title>
+    
+    <!-- Polices haut de gamme -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --vert-obsidien: #11231a;
+            --vert-principal: #1b3226;
+            --vert-doux: #2d523f;
+            --creme-lumineux: #faf8f2;
+            --creme-mix: #efe8d5;
+            --or-discret: #c5a059;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        body {
+            background: radial-gradient(circle at 50% 0%, #fefdfa 0%, var(--creme-mix) 100%);
+            color: var(--vert-principal);
+            font-family: 'Newsreader', serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 80px 20px;
+        }
+
+        .plateforme {
+            width: 100%;
+            max-width: 760px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* --- EN-TÊTE ÉDITORIAL --- */
+        .entete-edito {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .badge-lexique {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--or-discret);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .titre-site {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 4rem;
+            letter-spacing: -0.04em;
+            margin: 0 0 10px 0;
+            color: var(--vert-obsidien);
+        }
+
+        .description-site {
+            font-size: 1.3rem;
+            color: rgba(27, 50, 38, 0.65);
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        /* --- BARRE DE RECHERCHE CONSOLE --- */
+        .console-recherche {
+            width: 100%;
+            position: relative;
+            margin-bottom: 40px;
+            animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+            opacity: 0;
+        }
+
+        .barre-recherche {
+            width: 100%;
+            padding: 22px 28px 22px 64px;
+            font-family: 'Newsreader', serif;
+            font-size: 1.25rem;
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(27, 50, 38, 0.12);
+            border-radius: 20px;
+            outline: none;
+            color: var(--vert-obsidien);
+            box-shadow: 0 20px 40px -15px rgba(27, 50, 38, 0.08);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .barre-recherche:focus {
+            background: #ffffff;
+            border-color: var(--vert-doux);
+            box-shadow: 0 25px 50px -12px rgba(27, 50, 38, 0.15), 0 0 0 4px rgba(45, 82, 63, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .barre-recherche::placeholder {
+            color: rgba(27, 50, 38, 0.35);
+            font-style: italic;
+        }
+
+        .icone-loupe {
+            position: absolute;
+            left: 24px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        /* --- LISTE DES RÉSULTATS (GRILLE FLUIDE) --- */
+        #liste-mots {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .carte-mot {
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(27, 50, 38, 0.06);
+            border-radius: 16px;
+            padding: 24px 28px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(27, 50, 38, 0.02);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .carte-mot:hover {
+            background: #ffffff;
+            border-color: rgba(27, 50, 38, 0.2);
+            box-shadow: 0 16px 35px -10px rgba(27, 50, 38, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .ligne-entree {
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .mot-terme {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 1.35rem;
+            color: var(--vert-obsidien);
+            letter-spacing: -0.01em;
+        }
+
+        .phonetique {
+            font-size: 1rem;
+            color: rgba(27, 50, 38, 0.5);
+        }
+
+        .separateur-point {
+            width: 4px;
+            height: 4px;
+            background-color: rgba(27, 50, 38, 0.25);
+            border-radius: 50%;
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 4px;
+        }
+
+        .traduction-carte {
+            font-size: 1.2rem;
+            color: rgba(27, 50, 38, 0.85);
+            font-weight: 500;
+        }
+
+        .etymologie {
+            font-size: 1rem;
+            color: rgba(27, 50, 38, 0.55);
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        .etat-neutre {
+            text-align: center;
+            padding: 60px 0;
+            color: rgba(27, 50, 38, 0.45);
+            font-style: italic;
+            font-size: 1.15rem;
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        /* --- FOOTER DISCRET --- */
+        .footer-site {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(27, 50, 38, 0.35);
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="plateforme">
+        <!-- En-tête -->
+        <div class="entete-edito">
+            <span class="badge-lexique">Patrimoine & Langue Vivante</span>
+            <h1 class="titre-site">Fendani</h1>
+            <div class="description-site">dictionnaire interactif français-caló</div>
+        </div>
+
+        <!-- Console de recherche -->
+        <div class="console-recherche">
+            <span class="icone-loupe">✦</span>
+            <input type="text" id="recherche" class="barre-recherche" placeholder="Rechercher un terme, une racine, une définition..." autocomplete="off" autofocus>
+        </div>
+
+        <!-- Zone de résultats -->
+        <div id="liste-mots"></div>
+    </div>
+
+    <div class="footer-site">
+        Fendani © 2026 — Tous droits réservés
+    </div>
+
+    <!-- LOGIQUE JS -->
+    <script src="lexique.js"></script>
+    <script>
+        const conteneurListe = document.getElementById('liste-mots');
+        const champRecherche = document.getElementById('recherche');
+
+        function normaliserTexte(str) { 
+            return str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); 
+        }
+
+        function initialiserAccueil() {
+            conteneurListe.innerHTML = `<div class="etat-neutre">Entrez un mot pour explorer les <strong style="color: var(--vert-obsidien); font-weight: 600;">${dictionnaire.length}</strong> concepts répertoriés.</div>`;
+        }
+        
+        initialiserAccueil();
+
+        champRecherche.addEventListener('keydown', (e) => {
+            if (e.key === "Enter") {
+                const val = normaliserTexte(champRecherche.value.trim());
+                if (val === "") return;
+
+                const match = dictionnaire.find(item => 
+                    normaliserTexte(item.caló) === val || 
+                    normaliserTexte(item.français).includes(val)
+                );
+                
+                if (match) {
+                    window.location.href = `mot.html?terme=${match.id}`;
+                }
+            }
+        });
+
+        champRecherche.addEventListener('input', (e) => {
+            const requete = normaliserTexte(e.target.value.trim());
+            
+            if (requete === "") {
+                initialiserAccueil();
+                return;
+            }
+
+            let correspondances = dictionnaire.filter(entree => 
+                normaliserTexte(entree.caló).includes(requete) || 
+                normaliserTexte(entree.français).includes(requete)
+            );
+
+            if (correspondances.length === 0) {
+                conteneurListe.innerHTML = '<div class="etat-neutre">Aucun écho lexical ne correspond à cette requête.</div>';
+                return;
+            }
+
+            conteneurListe.innerHTML = '';
+            correspondances.forEach((entree) => {
+                const element = document.createElement('div');
+                element.className = 'carte-mot';
+                element.onclick = () => { window.location.href = `mot.html?terme=${entree.id}`; };
+                element.innerHTML = `
+                    <div class="ligne-entree">
+                        <span class="mot-terme">${entree.caló}</span>
+                        <span class="phonetique">${entree.caló_api}</span>
+                        <span class="separateur-point"></span>
+                        <span class="traduction-carte">${entree.français}</span>
+                    </div>
+                    <div class="etymologie">${entree.etymologie}</div>
+                `;
+                conteneurListe.appendChild(element);
+            });
+        });
+    </script>
+</body>
+</html>

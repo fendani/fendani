@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mots — Fendani</title>
+
+  <style>
+   @import url('https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400&family=JetBrains+Mono:wght@300&display=swap');
+
+    :root {
+      --bg: #ffffff;
+      --text: #0d0d0d;
+      --muted: #8c8c8c;
+      --line: #efefef;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", sans-serif;
+      height: 100vh;
+      overflow: hidden;
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: -0.015em;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Header minimaliste avec recherche centrée */
+    header {
+      width: 100%;
+      height: 80px;
+      padding: 0 60px;
+      display: grid;
+      grid-template-columns: 200px 1fr 240px;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(16px);
+      z-index: 1000;
+    }
+
+    .logo {
+      font-family: "Instrument Serif", serif;
+      font-size: 26px;
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+
+    .header-search-container {
+      display: flex;
+      justify-content: center;
+    
+    }
+
+    .header-search {
+      border: 0;
+      border-bottom: 1px solid var(--line);
+      background: transparent;
+      font-family: "Instrument Serif", serif;
+      font-size: 18px;
+      font-style: italic;
+      width: 100%;
+      max-width: 280px;
+      text-align: center;
+      outline: none;
+      padding-bottom: 2px;
+      color: var(--text);
+      transition: border-color 0.3s;
+    }
+
+    .header-search:focus {
+      border-color: var(--text);
+    }
+
+    .header-search::placeholder {
+      color: var(--muted);
+      opacity: 0.5;
+    }
+
+    /* Partie droite du header : empilement des boutons et du compteur */
+    .header-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 12px;
+    }
+
+    header nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .action-link, nav a {
+      font-family: "Bellota Text", monospace;
+      font-size: 10px;
+font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      background: none;
+      border: 0;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .action-link:hover, nav a:hover, nav a.active {
+      color: var(--text);
+    }
+
+    .header-counter {
+      display: flex;
+      flex-direction: column; /* Empile le nombre et le mot verticalement */
+      align-items: flex-end;   /* Aligne tout bien à droite */
+      gap: 0px;                /* Espace entre les deux lignes */
+      font-family: "Bellota Text", monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      line-height: 1;
+    }
+
+    .header-counter .counter-number {
+      font-size: 10px;
+      font-weight: 300;
+      color: var(--text);
+    }
+
+    .header-counter .counter-label {
+      font-size: 8px;
+      color: var(--muted);
+    }
+
+    /* Corps principal */
+    main {
+      max-width: 960px;
+      height: 100vh;
+      margin: 0 auto;
+      padding: 100px 30px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Hero de la page d'accueil */
+    .hero-section {
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 12px;
+    }
+
+    .eyebrow {
+      font-family: "Bellota Text", monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      color: var(--muted);
+    }
+
+    h1 {
+      font-family: "Instrument Serif", serif;
+      font-size: clamp(48px, 6vw, 72px);
+      line-height: 0.92;
+      font-weight: 400;
+      font-style: italic;
+      margin-bottom: 12px;
+    }
+
+    .hero-subtitle {
+      font-family: "Instrument Serif", serif;
+      font-size: 19px;
+      font-style: italic;
+      color: var(--muted);
+      max-width: 500px;
+      line-height: 1.3;
+    }
+
+    .home-directory {
+      margin-top: 24px;
+    }
+
+    .directory-label {
+      font-family: "Bellota Text", monospace;
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .alphabet-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .letter-pill {
+      font-family: "Bellota Text", monospace;
+      font-size: 10px;
+      padding: 5px 10px;
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .letter-pill:hover, .letter-pill.active {
+      background: var(--text);
+      color: var(--bg);
+      border-color: var(--text);
+    }
+
+    /* Liste des résultats */
+    .word-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      max-height: calc(100vh - 240px);
+      overflow-y: auto;
+    }
+
+    .word-card {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--line);
+      cursor: pointer;
+      transition: opacity 0.3s ease, padding-left 0.3s ease;
+    }
+
+    .word-card:hover {
+      opacity: 0.4;
+      padding-left: 10px;
+    }
+
+    .word-header-bar {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+
+    .word-main {
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+    }
+
+    .word-letter {
+      font-family: "Bellota Text", monospace;
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    .word-name {
+      font-family: "Instrument Serif", serif;
+      font-size: 32px;
+      font-weight: 400;
+    }
+
+    .word-fr {
+      color: var(--muted);
+      font-size: 23px;
+      font-family: "Instrument Serif", serif;
+      font-style: italic;
+    }
+
+    .word-nav-links {
+      display: none;
+      gap: 20px;
+    }
+
+    .word-nav-links a {
+      font-family: "Instrument Serif", serif;
+      font-size: 18px;
+      font-style: italic;
+      color: var(--muted);
+      transition: color 0.3s ease;
+    }
+
+    .word-nav-links a:hover {
+      color: var(--text);
+    }
+
+    /* MODE PAGE INDIVIDUELLE */
+    body.single-mode .hero-section {
+      display: none !important;
+    }
+
+    body.single-mode .home-directory {
+      display: none !important;
+    }
+
+    body.single-mode main {
+      padding: 160px 40px 20px;
+      max-width: 900px;
+      justify-content: flex-start;
+    }
+
+    body.single-mode .word-list {
+      max-height: none;
+      overflow-y: visible;
+      width: 100%;
+    }
+
+    body.single-mode .word-list .word:not(.active-single) {
+      display: none !important;
+    }
+
+    body.single-mode .word-card {
+      opacity: 1 !important;
+      cursor: default;
+      border-bottom: none;
+      padding: 0 !important;
+      width: 100%;
+    }
+
+    body.single-mode .word-header-bar {
+      border-bottom: 1px solid var(--text);
+      padding-bottom: 18px;
+      height: 70px; 
+      align-items: flex-end;
+    }
+
+    body.single-mode .word-name {
+      font-size: clamp(38px, 5vw, 56px);
+      line-height: 1;
+    }
+
+    body.single-mode .word-nav-links {
+      display: flex;
+    }
+
+    .details {
+      display: none;
+      margin-top: 32px;
+    }
+
+    body.single-mode .details {
+      display: block;
+    }
+
+    .monograph-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .mono-col {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .detail-row {
+      font-family: "Instrument Serif", serif;
+      font-size: 20px;
+      line-height: 1.35;
+      color: var(--text);
+    }
+
+    .detail-label {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 8px;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 2px;
+      font-style: normal;
+    }
+
+    .audio-row audio {
+      height: 20px;
+      filter: grayscale(1);
+    }
+
+    .related span {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      background: var(--line);
+      padding: 3px 8px;
+      border-radius: 2px;
+      margin-right: 6px;
+      display: inline-block;
+      margin-top: 2px;
+    }
+
+    .word-footer-info {
+      display: none;
+      justify-content: space-between;
+      margin-top: 40px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 8px;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    body.single-mode .word-footer-info {
+      display: flex;
+    }
+
+    .close-focus-btn {
+      display: none;
+    }
+
+    body.single-mode .close-focus-btn {
+      display: inline-block;
+    }
+
+    .empty, .error {
+      padding: 30px 0;
+      text-align: center;
+      font-family: "Instrument Serif", serif;
+      font-style: italic;
+      color: var(--muted);
+      font-size: 19px;
+    }
+
+    .error { color: #d9534f; }
+
+    @media (max-width: 768px) {
+      header { padding: 0 20px; grid-template-columns: 1fr auto; }
+      .header-search-container { display: none; }
+      .monograph-grid { grid-template-columns: 1fr; gap: 16px; }
+      body.single-mode main { padding: 120px 20px 20px; }
+      body.single-mode .word-header-bar { height: auto; align-items: baseline; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="suatos.html" class="logo">Fendani</a>
+    
+    <div class="header-search-container">
+      <input type="search" id="headerSearch" class="header-search" placeholder="Rodear yo suato..." autocomplete="off">
+    </div>
+
+    <div class="header-actions">
+      <nav>
+        <a href="suatos.html" id="closeFocus" class="close-focus-btn action-link">Mogante</a>
+        <a href="mots.html">FR</a>
+        <a href="suatos.html" class="active">CALÓ</a>
+      </nav>
+      <div class="header-counter">
+        <span class="counter-number" id="totalWords">—</span>
+        <span class="counter-label">pravias</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <div class="hero-top">
+        <div class="eyebrow">Archive ouverte</div>
+      </div>
+      <h1>Samos suatos.</h1>
+      <p class="hero-subtitle">Recueil de mots, mémoires nomades et résonances partagées.</p>
+    </section>
+
+    <section class="home-directory" id="homeDirectory">
+      <div class="directory-label">Exploration par initiale</div>
+      <div class="alphabet-grid" id="alphabet"></div>
+    </section>
+
+    <ul class="word-list" id="wordList"></ul>
+
+    <div class="empty" id="empty" style="display:none;">Aucun écho trouvé.</div>
+    <div class="error" id="error" style="display:none;">Le dictionnaire (`dictionary.js`) est introuvable.</div>
+  </main>
+
+  <script src="dictionary.js"></script>
+
+  <script>
+    const wordList = document.getElementById("wordList");
+    const headerSearch = document.getElementById("headerSearch");
+    const alphabet = document.getElementById("alphabet");
+    const homeDirectory = document.getElementById("homeDirectory");
+    const empty = document.getElementById("empty");
+    const error = document.getElementById("error");
+    const totalWords = document.getElementById("totalWords");
+
+    if (typeof dictionary === "undefined") {
+      error.style.display = "block";
+    } else {
+      totalWords.textContent = dictionary.length;
+
+      function escapeHTML(value) {
+        if (value === undefined || value === null) return "";
+        return String(value)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#039;");
+      }
+
+      function slugify(text) {
+        return String(text || "")
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/^-+|-+$/g, "");
+      }
+
+      function renderDetails(mot) {
+        let col1HTML = "";
+        let col2HTML = "";
+
+        if (mot.definition) col1HTML += `<div class="detail-row"><span class="detail-label">Définition</span>${escapeHTML(mot.definition)}</div>`;
+        if (mot.example) col1HTML += `<div class="detail-row"><span class="detail-label">Exemple</span><em>${escapeHTML(mot.example)}</em></div>`;
+
+        if (mot.type) col2HTML += `<div class="detail-row"><span class="detail-label">Nature / Genre</span>${escapeHTML(mot.type)}${mot.gender ? " · " + escapeHTML(mot.gender) : ""}</div>`;
+        if (mot.phonetic) col2HTML += `<div class="detail-row"><span class="detail-label">Prononciation</span>${escapeHTML(mot.phonetic)}</div>`;
+        if (mot.audio) col2HTML += `<div class="detail-row audio-row"><span class="detail-label">Audio</span><audio controls preload="none"><source src="${escapeHTML(mot.audio)}" type="audio/mpeg">Audio non supporté.</audio></div>`;
+        
+        if (mot.etymology) {
+          const etymologies = Array.isArray(mot.etymology) ? mot.etymology : [mot.etymology];
+          etymologies.forEach((etymology) => {
+            if (etymology.source || etymology.meaning) col2HTML += `<div class="detail-row"><span class="detail-label">Étymologie</span>${escapeHTML(etymology.source || "")}${etymology.meaning ? " — " + escapeHTML(etymology.meaning) : ""}</div>`;
+          });
+        }
+        if (mot.related && mot.related.length) col2HTML += `<div class="detail-row"><span class="detail-label">Résonances</span><span class="related">${mot.related.map(item => `<span>${escapeHTML(item)}</span>`).join("")}</span></div>`;
+
+        return `
+          <div class="monograph-grid">
+            <div class="mono-col">${col1HTML}</div>
+            <div class="mono-col">${col2HTML}</div>
+          </div>
+        `;
+      }
+
+      const sortedDictionary = [...dictionary].sort((a, b) =>
+        (a.b || "").localeCompare(b.b || "", "fr", { sensitivity: "base" })
+      );
+
+      function buildDOM(list) {
+        wordList.innerHTML = "";
+        empty.style.display = list.length ? "none" : "block";
+
+        list.forEach((mot, index) => {
+          const li = document.createElement("li");
+          li.className = "word";
+          const slug = slugify(mot.b || `mot-${index}`);
+          li.dataset.slug = slug;
+
+          const firstLetter = (mot.b || mot.fr || "").charAt(0).toUpperCase();
+
+          const prevIndex = (index - 1 + list.length) % list.length;
+          const nextIndex = (index + 1) % list.length;
+          const prevSlug = slugify(list[prevIndex].b);
+          const nextSlug = slugify(list[nextIndex].b);
+
+          li.innerHTML = `
+            <div class="word-card">
+              <div class="word-header-bar">
+                <div class="word-main">
+                  <span class="word-letter">${escapeHTML(firstLetter)}</span>
+                  <span class="word-name">${escapeHTML(mot.b)}</span>
+                  <span class="word-fr">${escapeHTML(mot.fr)}</span>
+                </div>
+                <div class="word-nav-links">
+                  <a href="?mot=${prevSlug}" class="nav-page-link" data-slug="${prevSlug}">← Andreato</a>
+                  <a href="?mot=${nextSlug}" class="nav-page-link" data-slug="${nextSlug}">Platenato →</a>
+                </div>
+              </div>
+
+              <div class="details">
+                ${renderDetails(mot)}
+              </div>
+
+              <div class="word-footer-info">
+                <span>Fendani Archive</span>
+                <span>${String(index + 1).padStart(3, "0")} / ${String(list.length).padStart(3, "0")}</span>
+              </div>
+            </div>
+          `;
+
+          li.querySelector('.word-card').addEventListener("click", (e) => {
+            if (e.target.tagName === 'A' || e.target.tagName === 'AUDIO' || e.target.closest('audio')) return;
+            navigateToWord(slug);
+          });
+
+          wordList.appendChild(li);
+        });
+
+        wordList.querySelectorAll('.nav-page-link').forEach(link => {
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            navigateToWord(link.getAttribute('data-slug'));
+          });
+        });
+      }
+
+      function navigateToWord(slug) {
+        history.pushState({ mot: slug }, "", `?mot=${slug}`);
+        handleRoute();
+      }
+
+      function handleRoute() {
+        const params = new URLSearchParams(window.location.search);
+        const currentMotSlug = params.get('mot');
+        const allWords = document.querySelectorAll('.word');
+
+        if (currentMotSlug) {
+          let found = false;
+          // S'assure que le DOM contient les éléments cachés pour les retrouver
+          if (wordList.children.length === 0) {
+            buildDOM(sortedDictionary);
+          }
+
+          allWords.forEach(w => {
+            if (w.dataset.slug === currentMotSlug) {
+              w.classList.add('active-single');
+              found = true;
+            } else {
+              w.classList.remove('active-single');
+            }
+          });
+
+          if (found) {
+            document.body.classList.add('single-mode');
+            homeDirectory.style.display = "none";
+            empty.style.display = "none";
+            return;
+          }
+        }
+
+        document.body.classList.remove('single-mode');
+        allWords.forEach(w => w.classList.remove('active-single'));
+        wordList.innerHTML = "";
+        homeDirectory.style.display = "block";
+        headerSearch.value = "";
+      }
+
+      window.addEventListener('popstate', handleRoute);
+
+      buildDOM(sortedDictionary);
+      handleRoute();
+
+      const letters = [...new Set(sortedDictionary.map(mot => (mot.b || "").charAt(0).toUpperCase()))];
+      letters.forEach(letter => {
+        const button = document.createElement("button");
+        button.className = "letter-pill";
+        button.textContent = letter;
+        button.addEventListener("click", () => {
+          headerSearch.value = "";
+          document.querySelectorAll(".letter-pill").forEach(item => item.classList.remove("active"));
+          button.classList.add("active");
+
+          const filtered = sortedDictionary.filter(mot => (mot.b || "").charAt(0).toUpperCase() === letter);
+          
+          wordList.innerHTML = "";
+          homeDirectory.style.display = "none";
+          empty.style.display = filtered.length ? "none" : "block";
+
+          filtered.forEach(mot => {
+            const li = document.createElement("li");
+            li.className = "word";
+            const slug = slugify(mot.b);
+
+            li.innerHTML = `
+              <div class="word-card" style="cursor: pointer;">
+                <div class="word-header-bar">
+                  <div class="word-main">
+                    <span class="word-name">${escapeHTML(mot.b)}</span>
+                    <span class="word-fr">${escapeHTML(mot.fr)}</span>
+                  </div>
+                  <span class="action-link" style="font-size: 10px; color: var(--muted);">Voir la fiche →</span>
+                </div>
+              </div>
+            `;
+
+            li.querySelector('.word-card').addEventListener("click", () => {
+              navigateToWord(slug);
+            });
+
+            wordList.appendChild(li);
+          });
+        });
+        alphabet.appendChild(button);
+      });
+
+      headerSearch.addEventListener("input", () => {
+        const query = headerSearch.value.trim().toLowerCase();
+        document.querySelectorAll(".letter-pill").forEach(item => item.classList.remove("active"));
+        
+        if (!query) {
+          wordList.innerHTML = "";
+          homeDirectory.style.display = "block";
+          empty.style.display = "none";
+          return;
+        }
+
+        const filtered = sortedDictionary.filter(mot => {
+          const fr = (mot.fr || "").toLowerCase();
+          const b = (mot.b || "").toLowerCase();
+          const definition = (mot.definition || "").toLowerCase();
+          return fr.includes(query) || b.includes(query) || definition.includes(query);
+        });
+
+        wordList.innerHTML = "";
+        homeDirectory.style.display = "none";
+        empty.style.display = filtered.length ? "none" : "block";
+
+        filtered.forEach((mot, index) => {
+          const li = document.createElement("li");
+          li.className = "word";
+          const slug = slugify(mot.b || `mot-${index}`);
+
+          li.innerHTML = `
+            <div class="word-card" style="cursor: pointer;">
+              <div class="word-header-bar">
+                <div class="word-main">
+                  <span class="word-name">${escapeHTML(mot.b)}</span>
+                  <span class="word-fr">${escapeHTML(mot.fr)}</span>
+                </div>
+                <span class="action-link" style="font-size: 10px; color: var(--muted);">Voir la fiche →</span>
+              </div>
+            </div>
+          `;
+
+          li.querySelector('.word-card').addEventListener("click", () => {
+            navigateToWord(slug);
+          });
+
+          wordList.appendChild(li);
+        });
+      });
+    }
+  </script>
+</body>
+</html>

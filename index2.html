@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fendani — Archives Lexicales & Âme Caló</title>
+    
+    <!-- Duo Typographique : Inter (Structure Apple) & Newsreader (Émotion et Poésie) -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@400;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400;1,6..72,600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Palette Terres Chaudes & Vibrantes */
+            --bg-main: #fbf9f4;          /* Blanc lin chaud, organique et vivant */
+            --bg-card: #ffffff;
+            --text-dark: #14110f;        /* Noir charbon intense */
+            --text-muted: #5c534e;       /* Brun terreux doux */
+            --accent-red: #c83320;       /* Rouge piment / sang vif */
+            --accent-gold: #d99136;      /* Or safran chaleureux */
+            --border-light: #eaddd3;     /* Ligne écrue chaleureuse */
+            
+            --nav-height: 52px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: calc(var(--nav-height) + 30px);
+            background-color: var(--bg-main);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* La poésie de Newsreader prend le dessus pour le texte */
+        p, .section-desc, .dict-card .translation, .museum-card p {
+            font-family: 'Newsreader', serif;
+            font-size: 1.1rem;
+        }
+
+        h1, h2, h3, h4, .nav-logo {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin: 0;
+        }
+        /* Barre de navigation fixe (Esprit Cupertino, tons Toile de Lin) */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--nav-height);
+            background: rgba(251, 249, 244, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-light);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1060px;
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 24px;
+            box-sizing: border-box;
+        }
+
+        .nav-logo a {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            transition: color 0.2s;
+        }
+        .nav-logo a:hover {
+            color: var(--accent-red);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 24px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-dark);
+        }
+
+        /* Section Intro / Grand Hero Littéraire Vibrant */
+        header {
+            padding: 130px 24px 70px 24px;
+            max-width: 820px;
+            margin: 0 auto;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .header-tag {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-red);
+            font-weight: 700;
+            margin-bottom: 14px;
+            display: block;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            line-height: 1.15;
+            font-weight: 700;
+            color: var(--text-dark);
+            letter-spacing: -0.03em;
+        }
+
+        header p {
+            font-size: 1.45rem;
+            color: var(--text-muted);
+            margin: 24px auto 0 auto;
+            max-width: 660px;
+            font-weight: 400;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        /* Conteneur principal */
+        .container {
+            max-width: 1060px;
+            margin: 0 auto;
+            padding: 0 24px;
+            box-sizing: border-box;
+        }
+        /* Hub de navigation : Cartes de Profil Dynamiques */
+        .hub-section {
+            padding: 10px 0 50px 0;
+        }
+
+        .grid-profiles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .profile-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-decoration: none;
+            color: var(--text-dark);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 20px rgba(20, 17, 15, 0.01);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s, border-color 0.4s;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 35px rgba(20, 17, 15, 0.05);
+            border-color: var(--accent-red);
+        }
+
+        .profile-card .badge-tag {
+            align-self: flex-start;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent-red);
+            margin-bottom: 12px;
+        }
+
+        .profile-card h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            letter-spacing: -0.01em;
+        }
+
+        .profile-card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Sections des Univers (Fonds Lumineux Chaleureux) */
+        .content-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 45px;
+            margin-top: 50px;
+            box-shadow: 0 6px 30px rgba(20, 17, 15, 0.01);
+        }
+
+        .section-header {
+            margin-bottom: 28px;
+            border-bottom: 2px solid var(--border-light);
+            padding-bottom: 16px;
+        }
+
+        .content-section h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--text-dark);
+        }
+
+        .section-desc {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin: 6px 0 0 0;
+            font-style: italic;
+        }
+        /* 01. Univers Jeunes - Gamification Organique */
+        .gamification-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--bg-main);
+            padding: 14px 22px;
+            border-radius: 10px;
+            margin-bottom: 24px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--border-light);
+        }
+        .score-display { color: var(--accent-red); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+        .progress-track { flex-grow: 1; height: 5px; background: #eaddd3; margin: 0 18px; border-radius: 4px; overflow: hidden; }
+        .progress-bar { width: 0%; height: 100%; background: var(--accent-red); transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .highlight-word { font-weight: 700; color: var(--accent-red); font-family: 'Inter', sans-serif; background: rgba(200, 51, 32, 0.05); padding: 2px 6px; border-radius: 4px; }
+
+        .quiz-option {
+            background: var(--bg-main);
+            padding: 16px 22px;
+            border: 1px solid var(--border-light);
+            border-radius: 10px;
+            margin: 12px 0;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.25s ease;
+        }
+        .quiz-option:hover { background: #ffffff; border-color: var(--accent-red); transform: translateX(4px); }
+
+        /* 02. Univers Curieux - Recherche Filtrante */
+        .input-curieux {
+            width: 100%;
+            max-width: 500px;
+            padding: 14px 20px;
+            border: 1px solid var(--border-light);
+            background-color: var(--bg-main);
+            border-radius: 10px;
+            font-size: 1rem;
+            box-sizing: border-box;
+            outline: none;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        .input-curieux:focus { border-color: var(--accent-red); background-color: #ffffff; box-shadow: 0 8px 24px rgba(200, 51, 32, 0.04); }
+        .dict-results { margin-top: 20px; max-width: 500px; }
+        .dict-card {
+            background: var(--bg-main);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 12px;
+            border-left: 4px solid var(--accent-gold);
+            border-top: 1px solid var(--border-light);
+            border-right: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+            animation: fadeIn 0.25s ease;
+        }
+        .dict-card h4 { margin: 0 0 2px 0; font-size: 1.15rem; font-weight: 700; color: var(--text-dark); }
+        .dict-card .translation { font-size: 1.15rem; color: var(--accent-red); font-weight: 600; margin-top: 2px; }
+        .dict-card .definition { font-size: 1rem; color: var(--text-muted); margin-top: 6px; line-height: 1.5; }
+
+        /* 03. Univers Musée - Galerie d'Art Vivante */
+        .museum-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-top: 24px;
+        }
+        .museum-card {
+            background: var(--bg-main);
+            border-radius: 14px;
+            padding: 26px;
+            border: 1px solid var(--border-light);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .museum-card:hover { border-color: var(--accent-gold); background: #ffffff; transform: translateY(-3px); box-shadow: 0 12px 30px rgba(217, 145, 54, 0.05); }
+        .museum-card .art-meta { font-size: 0.75rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 0.08em; }
+        .museum-card h4 { margin: 10px 0 6px 0; font-size: 1.2rem; font-weight: 700; }
+        .museum-card p { font-size: 1.05rem; color: var(--text-muted); margin: 0; line-height: 1.5; }
+
+        /* 04. Univers Institutions - Liste Répertoire */
+        .institution-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            max-width: 740px;
+            margin-top: 24px;
+        }
+        .institution-card {
+            background: var(--bg-main);
+            border-radius: 12px;
+            padding: 22px 26px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid var(--border-light);
+            transition: all 0.25s;
+        }
+        .institution-card:hover { border-color: var(--text-dark); background: #ffffff; }
+        .institution-info h4 { margin: 0 0 4px 0; font-size: 1.15rem; font-weight: 700; color: var(--text-dark); }
+        .institution-info p { font-size: 1rem; color: var(--text-muted); margin: 0; line-height: 1.5; }
+        .inst-badge { font-size: 0.7rem; font-weight: 700; background: #eaddd3; color: var(--text-dark); padding: 5px 12px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+        /* 05. Univers Lettrés - Table Académique */
+        .tabs-lettres { display: flex; gap: 10px; margin-bottom: 24px; }
+        .tab-btn-lettres {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.75rem;
+            padding: 10px 18px;
+            border: 1px solid var(--border-light);
+            background: #ffffff;
+            border-radius: 8px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            transition: all 0.2s;
+        }
+        .tab-btn-lettres.active { background: var(--text-dark); color: #ffffff; border-color: var(--text-dark); }
+
+        .verb-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+        .verb-table th, .verb-table td { text-align: left; padding: 16px 18px; border-bottom: 1px solid var(--border-light); }
+        .verb-table th { color: var(--text-dark); font-weight: 700; background-color: var(--bg-main); font-family: 'Inter', sans-serif; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.08em; border-bottom: 2px solid var(--text-dark); }
+        .verb-table td strong { font-family: 'Inter', sans-serif; font-weight: 700; color: var(--accent-red); }
+        .verb-table tbody tr:hover td { background-color: var(--bg-main); }
+        /* Grand Pied de page Hermès Édition Chaleureuse */
+        footer {
+            background: #ffffff;
+            border-top: 2px solid var(--border-light);
+            color: var(--text-dark);
+            padding: 70px 24px 45px 24px;
+            margin-top: 90px;
+        }
+
+        .footer-container {
+            max-width: 1060px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr repeat(3, 1fr);
+            gap: 40px;
+            box-sizing: border-box;
+        }
+
+        .footer-brand h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            margin: 0 0 12px 0;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-brand p {
+            font-family: 'Newsreader', serif;
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            max-width: 280px;
+            margin: 0 0 16px 0;
+            line-height: 1.5;
+        }
+
+        .footer-col h5 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            margin: 0 0 16px 0;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-col li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-family: 'Newsreader', serif;
+            transition: color 0.2s ease;
+        }
+
+        .footer-col a:hover {
+            color: var(--accent-red);
+        }
+
+        .footer-bottom {
+            grid-column: 1 / -1;
+            border-top: 1px solid var(--border-light);
+            margin-top: 40px;
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            font-family: 'Newsreader', serif;
+        }
+
+        .footer-legal-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-legal-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-legal-links a:hover {
+            color: var(--text-dark);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 850px) {
+            .footer-container { grid-template-columns: 1fr 1fr; gap: 30px; }
+            .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.3rem; }
+            header p { font-size: 1.25rem; }
+            .content-section { padding: 35px 20px; }
+            .footer-container { grid-template-columns: 1fr; gap: 24px; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barre de navigation fixe (Rigueur Apple, tons Chaleureux) -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#accueil">FENDANI</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#jeunes">Jeunes</a></li>
+                <li><a href="#curieux">Curieux</a></li>
+                <li><a href="#musee">Musée</a></li>
+                <li><a href="#institutions">Institutions</a></li>
+                <li><a href="#lettres">Lettrés</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- En-tête / Section d'introduction Éditoriale & Vivante -->
+    <header id="accueil">
+        <span class="header-tag">Archives Lexicales & Âme Caló</span>
+        <h1>L'esprit d'une langue,<br>partagé pour tous.</h1>
+        <p>Explorez la richesse globale du patrimoine Caló. De l'apprentissage ludique des mots à la galerie de pièces artistiques, en passant par le répertoire institutionnel et la rigueur de sa morphologie linguistique.</p>
+    </header>
+
+    <div class="container">
+        <!-- Hub de Cartes d'Exploration Organiques -->
+        <section class="hub-section">
+            <div class="grid-profiles">
+                <a href="#jeunes" class="profile-card">
+                    <span class="badge-tag">Ludique</span>
+                    <h2>01 / Jeunes Voyageurs</h2>
+                    <p>Mini-jeux et défis interactifs avec score en temps réel pour apprendre le Caló en s'amusant.</p>
+                </a>
+                
+                <a href="#curieux" class="profile-card">
+                    <span class="badge-tag">Découverte</span>
+                    <h2>02 / Index Interactif</h2>
+                    <p>Un dictionnaire instantané pour explorer l'étymologie et l'évolution des mots gitans.</p>
+                </a>
+
+                <a href="#musee" class="profile-card">
+                    <span class="badge-tag">Artistique</span>
+                    <h2>03 / Musée Virtuel</h2>
+                    <p>Une immersion visuelle à la découverte des chefs-d'œuvre et expressions culturelles.</p>
+                </a>
+            </div>
+        </section>
+        <!-- SECTIONS DE CONTENU ANCRÉES (LUMINEUSES ET SUBTILES) -->
+
+        <!-- Univers 01 : Les Jeunes -->
+        <section id="jeunes" class="content-section">
+            <div class="section-header">
+                <h3>01 / Espace Ludique & Gamification</h3>
+                <p class="section-desc">Accumulez des points en relevant nos défis de traduction.</p>
+            </div>
+            
+            <div class="gamification-bar">
+                <div class="score-display">Score : <span id="user-score">0</span> XP</div>
+                <div class="progress-track"><div class="progress-bar" id="score-progress"></div></div>
+                <div style="color: var(--text-muted);" id="level-display">Niveau 1</div>
+            </div>
+
+            <p style="font-size: 0.95rem; margin-bottom: 12px;">Traduis correctement l'expression suivante : <strong class="highlight-word">"Gachó"</strong></p>
+            <div style="max-width: 480px;">
+                <div class="quiz-option" onclick="verifierQuiz(true, this)">A) Un individu extérieur (qui n'est pas gitan)</div>
+                <div class="quiz-option" onclick="verifierQuiz(false, this)">B) Une guitare classique de flamenco</div>
+                <div class="quiz-option" onclick="verifierQuiz(false, this)">C) Une célébration communautaire traditionnelle</div>
+            </div>
+        </section>
+
+        <!-- Univers 02 : Les Curieux -->
+        <section id="curieux" class="content-section">
+            <div class="section-header">
+                <h3>02 / Moteur de Recherche Lexical</h3>
+                <p class="section-desc">Tapez une lettre pour filtrer en direct la base de données.</p>
+            </div>
+            
+            <input type="text" class="input-curieux" id="dict-search" oninput="filtrerDictionnaire()" placeholder="Tapez un terme (ex: Camelar, Chaval, Mola...)">
+
+            <div class="dict-results" id="dict-results-container">
+                <!-- Injecté dynamiquement par JavaScript -->
+            </div>
+        </section>
+
+        <!-- Univers 03 : Le Musée Virtuel -->
+        <section id="musee" class="content-section">
+            <div class="section-header">
+                <h3>03 / Musée Virtuel & Art Caló</h3>
+                <p class="section-desc">Découvrez les créations artistiques majeures et expressions graphiques liées à l'histoire des Gitans d'Espagne.</p>
+            </div>
+            
+            <div class="museum-grid">
+                <div class="museum-card">
+                    <span class="art-meta">Musique & Danse</span>
+                    <h4>L'Origine du Flamenco</h4>
+                    <p>Analyse de l'apport direct de la langue et du rythme Caló dans le répertoire andalou ancestral.</p>
+                </div>
+                <div class="museum-card">
+                    <span class="art-meta">Littérature</span>
+                    <h4>Romancero Gitano</h4>
+                    <p>Étude de l'empreinte lexicale caló à travers les œuvres poétiques majeures du XXe siècle.</p>
+                </div>
+                <div class="museum-card">
+                    <span class="art-meta">Orfèvrerie</span>
+                    <h4>Forge Traditionnelle</h4>
+                    <p>Exposition iconographique des pièces de métal ciselées par les maîtres forgerons gitans.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Univers 04 : Les Institutions -->
+        <section id="institutions" class="content-section">
+            <div class="section-header">
+                <h3>04 / Institutions & Droits Européens</h3>
+                <p class="section-desc">Les grands organismes impliqués dans le rayonnement et la protection institutionnelle du patrimoine linguistique.</p>
+            </div>
+            
+            <div class="institution-list">
+                <div class="institution-card">
+                    <div class="institution-info">
+                        <h4>Institut de la Culture Gitane</h4>
+                        <p>Organisme public européen dédié à la recherche scientifique et la diffusion de la langue Caló.</p>
+                    </div>
+                    <span class="inst-badge">Espagne / UE</span>
+                </div>
+                <div class="institution-card">
+                    <div class="institution-info">
+                        <h4>Conseil de l'Europe — EROM</h4>
+                        <p>Programmes de protection des langues minoritaires et promotion de l'histoire culturelle romani.</p>
+                    </div>
+                    <span class="inst-badge">Strasbourg</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Univers 05 : Les Lettrés -->
+        <section id="lettres" class="content-section">
+            <div class="section-header">
+                <h3>05 / Morphologie & Paradigmes Verbaux</h3>
+                <p class="section-desc">Étude morphologique rigoureuse du verbe <strong style="color: var(--text-dark);">Camelar</strong> (Aimer / Vouloir).</p>
+            </div>
+            
+            <div class="tabs-lettres">
+                <button class="tab-btn-lettres active" onclick="changerTemps('present', this)">Présent de l'Indicatif</button>
+                <button class="tab-btn-lettres" onclick="changerTemps('imparfait', this)">Imparfait Historique</button>
+            </div>
+
+            <div style="overflow-x: auto; max-width: 700px;">
+                <table class="verb-table">
+                    <thead>
+                        <tr>
+                            <th>Personne</th>
+                            <th>Forme Caló</th>
+                            <th>Racine / Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody id="verb-table-body">
+                        <!-- Rempli dynamiquement par JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Grand Pied de page Informationnel Riche (Inspiration Structurée Hermès) -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h4>FENDANI</h4>
+                <p>Préservation, documentation et rayonnement numérique de la langue et du patrimoine Caló.</p>
+                <p style="font-size: 0.8rem; margin-top: 10px;">Artisan numérique de la culture depuis 2026.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h5>Services</h5>
+                <ul>
+                    <li><a href="#accueil">Nous contacter</a></li>
+                    <li><a href="#curieux">Dictionnaire en ligne</a></li>
+                    <li><a href="#lettres">Tables de conjugaison</a></li>
+                    <li><a href="#musee">Demander une archive</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h5>La Maison Fendani</h5>
+                <ul>
+                    <li><a href="#accueil">Histoire des Gitans d'Espagne</a></li>
+                    <li><a href="#institutions">Institutions partenaires</a></li>
+                    <li><a href="#accueil">Développement culturel</a></li>
+                    <li><a href="#accueil">Rejoindre nos ateliers</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h5>Suivez-nous</h5>
+                <ul>
+                    <li><a href="#accueil">Newsletter culturelle</a></li>
+                    <li><a href="#accueil">Instagram</a></li>
+                    <li><a href="#accueil">YouTube</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Fendani Archives. Tous droits réservés.</p>
+                <div class="footer-legal-links">
+                    <a href="#accueil">Conditions d'utilisation</a>
+                    <a href="#accueil">Données personnelles</a>
+                    <a href="#accueil">Mentions légales</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LOGIQUE APPLICATIVE INTERACTIVE -->
+    <script>
+        // --- 1. LOGIQUE JEUNES (GAMIFICATION) ---
+        let score = 0;
+        function verifierQuiz(estCorrect, element) {
+            if (estCorrect) {
+                if(score === 0) {
+                    score = 100;
+                    document.getElementById('user-score').innerText = score;
+                    document.getElementById('score-progress').style.width = "100%";
+                    document.getElementById('level-display').innerText = "Niveau 2 🌟";
+                    element.style.borderColor = "var(--text-dark)";
+                    element.style.backgroundColor = "#eaddd3";
+                    alert('Félicitations ! +100 XP gagnés. Tu passes au Niveau 2 ! 🎉');
+                }
+            } else {
+                element.style.borderColor = "var(--accent-red)";
+                element.style.backgroundColor = "#fff5f2";
+                alert('Ce n\'est pas tout à fait ça... Laisse ton intuition te guider ! 👀');
+            }
+        }
+
+        // --- 2. FILTRAGE DYNAMIQUE INSTANTANÉ (CURIEUX) ---
+        const baseMots = [
+            { mot: "Camelar", traduction: "Aimer, vouloir, désirer", def: "Verbe pilier du Caló historique. Provient du sanskrit Kāma (désir)." },
+            { mot: "Chaval", traduction: "Garçon, jeune homme", def: "Issu de la racine romani signifiant 'enfant'. Passé intégralement dans l'argot castillan moderne." },
+            { mot: "Liló", traduction: "Fou, simple d'esprit", def: "Souvent utilisé avec ironie ou affection dans les proverbes populaires gitans." },
+            { mot: "Mola", traduction: "Plaire, être excellent", def: "Expression entrée massivement dans le langage familier de la péninsule ibérique pour dire 'c'est cool'." }
+        ];
+
+        function filtrerDictionnaire() {
+            const saisie = document.getElementById('dict-search').value.toLowerCase();
+            const conteneur = document.getElementById('dict-results-container');
+            conteneur.innerHTML = "";
+            
+            if(saisie.trim() === "") return;
+
+            const résultats = baseMots.filter(m => m.mot.toLowerCase().includes(saisie) || m.traduction.toLowerCase().includes(saisie));
+
+            résultats.forEach(r => {
+                conteneur.innerHTML += `
+                    <div class="dict-card">
+                        <h4>${r.mot}</h4>
+                        <div class="translation">→ ${r.traduction}</div>
+                        <div class="definition">${r.def}</div>
+                    </div>
+                `;
+            });
+        }
+
+        // --- 3. PARADIGMES VERBAUX ACADÉMIQUES (LETTRÉS) ---
+        const conjugaisons = {
+            present: [
+                { p: "1ère sing. (Je)", c: "Kamelo", r: "Kāma (Désir)" },
+                { p: "2ème sing. (Tu)", c: "Kameles", r: "-" },
+                { p: "3ème sing. (Il/Elle)", c: "Kamele", r: "-" },
+                { p: "1ère plur. (Nous)", c: "Kamelamos", r: "-" },
+                { p: "3ème plur. (Ils/Elles)", c: "Kamelan", r: "-" }
+            ],
+            imparfait: [
+                { p: "1ère sing. (Je)", c: "Kamelaba", r: "Structure caló hispanisée" },
+                { p: "2ème sing. (Tu)", c: "Kamelabas", r: "-" },
+                { p: "3ème sing. (Il/Elle)", c: "Kamelaba", r: "-" },
+                { p: "1ère plur. (Nous)", c: "Kamelábamos", r: "-" },
+                { p: "3ème plur. (Ils/Elles)", c: "Kamelan", r: "-" }
+            ]
+        };
+
+        function changerTemps(temps, bouton) {
+            document.querySelectorAll('.tab-btn-lettres').forEach(b => b.classList.remove('active'));
+            bouton.classList.add('active');
+            
+            const tbody = document.getElementById('verb-table-body');
+            tbody.innerHTML = "";
+
+            conjugaisons[temps].forEach(row => {
+                tbody.innerHTML += `
+                    <tr>
+                        <td>${row.p}</td>
+                        <td><strong>${row.c}</strong></td>
+                        <td>${row.r}</td>
+                    </tr>
+                `;
+            });
+        }
+        
+        // Initialisation par défaut au chargement de l'écran
+        changerTemps('present', document.querySelector('.tab-btn-lettres'));
+    </script>
+</body>
+</html>
+
+

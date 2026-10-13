@@ -1,0 +1,1214 @@
+{
+  "mots": [
+    {
+      "fr": "faire",
+      "b": "aquear",
+      "type": "verbe",
+      "phonetic": "/a.ke.ar/",
+      "definition": "Réaliser, accomplir ou produire une action.",
+      "example": "« Que fais-tu ? »",
+      "related": ["agir", "faire", "créer", "accomplir"],
+      "verb": {
+        "infinitive": "aquear",
+        "class": "ear",
+        "stem": "aque",
+        "subjStem": "aques",
+        "participle": "aqueado"
+      }
+    },
+    {
+      "fr": "lire",
+      "b": "lenar",
+      "type": "verbe",
+      "phonetic": "/le.nar/",
+      "definition": "Interpréter un texte ou des signes écrits afin d'en comprendre le sens.",
+      "example": "« Elle lit un livre. »",
+      "related": ["écrire", "livre", "texte", "lettre"],
+      "verb": {
+        "infinitive": "lenar",
+        "class": "nar",
+        "stem": "len",
+        "subjStem": "leñ",
+        "participle": "lenado"
+      }
+    },
+    {
+      "fr": "lisser",
+      "b": "masar",
+      "type": "verbe",
+      "phonetic": "/ma.sar/",
+      "definition": "Rendre une surface lisse, régulière ou uniforme.",
+      "example": "« Elle lisse le tissu. »",
+      "related": ["lisse", "surface", "aplanir", "polir"],
+      "verb": {
+        "infinitive": "masar",
+        "class": "ar",
+        "stem": "mas",
+        "subjStem": "masi",
+        "participle": "masado"
+      }
+    },
+    {
+      "fr": "être",
+      "b": "senar",
+      "type": "verbe",
+      "phonetic": "/se.nar/",
+      "definition": "Être, exister, posséder une identité ou une nature.",
+      "example": "« Il est calme. »",
+      "related": ["être", "se situer", "exister", "devenir"],
+      "verb": {
+        "infinitive": "senar",
+        "class": "nar",
+        "stem": "sen",
+        "subjStem": "señ",
+        "participle": "senado",
+        "irregularPresent": true
+      }
+    },
+    {
+      "fr": "se situer",
+      "b": "senear",
+      "type": "verbe",
+      "phonetic": "/se.ne.ar/",
+      "definition": "Être situé dans un lieu ou dans une position donnée.",
+      "example": "« Nous sommes à Paris. »",
+      "related": ["être", "se trouver", "se situer"],
+      "verb": {
+        "infinitive": "senear",
+        "class": "ear",
+        "stem": "sene",
+        "subjStem": "senes",
+        "participle": "seneado"
+      }
+    },
+    {
+      "fr": "écrire",
+      "b": "linar",
+      "type": "verbe",
+      "phonetic": "/li.nar/",
+      "image": "ecrire-linar.png",
+      "definition": "Tracer des mots ou des signes afin de communiquer.",
+      "example": "« Elle écrit une lettre. »",
+      "related": ["lire", "lettre", "texte"],
+      "verb": {
+        "infinitive": "linar",
+        "class": "nar",
+        "stem": "lin",
+        "subjStem": "liñ",
+        "participle": "linado"
+      }
+    },
+    {
+      "fr": "sourciller",
+      "b": "pleanar",
+      "type": "verbe",
+      "phonetic": "/ple.a.nar/",
+      "definition": "Relever ou contracter les sourcils, notamment pour exprimer l'étonnement ou le doute.",
+      "example": "« Il ne sourcilla pas. »",
+      "related": ["sourcil", "regarder", "étonnement"],
+      "verb": {
+        "infinitive": "pleanar",
+        "class": "nar",
+        "stem": "plean",
+        "subjStem": "pleañ",
+        "participle": "pleanado"
+      }
+    },
+    {
+      "fr": "dévorer",
+      "b": "puevar",
+      "type": "verbe",
+      "phonetic": "/pue.var/",
+      "definition": "Regarder quelqu'un ou quelque chose avec une attention intense et insistante.",
+      "expressions": [
+        {
+          "expression": "dévorer des yeux",
+          "definition": "Regarder avec admiration, envie ou désir."
+        }
+      ],
+      "related": ["regarder", "observer", "regard"],
+      "verb": {
+        "infinitive": "puevar",
+        "class": "ar",
+        "stem": "puev",
+        "subjStem": "puevi",
+        "participle": "puevado"
+      }
+    },
+    {
+      "fr": "voir",
+      "b": "dicar",
+      "type": "verbe",
+      "phonetic": "/di.kar/",
+      "etymology": {
+        "date": "1870",
+        "author": "QUINDALÉ",
+        "language": "ANCIEN CALÓ",
+        "source": "dicar",
+        "meaning": "voir"
+      },
+      "audio": "audio-dicar.mp3",
+      "definition": "Percevoir quelque chose par la vue.",
+      "example": "« Je vois la maison. »",
+      "related": ["regarder", "observer", "apercevoir"],
+      "verb": {
+        "infinitive": "dicar",
+        "class": "ar",
+        "stem": "dic",
+        "subjStem": "di",
+        "participle": "dicado"
+      }
+    },
+    {
+      "fr": "lorgner",
+      "b": "flegar",
+      "type": "verbe",
+      "phonetic": "/fle.gar/",
+      "definition": "Regarder quelqu'un ou quelque chose avec insistance, souvent à la dérobée.",
+      "example": "« Il lorgne le gâteau depuis une heure. »",
+      "related": ["regarder", "observer"],
+      "verb": {
+        "infinitive": "flegar",
+        "class": "ar",
+        "stem": "fleg",
+        "subjStem": "flegu",
+        "participle": "flegado"
+      }
+    },
+    {
+      "fr": "dire",
+      "b": "penar",
+      "type": "verbe",
+      "phonetic": "",
+      "etymology": {
+        "date": "1870",
+        "author": "QUINDALÉ",
+        "language": "ANCIEN CALÓ",
+        "source": "penar",
+        "meaning": "dire, parler"
+      },
+      "definition": "Parler, mettre ensemble des mots, une phrase, un discours.",
+      "example": "Penamo de adive.",
+      "related": ["raconter", "parler"],
+      "verb": {
+        "infinitive": "penar",
+        "class": "nar",
+        "stem": "pen",
+        "subjStem": "peñ",
+        "participle": "penado"
+      }
+    },
+    {
+      "fr": "raconter",
+      "b": "penear",
+      "type": "verbe",
+      "phonetic": "",
+      "etymology": {
+        "date": "1870",
+        "author": "QUINDALÉ",
+        "language": "ANCIEN CALÓ",
+        "source": "penelar",
+        "meaning": "raconter, narrer"
+      },
+      "definition": "Restituer oralement des mots, une phrase, un discours.",
+      "example": "Peneamo de adive.",
+      "related": ["dire", "parler"],
+      "verb": {
+        "infinitive": "penear",
+        "class": "ear",
+        "stem": "pene",
+        "subjStem": "pene",
+        "participle": "peneado"
+      }
+    },
+    {
+      "fr": "visionner",
+      "b": "renillar",
+      "type": "verbe",
+      "phonetic": "/re.ni.lar/",
+      "definition": "Regarder attentivement un contenu audiovisuel ou visuel.",
+      "example": "« Nous visionnons le film ce soir. »",
+      "related": ["regarder", "voir", "observer"],
+      "verb": {
+        "infinitive": "renillar",
+        "class": "ar",
+        "stem": "renill",
+        "subjStem": "renil",
+        "participle": "renillado"
+      }
+    },
+    {
+      "fr": "entrevoir",
+      "b": "meduar",
+      "type": "verbe",
+      "phonetic": "/me.du.ar/",
+      "definition": "Apercevoir brièvement ou imparfaitement.",
+      "example": "« J'ai entrevu une silhouette dans la brume. »",
+      "related": ["voir", "apercevoir", "regard"],
+      "verb": {
+        "infinitive": "meduar",
+        "class": "ar",
+        "stem": "medu",
+        "subjStem": "meduy",
+        "participle": "meduado"
+      }
+    },
+    {
+      "fr": "tête",
+      "b": "mecha",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "Partie supérieure du corps humain, comprenant notamment le cerveau, le visage et les principaux organes des sens.",
+      "example": "",
+      "related": ["cheveux", "front", "œil", "oreille", "nez"]
+    },
+    {
+      "fr": "cheveux",
+      "b": "bales",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "Ensemble des poils qui poussent sur la tête.",
+      "example": "",
+      "related": ["tête", "front"]
+    },
+    {
+      "fr": "front",
+      "b": "sentália",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "Partie du visage située entre les sourcils et la racine des cheveux.",
+      "example": "",
+      "related": ["tête", "sourcil", "cheveux"]
+    },
+    {
+      "fr": "racontar",
+      "b": "penealipe",
+      "type": "nom",
+      "gender": "neutre",
+      "plural": "penealipes",
+      "phonetic": "",
+      "etymology": {
+        "date": "1870",
+        "author": "QUINDALÉ",
+        "language": "ANCIEN CALÓ",
+        "source": "substantivation de penar",
+        "meaning": "dire, parler"
+      },
+      "definition": "Commérage.",
+      "example": "",
+      "related": ["rumeur", "bruit", "ragot"]
+    },
+    {
+      "fr": "œil",
+      "b": "acai",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "Organe de la vue situé dans l'orbite.",
+      "example": "",
+      "related": ["sourcil", "nez", "oreille"]
+    },
+    {
+      "fr": "sourcil",
+      "b": "pleana",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "Bande de poils située au-dessus de l'œil.",
+      "example": "",
+      "related": ["œil", "front"]
+    },
+    {
+      "fr": "oreille",
+      "b": "mela",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "Organe de l'ouïe situé de chaque côté de la tête.",
+      "example": "",
+      "related": ["tête", "œil", "nez"]
+    },
+    {
+      "fr": "nez",
+      "b": "nari",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "Organe de l'odorat situé au milieu du visage.",
+      "example": "",
+      "related": ["œil", "bouche", "joue"]
+    },
+    {
+      "fr": "joue",
+      "b": "seoma",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "Partie latérale du visage située sous l'œil.",
+      "example": "",
+      "related": ["œil", "nez", "bouche"]
+    },
+    {
+      "fr": "bouche",
+      "b": "suemba",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "Ouverture du visage servant notamment à manger, boire et parler.",
+      "example": "",
+      "related": ["lèvre", "dent", "langue"]
+    },
+    {
+      "fr": "lèvre",
+      "b": "ando",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "Parties charnues qui bordent l'ouverture de la bouche.",
+      "example": "",
+      "related": ["bouche", "dent", "langue"]
+    },
+    {
+      "fr": "dent",
+      "b": "diando",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "Organe dur implanté dans la mâchoire et servant notamment à mordre et à mâcher.",
+      "example": "",
+      "related": ["bouche", "lèvre", "langue"]
+    },
+    {
+      "fr": "langue",
+      "b": "deosa",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "Organe musculaire situé dans la bouche, intervenant notamment dans la parole, le goût et la déglutition.",
+      "example": "",
+      "related": ["bouche", "lèvre", "dent"]
+    },
+    {
+      "fr": "menton",
+      "b": "suenino",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "Partie inférieure du visage située sous la bouche.",
+      "example": "",
+      "related": ["bouche", "joue"]
+    },
+    {
+      "fr": "cou",
+      "b": "calana",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "Partie du corps qui relie la tête au tronc.",
+      "example": "",
+      "related": ["tête", "épaule", "dos"]
+    },
+    {
+      "fr": "épaule",
+      "b": "pumo",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "Partie du corps située à la jonction du bras et du tronc.",
+      "example": "",
+      "related": ["bras", "cou", "dos"]
+    },
+    {
+      "fr": "bras",
+      "b": "musio",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "Membre supérieur du corps, allant de l'épaule à la main.",
+      "example": "",
+      "related": ["épaule", "coude", "main"]
+    },
+    {
+      "fr": "coude",
+      "b": "cuna",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "Articulation qui relie le bras à l'avant-bras.",
+      "example": "",
+      "related": ["bras", "avant-bras", "main"]
+    },
+    {
+      "fr": "avant-bras",
+      "b": "angomusio",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "Partie du membre supérieur située entre le coude et le poignet.",
+      "example": "",
+      "related": ["bras", "coude", "main"]
+    },
+    {
+      "fr": "main",
+      "b": "lueva",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "Extrémité du membre supérieur, comprenant notamment la paume et les doigts.",
+      "example": "",
+      "related": ["bras", "doigt"]
+    },
+    {
+      "fr": "doigt",
+      "b": "enusta",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "Chacune des parties articulées qui terminent la main.",
+      "example": "",
+      "related": ["main", "orteil"]
+    },
+    {
+      "fr": "poitrine",
+      "b": "bolco",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "Partie antérieure du tronc située entre le cou et le ventre.",
+      "example": "",
+      "related": ["cou", "ventre", "dos"]
+    },
+    {
+      "fr": "ventre",
+      "b": "duembo",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "Partie du tronc située entre la poitrine et le bassin.",
+      "example": "",
+      "related": ["poitrine", "hanche", "dos"]
+    },
+    {
+      "fr": "dos",
+      "b": "espeva",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "Partie postérieure du tronc, opposée à la poitrine et au ventre.",
+      "example": "",
+      "related": ["poitrine", "ventre", "épaule"]
+    },
+    {
+      "fr": "hanche",
+      "b": "polema",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "Partie du corps située de chaque côté du bassin, à la jonction avec la cuisse.",
+      "example": "",
+      "related": ["ventre", "jambe", "genou"]
+    },
+    {
+      "fr": "jambe",
+      "b": "retia",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "Membre inférieur du corps, comprenant notamment la cuisse, le genou et la partie située jusqu'à la cheville.",
+      "example": "",
+      "related": ["hanche", "genou", "cheville"]
+    },
+    {
+      "fr": "genou",
+      "b": "cando",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "Articulation qui relie la cuisse à la jambe.",
+      "example": "",
+      "related": ["jambe", "mollet"]
+    },
+    {
+      "fr": "mollet",
+      "b": "valiño",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "Partie charnue située à l'arrière de la jambe, sous le genou.",
+      "example": "",
+      "related": ["jambe", "genou", "cheville"]
+    },
+    {
+      "fr": "cheville",
+      "b": "sueca",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "Articulation qui relie la jambe au pied.",
+      "example": "",
+      "related": ["jambe", "pied", "mollet"]
+    },
+    {
+      "fr": "pied",
+      "b": "pindo",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "Extrémité du membre inférieur qui permet notamment de se tenir debout et de marcher.",
+      "example": "",
+      "related": ["cheville", "orteil"]
+    },
+    {
+      "fr": "yeux",
+      "b": "acais",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "Organes avec lesquels nous pouvons voir, regarder, visionner.",
+      "example": "",
+      "related": ["œil", "voir"]
+    },
+    {
+      "fr": "orteil",
+      "b": "sevo",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "Chacune des parties articulées qui terminent le pied.",
+      "example": "",
+      "related": ["pied", "doigt"]
+    },
+    {
+      "fr": "zéro",
+      "b": "Sero",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "un",
+      "b": "Yego",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "deux",
+      "b": "Duo",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "trois",
+      "b": "Treo",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "quatre",
+      "b": "Echo",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "cinq",
+      "b": "Pancho",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "six",
+      "b": "Yovo",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "sept",
+      "b": "Efio",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "huit",
+      "b": "Ovro",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "neuf",
+      "b": "Nebo",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "dix",
+      "b": "edeno",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "dix",
+      "b": "daso",
+      "type": "nom",
+      "label": ["ACADÉMIQUE", "SCIENTIFIQUE"],
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "onze",
+      "b": "yesdeque",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "onze",
+      "b": "edaso",
+      "type": "nom",
+      "label": ["ACAD.", "SCIENT."],
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "douze",
+      "b": "duideque",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "douze",
+      "b": "badaso",
+      "type": "nom",
+      "label": ["ACAD.", "SCIENT."],
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "treize",
+      "b": "tredeque",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "treize",
+      "b": "tedaso",
+      "type": "nom",
+      "label": ["ACAD.", "SCIENT."],
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "quatorze",
+      "b": "osdeque",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "quatorze",
+      "b": "codaso",
+      "type": "nom",
+      "label": ["ACAD.", "SCIENT."],
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "quinze",
+      "b": "pandeque",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "quinze",
+      "b": "pandaso",
+      "type": "nom",
+      "label": ["ACAD.", "SCIENT."],
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "seize",
+      "b": "yodeque",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "seize",
+      "b": "chadaso",
+      "type": "nom",
+      "label": ["ACAD.", "SCIENT."],
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "dix-sept",
+      "b": "efideque",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "dix-sept",
+      "b": "sadaso",
+      "type": "nom",
+      "label": ["ACAD.", "SCIENT."],
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "dix-huit",
+      "b": "ordeque",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "dix-huit",
+      "b": "atadaso",
+      "type": "nom",
+      "label": ["ACAD.", "SCIENT."],
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "dix-neuf",
+      "b": "nedeque",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "dix-neuf",
+      "b": "undaso",
+      "type": "nom",
+      "label": ["ACAD.", "SCIENT."],
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "vingt",
+      "b": "vino",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "vingt",
+      "b": "vemiso",
+      "type": "nom",
+      "label": ["ACAD.", "SCIENT."],
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "vingt et un",
+      "b": "viñego",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "vingt et un",
+      "b": "emiso",
+      "type": "nom",
+      "label": ["ACAD.", "SCIENT."],
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "vingt-deux",
+      "b": "vina dui",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "vingt-deux",
+      "b": "bamiso",
+      "type": "nom",
+      "label": ["ACAD.", "SCIENT."],
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "vingt-trois",
+      "b": "vina tre",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "vingt-trois",
+      "b": "temiso",
+      "type": "nom",
+      "label": ["ACAD.", "SCIENT."],
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "vingt-quatre",
+      "b": "vinosta",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "vingt-quatre",
+      "b": "comiso",
+      "type": "nom",
+      "label": ["ACAD.", "SCIENT."],
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "vingt-cinq",
+      "b": "vina panche",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "vingt-cinq",
+      "b": "pamiso",
+      "type": "nom",
+      "label": ["ACAD.", "SCIENT."],
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "vingt-six",
+      "b": "vinove",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "vingt-six",
+      "b": "chamiso",
+      "type": "nom",
+      "label": ["ACAD.", "SCIENT."],
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "vingt-sept",
+      "b": "vinefia",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "vingt-sept",
+      "b": "samiso",
+      "type": "nom",
+      "label": ["ACAD.", "SCIENT."],
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "vingt-huit",
+      "b": "vinovre",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "vingt-huit",
+      "b": "atamiso",
+      "type": "nom",
+      "label": ["ACAD.", "SCIENT."],
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "vingt-neuf",
+      "b": "vinebe",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "vingt-neuf",
+      "b": "untiso",
+      "type": "nom",
+      "label": ["ACAD.", "SCIENT."],
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "trente",
+      "b": "trianda",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "trente",
+      "b": "tiso",
+      "type": "nom",
+      "label": ["ACAD.", "SCIENT."],
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "trente et un",
+      "b": "triandego",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "trente et un",
+      "b": "etiso",
+      "type": "nom",
+      "label": ["ACAD.", "SCIENT."],
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "trente-deux",
+      "b": "triandui",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "trente-deux",
+      "b": "batiso",
+      "type": "nom",
+      "label": ["ACAD.", "SCIENT."],
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "trente-trois",
+      "b": "trianda tre",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "trente-trois",
+      "b": "tetiso",
+      "type": "nom",
+      "label": ["ACAD.", "SCIENT."],
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "trente-quatre",
+      "b": "triandosta",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "trente-quatre",
+      "b": "cotiso",
+      "type": "nom",
+      "label": ["ACAD.", "SCIENT."],
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "trente-cinq",
+      "b": "trianda panche",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "trente-cinq",
+      "b": "patiso",
+      "type": "nom",
+      "label": ["ACAD.", "SCIENT."],
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "trente-six",
+      "b": "triandove",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "trente-six",
+      "b": "chatiso",
+      "type": "nom",
+      "label": ["ACAD.", "SCIENT."],
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "trente-sept",
+      "b": "triandefia",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "trente-sept",
+      "b": "satiso",
+      "type": "nom",
+      "label": ["ACAD.", "SCIENT."],
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "trente-huit",
+      "b": "triandovre",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "trente-huit",
+      "b": "atiso",
+      "type": "nom",
+      "label": ["ACAD.", "SCIENT."],
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "trente-neuf",
+      "b": "trianda nebe",
+      "type": "nom",
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    },
+    {
+      "fr": "trente-neuf",
+      "b": "untaliso",
+      "type": "nom",
+      "label": ["ACAD.", "SCIENT."],
+      "phonetic": "",
+      "definition": "",
+      "example": "",
+      "related": []
+    }
+  ]
+}

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fendani — Fiche Concept</title>
+    
+    <!-- Polices haute fidélité -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --obsidienne: #0b1711;
+            --vert-profond: #13271d;
+            --vert-vif: #1f3f2f;
+            --or-precieux: #d4af37;
+            --or-clair: #f3e5ab;
+            --fond-soie: #f4f1ea;
+            --blanc-pur: #ffffff;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        body {
+            background-color: var(--fond-soie);
+            background-image: 
+                radial-gradient(circle at 15% 10%, rgba(212, 175, 55, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 90%, rgba(31, 63, 47, 0.08) 0%, transparent 50%),
+                linear-gradient(135deg, #f9f8f4 0%, var(--fond-soie) 100%);
+            color: var(--obsidienne);
+            font-family: 'Newsreader', serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 60px 20px;
+            overflow-x: hidden;
+        }
+
+        .scene {
+            width: 100%;
+            max-width: 740px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* --- NAVIGATION SUPÉRIEURE ÉPURÉE --- */
+        .barre-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 35px;
+            animation: fadeInDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .lien-retour {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--vert-profond);
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(19, 39, 29, 0.08);
+            padding: 12px 22px;
+            border-radius: 14px;
+            cursor: pointer;
+            text-decoration: none;
+            backdrop-filter: blur(12px);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 20px rgba(19, 39, 29, 0.03);
+        }
+
+        .lien-retour:hover {
+            background: var(--vert-profond);
+            color: var(--blanc-pur);
+            border-color: var(--vert-profond);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(19, 39, 29, 0.15);
+        }
+
+        .champ-input-mini {
+            width: 240px;
+            padding: 12px 18px;
+            font-family: 'Newsreader', serif;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(19, 39, 29, 0.08);
+            border-radius: 14px;
+            outline: none;
+            color: var(--obsidienne);
+            backdrop-filter: blur(12px);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 20px rgba(19, 39, 29, 0.03);
+        }
+
+        .champ-input-mini:focus {
+            background: var(--blanc-pur);
+            border-color: var(--or-precieux);
+            width: 290px;
+            box-shadow: 0 12px 30px -8px rgba(212, 175, 55, 0.2);
+        }
+
+        .champ-input-mini::placeholder {
+            color: rgba(19, 39, 29, 0.35);
+            font-style: italic;
+        }
+
+        /* --- CARTE MAJESTUEUSE --- */
+        .carte-majestueuse {
+            background: rgba(255, 255, 255, 0.82);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            border-radius: 32px;
+            padding: 56px 48px;
+            box-shadow: 0 35px 70px -20px rgba(19, 39, 29, 0.09), 
+                        0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+            backdrop-filter: blur(24px);
+            position: relative;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+            opacity: 0;
+        }
+
+        .carte-majestueuse::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50px;
+            right: 50px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--or-precieux), transparent);
+        }
+
+        .entete-concept {
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 8px;
+        }
+
+        .mot-vedette {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: 3.2rem;
+            letter-spacing: -0.03em;
+            color: var(--obsidienne);
+        }
+
+        .bloc-audios {
+            display: inline-flex;
+            gap: 8px;
+        }
+
+        .bouton-audio {
+            background: rgba(19, 39, 29, 0.04);
+            border: 1px solid rgba(19, 39, 29, 0.08);
+            border-radius: 10px;
+            padding: 6px 14px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--vert-profond);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .bouton-audio:hover {
+            background: var(--or-precieux);
+            color: var(--obsidienne);
+            border-color: var(--or-precieux);
+            transform: scale(1.06);
+            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.3);
+        }
+
+        .traduction-principale {
+            font-weight: 400;
+            font-size: 1.8rem;
+            color: rgba(19, 39, 29, 0.75);
+            font-style: italic;
+        }
+
+        .etymologie {
+            font-size: 1.2rem;
+            color: rgba(19, 39, 29, 0.6);
+            font-style: italic;
+            margin-bottom: 24px;
+            letter-spacing: 0.01em;
+        }
+
+        /* --- MÉTADONNÉES HISTORIQUES --- */
+        .grille-meta {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 48px;
+            background: rgba(19, 39, 29, 0.02);
+            padding: 20px 24px;
+            border-radius: 18px;
+            border: 1px solid rgba(19, 39, 29, 0.04);
+        }
+
+        .bloc-meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .meta-titre {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 600;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--or-precieux);
+        }
+
+        .meta-valeur {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--obsidienne);
+        }
+
+        /* --- SECTIONS INTERNES --- */
+        .titre-section {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--or-precieux);
+            margin-top: 42px;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .titre-section::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(212, 175, 55, 0.25);
+        }
+
+        .citation-situation {
+            background: rgba(19, 39, 29, 0.02);
+            border-left: 3px solid var(--or-precieux);
+            padding: 26px 30px;
+            border-radius: 0 20px 20px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            border-top: 1px solid rgba(19, 39, 29, 0.04);
+            border-right: 1px solid rgba(19, 39, 29, 0.04);
+            border-bottom: 1px solid rgba(19, 39, 29, 0.04);
+        }
+
+        .ligne-citation {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .texte-calo-sit {
+            font-weight: 600;
+            font-size: 1.35rem;
+            color: var(--obsidienne);
+            letter-spacing: -0.01em;
+        }
+
+        .texte-fran-sit {
+            font-size: 1.2rem;
+            color: rgba(19, 39, 29, 0.7);
+            font-style: italic;
+        }
+
+        /* Bloc observation */
+        .texte-observation {
+            font-size: 1.1rem;
+            color: rgba(19, 39, 29, 0.8);
+            line-height: 1.6;
+            font-style: italic;
+            background: rgba(19, 39, 29, 0.015);
+            padding: 20px 24px;
+            border-radius: 14px;
+            border: 1px solid rgba(19, 39, 29, 0.04);
+        }
+
+        /* Constellation de synonymes / antonymes */
+        .constellation-synonymes {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .lien-synonyme {
+            display: inline-block;
+            background: rgba(19, 39, 29, 0.03);
+            border: 1px solid rgba(19, 39, 29, 0.08);
+            padding: 10px 18px;
+            border-radius: 12px;
+            color: var(--vert-profond);
+            text-decoration: none;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .lien-synonyme:hover {
+            background: var(--vert-profond);
+            color: var(--blanc-pur);
+            border-color: var(--vert-profond);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px -5px rgba(19, 39, 29, 0.2);
+        }
+
+        .aucun-terme {
+            color: rgba(19, 39, 29, 0.4);
+            font-style: italic;
+            font-size: 1.05rem;
+        }
+
+        /* Bloc tableau de conjugaison */
+        .conteneur-conjugaison {
+            background: rgba(19, 39, 29, 0.02);
+            border: 1px solid rgba(19, 39, 29, 0.06);
+            border-radius: 18px;
+            padding: 24px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.95rem;
+            color: rgba(19, 39, 29, 0.8);
+        }
+
+        /* --- PIED DE PAGE --- */
+        .pied-page {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(19, 39, 29, 0.3);
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="scene">
+        <!-- Navigation -->
+        <div class="barre-nav">
+            <a href="dictionnaire.html" class="lien-retour">
+                <span>←</span> Lexique
+            </a>
+            <input type="text" id="recherche" class="champ-input-mini" placeholder="Explorer un autre terme..." autocomplete="off">
+        </div>
+
+        <!-- Fiche Concept -->
+        <div id="affichage-concept"></div>
+    </div>
+
+    <div class="pied-page">
+        Fendani © 2026 — Tous droits réservés.
+    </div>
+
+    <!-- SCRIPT LOGIQUE -->
+    <script src="lexique.js"></script>
+    <script>
+        function jouerAudio(nomFichier) {
+            const audio = new Audio(nomFichier);
+            audio.play().catch(e => alert(`Fichier audio introuvable ou bloqué : ${nomFichier}`));
+        }
+
+        const parametres = new URLSearchParams(window.location.search);
+        const termeId = parametres.get('terme');
+        const concept = dictionnaire.find(item => item.id === termeId);
+        const zoneAffichage = document.getElementById('affichage-concept');
+
+        if (concept) {
+            // Gestion des synonymes
+            let htmlSynonymes = '<span class="aucun-terme">Aucun synonyme répertorié.</span>';
+            if (concept.synonymes && concept.synonymes.length > 0) {
+                htmlSynonymes = '<ul class="constellation-synonymes">' + concept.synonymes.map(syn => {
+                    const coord = dictionnaire.find(i => i.caló === syn);
+                    return coord 
+                        ? `<li><a href="mot.html?terme=${coord.id}" class="lien-synonyme">${syn}</a></li>`
+                        : `<li><span class="lien-synonyme" style="opacity: 0.5; cursor: default;">${syn}</span></li>`;
+                }).join('') + '</ul>';
+            }
+
+            // Gestion des antonymes
+            let htmlAntonymes = '<span class="aucun-terme">Aucun antonyme répertorié.</span>';
+            if (concept.antonymes && concept.antonymes.length > 0) {
+                htmlAntonymes = '<ul class="constellation-synonymes">' + concept.antonymes.map(ant => `<li><span class="lien-synonyme">${ant}</span></li>`).join('') + '</ul>';
+            }
+
+            // Gestion de l'observation
+            let htmlObservation = concept.observation 
+                ? `<div class="texte-observation">${concept.observation}</div>` 
+                : '<span class="aucun-terme">Aucune observation particulière pour ce terme.</span>';
+
+            // Gestion du tableau de conjugaison
+            let htmlConjugaison = concept.conjugaison_html || '<span class="aucun-terme" style="font-style: italic;">Non applicable ou non renseigné pour ce terme.</span>';
+
+            document.title = `Fendani — ${concept.caló}`;
+            zoneAffichage.innerHTML = `
+                <div class="carte-majestueuse">
+                    <div class="entete-concept">
+                        <span class="mot-vedette">${concept.caló}</span>
+                        <div class="bloc-audios">
+                            <button class="bouton-audio" title="Audio Masculin" onclick="jouerAudio('${concept.audio_masc}')">👨🏻 🔊</button>
+                            <button class="bouton-audio" title="Audio Féminin" onclick="jouerAudio('${concept.audio_fem}')">👩🏻 🔊</button>
+                        </div>
+                        <span class="traduction-principale">/ ${concept.français}</span>
+                    </div>
+                    
+                    <div class="etymologie">${concept.etymologie || 'Étymologie non renseignée.'}</div>
+
+                    <!-- Blocs Date et Première attestation -->
+                    <div class="grille-meta">
+                        <div class="bloc-meta-item">
+                            <span class="meta-titre">Date</span>
+                            <span class="meta-valeur">${concept.siecle || 'XVIe siècle'}</span>
+                        </div>
+                        <div class="bloc-meta-item">
+                            <span class="meta-titre">Première attestation</span>
+                            <span class="meta-valeur">${concept.premiere_attestation || '1853'}</span>
+                        </div>
+                    </div>
+
+                    <div class="titre-section">Mise en situation</div>
+                    <div class="citation-situation">
+                        <div class="ligne-citation">
+                            <button class="bouton-audio" onclick="jouerAudio('${concept.audio_phrase_calo_masc || concept.audio_masc}')">🔊</button>
+                            <span class="texte-calo-sit">${concept.phrase_calo_masc || ''}</span>
+                        </div>
+                        <div class="ligne-citation">
+                            <button class="bouton-audio" onclick="jouerAudio('${concept.audio_phrase_fran_masc || concept.audio_masc}')">🔊</button>
+                            <span class="texte-fran-sit">${concept.phrase_fran_masc || ''}</span>
+                        </div>
+                    </div>
+
+                    <div class="titre-section">Observation</div>
+                    <div>${htmlObservation}</div>
+
+                    <div class="titre-section">Correspondances & Synonymes</div>
+                    <div>${htmlSynonymes}</div>
+
+                    <div class="titre-section">Antonyme</div>
+                    <div>${htmlAntonymes}</div>
+
+                    <div class="titre-section">Tableau de conjugaison</div>
+                    <div class="conteneur-conjugaison">
+                        ${htmlConjugaison}
+                    </div>
+
+                </div>
+            `;
+        } else {
+            zoneAffichage.innerHTML = '<div class="carte-majestueuse" style="text-align: center; font-style: italic; color: rgba(19,39,29,0.5);">Ce concept est introuvable dans le lexique.</div>';
+        }
+
+        const champRecherche = document.getElementById('recherche');
+        champRecherche.addEventListener('keydown', (e) => {
+            if (e.key === "Enter") {
+                const val = champRecherche.value.trim().toLowerCase();
+                const match = dictionnaire.find(item => item.caló.toLowerCase() === val || item.français.toLowerCase() === val);
+                window.location.href = match ? `mot.html?terme=${match.id}` : "dictionnaire.html";
+            }
+        });
+    </script>
+</body>
+</html>

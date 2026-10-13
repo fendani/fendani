@@ -1,0 +1,135 @@
+function renderDetails(mot) {
+  let col1HTML = "";
+  let col2HTML = "";
+
+  const lang = new URLSearchParams(window.location.search).get("lang") || "pt";
+
+  // Fonction pour récupérer le bon texte
+  function t(value) {
+    if (typeof value === "object" && value !== null) {
+      return value[lang] || value.fr || "";
+    }
+    return value || "";
+  }
+
+  // DÉFINITION
+  if (mot.definition) {
+    col1HTML += `
+      <div class="detail-row">
+        <span class="detail-label">Definição</span>
+        ${escapeHTML(t(mot.definition))}
+      </div>`;
+  }
+
+  // EXEMPLE
+  if (mot.example) {
+    col1HTML += `
+      <div class="detail-row">
+        <span class="detail-label">Exemplo</span>
+        <em>${escapeHTML(t(mot.example))}</em>
+      </div>`;
+  }
+
+  // NATURE + GENRE
+  if (mot.type || mot.gender) {
+    col2HTML += `
+      <div class="detail-row">
+        <span class="detail-label">Natureza / Género</span>
+        ${escapeHTML(t(mot.type))}
+        ${mot.gender ? " · " + escapeHTML(t(mot.gender)) : ""}
+      </div>`;
+  }
+
+  // DOMAINE
+  if (mot.domain) {
+    col2HTML += `
+      <div class="detail-row">
+        <span class="detail-label">Domínio</span>
+        <span style="
+          display:inline-block;
+          background:#f0f0f0;
+          color:#005D4C;
+          padding:4px 10px;
+          border-radius:20px;
+          font-size:0.9em;
+        ">
+          ${escapeHTML(t(mot.domain))}
+        </span>
+      </div>`;
+  }
+
+  // PRONONCIATION
+  if (mot.phonetic) {
+    col2HTML += `
+      <div class="detail-row">
+        <span class="detail-label">Pronúncia</span>
+        ${escapeHTML(mot.phonetic)}
+      </div>`;
+  }
+
+  // AUDIO
+  if (mot.audio1 || mot.audio2) {
+    col2HTML += `
+      <div class="detail-row audio-row">
+        <span class="detail-label">Áudio</span>`;
+
+    if (mot.audio1) {
+      col2HTML += `
+        <button class="play-audio"
+          onclick="new Audio('${escapeHTML(mot.audio1)}').play()">
+          🗣️
+        </button>`;
+    }
+
+    if (mot.audio2) {
+      col2HTML += `
+        <button class="play-audio"
+          onclick="new Audio('${escapeHTML(mot.audio2)}').play()">
+          🎓
+        </button>`;
+    }
+
+    col2HTML += `</div>`;
+  }
+
+  // ÉTYMOLOGIE
+  if (mot.etymology) {
+    const etymologies = Array.isArray(mot.etymology)
+      ? mot.etymology
+      : [mot.etymology];
+
+    etymologies.forEach(etymology => {
+      const language = t(etymology.language);
+      const meaning = t(etymology.meaning);
+
+      if (etymology.source || meaning) {
+        col2HTML += `
+          <div class="detail-row">
+            <span class="detail-label">
+              Etimologia · ${escapeHTML(language)}
+            </span>
+            ${etymology.source || ""}
+            ${meaning ? " — " + escapeHTML(meaning) : ""}
+          </div>`;
+      }
+    });
+  }
+
+  // RÉSONANCES
+  if (mot.related && mot.related.length) {
+    col2HTML += `
+      <div class="detail-row">
+        <span class="detail-label">Palavras relacionadas</span>
+        <span class="related">
+          ${mot.related.map(item => `<span>${escapeHTML(item)}</span>`).join("")}
+        </span>
+      </div>`;
+  }
+
+  return `
+    <div class="monograph-grid">
+      <div class="mono-col">${col1HTML}</div>
+      <div class="mono-col">${col2HTML}</div>
+    </div>
+  `;
+}

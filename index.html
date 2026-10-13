@@ -633,6 +633,15 @@ header nav a {
     width: 150px;
   }
 
+  @media (max-width: 768px) {
+    /* Ce code s'applique uniquement sur les téléphones */
+    .votre-bloc-categorie, .votre-bloc-mot {
+        width: 100% !important; /* Force les éléments à prendre toute la largeur et à se mettre les uns sous les autres */
+        display: block !important;
+        float: none !important;
+    }
+}
+
   #compactSearchInput {
     font-size: 15px;
   }

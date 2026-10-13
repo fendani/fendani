@@ -751,7 +751,24 @@ etymology: {
         ]
     },
 
-
+{
+        fr: "abat-jour",
+        b: "penao",
+        type: "nom",
+gender: "féminin",
+        phonetic: "",
+domain: "mesure du temps",
+etymology: {
+            date: "2016",
+            author: "Pablo Ramírez López",
+            language: "ANCIEN CALÓ",
+            source: "<em>cf. nuit</em>",
+},
+        definition: "Milieu de la nuit et transition exacte entre deux jours consécutifs à 00 h 00 (ou 24 h 00). Sur le plan astronomique, le minuit correspond à l'instant où le Soleil se trouve au plus bas sous l'horizon, à l'opposé exact du midi solaire.",
+        example: "",
+        related: [
+        ]
+    },
 
 
 

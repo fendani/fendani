@@ -432,7 +432,8 @@ letter-spacing: 0px;
     display: flex;
     flex-direction: column;
     gap: 15px;
-    position: relative; /* Évite que le header écrase le contenu */
+    position: relative;
+    width: 100% !important;
   }
 
   .logo {
@@ -440,15 +441,18 @@ letter-spacing: 0px;
     text-align: center;
   }
 
-  /* Redonne de la place et de l'importance à la barre de recherche */
+  /* Force la barre à rester dans les limites de l'écran de téléphone */
   .header-search-container {
-    width: 100%;
+    width: 100% !important;
+    padding: 0 10px;
   }
 
   .header-search {
-    max-width: 100%;
-    font-size: 22px; /* Plus grand pour taper facilement au doigt */
-    border-bottom: 1px solid var(--line); /* Ligne visible pour le mobile */
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important; /* Empêche les paddings de faire déborder la barre */
+    font-size: 22px; 
+    border-bottom: 1px solid var(--line) !important; 
     padding-bottom: 5px;
   }
 
@@ -459,9 +463,9 @@ letter-spacing: 0px;
 
   /* Déblocage du corps de la page */
   main {
-    height: auto; /* Supprime la hauteur bloquée de l'ordinateur */
-    min-height: auto;
-    padding: 20px 20px 40px;
+    height: auto !important; 
+    min-height: auto !important;
+    padding: 20px 20px 40px !important;
   }
 
   /* Réalignement des mots du dictionnaire */
@@ -479,7 +483,6 @@ letter-spacing: 0px;
     font-size: 18px;
   }
   
-  /* Ajustement de la grille de l'alphabet */
   .alphabet-grid {
     justify-content: center;
   }

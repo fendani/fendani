@@ -2349,6 +2349,8 @@ etymology: {
         b: "canedra",
         type: "nom",
 gender: "féminin",
+    image: "psalterion.jpg",
+credit: "Wikipédia © Didier Descouens", 
 domain: "instrument de musique",
         phonetic: "",
         definition: "Instrument de musique médiéval à cordes pincées ou frappées, tendues sur une caisse de résonance plate en bois.",

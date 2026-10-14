@@ -2344,6 +2344,29 @@ etymology: {
         ]
     },
 
+{
+        fr: "psaltérion",
+        b: "canedra",
+        type: "nom",
+gender: "féminin",
+domain: "instrument de musique",
+        phonetic: "",
+        definition: "Instrument de musique médiéval à cordes pincées ou frappées, tendues sur une caisse de résonance plate en bois.",
+        example: "",
+etymology: {
+            date: "XXIe s.",
+            author: "FENDANI",
+            language: "HINDI",
+            source: "formé à partir de क्वणित, <em>kvaṇita</em> (son produit par un instrument à cordes) et त्र, <em>tra</em>, (vibration)",
+            meaning: ""
+        },
+        related: [
+            "instrument",
+            "musique",
+            "médiéval"
+        ]
+    },
+    
     {
         fr: "chêne",
         b: "diambo",

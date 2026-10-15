@@ -1283,6 +1283,62 @@ body.single-mode:not(.has-image) main {
     font-size: 27px;
   }
 } 
+    /* FENDANI — Visibilité du mot principal */
+@media (max-width: 768px) {
+  body.single-mode .word-header-bar {
+    align-items: stretch;
+    padding-top: 12px;
+    padding-bottom: 22px;
+    gap: 18px;
+    min-height: 0;
+    height: auto;
+  }
+
+  body.single-mode .word-main {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: baseline;
+    column-gap: 10px;
+    row-gap: 7px;
+    width: 100%;
+  }
+
+  body.single-mode .word-letter {
+    grid-column: 1;
+    grid-row: 1;
+    padding-top: 4px;
+  }
+
+  body.single-mode .word-fr {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 19px;
+    line-height: 1.35;
+  }
+
+  body.single-mode .word-name {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 5px;
+    font-size: clamp(42px, 11vw, 58px);
+    line-height: 1.04;
+    letter-spacing: 0;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    hyphens: auto;
+  }
+
+  body.single-mode .word-nav-links {
+    padding-top: 4px;
+  }
+
+  body.single-mode .details {
+    margin-top: 28px;
+  }
+}
   </style>
 </head>
 
@@ -1694,61 +1750,101 @@ document.body.style.backgroundColor =
     .toLowerCase();
 }
 
-mainSearch.addEventListener("keydown", (event) => {
+function normalizeWord(text) {
+  return String(text || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLocaleLowerCase("fr")
+    .trim();
+}
+
+function getSearchText(mot) {
+  const senses = (mot.senses || [])
+    .map(s => [
+      s.definition,
+      s.b,
+      ...(s.examples || []).map(e => e.text)
+    ].join(" "))
+    .join(" ");
+
+  const related = (mot.related || []).join(" ");
+
+  return normalizeWord([
+    mot.fr,
+    mot.b,
+    mot.definition,
+    ...(mot.examples || []).map(e => e.text),
+    mot.type,
+    mot.domain,
+    mot.phonetic,
+    related,
+    senses
+  ].join(" "));
+}
+
+function searchDictionary(query) {
+  const q = normalizeWord(query);
+  if (!q) return [];
+
+  const terms = q.split(/\s+/).filter(Boolean);
+
+  return sortedDictionary
+    .map(mot => {
+      const french = normalizeWord(mot.fr);
+      const calo = normalizeWord(mot.b);
+      const fullText = getSearchText(mot);
+
+      let score = 0;
+
+      if (french === q || calo === q) score = 100;
+      else if (french.startsWith(q) || calo.startsWith(q)) score = 70;
+      else if (terms.every(term => fullText.includes(term))) score = 40;
+      else if (fullText.includes(q)) score = 20;
+
+      return { mot, score };
+    })
+    .filter(item => item.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .map(item => item.mot);
+}
+
+function displaySearchResults(query) {
+  const results = searchDictionary(query);
+
+  wordList.innerHTML = "";
+  empty.style.display = "none";
+
+  if (!query.trim()) {
+    buildDOM(sortedDictionary);
+    return;
+  }
+
+  if (!results.length) {
+    empty.textContent = "Aucun écho trouvé.";
+    empty.style.display = "block";
+    return;
+  }
+
+  buildDOM(results);
+}
+
+mainSearch.addEventListener("input", () => {
+  displaySearchResults(mainSearch.value);
+});
+
+mainSearch.addEventListener("keydown", event => {
   if (event.key !== "Enter") return;
 
   event.preventDefault();
 
-  const query = normalizeWord(mainSearch.value);
+  const results = searchDictionary(mainSearch.value);
 
-  if (!query) return;
-
-  const mot = sortedDictionary.find(mot =>
-    normalizeWord(mot.fr) === query
-  );
-
-  if (mot) {
-    window.location.href =
-      `index.html?mot=${encodeURIComponent(slugify(mot.b))}`;
+  if (results.length) {
+    navigateToWord(slugify(results[0].b));
   } else {
     empty.textContent = "Retentez votre chance.";
     empty.style.display = "block";
-    wordList.innerHTML = "";
   }
-});
-    }
-const compactSearch = document.getElementById("compactSearch");
-const compactSearchInput = document.getElementById("compactSearchInput");
-
-function updateCompactSearch() {
-  compactSearch.style.display =
-    document.body.classList.contains("single-mode") ? "block" : "none";
-}
-
-const previousHandleRoute = handleRoute;
-
-handleRoute = function () {
-  previousHandleRoute();
-  updateCompactSearch();
-};
-
-compactSearchInput.addEventListener("keydown", function (event) {
-  if (event.key !== "Enter") return;
-  event.preventDefault();
-
-  const query = normalizeWord(compactSearchInput.value);
-
-  const mot = dictionary.find(m =>
-    normalizeWord(m.fr) === query
-  );
-
-  if (!mot) return;
-
-  const slug = slugify(mot.b);
-  window.location.href = new URL(
-    "index.html?mot=" + encodeURIComponent(slug),
-    window.location.href
-  ).href;
 });
 
 updateCompactSearch();

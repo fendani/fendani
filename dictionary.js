@@ -1030,6 +1030,44 @@ senses: [
         ]
     },
 
+{
+        fr: "avoir",
+        b: "anar",
+        type: "verbe, nom",
+image: "soleil.jpg",
+credit: "Unsplash © Ishan @seefromthesky",
+        phonetic: "",
+etymology: {
+            date: "2016",
+            author: "Pablo Ramírez López",
+            language: "ANCIEN CALÓ",
+            source: "<em>aisnar, terelar</em>",
+            meaning: "avoir, posséder"
+},
+         definition: "<strong><span style=\"color:#305CDE;\">anar</span></strong> Possession matérielle ou abstraite, l'action d'éprouver un sentiment, ou sert d'auxiliaire indispensable pour conjuguer les temps composés. C'est l'un des piliers fondamentaux de la langue, reliant le sujet à ses biens, ses états ou ses actions passées.",
+examples: [
+  {
+text: "<strong>Ha sinado al biosco, adive.</strong> Il a été au cinéma, aujourd'hui.",
+  },
+],
+senses: [
+  {
+    definition: "Avoir, posséder",
+    b: '<strong><span style="color: #305CDE;">tenear</span></strong>',
+    examples: [
+      {
+        text: "<strong><em>Teneo</em> yo dambo da dui machicos.</strong> J'ai un chien et deux chats.",
+        audio: ""
+      },
+    ]
+
+  },
+ ],
+
+        related: [
+            "posséder",
+        ]
+    },
 
 
     {
@@ -1075,7 +1113,7 @@ etymology: {
             date: "1870",
             author: "F. Quindalé",
             language: "ANCIEN CALÓ",
-            source: "substantivation de penear",
+            source: "substantivation de <em>penear</em>",
             meaning: "dire, parler"
 },
         definition: "Commérage.",
@@ -1132,6 +1170,51 @@ audio1: "",
         related: [
             "bouc",
             "menon"
+        ]
+    },
+
+{
+        fr: "avoirs",
+        b: "xalleres",
+        type: "nom",
+        gender: "masculin pluriel",
+domain: "économie",
+        phonetic: "",
+definition: "<strong>sg</strong>. <em>xaller</em>. <br><br> Ensemble des biens, des droits et des créances que possède une personne physique ou morale (une entreprise, une banque). C'est un terme principalement utilisé en comptabilité et en finance.",
+
+etymology: {
+            date: "2016",
+            author: "Pablo Ramírez López",
+            language: "ANCIEN CALÓ",
+            source: "<em>xayere</em>",
+            meaning: "avoir"
+},
+audio1: "",
+        related: [
+            "bien",
+            "créance"
+        ]
+    },
+
+{
+        fr: "abats",
+        b: "vendras",
+        type: "nom",
+        gender: "féminin pluriel",
+        phonetic: "",
+definition: "<strong>sg</strong>. <em>vendra</em>. <br><br> Ensemble des parties comestibles des animaux de boucherie qui ne sont pas de la viande (les muscles squelettiques). Ils proviennent de la tête, du thorax, de l'abdomen ou des pattes de l'animal.",
+
+etymology: {
+            date: "2016",
+            author: "Pablo Ramírez López",
+            language: "ANCIEN CALÓ",
+            source: "<em>vendri</em>",
+            meaning: "abats"
+},
+audio1: "",
+        related: [
+            "boucherie",
+            "muscle"
         ]
     },
 

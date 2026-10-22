@@ -32,7 +32,7 @@ pt: "fazer",
 
 {
         fr: "suffixe",
-        b: "prandia",
+        b: "prata",
         type: "nom",
 gender: "féminin",
 definition: "Élément linguistique (affixe) qui s'ajoute à la fin d'un radical pour former un mot nouveau ou modifier sa fonction grammaticale. Il permet de dériver une entité lexicale tout en déterminant généralement sa catégorie (comme transformer un verbe en adjectif).",
@@ -46,6 +46,26 @@ etymology: {
 examples: [
   {
 text: "-able : -ago, -ayo (योग्य  yogya) <br>-ablement : -agame, -ayame ; -agamate -ayamate (yogya + मति mati) <br> -abilité : -agota, -ayota (yogya + ताति tathi) <br> -(at)aire : -(at)andro (tathi + पैतृक paitŕk, héritier, paternel) <br> -airement : -adrame, -andramate <br> -ique : -asco, -esco, -isco, -usco (rromani : esko, du latin -<em>iscus</em>) <br> -isme : -asto, -esto, -isto, -usto (अवस्था avasthā, condition, état) <br> -iste : <br> -> -vaño, -veño, -viño, -vuño (वादी, vadi, politique, idéologie) <br> -> -alo, -elo, -ilo, -ulo (कार, kara, professionnel, artistique) <br> -> -aco, -eco, -ico, -uco (िक, ika, académique, scientifique) <br> -> -astro, -estro, -istro, -ustro (शास्त्री, shāstrī, expertise, érudition) <br> ", 
+  },
+],
+},
+
+{
+        fr: "préfixe",
+        b: "upias",
+        type: "nom",
+gender: "masculin",
+definition: "Élément linguistique (affixe) qui précède un radical pour former un mot ou modifier sa fonction grammaticale.",
+etymology: {
+            date: "XXIe s.",
+            author: "FENDANI",
+            language: "HINDI",
+            source: "उपसर्ग • <em>upasarg</em>",
+            meaning: "préfixe"
+        },
+examples: [
+  {
+text: "pré- : ple-, pel- (पहले  pahle) <br> post- : anta-, ant- (अन्तर  antar) <br> ", 
   },
 ],
 },
@@ -1239,6 +1259,122 @@ etymology: {
             "sourcil",
             "nez",
             "oreille"
+        ]
+    },
+
+    {
+        fr: "automnal",
+        b: "tomnal",
+        type: "adjectif",
+        phonetic: "",
+image: "automne.jpg",
+credit: "Unsplash © Daniel J. Schwarz",
+etymology: {
+             date: "XXIe s.",
+            author: "ROMLEX",
+            language: "Rromani Kalderaš",
+            source: "<em>tomna</em>",
+            meaning: "automne"
+        },
+        definition: "Relatif à l'automne.",
+        example: "",
+        related: [
+            "automne",
+            "saison",
+            "hivernal"
+        ]
+    },
+
+    {
+        fr: "automnation",
+        b: "tomenibe",
+        type: "nom",
+gender: "neutre",
+        phonetic: "",
+image: "automne.jpg",
+credit: "Unsplash © Daniel J. Schwarz",
+etymology: {
+             date: "XXIe s.",
+            author: "ROMLEX",
+            language: "Rromani Kalderaš",
+            source: "<em>tomna</em>",
+            meaning: "automne"
+        },
+        definition: "Influence de l'automne.",
+        example: "",
+        related: [
+            "automne",
+            "saison",
+            "hivernal"
+        ]
+    },
+
+    {
+        fr: "automner",
+        b: "tomnar",
+        type: "verbe",
+        phonetic: "",
+image: "automne.jpg",
+credit: "Unsplash © Daniel J. Schwarz",
+etymology: {
+             date: "XXIe s.",
+            author: "ROMLEX",
+            language: "Rromani Kalderaš",
+            source: "<em>tomna</em>",
+            meaning: "automne"
+        },
+        definition: "Action qui s'apparente à l'automne.",
+        example: "",
+        related: [
+            "automne",
+            "saison",
+            "hivernal"
+        ]
+    },
+
+    {
+        fr: "préautomnal",
+        b: "pletomnal",
+        type: "adjectif",
+        phonetic: "",
+image: "automne.jpg",
+credit: "Unsplash © Daniel J. Schwarz",
+etymology: {
+             date: "XXIe s.",
+            author: "ROMLEX",
+            language: "Rromani Kalderaš",
+            source: "<em>tomna</em>",
+            meaning: "automne"
+        },
+        definition: "Ce qui précède l'automne.",
+        example: "",
+        related: [
+            "automne",
+            "saison",
+            "hivernal"
+        ]
+    },
+
+    {
+        fr: "postautomnal",
+        b: "batomnal",
+        type: "adjectif",
+        phonetic: "",
+image: "automne.jpg",
+credit: "Unsplash © Daniel J. Schwarz",
+etymology: {
+             date: "XXIe s.",
+            author: "ROMLEX",
+            language: "Rromani Kalderaš",
+            source: "<em>tomna</em>",
+            meaning: "automne"
+        },
+        definition: "Ce qui suit l'automne.",
+        example: "",
+        related: [
+            "automne",
+            "saison",
+            "hivernal"
         ]
     },
 

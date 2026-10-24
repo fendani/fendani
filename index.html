@@ -144,33 +144,30 @@
 }
 
 function afficherFicheUnique(idMot) {
-    // Change l'adresse URL du navigateur (ex: #/mot/12)
-    window.location.hash = `/mot/${idMot}`;
-}
+    const item = dictionnaire.find(m => m.id === idMot);
+    if (!item) return;
 
-// Nouvelle fonction qui dessine la fiche à l'écran quand l'URL change
-function dessinerFicheDansPage(idMot) {
-    const item = dictionnaire.find(m => m.id === parseInt(idMot));
-    if (!item) {
-        retourRecherche();
-        return;
-    }
+    let contenuHtml = "";
 
-    // Change le titre de l'onglet du navigateur pour afficher le nom du mot
-    document.title = `${item.mot} - Dictionnaire Bilingue`;
-
-    document.getElementById('details-container').innerHTML = `
-        <div class="fiche-complete">
-            <span class="mot-main">${item.mot}</span>
-            <span class="nature-main">${item.nature || 'Nature non spécifiée'}</span>
-            ${item.etymologie ? `<div class="section-fiche"><span class="section-title">Étymologie</span><div class="section-content">${item.etymologie}</div></div>` : ''}
-            <div class="section-fiche" style="border-left: 4px solid var(--success);"><span class="section-title">Traduction</span><div class="section-content trad-main">✨ ${item.traduction}</div></div>
-        </div>`;
-        
-    document.getElementById('view-search').classList.add('hidden');
-    document.getElementById('view-details').classList.remove('hidden');
-    window.scrollTo({ top: 0 });
-}
+    if (Array.isArray(item.sens)) {
+        // Parcours de chaque sens pour créer des blocs distincts
+        item.sens.forEach((s, index) => {
+            contenuHtml += `
+                <div style="margin-bottom: 30px; border-bottom: 2px dashed #e2e8f0; padding-bottom: 20px;">
+                    <span style="font-size: 18px; font-weight: bold; color: var(--accent); display: block; margin-bottom: 10px;">Sens n°${index + 1}</span>
+                    
+                    ${s.etymologie ? `
+                    <div class="section-fiche">
+                        <span class="section-title">Étymologie</span>
+                        <div class="section-content" style="font-size: 16px;">${s.etymologie}</div>
+                    </div>` : ''}
+                    
+                    <div class="section-fiche" style="border-left: 4px solid var(--success); background: #f0fdf4;">
+                        <span class="section-title">Traduction</span>
+                        <div class="section-content trad-main" style="font-size: 20px;">✨ ${s.traduction}</div>
+                    </div>
+                </div>`;
+        });
     } else {
         // Rétrocompatibilité si un mot n'a qu'un sens simple (ancien format)
         contenuHtml = `
@@ -189,37 +186,8 @@ function dessinerFicheDansPage(idMot) {
     document.getElementById('view-details').classList.remove('hidden');
     window.scrollTo({ top: 0 });
 }
-       function retourRecherche() {
-    // Réinitialise l'adresse de la page (enlève le #/mot/...)
-    window.location.hash = "";
-    document.title = "Mon Dictionnaire Vivant";
-    document.getElementById('view-details').classList.add('hidden');
-    document.getElementById('view-search').classList.remove('hidden');
-}
+        function retourRecherche() { document.getElementById('view-details').classList.add('hidden'); document.getElementById('view-search').classList.remove('hidden'); }
         function desactiverLettres() { document.querySelectorAll('.letter-btn').forEach(btn => btn.classList.remove('active')); }
-        // Détecte si l'utilisateur arrive sur le site avec le lien direct d'un mot, ou s'il clique sur "Précédent" dans son navigateur
-function gérerNavigation() {
-    const hash = window.location.hash;
-    
-    if (hash.startsWith('#/mot/')) {
-        const idMot = hash.replace('#/mot/', '');
-        dessinerFicheDansPage(idMot);
-    } else {
-        retourRecherche();
-    }
-}
-
-// Écoute les changements d'adresse dans le navigateur
-window.addEventListener('hashchange', gérerNavigation);
-
-// Active l'écoute dès le chargement de la page
-document.addEventListener("DOMContentLoaded", () => {
-    // Ligne déjà présente dans votre code :
-    if (typeof dictionnaire !== 'undefined') { genererBarreAlphabet(); }
-    
-    // Ajout pour vérifier si un lien direct a été ouvert :
-    gérerNavigation();
-});
     </script>
 </body>
 </html>

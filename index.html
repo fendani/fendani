@@ -59,7 +59,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             if (typeof dictionnaire !== 'undefined') {
-                document.getElementById('count-label').textContent = `${dictionnaire.length.toLocaleString('fr-FR')} mots chargés avec succès.`;
+                document.getElementById('count-label').textContent = `Retrouvez les ${dictionnaire.length.toLocaleString('fr-FR')} mots et expressions dans le dictionnaire.`;
                 genererBarreAlphabet();
             } else {
                 document.getElementById('count-label').textContent = "Erreur : le fichier donnees.js est introuvable ou mal configuré.";

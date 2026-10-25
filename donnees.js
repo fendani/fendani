@@ -208,7 +208,7 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 31,
-    "mot": "abcès, n.",
+    "mot": "abcès",
     "traduction": "· du romani phum - pume"
   },
   {
@@ -231,12 +231,13 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 35,
-    "mot": "abdiquer, vb. ‹1› (abandonner) de l'ancien calo mucar",
+    "mot": "abdiquer",
+"etymologie": "vb. ‹1› (abandonner) de l'ancien calo mucar",
     "traduction": "· mugar  ‹2› (renoncer) du romani tordiarel · tordiar"
   },
   {
     "id": 36,
-    "mot": "abdomen, n.",
+    "mot": "abdomen",
     "traduction": "· de l'ancien calo porria - paria"
   },
   {
@@ -247,7 +248,8 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 38,
-    "mot": "abeille, n.",
+    "mot": "abeille",
+"nature": "n.m.",
     "traduction": "· de l'ancien calo jernimachi - ernimo"
   },
   {
@@ -337,7 +339,7 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 52,
-    "mot": "Abolitionniste, n. Adj.",
+    "mot": "abolitionniste",
     "traduction": "pasteniste, pastenisto"
   },
   {
@@ -392,7 +394,7 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 61,
-    "mot": "Abonner",
+    "mot": "abonner",
     "nature": "vb.",
     "etymologie": "de l'ancien calo ustilar",
     "traduction": "estillar"
@@ -418,13 +420,13 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 65,
-    "mot": "Aborder",
+    "mot": "aborder",
     "nature": "vb.",
     "traduction": "anillar ; culmar"
   },
   {
     "id": 66,
-    "mot": "abordeur, n. Adj.",
+    "mot": "abordeur",
     "traduction": "anillare, anillaro ; culmare, culmaro"
   },
   {
@@ -462,7 +464,7 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 72,
-    "mot": "abrasif, n. Adj.",
+    "mot": "abrasif",
     "traduction": "ambenive, ambenivo"
   },
   {
@@ -504,7 +506,7 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 79,
-    "mot": "abréviateur, n. Adj.",
+    "mot": "abréviateur",
     "traduction": "amarnare, amarnaro"
   },
   {
@@ -515,7 +517,7 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 81,
-    "mot": "Abri",
+    "mot": "abri",
     "nature": "n.",
     "etymologie": "de l'ancien calo acruñe",
     "traduction": "arne"
@@ -586,7 +588,7 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 92,
-    "mot": "absent, n. Adj.",
+    "mot": "absent",
     "traduction": "duriane ; duriano"
   },
   {
@@ -597,7 +599,7 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 94,
-    "mot": "absentéiste, n. Adj.",
+    "mot": "absentéiste",
     "traduction": "durianiste ; durianisto"
   },
   {
@@ -615,7 +617,7 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 97,
-    "mot": "absolu, n. Adj.",
+    "mot": "absolu",
     "traduction": "arime ; arimo"
   },
   {
@@ -653,7 +655,7 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 103,
-    "mot": "Abstenir",
+    "mot": "abstenir",
     "nature": "vb.",
     "etymologie": "de l'ancien calo parrotobar",
     "traduction": "partovar"
@@ -672,7 +674,7 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 106,
-    "mot": "abstentionniste, n. Adj.",
+    "mot": "abstentionniste",
     "traduction": "partoviste ; partovisto"
   },
   {
@@ -702,7 +704,7 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 111,
-    "mot": "Absurde, n. Adj.",
+    "mot": "absurde",
     "etymologie": "du romani ćalaperdo",
     "traduction": "calpe ; calpeo"
   },
@@ -746,14 +748,14 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 118,
-    "mot": "Acacia",
+    "mot": "acacia",
     "nature": "n.",
     "etymologie": "de l'hindi akis, épine",
     "traduction": "aguisa : L’Acasia est un arbre de la famille des Fabacées · L’Aguisa si ye caste de la luíma de los Fabasenis."
   },
   {
     "id": 119,
-    "mot": "Académicien, n. Adj.",
+    "mot": "académicien",
     "traduction": "ampariste ; amparisto"
   },
   {
@@ -765,7 +767,7 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 121,
-    "mot": "Académique",
+    "mot": "académique",
     "nature": "adj.",
     "traduction": "amparesco"
   },
@@ -1059,7 +1061,7 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 167,
-    "mot": "accompagnateur, n. Adj.",
+    "mot": "accompagnateur",
     "traduction": "paste-nare ; pastenaro"
   },
   {
@@ -1201,201 +1203,201 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 189,
-    "mot": "ACCRO",
+    "mot": "accro",
     "nature": "adj.",
     "etymologie": "de l'ancien calo tistardo",
     "traduction": "tisaro"
   },
   {
     "id": 190,
-    "mot": "ACCROC",
+    "mot": "accroc",
     "nature": "n.",
     "traduction": "umbli : sans accroc · vin umbli"
   },
   {
     "id": 191,
-    "mot": "ACCROCHAGE",
+    "mot": "accrochage",
     "nature": "n.",
     "traduction": "umblache"
   },
   {
     "id": 192,
-    "mot": "ACCROCHE",
+    "mot": "accroche",
     "nature": "n.",
     "traduction": "umbleo"
   },
   {
     "id": 193,
-    "mot": "ACCROCHER",
+    "mot": "accrocher",
     "nature": "vb.",
     "etymologie": "du romani umblavel",
     "traduction": "umblar"
   },
   {
     "id": 194,
-    "mot": "ACCROISSEMENT",
+    "mot": "accroissement",
     "nature": "n.",
     "traduction": "(écon.) apralemipén ; (gén.) aparevipén"
   },
   {
     "id": 195,
-    "mot": "ACCROITRE",
+    "mot": "accroître",
     "nature": "vb.",
     "traduction": "(écon.) apralimar ; (gén. cf. Croître) aparivar"
   },
   {
     "id": 196,
-    "mot": "ACCROUPIR",
+    "mot": "accroupir",
     "nature": "vb.",
     "etymologie": "du romani bešnja",
     "traduction": "veñar"
   },
   {
     "id": 197,
-    "mot": "ACCRU",
+    "mot": "accru",
     "nature": "adj.",
     "traduction": "apralimado ; aparivado"
   },
   {
     "id": 198,
-    "mot": "ACCUEIL",
+    "mot": "accueil",
     "nature": "n.",
     "traduction": "ustilio"
   },
   {
     "id": 199,
-    "mot": "ACCUEILLANT",
+    "mot": "accueillant",
     "nature": "pp. adj.",
     "traduction": "ustilante ; ustilanto"
   },
   {
     "id": 200,
-    "mot": "ACCUEILLIR",
+    "mot": "accueillir",
     "nature": "vb.",
     "etymologie": "de l'ancien calo ustilelar",
     "traduction": "ustillar"
   },
   {
     "id": 201,
-    "mot": "ACCUMULABLE",
+    "mot": "accumulable",
     "nature": "adj.",
     "traduction": "robinacho"
   },
   {
     "id": 202,
-    "mot": "ACCUMULATION",
+    "mot": "accumulation",
     "nature": "n.",
     "traduction": "robenipén"
   },
   {
     "id": 203,
-    "mot": "ACCUMULER",
+    "mot": "accumuler",
     "nature": "vb.",
     "etymologie": "de l'ancien calo arrobiñar",
     "traduction": "robinar"
   },
   {
     "id": 204,
-    "mot": "ACCUSATEUR, n. Adj.",
+    "mot": "accusateur",
     "traduction": "Sapiare ; sapiaro"
   },
   {
     "id": 205,
-    "mot": "ACCUSATION",
+    "mot": "accusation",
     "nature": "n.",
     "traduction": "Sapiani"
   },
   {
     "id": 206,
-    "mot": "ACCUSER",
+    "mot": "accuser",
     "nature": "vb.",
     "etymologie": "de l'ancien calo sarplar",
     "traduction": "Sapiar"
   },
   {
     "id": 207,
-    "mot": "ACÉRAGE",
+    "mot": "acérage",
     "nature": "n.",
     "traduction": "Pisiache"
   },
   {
     "id": 208,
-    "mot": "ACERBE",
+    "mot": "acerbe",
     "nature": "adj.",
     "traduction": "Pisiano"
   },
   {
     "id": 209,
-    "mot": "ACÉRÉ",
+    "mot": "acéré",
     "nature": "adj.",
     "traduction": "Pisiado"
   },
   {
     "id": 210,
-    "mot": "ACÉRER",
+    "mot": "acérer",
     "nature": "vb.",
     "etymologie": "du romani pišisarel",
     "traduction": "Pisiar"
   },
   {
     "id": 211,
-    "mot": "ACÉROLa",
+    "mot": "acérola",
     "nature": "n.",
     "etymologie": "de l'espagnol aserola",
     "traduction": "aserola"
   },
   {
     "id": 212,
-    "mot": "acérolIER",
+    "mot": "acérolier",
     "nature": "n.",
     "traduction": "Aserolino"
   },
   {
     "id": 213,
-    "mot": "ACÉTABULE",
-    "nature": "n.",
-    "etymologie": "de l'ancien calo bada, calice",
-    "traduction": "Bada"
+    "mot": "acétabule",
+    "nature": "n.m.",
+    "etymologie": "de l'ancien calo <em>bada</em>, calice",
+    "traduction": "bada"
   },
   {
     "id": 214,
-    "mot": "Acétabulum",
-    "nature": "n.",
-    "etymologie": "du sanskrit कूप॑  kupa, récipient à huile",
-    "traduction": "cupia ; acetabolio"
+    "mot": "acétabulum",
+    "nature": "n.m.",
+    "etymologie": "du sanskrit कूप॑ <em>kupa</em>, récipient à huile",
+    "traduction": "cupia"
   },
   {
     "id": 215,
     "mot": "acétique",
     "nature": "n.",
-    "etymologie": "cf. Acide",
+    "etymologie": "cf. acide",
     "traduction": "bermano"
   },
   {
     "id": 216,
-    "mot": "ACHARNEMENT",
+    "mot": "acharnement",
     "nature": "n.",
     "etymologie": "de l'ancien calo esilen",
     "traduction": "Esiliani"
   },
   {
     "id": 217,
-    "mot": "ACHARNER",
+    "mot": "acharner",
     "nature": "vb.",
     "traduction": "Esiliar : S’acharner à · Eziliarse en"
   },
   {
     "id": 218,
-    "mot": "ACHAT",
+    "mot": "achat",
     "nature": "n.",
     "traduction": "Aqueneo"
   },
   {
     "id": 219,
-    "mot": "Achatine",
-    "nature": "n.",
-    "etymologie": "du français achatine",
-    "traduction": "Achatine"
+    "mot": "achatine",
+    "nature": "n.f.",
+    "etymologie": "du sanskrit शम्बूक <em>shambuka</em>, escargot",
+    "traduction": "sambuca"
   },
   {
     "id": 220,
@@ -1411,45 +1413,45 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 222,
-    "mot": "ACHETER",
+    "mot": "acheter",
     "nature": "vb.",
     "traduction": "Aquenar"
   },
   {
     "id": 223,
-    "mot": "ACHEVABLE",
+    "mot": "achevable",
     "nature": "adj.",
     "traduction": "Concalacho"
   },
   {
     "id": 224,
-    "mot": "ACHÈVEMENT",
+    "mot": "achèvement",
     "nature": "n.",
     "traduction": "Concalime"
   },
   {
     "id": 225,
-    "mot": "ACHEVER",
+    "mot": "achever",
     "nature": "vb.",
     "etymologie": "du romani koncyail",
     "traduction": "Concaliar"
   },
   {
     "id": 226,
-    "mot": "ACIDE",
+    "mot": "acide",
     "nature": "n.",
-    "etymologie": "de l'ancien calo berji",
+    "etymologie": "de l'ancien calo <em>berji</em>",
     "traduction": "Bermi"
   },
   {
     "id": 227,
-    "mot": "ACIDITé",
+    "mot": "acidité",
     "nature": "n.",
     "traduction": "Bermadi"
   },
   {
     "id": 228,
-    "mot": "ACIER",
+    "mot": "acier",
     "nature": "n.",
     "etymologie": "de l'ancien calo asistrole",
     "traduction": "stole"
@@ -1465,13 +1467,13 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 230,
-    "mot": "ACMÉISME",
+    "mot": "acméisme",
     "nature": "n.",
     "traduction": "sirismo"
   },
   {
     "id": 231,
-    "mot": "ACMÉISTE, n. Adj.",
+    "mot": "acméiste",
     "traduction": "siriste ; siristo"
   },
   {
@@ -1483,47 +1485,47 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 233,
-    "mot": "ACNÉIQUE",
+    "mot": "acnéique",
     "nature": "adj.",
     "traduction": "Musino"
   },
   {
     "id": 234,
-    "mot": "ACNÉISEr",
+    "mot": "acnéiser",
     "nature": "vb.",
     "traduction": "Musillar"
   },
   {
     "id": 235,
-    "mot": "ACOLYTE",
+    "mot": "acolyte",
     "nature": "n.",
     "etymologie": "de l'hindi parichara",
     "traduction": "Pachare"
   },
   {
     "id": 236,
-    "mot": "ACOMPTE",
+    "mot": "acompte",
     "nature": "n.",
     "etymologie": "cf. Compte",
     "traduction": "Agianeo"
   },
   {
     "id": 237,
-    "mot": "A-CÔTÉ",
+    "mot": "à-côté",
     "nature": "n.",
     "etymologie": "du romani kald. Petoparco, futilité, accessoire",
     "traduction": "Peoparco"
   },
   {
     "id": 238,
-    "mot": "A-COUP",
+    "mot": "à-coup",
     "nature": "n.",
     "etymologie": "du romani kald. śindo, couper",
     "traduction": "chindeo"
   },
   {
     "id": 239,
-    "mot": "ACOUSTIQUE, n. Adj.",
+    "mot": "acoustique",
     "etymologie": "du sanskrit श्रावण chravania, audible",
     "traduction": "sirvane ; sirvaño"
   },
@@ -1541,68 +1543,68 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 242,
-    "mot": "ACQUÉRABLE",
+    "mot": "acquérable",
     "nature": "adj.",
     "traduction": "Aquilenacho"
   },
   {
     "id": 243,
-    "mot": "ACQUÉREUR, n. Adj.",
+    "mot": "acquéreur",
     "traduction": "Aquilenare ; aquilenaro"
   },
   {
     "id": 244,
-    "mot": "ACQUÉRIR",
+    "mot": "acquérir",
     "nature": "vb.",
     "etymologie": "cf. acheter",
     "traduction": "Aquilenar"
   },
   {
     "id": 245,
-    "mot": "ACQUIESçable",
+    "mot": "acquiesçable",
     "nature": "adj.",
     "traduction": "fogadiesco"
   },
   {
     "id": 246,
-    "mot": "acquiescEment",
+    "mot": "acquiescement",
     "nature": "n.",
     "traduction": "fogadipén"
   },
   {
     "id": 247,
-    "mot": "acquiesceR",
+    "mot": "acquiescer",
     "nature": "vb.",
     "etymologie": "du romani verś. fogadinel",
     "traduction": "fogadiar"
   },
   {
     "id": 248,
-    "mot": "Acquis, n. Adj.",
+    "mot": "acquis",
     "traduction": "aquile ; aquilio"
   },
   {
     "id": 249,
-    "mot": "ACQUISITION",
+    "mot": "acquisition",
     "nature": "n.",
     "traduction": "Aquilani"
   },
   {
     "id": 250,
-    "mot": "ACQUIT",
+    "mot": "acquit",
     "nature": "n.",
     "traduction": "lizeo"
   },
   {
     "id": 251,
-    "mot": "ACQUITTER",
+    "mot": "acquitter",
     "nature": "vb.",
     "etymologie": "du romani sint.  Lezrel pes, acquitter quelqu'un de quelque chose",
     "traduction": "lizar"
   },
   {
     "id": 252,
-    "mot": "ÂCRE",
+    "mot": "âcre",
     "nature": "adj.",
     "etymologie": "du romani kald. Mêruga, aigre",
     "traduction": "Merugo"
@@ -1615,25 +1617,25 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 254,
-    "mot": "ÂCRETÉ",
+    "mot": "âcreté",
     "nature": "n.",
     "traduction": "Merugadi"
   },
   {
     "id": 255,
-    "mot": "ACROBATe, n. Adj.",
+    "mot": "acrobate",
     "etymologie": "de l'hindi नटnat, caste des jongleurs et acrobates",
     "traduction": "Nate ; nato"
   },
   {
     "id": 256,
-    "mot": "ACROBATIE",
+    "mot": "acrobatie",
     "nature": "n.",
     "traduction": "Natadi"
   },
   {
     "id": 257,
-    "mot": "Acronyme",
+    "mot": "acronyme",
     "nature": "n.",
     "etymologie": "du sanskritशिखर śikhara, sommet, et le suffixe -ne, pour -nyme",
     "traduction": "Sicane"
@@ -1659,7 +1661,7 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 261,
-    "mot": "ACRYLIQUE, n. Adj.",
+    "mot": "acrylique",
     "traduction": "Acrilesque ; acrilesco"
   },
   {
@@ -1670,473 +1672,473 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 263,
-    "mot": "ACTE",
+    "mot": "acte",
     "nature": "n.",
     "etymologie": "‹1› (théâtre) de l'ancien calo goliche",
     "traduction": "Goliche ‹2› (procédé d'une action) Spanse"
   },
   {
     "id": 264,
-    "mot": "ACTEUR, n. Adj.",
+    "mot": "acteur",
     "traduction": "(théâtre) quelare, (celui qui fait une action) spansare ; quelaro, spansaro"
   },
   {
     "id": 265,
-    "mot": "ACTIF, n. Adj.",
+    "mot": "actif",
     "etymologie": "de l'ancien calo care",
     "traduction": "Gare ; garo"
   },
   {
     "id": 266,
-    "mot": "ACTION",
+    "mot": "action",
     "nature": "n.",
     "etymologie": "‹1› (général) du romani spansenja",
     "traduction": "Spanse ‹2› (bonne action) de l'ancien calo mipi · mipia ‹3› (mauvaise action) de l'ancien calo bachurri · Masuria ‹4› (écon.) du romani kerdimata · Querma"
   },
   {
     "id": 267,
-    "mot": "ACTIONNABLE",
+    "mot": "actionnable",
     "nature": "adj.",
     "traduction": "Spansacho"
   },
   {
     "id": 268,
-    "mot": "ACTIONNAIRE, n. Adj.",
+    "mot": "actionnaire",
     "traduction": "Quermante ; quermanto"
   },
   {
     "id": 269,
-    "mot": "ACTIONNALISME",
+    "mot": "actionnalisme",
     "nature": "n.",
     "traduction": "Spansialisme ; Masurialisme ; Quermialisme"
   },
   {
     "id": 270,
-    "mot": "ACTIONNALISTE, n. Adj.",
+    "mot": "actionnaliste",
     "traduction": "Spansialiste, -isto ; Masurialiste, -isto ; Quermialiste, -isto"
   },
   {
     "id": 271,
-    "mot": "ACTIONNEL",
+    "mot": "actionnel",
     "nature": "adj.",
     "traduction": "Spansial ; Masurial ; Quermial"
   },
   {
     "id": 272,
-    "mot": "ACTIONNEMENT",
+    "mot": "actionnement",
     "nature": "n.",
     "traduction": "Spansipén ; Masuripén ; Quermipén"
   },
   {
     "id": 273,
-    "mot": "ACTIONNER",
+    "mot": "actionner",
     "nature": "vb.",
     "traduction": "Spansar ; Masurar ; Quermar"
   },
   {
     "id": 274,
-    "mot": "ACTIONNEUR, n. Adj.",
+    "mot": "actionneur",
     "traduction": "Spansare, -aro ; Masurare, -aro ; Quermare, -aro"
   },
   {
     "id": 275,
-    "mot": "ACTIONNISME",
+    "mot": "actionnisme",
     "nature": "n.",
     "traduction": "Spansismo ; Masurismo ; Quermismo"
   },
   {
     "id": 276,
-    "mot": "ACTIONNISTE, n. Adj.",
+    "mot": "actionniste",
     "traduction": "Spansiste, -isto ; Masuriste, -isto ; Quermiste, -isto"
   },
   {
     "id": 277,
-    "mot": "Activement",
+    "mot": "activement",
     "nature": "adv.",
     "traduction": "Garamente"
   },
   {
     "id": 278,
-    "mot": "ACTIVER",
+    "mot": "activer",
     "nature": "vb.",
     "traduction": "Garar"
   },
   {
     "id": 279,
-    "mot": "Activisme",
+    "mot": "activisme",
     "nature": "n.",
     "traduction": "Garisme"
   },
   {
     "id": 280,
-    "mot": "Activiste, n. Adj.",
+    "mot": "activiste",
     "traduction": "Gariste ; garlisto"
   },
   {
     "id": 281,
-    "mot": "Activité",
+    "mot": "activité",
     "nature": "n.",
     "traduction": "garadi"
   },
   {
     "id": 282,
-    "mot": "Actrice, n. Adj.",
+    "mot": "actrice",
     "etymologie": "de l'ancien calo querdani",
     "traduction": "Quelani ; quelana"
   },
   {
     "id": 283,
-    "mot": "Actualisation",
+    "mot": "actualisation",
     "nature": "n.",
     "traduction": "Dealenipén"
   },
   {
     "id": 284,
-    "mot": "Actualiser",
+    "mot": "actualiser",
     "nature": "vb.",
     "traduction": "Dealenar"
   },
   {
     "id": 285,
-    "mot": "Actualité",
+    "mot": "actualité",
     "nature": "n.",
     "traduction": "Dealipén"
   },
   {
     "id": 286,
-    "mot": "Actuel",
+    "mot": "actuel",
     "nature": "adj.",
     "etymologie": "de l'ancien calo delal",
     "traduction": "Deal"
   },
   {
     "id": 287,
-    "mot": "Actuellement",
+    "mot": "actuellement",
     "nature": "adv.",
     "traduction": "Dealmente"
   },
   {
     "id": 288,
-    "mot": "Acuité",
+    "mot": "acuité",
     "nature": "n.",
     "traduction": "Pescadi"
   },
   {
     "id": 289,
-    "mot": "Acupuncture",
+    "mot": "acupuncture",
     "nature": "n.",
     "traduction": "Acupuntura"
   },
   {
     "id": 290,
-    "mot": "Adagio",
-    "nature": "n.",
-    "etymologie": "de l'ancien calo rejelendre",
-    "traduction": "Elendro"
+    "mot": "adagio",
+    "nature": "n.m.",
+    "etymologie": "de l'ancien calo <em>rejelendre</em>",
+    "traduction": "elendro"
   },
   {
     "id": 291,
-    "mot": "Adamantin",
+    "mot": "adamantin",
     "nature": "adj.",
-    "etymologie": "du romani gemant’iko",
-    "traduction": "Gemantino"
+    "etymologie": "du romani <em>gemant’iko</em>",
+    "traduction": "guemantino"
   },
   {
     "id": 292,
-    "mot": "Adaptable",
+    "mot": "adaptable",
     "nature": "adj.",
     "traduction": "Merimacho"
   },
   {
     "id": 293,
-    "mot": "Adaptateur",
+    "mot": "adaptateur",
     "nature": "n.",
     "traduction": "Merimare"
   },
   {
     "id": 294,
-    "mot": "Adaptation",
+    "mot": "adaptation",
     "nature": "n.",
     "traduction": "Merimani"
   },
   {
     "id": 295,
-    "mot": "Adapter",
+    "mot": "adapter",
     "nature": "vb.",
     "etymologie": "de l'ancien calo, du romani menribal",
     "traduction": "Merimar"
   },
   {
     "id": 296,
-    "mot": "Addict",
+    "mot": "addict",
     "nature": "adj.",
     "etymologie": "de l'ancien calo rocamblo",
     "traduction": "Ramblo"
   },
   {
     "id": 297,
-    "mot": "Addiction",
+    "mot": "addiction",
     "nature": "n.",
     "traduction": "rAmbladi"
   },
   {
     "id": 298,
-    "mot": "Additif, n. Adj.",
+    "mot": "additif",
     "etymologie": "de l'ancien calo aljipi",
-    "traduction": "Alipia ; Alipesco"
+    "traduction": "alpia"
   },
   {
     "id": 299,
-    "mot": "Addition",
+    "mot": "addition",
     "nature": "n.",
     "etymologie": "de l'ancien calo nejebipen",
     "traduction": "Elemipén, elemino"
   },
   {
     "id": 300,
-    "mot": "Additionnel",
+    "mot": "additionnel",
     "nature": "adj.",
     "traduction": "Elemial"
   },
   {
     "id": 301,
-    "mot": "Additionner",
+    "mot": "additionner",
     "nature": "vb.",
     "traduction": "Elemiar"
   },
   {
     "id": 302,
-    "mot": "Adepte, n. Adj.",
+    "mot": "adepte",
     "etymologie": "de l'ancien calo opallar, suivre les traces",
     "traduction": "palare ; palaro"
   },
   {
     "id": 303,
-    "mot": "Adéquat",
+    "mot": "adéquat",
     "nature": "adj.",
     "etymologie": "du romani kald. grežome",
     "traduction": "grezimo"
   },
   {
     "id": 304,
-    "mot": "Adéquation",
+    "mot": "adéquation",
     "nature": "n.",
     "traduction": "grezimani"
   },
   {
     "id": 305,
-    "mot": "Adénome",
+    "mot": "adénome",
     "nature": "n.",
     "traduction": "Glandoma"
   },
   {
     "id": 306,
-    "mot": "Adhérance",
+    "mot": "adhérance",
     "nature": "n.",
     "traduction": "Dinovante"
   },
   {
     "id": 307,
-    "mot": "Adhérant, n. Adj.",
+    "mot": "adhérant",
     "traduction": "Dinovate ; dinovato"
   },
   {
     "id": 308,
-    "mot": "Adhérer",
+    "mot": "adhérer",
     "nature": "vb.",
     "etymologie": "de l'ancien calo diñovar",
     "traduction": "Dinovar"
   },
   {
     "id": 309,
-    "mot": "Adhésif, n. Adj.",
+    "mot": "adhésif",
     "traduction": "Dinovesque ; dinovesco"
   },
   {
     "id": 310,
-    "mot": "Adhésion",
+    "mot": "adhésion",
     "nature": "n.",
     "traduction": "Dinovipén"
   },
   {
     "id": 311,
-    "mot": "Adieu",
+    "mot": "adieu",
     "nature": "interj.",
     "traduction": "contraction de a Debelio · Adelio"
   },
   {
     "id": 312,
-    "mot": "Adjectif",
+    "mot": "adjectif",
     "nature": "n.",
     "etymologie": "de l'hindi विशेषण vishesian",
     "traduction": "Vesiani"
   },
   {
     "id": 313,
-    "mot": "Adjectivable",
+    "mot": "adjectivable",
     "nature": "adj.",
     "traduction": "Vesianacho"
   },
   {
     "id": 314,
-    "mot": "Adjectivation",
+    "mot": "adjectivation",
     "nature": "n.",
     "traduction": "Vesianipén"
   },
   {
     "id": 315,
-    "mot": "Adjectiver",
+    "mot": "adjectiver",
     "nature": "vb.",
     "traduction": "Vesianar"
   },
   {
     "id": 316,
-    "mot": "Adjoindre",
+    "mot": "adjoindre",
     "nature": "vb.",
     "etymologie": "de l'ancien calo acatar",
     "traduction": "acandar"
   },
   {
     "id": 317,
-    "mot": "Adjoint, n. Adj.",
+    "mot": "adjoint",
     "traduction": "Acandare ; acandado"
   },
   {
     "id": 318,
-    "mot": "Adjonction",
+    "mot": "adjonction",
     "nature": "n.",
     "traduction": "Acandipén"
   },
   {
     "id": 319,
-    "mot": "Adjudant, n. Adj.",
+    "mot": "adjudant",
     "etymologie": "du romani džantakiiro, sergent",
     "traduction": "gAndacare ; gandaquero"
   },
   {
     "id": 320,
-    "mot": "Adjudicataire, n. Adj.",
+    "mot": "adjudicataire",
     "traduction": "Antoraste ; antorasto"
   },
   {
     "id": 321,
-    "mot": "Adjudicateur, n. Adj.",
+    "mot": "adjudicateur",
     "traduction": "Antorare ; antoraro"
   },
   {
     "id": 322,
-    "mot": "Adjudication",
+    "mot": "adjudication",
     "nature": "n.",
     "etymologie": "de l'ancien calo enturipen",
     "traduction": "Antoripén"
   },
   {
     "id": 323,
-    "mot": "Adjuger",
+    "mot": "adjuger",
     "nature": "vb.",
     "etymologie": "de l'ancien calo enturar",
     "traduction": "anturar"
   },
   {
     "id": 324,
-    "mot": "Admettre",
+    "mot": "admettre",
     "nature": "vb.",
     "etymologie": "de l'ancien calo alojar",
     "traduction": "Alogar"
   },
   {
     "id": 325,
-    "mot": "Administrataire, n. Adj.",
+    "mot": "administrataire",
     "traduction": "carescante ; carescanto"
   },
   {
     "id": 326,
-    "mot": "Administrateur, n. Adj.",
+    "mot": "administrateur",
     "traduction": "carescare ; carescaro"
   },
   {
     "id": 327,
-    "mot": "Administratif",
+    "mot": "administratif",
     "nature": "adj.",
     "traduction": "caresquivo"
   },
   {
     "id": 328,
-    "mot": "Administrativement",
+    "mot": "administrativement",
     "nature": "adv.",
-    "traduction": "cares-quivamente"
+    "traduction": "caresquivame"
   },
   {
     "id": 329,
-    "mot": "Administration",
+    "mot": "administration",
     "nature": "n.",
     "traduction": "carescani"
   },
   {
     "id": 330,
-    "mot": "Administrer",
+    "mot": "administrer",
     "nature": "vb.",
     "etymologie": "de l'ancien calo keresker",
     "traduction": "carescar"
   },
   {
     "id": 331,
-    "mot": "Admirable",
+    "mot": "admirable",
     "nature": "adj.",
-    "traduction": "Dapesacho"
+    "traduction": "apiasano"
   },
   {
     "id": 332,
-    "mot": "Admirablement",
+    "mot": "admirablement",
     "nature": "adv.",
-    "traduction": "Dapesachamente"
+    "traduction": "apiasaname"
   },
   {
     "id": 333,
-    "mot": "Admiration",
+    "mot": "admiration",
     "nature": "n.",
-    "traduction": "Dapesani"
+    "traduction": "apiasibe"
   },
   {
     "id": 334,
-    "mot": "Admirer",
+    "mot": "admirer",
     "nature": "vb.",
-    "etymologie": "de l'ancien calo trapasar",
-    "traduction": "Dipesar"
+    "etymologie": "de l'ancien calo <em>trapasar</em>",
+    "traduction": "apiasar"
   },
   {
     "id": 335,
-    "mot": "Admis",
+    "mot": "admis",
     "nature": "adj.",
     "traduction": "Alogado"
   },
   {
     "id": 336,
-    "mot": "Admissible",
+    "mot": "admissible",
     "nature": "adj.",
     "traduction": "Alogacho"
   },
   {
     "id": 337,
-    "mot": "Admissiblement",
+    "mot": "admissiblement",
     "nature": "adv.",
     "traduction": "Alogachamente"
   },
   {
     "id": 338,
-    "mot": "Admission",
+    "mot": "admission",
     "nature": "n.",
     "traduction": "Aloguipén"
   },
   {
     "id": 339,
-    "mot": "Admonestation",
+    "mot": "admonestation",
     "nature": "n.",
-    "traduction": "Agualipén"
+    "traduction": "Agualibe"
   },
   {
     "id": 340,
-    "mot": "Admonester",
+    "mot": "admonester",
     "nature": "vb.",
     "etymologie": "de l'ancien calo agualar",
     "traduction": "Agualiar"
@@ -2144,127 +2146,127 @@ exemple_fr: "Je suis à Paris.",
   {
     "id": 341,
     "mot": "ADN",
-    "nature": "abr.",
-    "traduction": "BDS (berma desosíribo semúnica)"
+    "nature": "n.m.",
+    "traduction": "BDS (Berma Desosíribo Semúnica)"
   },
   {
     "id": 342,
-    "mot": "Ado",
+    "mot": "ado",
     "nature": "abr.",
     "traduction": "Teni"
   },
   {
     "id": 343,
-    "mot": "Adobe",
+    "mot": "adobe",
     "nature": "n.",
     "etymologie": "de l'ancien calo ulagone",
     "traduction": "Lagone"
   },
   {
     "id": 344,
-    "mot": "Adolescence",
+    "mot": "adolescence",
     "nature": "n.",
     "traduction": "Ternimani"
   },
   {
     "id": 345,
-    "mot": "Adolescent, n. Adj.",
+    "mot": "adolescent",
     "etymologie": "de l'ancien calo ternimo",
     "traduction": "Ternime ; ternimo"
   },
   {
     "id": 346,
-    "mot": "Adopter",
+    "mot": "adopter",
     "nature": "vb.",
     "etymologie": "‹1› (enfant) du romani chinavil",
     "traduction": "Chinevar ‹2› (choisir, prendre) de l'ancien calo escogiserar ·  Escogiar"
   },
   {
     "id": 347,
-    "mot": "Adoptif",
+    "mot": "adoptif",
     "nature": "adj.",
     "traduction": "Chanivivo ; Escogivo"
   },
   {
     "id": 348,
-    "mot": "Adoption",
+    "mot": "adoption",
     "nature": "n.",
     "traduction": "Chinepe"
   },
   {
     "id": 349,
-    "mot": "Adorable",
+    "mot": "adorable",
     "nature": "adj.",
     "traduction": "Vulimacho"
   },
   {
     "id": 350,
-    "mot": "Adoration",
+    "mot": "adoration",
     "nature": "n.",
     "traduction": "Vulimani"
   },
   {
     "id": 351,
-    "mot": "Adorer",
+    "mot": "adorer",
     "nature": "vb.",
     "etymologie": "de l'ancien calo bujirar",
     "traduction": "Vulimar"
   },
   {
     "id": 352,
-    "mot": "Adornement",
+    "mot": "adornement",
     "nature": "n.",
     "traduction": "Alujea"
   },
   {
     "id": 353,
-    "mot": "Adornementation",
+    "mot": "adornementation",
     "nature": "n.",
     "traduction": "Alujeani"
   },
   {
     "id": 354,
-    "mot": "Adorner",
+    "mot": "adorner",
     "nature": "vb.",
     "etymologie": "cf. orner",
     "traduction": "alujar"
   },
   {
     "id": 355,
-    "mot": "Adosser",
+    "mot": "adosser",
     "nature": "vb.",
     "etymologie": "cf. dos",
     "traduction": "asulviar"
   },
   {
     "id": 356,
-    "mot": "Adoucir",
+    "mot": "adoucir",
     "nature": "vb.",
     "etymologie": "cf. doux",
     "traduction": "Acoliar"
   },
   {
     "id": 357,
-    "mot": "Adoucissant",
+    "mot": "adoucissant",
     "nature": "n.",
     "traduction": "Acoliante"
   },
   {
     "id": 358,
-    "mot": "Adoucissement",
+    "mot": "adoucissement",
     "nature": "n.",
     "traduction": "Acolipén"
   },
   {
     "id": 359,
-    "mot": "Adresse",
+    "mot": "adresse",
     "nature": "n.",
     "etymologie": "‹1› (physique) Zanimesa ‹2›  (postale) du rom. Lov. Vers. Cimo",
     "traduction": "Cima"
   },
   {
     "id": 360,
-    "mot": "Adroit",
+    "mot": "adroit",
     "nature": "adj.",
     "etymologie": "du romani burg. Dzanipe, abilité",
     "traduction": "Zano"
@@ -2273,70 +2275,70 @@ exemple_fr: "Je suis à Paris.",
     "id": 361,
     "mot": "adroitement",
     "nature": "adv.",
-    "traduction": "zanamente"
+    "traduction": "zaname"
   },
   {
     "id": 362,
-    "mot": "ADSL, acr. (asymmetric digital subscriber line)",
+    "mot": "ADSL",
     "traduction": "· ADSL"
   },
   {
     "id": 363,
-    "mot": "Adulation",
+    "mot": "adulation",
     "nature": "n.",
     "traduction": "Rumendani"
   },
   {
     "id": 364,
-    "mot": "Aduler",
+    "mot": "aduler",
     "nature": "vb.",
     "etymologie": "de l'ancien calo rumendiar",
     "traduction": "Rumendar"
   },
   {
     "id": 365,
-    "mot": "Adulescent",
+    "mot": "adulescent",
     "nature": "n.",
     "traduction": "Feltenisente"
   },
   {
     "id": 366,
-    "mot": "Adulte, n. Adj.",
+    "mot": "adulte",
     "etymologie": "du romani vers. felnetno",
     "traduction": "Feltene ; felteno"
   },
   {
     "id": 367,
-    "mot": "Adultère",
+    "mot": "adultère",
     "nature": "n.",
     "etymologie": "Pirameo : Commettre un adultère, de l'ancien calo pirabar",
-    "traduction": "Piramar"
+    "traduction": "piramar"
   },
   {
     "id": 368,
-    "mot": "Adultérin",
-    "nature": "n.",
-    "traduction": "Piramesco"
+    "mot": "adultérin",
+    "nature": "adj.",
+    "traduction": "piramesco"
   },
   {
     "id": 369,
-    "mot": "Advenir",
+    "mot": "advenir",
     "nature": "vb.",
     "etymologie": "cf. venir",
     "traduction": "Acasar, adabiliar"
   },
   {
     "id": 370,
-    "mot": "Adverbe",
-    "nature": "n.",
-    "etymologie": "du sanskrit अक्ष॑रा áksiarā, mot",
-    "traduction": "asara"
+    "mot": "adverbe",
+    "nature": "n.m.",
+    "etymologie": "du sanskrit अक्ष॑रा <em>áksiarā</em>, mot",
+    "traduction": "casiar"
   },
   {
     "id": 371,
-    "mot": "Adverbial",
+    "mot": "adverbial",
     "nature": "adj.",
-    "traduction": "Aseral"
+    "traduction": "casiaresco"
   },
   {
     "id": 372,
@@ -2358,171 +2360,171 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 375,
-    "mot": "Adversaire, n. Adj.",
+    "mot": "adversaire",
     "etymologie": "de l'ancien calo enorme",
     "traduction": "Enorme ; Enormo"
   },
   {
     "id": 376,
-    "mot": "Adversité",
+    "mot": "adversité",
     "nature": "n.",
     "traduction": "Enormadi"
   },
   {
     "id": 377,
-    "mot": "Aération",
+    "mot": "aération",
     "nature": "n.",
     "traduction": "Nuenipén"
   },
   {
     "id": 378,
-    "mot": "Aérer",
+    "mot": "aérer",
     "nature": "vb.",
     "traduction": "Nuenar"
   },
   {
     "id": 379,
-    "mot": "Aérien",
+    "mot": "aérien",
     "nature": "adj.",
     "etymologie": "cf. air",
     "traduction": "Nuenoso"
   },
   {
     "id": 380,
-    "mot": "Aérobic",
+    "mot": "aérobic",
     "nature": "n.",
     "traduction": "Nuevino"
   },
   {
     "id": 381,
-    "mot": "Aérodrome",
+    "mot": "aérodrome",
     "nature": "n.",
     "traduction": "Nuedaste"
   },
   {
     "id": 382,
-    "mot": "Aérodynamique",
+    "mot": "aérodynamique",
     "nature": "adj.",
     "traduction": "Nuerafiliesco"
   },
   {
     "id": 383,
-    "mot": "Aérogare",
+    "mot": "aérogare",
     "nature": "n.",
     "traduction": "Nuenofeo"
   },
   {
     "id": 384,
-    "mot": "Aéroglisseur",
+    "mot": "aéroglisseur",
     "nature": "n.",
     "traduction": "Nuesutilaro"
   },
   {
     "id": 385,
-    "mot": "Aérogramme",
+    "mot": "aérogramme",
     "nature": "n.",
     "traduction": "Nuegramo"
   },
   {
     "id": 386,
-    "mot": "Aéronautique",
+    "mot": "aéronautique",
     "nature": "n.",
     "traduction": "Nueseliño"
   },
   {
     "id": 387,
-    "mot": "Aéronef",
+    "mot": "aéronef",
     "nature": "n.",
     "traduction": "Nuenavi"
   },
   {
     "id": 388,
-    "mot": "Aérophagie",
+    "mot": "aérophagie",
     "nature": "n.",
     "traduction": "Nueganadi"
   },
   {
     "id": 389,
-    "mot": "Aéroport",
+    "mot": "aéroport",
     "nature": "n.",
     "traduction": "Nuemalo"
   },
   {
     "id": 390,
-    "mot": "Aérosol",
+    "mot": "aérosol",
     "nature": "n.",
     "traduction": "Nuesieme"
   },
   {
     "id": 391,
-    "mot": "Aérospatial",
+    "mot": "aérospatial",
     "nature": "adj.",
     "traduction": "Nueantesiesco"
   },
   {
     "id": 392,
-    "mot": "Affabilité",
+    "mot": "affabilité",
     "nature": "n.",
     "traduction": "Dagostadi"
   },
   {
     "id": 393,
-    "mot": "Affable",
+    "mot": "affable",
     "nature": "adj.",
-    "etymologie": "du romani dragosto",
-    "traduction": "Dagosto"
+    "etymologie": "du romani <em>dragosto</em>",
+    "traduction": "gosto"
   },
   {
     "id": 394,
-    "mot": "Affablement",
+    "mot": "affablement",
     "nature": "adv.",
-    "traduction": "Dagostamente"
+    "traduction": "gostame"
   },
   {
     "id": 395,
-    "mot": "Affaiblir",
+    "mot": "affaiblir",
     "nature": "vb.",
     "etymologie": "cf. faible",
     "traduction": "abizuriar"
   },
   {
     "id": 396,
-    "mot": "Affaiblissement",
+    "mot": "affaiblissement",
     "nature": "n.",
-    "traduction": "Abizurime"
+    "traduction": "Abizuribe"
   },
   {
     "id": 397,
-    "mot": "Affaire",
+    "mot": "affaire",
     "nature": "n.",
     "etymologie": "de l'ancien calo bajo",
     "traduction": "bagueo"
   },
   {
     "id": 398,
-    "mot": "Affairé",
+    "mot": "affairé",
     "nature": "adj.",
     "traduction": "baguiado"
   },
   {
     "id": 399,
-    "mot": "Affaissement",
+    "mot": "affaissement",
     "nature": "n.",
     "traduction": "Baledime"
   },
   {
     "id": 400,
-    "mot": "Affaisser",
+    "mot": "affaisser",
     "nature": "vb.",
     "etymologie": "du rom. Lov. Bad'adij",
     "traduction": "Balediar"
   },
   {
     "id": 401,
-    "mot": "Affaler",
+    "mot": "affaler",
     "nature": "vb.",
-    "etymologie": "du rom. Prem. Znižaulinel, ralentir",
-    "traduction": "Aulinar"
+    "etymologie": "du rromani prekmurski <em>znižaulinel</em>, ralentir",
+    "traduction": "aulinar"
   },
   {
     "id": 402,

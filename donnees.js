@@ -1,23 +1,45 @@
 const dictionnaire = [
-  {
-    "id": 1,
-    "mot": "A",
-    "sens": [
-    {
-      "traduction": "pimpa",
-      "etymologie": "Du latin populaire Punctum (piqûre), lié à l'éruption cutanée."
-    },
-    {
-      "traduction": "bosia",
-      "etymologie": "De l'ancien allemand Boten (pousse, bourgeon), par analogie de forme."
-    }
-  ]
-  },
+ {
+    id: 1,
+    mot: "a",
+    nature: "lettre. vb.",
+    sens: [
+        {
+            traduction: "a",
+            etymologie: "de l'ancien caló <em> a</em>, dérivé de l'espagnol",
+            audio: "audio/a-sens-1.mp3",
+            exemple_fr: "La lettre 'a' est la première de l'alphabet.",
+            exemple_trad: "La lieste 'a' sina la proma de lo romerio.",
+            exemple_audio: "audio/a-exemple-1.mp3"
+        },
+        {
+            traduction: "ha",
+            etymologie: "terminaison irrégulière - de l'ancien caló <em> aisnar</em>, avoir",
+            audio: "audio/a-sens-2.mp3",
+            exemple_fr: "Il a 20 ans.",
+            exemple_trad: "Ha 20 bergas.",
+            exemple_audio: "audio/a-exemple-2.mp3"
+        } ]
+},
   {
     "id": 2,
-    "mot": "À",
+    "mot": "à",
     "nature": "prep.",
-    "traduction": "a : je vis à Lyon depuis six ans · vivo a Lyon anta yove beres. ; à + chiffre · con + sine : le faire à 18 ans · angarlo con 18 barios ; · Virimarse a ; · sampare a"
+   sens: [
+        {
+            traduction: "a",
+            etymologie: "de l'ancien caló <em>a</em>",
+exemple_fr: "Je suis à Paris.",
+            exemple_trad: "Seneo a Parise.",
+            exemple_audio: "seneo-a-parise.mp3"
+
+        },
+        {
+            traduction: "con",
+            exemple_fr: "Je l'ai fait à vingt ans.",
+            exemple_trad: "L'ho aqueado con vino bergas.",
+            exemple_audio: "ex2-a.mp3"
+        } ]
   },
   {
     "id": 3,
@@ -27,88 +49,87 @@ const dictionnaire = [
     "traduction": "l’espone DL (Doste lancho) del banicho non si bremianta pa lucinar las albaras escolis."
   },
   {
-    "id": 4,
-    "mot": "Aussi bien … que … Talmiste …ce ...",
-    "traduction": ""
-  },
-  {
     "id": 5,
-    "mot": "ABACTÉRIEN, adj. agivano",
-    "traduction": ""
+    "mot": "abactérien",
+"nature": "adj.",
+    "traduction": "agivano"
   },
   {
     "id": 6,
-    "mot": "ABAISSEMENT",
+    "mot": "abaissement",
     "nature": "nm.",
     "traduction": "asteana"
   },
   {
     "id": 7,
-    "mot": "ABAISSER",
+    "mot": "abaisser",
     "nature": "vb.",
     "traduction": "DE L’ANCIEN CALO OSTELAR – astear"
   },
   {
     "id": 8,
-    "mot": "ABANDON",
+    "mot": "abandon",
     "nature": "nm.",
     "traduction": "mego"
   },
   {
     "id": 9,
-    "mot": "ABANDONNABLE",
+    "mot": "abandonnable",
     "nature": "adj.",
     "traduction": "megayo"
   },
   {
     "id": 10,
-    "mot": "ABANDONNATAIRE",
+    "mot": "abandonnataire",
     "nature": "adj.",
     "traduction": "megatandro"
   },
   {
     "id": 11,
-    "mot": "ABANDONNÉMENT",
+    "mot": "abandonnement",
     "nature": "adv.",
     "traduction": "megadame"
   },
   {
     "id": 12,
-    "mot": "ABANDONNER",
+    "mot": "abandonner",
     "nature": "vb.",
     "etymologie": "DE L’ANCIEN CALO MECAR – megar : De nombreux animaux sont abandonnés par leurs maîtres chaque année",
     "traduction": "Sinalos pastres san megados por sus dosianes sanga beriani."
   },
   {
     "id": 13,
-    "mot": "Abandonneur, n. Adj.",
+    "mot": "abandonneur",
+"nature": "adj.",
     "traduction": "megare, megaro"
   },
   {
     "id": 14,
-    "mot": "abandonnique, n. Adj.",
+    "mot": "abandonnique",
     "traduction": "megasco : l’abandonnique (…) est un sujet préœudipien · lo meguine (…) si ye sutal paledipieno (Emmanuel de Saint-Aubert, Du lien des êtres aux éléments de l'être : MerleauPonty au tournant des années 1945-1951, Vrin, Paris, 2004, p.196)."
   },
   {
     "id": 15,
-    "mot": "Abandonnisme",
+    "mot": "abandonnisme",
     "nature": "n.",
     "traduction": "megasto"
   },
   {
     "id": 16,
-    "mot": "abanuir, vb.",
+    "mot": "abanuir",
+"nature": "vb.",
     "traduction": "· DU ROMANI LeVAL – levar : pour abanuir notre chagrin · pa lovar amara ducani (H.F. Comte de Joubert, Glossaire du centre de la France, Napoléon Chaix & Cie., Paris, 1864, p.2)."
   },
   {
     "id": 17,
-    "mot": "Abasourdi",
+    "mot": "abasourdi",
     "nature": "adj.",
     "traduction": "lindevolado : Il a été complètement abasourdi · Ha sindo colieramente linvolado."
   },
   {
     "id": 18,
-    "mot": "Abasourdir, vb.",
+    "mot": "abasourdir",
+"nature": "vb.",
     "traduction": "· DU ROMANI ZALINDIVOLA, ÊTRE ABASOURDI – lindevolar"
   },
   {
@@ -118,7 +139,8 @@ const dictionnaire = [
   },
   {
     "id": 20,
-    "mot": "abats, npl.",
+    "mot": "abats",
+"nature": "npl.",
     "traduction": "· de l'ancien calo vendri - vendris"
   },
   {
@@ -1434,10 +1456,12 @@ const dictionnaire = [
   },
   {
     "id": 229,
-    "mot": "ACMé",
-    "nature": "n.",
-    "etymologie": "du sanskrit śiras, tête, sommet",
-    "traduction": "sira : A l’acmé de sa carrière · A la sira de su estiva."
+    "mot": "acmé",
+    "nature": "n. m.",
+    "etymologie": "du sanskrit शिरस् <em>śiras</em>, tête, sommet",
+    "traduction": "sira",
+    "exemple_fr": "A l'acmé de sa carrière.",
+    "exemple_trad": "A la sira de su "
   },
   {
     "id": 230,
@@ -1452,10 +1476,10 @@ const dictionnaire = [
   },
   {
     "id": 232,
-    "mot": "ACNÉ",
-    "nature": "n.",
-    "etymologie": "de l'hindi मुँहासा muhasa, dérive de muh, visage",
-    "traduction": "Musa"
+    "mot": "acné",
+    "nature": "n. m.",
+    "etymologie": "de l'hindi मुँहासा <em>muhasa</em>, dérive de मुँह <em>muh</em>, visage",
+    "traduction": "musa"
   },
   {
     "id": 233,
@@ -3884,7 +3908,7 @@ const dictionnaire = [
   {
     "id": 652,
     "mot": "Alphabet",
-    "traduction": "· Romaño"
+    "traduction": "· Romerio"
   },
   {
     "id": 653,
@@ -7765,6 +7789,11 @@ const dictionnaire = [
     "id": 1426,
     "mot": "Aussi",
     "traduction": "· Tramisto (tramisto) ; Nina (niina)"
+  },
+  {
+    "id": 4,
+    "mot": "Aussi bien … que … Talmiste …ce ...",
+    "traduction": ""
   },
   {
     "id": 1427,
@@ -18050,23 +18079,25 @@ const dictionnaire = [
   },
   {
     "id": 3483,
-    "mot": "1758. Carreleur Vorquelero",
-    "traduction": ""
+    "mot": "carreleur",
+    "traduction": "vorquelero"
   },
   {
     "id": 3484,
-    "mot": "1759. Carrément",
-    "traduction": "· Deplina (deplin)"
+    "mot": "carrément",
+    "traduction": "· deplina (deplin)"
   },
   {
     "id": 3485,
-    "mot": "1760. Carrer",
+    "mot": "carrer",
     "traduction": "· Vorcar"
   },
   {
     "id": 3486,
-    "mot": "1761. Carrière",
-    "traduction": "· Estiva (estiva)"
+    "mot": "carrière",
+"nature": "n. f.",
+"etymologie": "de l'ancien caló · <em>estiva</em>",
+    "traduction": "estiva"
   },
   {
     "id": 3487,
@@ -20084,8 +20115,12 @@ const dictionnaire = [
   },
   {
     "id": 3889,
-    "mot": "2126. Chien",
-    "traduction": "· dambo (tamború)"
+    "mot": "chien",
+"nature": "n.m.",
+"image": "chien.jpg",
+"etymologie": "de l'ancien caló <em>tamború</em>",
+    "traduction": "dambo",
+"audio": "dambo.mp3"
   },
   {
     "id": 3890,
@@ -34364,8 +34399,11 @@ const dictionnaire = [
   },
   {
     "id": 6739,
-    "mot": "4639. écrire linar (ac. libanar), olivar (cf. écrivain)",
-    "traduction": ""
+    "mot": "écrire",
+"nature": "vb.",
+"etymologie": "de l'ancien caló · <em>libanar</em>",
+    "traduction": "linar",
+"audio": "linare.mp3"
   },
   {
     "id": 6740,
@@ -34385,7 +34423,7 @@ const dictionnaire = [
   {
     "id": 6743,
     "mot": "4643. écrivain ac.  (livre) Linaro ; (autre chose) Olibay olivayo",
-    "traduction": ""
+    "traduction": "olibayo - , olivar (cf. écrivain)"
   },
   {
     "id": 6744,
@@ -100170,19 +100208,21 @@ const dictionnaire = [
   {
     "id": 18613,
     "mot": "V",
-    "traduction": "· V"
+"nature": "lettre",
+    "traduction": "V"
   },
   {
     "id": 18614,
     "mot": "vacance",
+"etymologie": "de l'ancien caló <em>biquerame</em>",
     "nature": "nf.",
-    "traduction": "vicoria (biquerame)"
+    "traduction": "virame"
   },
   {
     "id": 18615,
     "mot": "vacancier",
     "nature": "n. adj.",
-    "traduction": "vicore, vicero"
+    "traduction": "viramaro"
   },
   {
     "id": 18616,

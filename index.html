@@ -1072,7 +1072,7 @@ function afficherTexteAvecLiens(texte) {
     return echapperHTML(texte).replace(
         /\[([^\]]+)\]\(prefixe:([^)]+)\)/g,
         (match, texteLien, prefixe) => {
-            const url = "https://fendani.fr/prefixes.html#" +
+            const url = "https://fendani.fr/prefixes.html#/prefixe/" +
                 encodeURIComponent(prefixe.trim());
 
             return `<a href="${url}"

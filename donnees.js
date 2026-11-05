@@ -7,18 +7,18 @@ const dictionnaire = [
         {
             traduction: "a",
             etymologie: "de l'ancien caló <em> a</em>, dérivé de l'espagnol",
-            audio: "audio/a-sens-1.mp3",
+            audio: "ha.mp3",
             exemple_fr: "La lettre 'a' est la première de l'alphabet.",
-            exemple_trad: "La lieste 'a' sina la proma de lo romerio.",
-            exemple_audio: "audio/a-exemple-1.mp3"
+            exemple_trad: "La lieste 'a' sena la proma de lo romerio.",
+            exemple_audio: "lalieste.mp3"
         },
         {
             traduction: "ha",
             etymologie: "terminaison irrégulière - de l'ancien caló <em> aisnar</em>, avoir",
-            audio: "audio/a-sens-2.mp3",
+            audio: "ha.mp3",
             exemple_fr: "Il a 20 ans.",
             exemple_trad: "Ha 20 bergas.",
-            exemple_audio: "audio/a-exemple-2.mp3"
+            exemple_audio: "havino.mp3"
         } ]
 },
   {
@@ -50,9 +50,9 @@ exemple_fr: "Je suis à Paris.",
             traduction: "santioso",
             etymologie: "de l'hindi <a href=\"https://en.wiktionary.org/wiki/%E0%A4%B8%E0%A4%82%E0%A4%A4%E0%A5%8B%E0%A4%B7\" class=\"lien-dictionnaire\">संतोष</a> <em>santos</em>, satisfaisant",
             audio: "santioso.mp3",
-            exemple_fr: "la mention AB (Assez Bien) du baccalauréat n’est pas suffisante pour intégrer les grandes écoles",
-            exemple_trad: "l’espone santioso del banicho no sina bremianta pa luchinar las baras vedalas.",
-            exemple_audio: "AB.mp3",
+            exemple_fr: "La mention AB (Assez Bien) du baccalauréat n’est pas suffisante pour intégrer les grandes écoles.",
+            exemple_trad: "L’espone santioso del banicho no sena bremianta pa luchinar las baras vedalas.",
+            exemple_audio: "lespone.mp3",
             illustration: "images/...jpg"
         }
     ]
@@ -114,13 +114,15 @@ exemple_fr: "Je suis à Paris.",
     "mot": "abandonner",
     "nature": "vb.",
 "etymologie": "de l'ancien caló <em>mecar</em>",
+"audio": "megar.mp3",
     "traduction": "megar"
   },
   {
     "id": 13,
     "mot": "abandonneur",
 "nature": "adj.",
-    "traduction": "megaor"
+"audio": "megor.mp3",
+    "traduction": "megor, megaor"
   },
   {
     "id": 14,
@@ -132,8 +134,8 @@ exemple_fr: "Je suis à Paris.",
             etymologie: "adjectivation du verbe <em> megar</em>, abandonner",
             audio: "abandonnique-1.mp3",
             exemple_fr: "l’abandonnique (…) est un sujet préœudipien",
-            exemple_trad: "lo méguico (…) sina yo sutal paledipiano",
-            exemple_audio: "abandonnique-2.mp3",
+            exemple_trad: "lo méguico (…) sena yo sutal paledipiano",
+            exemple_audio: "loméguico.mp3",
 source_exemple: "<strong>Emmanuel de Saint-Aubert</strong>, <em>Du lien des êtres aux éléments de l'être : Merleau-Ponty au tournant des années 1945-1951</em>, Vrin, Paris, 2004, p.196.",
             illustration: "images/...jpg"
         }
@@ -143,7 +145,8 @@ source_exemple: "<strong>Emmanuel de Saint-Aubert</strong>, <em>Du lien des êtr
     "id": 15,
     "mot": "abandonnisme",
     "nature": "n.",
-    "traduction": "megasto"
+"audio": "meguevio.mp3",
+    "traduction": "meguevio"
   },
   {
     "id": 16,

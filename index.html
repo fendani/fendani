@@ -1066,24 +1066,30 @@ function echapperHTML(texte) {
     })[caractere]);
 }
 
+
 function afficherTexteAvecLiens(texte) {
     if (!texte) return "";
 
-    return echapperHTML(texte).replace(
+    // Autoriser uniquement quelques balises de mise en forme
+    const balisesAutorisees = String(texte)
+        .replace(/&/g, "&amp;")
+        .replace(/<(\/?)(em|i|strong|b)>/gi, "<$1$2>");
+
+    // Transformer les liens vers les préfixes
+    return balisesAutorisees.replace(
         /\[([^\]]+)\]\(prefixe:([^)]+)\)/g,
         (match, texteLien, prefixe) => {
             const url = "https://fendani.fr/prefixes.html#/prefixe/" +
                 encodeURIComponent(prefixe.trim());
 
             return `<a href="${url}"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="lien-dictionnaire">
-                       ${texteLien}
-                    </a>`;
+                target="_blank"
+                rel="noopener noreferrer"
+                class="lien-dictionnaire">${texteLien}</a>`;
         }
     );
 }
+
 
 function creerBoutonAudio(fichier, titre) {
     if (!fichier) return "";

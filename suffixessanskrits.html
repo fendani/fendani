@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>fendani</title>
+<!-- Chargement des polices Newsreader et Bellota Text -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
+<style>
+body { 
+  font-family: 'Newsreader', serif; 
+  color: #000; 
+  background: #ffffff; /* Fond général blanc pour créer les espaces de séparation */
+  margin: 0;
+  padding: 0; 
+  line-height: 1.6;
+}
+
+main {
+  padding: 0;
+}
+
+/* Style de fond et espacement pour chaque section */
+section {
+  padding: 2.5rem 20px;
+  margin-bottom: 12px; /* Espace blanc et neutre entre les catégories */
+}
+
+#actu {
+  background: #f0f3ee; /* Vert très doux */
+}
+
+#propos {
+  background: #e2e8df; /* Vert légèrement plus foncé */
+}
+
+#encyclopedie {
+  background: #f7f4ec; /* Beige plus clair et très doux */
+}
+
+/* En-tête réduit avec fond blanc pur */
+header {
+  background: #ffffff;
+  padding: 0.8rem 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+h1 { 
+  font-weight: 800; 
+  font-size: 1.8rem; 
+  margin: 0; 
+  line-height: 1;
+}
+
+/* Formulaire de recherche centré */
+header form {
+  margin: 0;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+input[type="search"] {
+  font-family: 'Bellota Text', sans-serif;
+  border: 1px solid #000;
+  border-radius: 20px;
+  padding: 0.25rem 0.8rem;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  max-width: 280px;
+  font-size: 0.9rem;
+}
+
+input[type="search"]::placeholder {
+  font-family: 'Newsreader', serif;
+  color: #000;
+}
+
+/* Menu de navigation aligné à droite */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+a { 
+  color: #000; 
+  text-decoration: none; 
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Style des titres de catégories en Bellota Text, majuscules et gras */
+.category-title {
+  font-family: 'Bellota Text', cursive, sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+/* Alignement vertical des articles en 3 colonnes côte à côte */
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 850px) {
+  header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.8rem;
+  }
+  
+  header form {
+    justify-content: stretch;
+  }
+
+  input[type="search"] {
+    max-width: 100%;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  .articles-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+}
+
+article h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.2rem;
+}
+
+.meta {
+  font-size: 0.85rem;
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+}
+
+/* Cadres photo harmonisés */
+.photo-frame {
+  margin: 0.8rem 0;
+  border: 1px dashed #000;
+  background: rgba(0, 0, 0, 0.03);
+  width: 100%;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+blockquote {
+  margin: 1rem 0;
+  padding-left: 0.8rem;
+  border-left: 2px solid #000;
+}
+
+/* Pied de page sur fond blanc */
+footer {
+  font-size: 0.9rem;
+  background: #ffffff;
+  margin: 0;
+  padding: 1.5rem 20px;
+}
+</style>
+</head>
+<body>
+
+<!-- En-tête compact sur fond blanc : Titre à gauche, Recherche au centre, Menu à droite -->
+<header>
+  <h1>fendani</h1>
+  
+  <form>
+    <input type="search" placeholder="Dictionnaire bilingue...">
+  </form>
+
+  <nav>
+    <a href="#actu">actualités</a> |
+    <a href="#propos">qui sommes-nous ?</a> |
+    <a href="#encyclopedie">encyclopédie</a>
+  </nav>
+</header>
+
+<main>
+  <!-- Section Actualités (3 colonnes verticales) -->
+  <section id="actu">
+    <h2 class="category-title">Actualités</h2>
+
+    <div class="articles-grid">
+      <article>
+        <h3 style="font-weight: 700;">Semaine de la culture franco-brésilienne à Angers</h3>
+        <p class="meta" style="font-weight: 300; font-style: italic;">Publié le 12 octobre 2026 — Événement / Angers</p>
+        <div class="photo-frame">[ Emplacement photo ]</div>
+        <p style="font-weight: 400;">
+          L'association <strong>fendani</strong> organise du 15 au 22 novembre une semaine dédiée aux échanges artistiques entre la France et le Brésil. Au programme : projections de films indépendants, ateliers de littérature croisée et concerts de Choro en plein cœur d'Angers.
+        </p>
+      </article>
+
+      <article>
+        <h3 style="font-weight: 700;">Lancement des ateliers d'initiation au portugais brésilien</h3>
+        <p class="meta" style="font-weight: 300; font-style: italic;">Publié le 28 septembre 2026 — Cours & Ateliers</p>
+        <div class="photo-frame">[ Emplacement photo ]</div>
+        <p style="font-weight: 400;">
+          Dès le mois prochain, nos bénévoles ouvriront des sessions hebdomadaires de conversation en portugais. Conçus pour les débutants comme pour les pratiquants avancés, ces rendez-vous mettront l'accent sur la pratique orale et le partage convivial.
+        </p>
+      </article>
+
+      <article>
+        <h3 style="font-weight: 700;">Appel à résidences d'artistes pour la saison 2027</h3>
+        <p class="meta" style="font-weight: 300; font-style: italic;">Publié le 5 septembre 2026 — Bourses & Projets</p>
+        <div class="photo-frame">[ Emplacement photo ]</div>
+        <p style="font-weight: 400;">
+          En partenariat avec la ville d'Angers, <strong>fendani</strong> lance son premier appel à projets à destination des plasticiens et écrivains émergents issus du monde francophone et lusophone. Les lauréats bénéficieront de trois mois de résidence.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Section Qui sommes-nous ? -->
+  <section id="propos">
+    <h2 class="category-title">Qui sommes-nous ?</h2>
+    <p style="font-weight: 400; max-width: 800px;">
+      Fondée à Angers, <strong>fendani</strong> est une association franco-brésilienne dédiée au développement des liens culturels, linguistiques et artistiques entre la France et le Brésil. Nous proposons des ateliers, des rencontres littéraires et des événements ouverts à toutes et tous.
+    </p>
+  </section>
+
+  <!-- Section Encyclopédie (3 colonnes verticales) -->
+  <section id="encyclopedie">
+    <h2 class="category-title">Encyclopédie</h2>
+
+    <div class="articles-grid">
+      <article>
+        <h3 style="font-weight: 700;">1. L'héritage littéraire du Romantisme franco-brésilien</h3>
+        <p class="meta" style="font-weight: 300; font-style: italic;">Catégorie : Littérature / Histoire</p>
+        <div class="photo-frame">[ Emplacement photo ]</div>
+        <p style="font-weight: 400;">
+          Au XIXe siècle, les échanges culturels entre la France et le Brésil ont forgé une tradition littéraire unique. Des auteurs majeurs tels que Machado de Assis et Gonçalves Dias ont puisé dans la poésie française les structures formelles qu'ils ont adaptées à la réalité tropicale.
+        </p>
+        <blockquote style="font-weight: 500; font-style: italic;">
+          « La langue est le pont invisible par lequel deux peuples apprennent à partager leurs rêves. »
+        </blockquote>
+      </article>
+
+      <article>
+        <h3 style="font-weight: 700;">2. Le Choro : aux origines de la musique populaire brésilienne</h3>
+        <p class="meta" style="font-weight: 300; font-style: italic;">Catégorie : Musicologie</p>
+        <div class="photo-frame">[ Emplacement photo ]</div>
+        <p style="font-weight: 400;">
+          Né à Rio de Janeiro dans la seconde moitié du XIXe siècle, le <em>choro</em> est le premier genre musical urbain typiquement brésilien. Il est issu de la rencontre entre les danses européennes importées et les rythmes afro-brésiliens.
+        </p>
+      </article>
+
+      <article>
+        <h3 style="font-weight: 700;">3. L'influence de l'architecture moderniste de Brasília</h3>
+        <p class="meta" style="font-weight: 300; font-style: italic;">Catégorie : Architecture & Urbanisme</p>
+        <div class="photo-frame">[ Emplacement photo ]</div>
+        <p style="font-weight: 400;">
+          Inaugurée en 1960, la capitale du Brésil représentait le sommet du modernisme architectural. Conçue par Lúcio Costa et Oscar Niemeyer, Brasília s'inspire des théories urbanistiques européennes tout en y apportant la sensualité des lignes courbes.
+        </p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<!-- Pied de page sur fond blanc -->
+<footer>
+  fendani - association franco-brésilienne / 12 rue de la République, 49000 Angers / 07 00 88 99 00 / adresse@mail.fr /
+</footer>
+
+</body>
+</html>

@@ -524,6 +524,29 @@ button:focus-visible {
     overflow-wrap: anywhere;
 }
 
+.lien-dictionnaire {
+color: inherit;
+text-decoration: none;
+transition: color 0.2s ease;
+
+}
+
+.lien-dictionnaire:hover {
+color: #a07845;
+text-decoration: none;
+cursor: pointer;
+
+}
+
+.source-exemple {
+    margin-top: 8px;
+    font-size: 0.8em;
+font-family: 'Newsreader';
+    color: #888;
+    font-style: normal;
+    font-weight: normal;
+}
+
 /* FICHE DÉTAILLÉE */
 
 #view-details {
@@ -806,7 +829,10 @@ button:focus-visible {
 </head>
 <body>
     <header>
-        <h1>Fendani</h1>
+    <h1 class="logo-home">
+    <img src="logofendani.png" alt="Fendani"
+         style="width:300px; height:90px; object-fit:contain;">
+</h1>
         <p>Dictionnaire bilingue français-caló</p>
     </header>
     <div class="container">
@@ -827,19 +853,43 @@ onkeydown="if(event.key === 'Enter') ouvrirMotRecherche()"></div>
 <!-- Balise audio invisible permanente pour forcer la lecture sans blocage du navigateur -->
 <audio id="lecteur-audio-global" style="display:none;"></audio>
     <script src="donnees.js"></script>
+<script>
+dictionnaire.forEach(item => {
+    item.id = item.mot;
+});
+</script>
     <script>
 // Variable globale pour garder en mémoire la liste filtrée actuelle (évite de ré-afficher 19500 mots)
 let listeActuelle = [];
 
 document.addEventListener("DOMContentLoaded", () => {
-    if (typeof dictionnaire !== 'undefined') {
-        document.getElementById('count-label').textContent = `Le dictionnaire contient actuellement ${dictionnaire.length.toLocaleString('fr-FR')} mots et expressions.`;
-       // genererBarreAlphabet();
-        
-        // Vérifie immédiatement si l'utilisateur arrive sur le site via le lien direct d'un mot
+    if (typeof dictionnaire !== "undefined") {
+
+        // Remplacer les ID numériques par les mots
+        dictionnaire.forEach(item => {
+            item.id = item.mot;
+        });
+
+        // Trier le dictionnaire par ordre alphabétique français
+        dictionnaire.sort((a, b) =>
+    a.mot.localeCompare(b.mot, "fr", {
+        sensitivity: "variant",
+        ignorePunctuation: false,
+        numeric: false
+    })
+);
+
+        document.getElementById("count-label").textContent =
+            `Le dictionnaire contient actuellement ${
+                dictionnaire.length.toLocaleString("fr-FR")
+            } mots et expressions.`;
+
+        // Gérer l'ouverture directe d'une fiche
         gererNavigation();
+
     } else {
-        document.getElementById('count-label').textContent = "Erreur : le fichier donnees.js est introuvable.";
+        document.getElementById("count-label").textContent =
+            "Erreur : le fichier donnees.js est introuvable.";
     }
 });
 
@@ -858,10 +908,18 @@ function genererBarreAlphabet() {
     });
 }
 function ouvrirMotRecherche() {
-    const recherche = document.getElementById('search-input').value.toLowerCase().trim();
-    const mot = dictionnaire.find(m => m.mot.toLowerCase() === recherche);
+    const recherche = document
+        .getElementById("search-input")
+        .value.toLowerCase().trim();
 
-    if (mot) window.location.hash = '/mot/' + mot.id;
+    const mot = dictionnaire.find(
+        m => m.mot.toLowerCase() === recherche
+    );
+
+    if (mot) {
+        window.location.hash =
+            "/mot/" + encodeURIComponent(mot.id);
+    }
 }
 function declencherRecherche() {
     desactiverLettres();
@@ -895,8 +953,13 @@ function filtrerParLettre(lettre, elementBtn) {
     elementBtn.classList.add('active');
     
     listeActuelle = dictionnaire.filter(item => item.mot && item.mot.trim().toUpperCase().startsWith(lettre));
-    listeActuelle.sort((a, b) => a.mot.localeCompare(b.mot));
-    
+listeActuelle.sort((a, b) =>
+    a.mot.localeCompare(b.mot, "fr", {
+        sensitivity: "variant",
+        ignorePunctuation: false,
+        numeric: false
+    })
+);    
     afficherListeResultats(listeActuelle, `Lettre ${lettre}`);
 }
 
@@ -912,7 +975,10 @@ function afficherListeResultats(liste, contexte = "") {
         let card = document.createElement('div');
         card.className = "resultat-card";
         // Au clic, on change l'adresse URL au lieu de forcer l'affichage direct
-        card.onclick = () => window.location.hash = `/mot/${item.id}`;
+        card.onclick = () => {
+    window.location.hash =
+        `/mot/${encodeURIComponent(item.id)}`;
+};
         
        
 let traductions = "";
@@ -955,8 +1021,11 @@ function gererNavigation() {
     const hash = window.location.hash;
     
     if (hash.startsWith('#/mot/')) {
-        const idMot = parseInt(hash.replace('#/mot/', ''));
-        const item = dictionnaire.find(m => m.id === idMot);
+        const idMot = decodeURIComponent(
+    hash.slice("#/mot/".length)
+);
+
+const item = dictionnaire.find(m => m.id === idMot);
         
         if (item) {
             document.title = `${item.mot} - Dictionnaire`;
@@ -974,7 +1043,10 @@ function gererNavigation() {
                     voisinsHtml += `<button class="voisin-btn actuel">${motVoisin.mot}</button>`;
                 } else {
                     // Ce sont tous les autres mots du dictionnaire (cliquables)
-                    voisinsHtml += `<button class="voisin-btn" onclick="window.location.hash = '/mot/${motVoisin.id}'">${motVoisin.mot}</button>`;
+                    voisinsHtml += `<button class="voisin-btn"
+    onclick="window.location.hash = '/mot/${encodeURIComponent(motVoisin.id)}'">
+    ${motVoisin.mot}
+</button>`;
                 }
             });
             
@@ -994,6 +1066,24 @@ function echapperHTML(texte) {
     })[caractere]);
 }
 
+function afficherTexteAvecLiens(texte) {
+    if (!texte) return "";
+
+    return echapperHTML(texte).replace(
+        /\[([^\]]+)\]\(prefixe:([^)]+)\)/g,
+        (match, texteLien, prefixe) => {
+            const url = "https://fendani.fr/prefixes.html#" +
+                encodeURIComponent(prefixe.trim());
+
+            return `<a href="${url}"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="lien-dictionnaire">
+                       ${texteLien}
+                    </a>`;
+        }
+    );
+}
 
 function creerBoutonAudio(fichier, titre) {
     if (!fichier) return "";
@@ -1023,6 +1113,7 @@ if (Array.isArray(item.sens)) {
         const exempleFr = s.exemple_fr || item.exemple_fr;
         const exempleTrad = s.exemple_trad || item.exemple_trad;
         const audioExemple = s.exemple_audio;
+const sourceExemple = s.source_exemple || item.source_exemple;
 
         return `
             <div class="section-sens"
@@ -1044,7 +1135,7 @@ style="
              letter-spacing: -0,1 px;
              line-height: 1.6;
          ">
-                           ${s.etymologie || ""}
+                           ${afficherTexteAvecLiens(s.etymologie)}
                         </div>
                     </div>
                 ` : ""}
@@ -1055,9 +1146,13 @@ style="
 
                     <span class="section-title">Traduction</span>
 
-                    <div class="section-content trad-main">
-    ${echapperHTML(s.traduction || "")}
+                 <div class="section-content trad-main"
+     style="display:flex; align-items:center; gap:8px;">
+
     ${creerBoutonAudio(audioMot, "Écouter la prononciation")}
+
+    <span>${echapperHTML(s.traduction || "")}</span>
+
 </div>
 
              ${exempleFr || exempleTrad ? `
@@ -1092,6 +1187,11 @@ style="
 ${echapperHTML(exempleTrad)}
                             </div>
                         ` : ""}
+${sourceExemple ? `
+    <div class="source-exemple">
+        ${sourceExemple}
+    </div>
+` : ""}
                     </div>
                 ` : ""}
             </div>
@@ -1113,7 +1213,7 @@ font-weight: 400;
          word-spacing: 0px;
          line-height: 1.6;
 ">
-                    ${item.etymologie || ""}
+                    ${afficherTexteAvecLiens(item.etymologie)}
                 </div>
             </div>
         ` : ""}
@@ -1121,11 +1221,14 @@ font-weight: 400;
         <div class="section-fiche"
              style="border-left:4px solid var(--success);">
             <span class="section-title">Traduction</span>
-            <div class="section-content trad-main">
-                ${echapperHTML(item.traduction || "")}
-            </div>
-            ${creerBoutonAudio(item.audio,
-                "Écouter la prononciation")}
+            <div class="section-content trad-main"
+     style="display:flex; align-items:center; gap:8px;">
+
+    ${creerBoutonAudio(item.audio, "Écouter la prononciation")}
+
+    <span>${echapperHTML(item.traduction || "")}</span>
+
+</div>
         </div>
 
         ${item.exemple_fr || item.exemple_trad ? `
@@ -1159,17 +1262,8 @@ ${item.image ? `<img src="${item.image}" alt="${item.mot}" class="image-mot">` :
                   ${contenuSens}
 
 
-                    <!-- LE BLOC DES EXEMPLES -->
-                    ${item.exemple_fr ? `
-                    <div class="section-fiche" style="border-left: 4px solid var(--warning); background: #fffdf5;">
-                        <span class="section-title">Exemple d'utilisation</span>
-                        <div class="section-content" style="font-style: italic;">
-                            ${item.exemple_fr}
-                            ${item.exemple_trad ? `<div style="margin-top: 6px; color: var(--accent); font-weight: 500; font-style: normal;">➔ ${item.exemple_trad}</div>` : ''}
-                        </div>
-                    </div>
-                    ` : ''}
-                </div>`;
+
+</div>`;
             
             document.getElementById('view-search').classList.add('hidden');
             document.getElementById('view-details').classList.remove('hidden');

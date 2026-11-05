@@ -1,0 +1,442 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Index alphabétique — Fendani</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Newsreader:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+.logo-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.logo-home img {
+    display: block;
+    width: 300px;
+    height: 90px;
+    object-fit: contain;
+}
+
+:root {
+    --primary: #29185e;
+    --accent: #4b26c8;
+    --bg: #f0edff;
+    --card: #ffffff;
+    --border: #e8e2fa;
+    --text: #211747;
+    --muted: #77718f;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 18px;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+        radial-gradient(ellipse at top right, #e0dcff 0, transparent 48%),
+        var(--bg);
+    color: var(--text);
+    font-family: "DM Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+header {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: clamp(28px, 5vw, 52px) 20px;
+    border-radius: 0 0 28px 28px;
+}
+
+header h1 {
+    margin: 0;
+    font: 700 clamp(2rem, 5vw, 3rem) "Newsreader", Georgia, serif;
+    letter-spacing: -0.5px;
+}
+
+header p {
+    margin: 8px 0 0;
+    font-size: clamp(14px, 2vw, 16px);
+    line-height: 1.6;
+    opacity: 0.85;
+}
+
+main {
+    width: min(100% - 28px, 1080px);
+    margin: 24px auto 56px;
+}
+
+.search {
+    position: sticky;
+    top: 8px;
+    z-index: 5;
+    padding: 8px;
+    margin-bottom: 16px;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(41, 24, 94, 0.08);
+}
+
+#search {
+    display: block;
+    width: 100%;
+    min-height: 50px;
+    padding: 13px 15px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    outline: none;
+    background: #f8f7fd;
+    color: var(--text);
+    font: 16px "DM Sans", sans-serif;
+}
+
+#search:focus {
+    border-color: var(--accent);
+    background: white;
+}
+
+#search::placeholder {
+    color: #928ba8;
+}
+
+.alphabet {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 7px;
+    padding: 14px;
+    margin-bottom: 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+}
+
+.letter-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    min-height: 40px;
+    padding: 8px 11px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #f5f2ff;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    transition: background .15s, color .15s;
+}
+
+.letter-link:hover,
+.letter-link:focus-visible {
+    background: var(--accent);
+    color: white;
+    outline-offset: 2px;
+}
+
+.count {
+    margin: 20px 0;
+    color: var(--muted);
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.letter-section {
+    padding: clamp(16px, 3vw, 26px);
+    margin-bottom: 20px;
+    scroll-margin-top: 85px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: 0 6px 22px rgba(41, 24, 94, 0.045);
+}
+
+.letter-section h2 {
+    margin: 0 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border);
+    color: var(--primary);
+    font: 700 clamp(26px, 4vw, 34px) "Newsreader", Georgia, serif;
+}
+
+.word-list {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+}
+
+.word-link {
+    display: block;
+    min-width: 0;
+    padding: 12px 13px;
+    border: 1px solid transparent;
+    border-radius: 11px;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    transition: background .15s, border-color .15s;
+}
+
+.word-link:hover,
+.word-link:focus-visible {
+    background: #f7f5ff;
+    border-color: var(--border);
+    outline-offset: 2px;
+}
+
+.word {
+    display: block;
+    color: var(--accent);
+    font: 700 19px/1.4 "Newsreader", Georgia, serif;
+}
+
+.translation {
+    display: block;
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+@media (min-width: 600px) {
+    main {
+        width: min(100% - 40px, 1080px);
+        margin-top: 30px;
+    }
+
+    .word-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px 16px;
+    }
+
+    .alphabet {
+        justify-content: flex-start;
+        padding: 16px;
+    }
+
+    .letter-link {
+        min-width: 42px;
+        min-height: 42px;
+    }
+}
+
+@media (min-width: 960px) {
+    main {
+        width: min(100% - 64px, 1080px);
+    }
+
+    .word-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px 18px;
+    }
+
+    .letter-section {
+        padding: 28px;
+    }
+}
+
+@media (max-width: 380px) {
+    main {
+        width: calc(100% - 20px);
+    }
+
+    .alphabet {
+        gap: 5px;
+        padding: 10px;
+    }
+
+    .letter-link {
+        min-width: 34px;
+        min-height: 38px;
+        padding: 6px 8px;
+    }
+
+    .letter-section {
+        padding: 14px;
+        border-radius: 14px;
+    }
+
+    .word {
+        font-size: 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+    }
+}
+
+</style>
+</head>
+
+<body>
+<header>
+   <h1 class="logo-home">
+    <img src="logofendani.png" alt="Fendani"
+         style="width:300px; height:90px; object-fit:contain;">
+</h1>
+    <p>Index alphabétique français–caló</p>
+</header>
+
+<main>
+    <div class="search">
+        <input id="search" type="search"
+            placeholder="Rechercher un mot..."
+            aria-label="Rechercher dans l'index">
+    </div>
+
+    <nav class="alphabet" id="alphabet"
+        aria-label="Navigation alphabétique"></nav>
+
+    <p class="count" id="count">Chargement du dictionnaire…</p>
+    <div id="index"></div>
+</main>
+
+<script src="donnees.js"></script>
+<script>
+const index = document.getElementById("index");
+const alphabet = document.getElementById("alphabet");
+const search = document.getElementById("search");
+const count = document.getElementById("count");
+
+function nettoyer(texte) {
+    return String(texte || "")
+        .normalize("NFC")
+        .toLocaleLowerCase("fr");
+}
+
+function premiereLettre(mot) {
+    const premiere = Array.from(mot.trim())[0] || "#";
+    return premiere.toLocaleUpperCase("fr");
+}
+
+function obtenirTraduction(item) {
+    if (Array.isArray(item.sens)) {
+        return item.sens
+            .map(s => s.traduction || "")
+            .filter(Boolean)
+            .join(" · ");
+    }
+    return item.traduction || "";
+}
+
+function afficherIndex() {
+    if (typeof dictionnaire === "undefined") {
+        count.textContent = "Impossible de charger donnees.js.";
+        return;
+    }
+
+    const terme = nettoyer(search.value.trim());
+
+    const mots = dictionnaire
+        .filter(item => item.mot)
+        .filter(item =>
+            nettoyer(item.mot).includes(terme) ||
+            nettoyer(obtenirTraduction(item)).includes(terme)
+        )
+        .slice()
+        .sort((a, b) =>
+            a.mot.localeCompare(b.mot, "fr", {
+                sensitivity: "variant",
+                ignorePunctuation: false,
+                numeric: false
+            })
+        );
+
+    const groupes = new Map();
+
+    for (const item of mots) {
+        const lettre = premiereLettre(item.mot);
+        if (!groupes.has(lettre)) groupes.set(lettre, []);
+        groupes.get(lettre).push(item);
+    }
+
+    alphabet.replaceChildren();
+    index.replaceChildren();
+
+    for (const lettre of groupes.keys()) {
+        const lien = document.createElement("a");
+        lien.className = "letter-link";
+        lien.href = "#" + encodeURIComponent(lettre);
+        lien.textContent = lettre;
+        alphabet.appendChild(lien);
+    }
+
+    for (const [lettre, entrees] of groupes) {
+        const section = document.createElement("section");
+        section.className = "letter-section";
+        section.id = "lettre-" + lettre;
+
+        const titre = document.createElement("h2");
+        titre.textContent = lettre;
+        section.appendChild(titre);
+
+        const liste = document.createElement("div");
+        liste.className = "word-list";
+
+        for (const item of entrees) {
+            const lien = document.createElement("a");
+            lien.className = "word-link";
+            lien.href = "index.html#/mot/" +
+    encodeURIComponent(item.mot);
+
+            const mot = document.createElement("span");
+            mot.className = "word";
+            mot.textContent = item.mot;
+            lien.appendChild(mot);
+
+            const traduction = obtenirTraduction(item);
+            if (traduction) {
+                const sens = document.createElement("span");
+                sens.className = "translation";
+                sens.textContent = traduction;
+                lien.appendChild(sens);
+            }
+
+            liste.appendChild(lien);
+        }
+
+        section.appendChild(liste);
+        index.appendChild(section);
+    }
+
+    count.textContent =
+        mots.length.toLocaleString("fr-FR") +
+        " entrée(s) dans l’index";
+
+    if (mots.length === 0) {
+        count.textContent = "Aucun mot trouvé.";
+    }
+}
+
+search.addEventListener("input", afficherIndex);
+
+afficherIndex();
+</script>
+</body>
+</html>

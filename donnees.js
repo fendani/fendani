@@ -45,68 +45,99 @@ exemple_fr: "Je suis à Paris.",
     "id": 3,
     "mot": "AB",
     "nature": "abr.",
-    "etymologie": "assez bien – DL (doste lancho) – la mention AB (Assez Bien) du baccalauréat n’est pas suffisante pour intégrer les grandes écoles",
-    "traduction": "l’espone DL (Doste lancho) del banicho non si bremianta pa lucinar las albaras escolis."
-  },
+ sens: [
+        {
+            traduction: "santioso",
+            etymologie: "de l'hindi <a href=\"https://en.wiktionary.org/wiki/%E0%A4%B8%E0%A4%82%E0%A4%A4%E0%A5%8B%E0%A4%B7\" class=\"lien-dictionnaire\">संतोष</a> <em>santos</em>, satisfaisant",
+            audio: "santioso.mp3",
+            exemple_fr: "la mention AB (Assez Bien) du baccalauréat n’est pas suffisante pour intégrer les grandes écoles",
+            exemple_trad: "l’espone santioso del banicho no sina bremianta pa luchinar las baras vedalas.",
+            exemple_audio: "AB.mp3",
+            illustration: "images/...jpg"
+        }
+    ]
+},
   {
     "id": 5,
     "mot": "abactérien",
 "nature": "adj.",
-    "traduction": "agivano"
+"audio": "aguivanico.mp3",
+"etymologie": "Formé avec le [préfixe a-](prefixe:a-) d'origine grecque, suivi de <em>guivana</em>, bactérie, et du suffixe <em>-ico</em>",
+    "traduction": "aguivánico"
   },
   {
     "id": 6,
     "mot": "abaissement",
-    "nature": "nm.",
-    "traduction": "asteana"
+    "nature": "n.m.",
+"audio": "asteipen.mp3",
+"etymologie": "substantivation du verbe <em>astear</em>, abaisser",
+    "traduction": "asteipén"
   },
   {
     "id": 7,
     "mot": "abaisser",
     "nature": "vb.",
-    "traduction": "DE L’ANCIEN CALO OSTELAR – astear"
+"audio": "astear.mp3",
+"etymologie": "de l'ancien caló <em> ostelar</em>",
+    "traduction": "astear"
   },
   {
     "id": 8,
     "mot": "abandon",
     "nature": "nm.",
-    "traduction": "mego"
+"audio": "megano.mp3",
+    "traduction": "megano"
   },
   {
     "id": 9,
     "mot": "abandonnable",
     "nature": "adj.",
+"audio": "megayo.mp3",
     "traduction": "megayo"
   },
   {
     "id": 10,
     "mot": "abandonnataire",
     "nature": "adj.",
+"audio": "megatandro.mp3",
     "traduction": "megatandro"
   },
   {
     "id": 11,
     "mot": "abandonnement",
     "nature": "adv.",
-    "traduction": "megadame"
+"audio": "meguipen.mp3",
+    "traduction": "meguipén"
   },
   {
     "id": 12,
     "mot": "abandonner",
     "nature": "vb.",
-    "etymologie": "DE L’ANCIEN CALO MECAR – megar : De nombreux animaux sont abandonnés par leurs maîtres chaque année",
-    "traduction": "Sinalos pastres san megados por sus dosianes sanga beriani."
+"etymologie": "de l'ancien caló <em>mecar</em>",
+    "traduction": "megar"
   },
   {
     "id": 13,
     "mot": "abandonneur",
 "nature": "adj.",
-    "traduction": "megare, megaro"
+    "traduction": "megaor"
   },
   {
     "id": 14,
     "mot": "abandonnique",
-    "traduction": "megasco : l’abandonnique (…) est un sujet préœudipien · lo meguine (…) si ye sutal paledipieno (Emmanuel de Saint-Aubert, Du lien des êtres aux éléments de l'être : MerleauPonty au tournant des années 1945-1951, Vrin, Paris, 2004, p.196)."
+"nature": "adj.",
+  sens: [
+        {
+            traduction: "méguico",
+            etymologie: "adjectivation du verbe <em> megar</em>, abandonner",
+            audio: "abandonnique-1.mp3",
+            exemple_fr: "l’abandonnique (…) est un sujet préœudipien",
+            exemple_trad: "lo méguico (…) sina yo sutal paledipiano",
+            exemple_audio: "abandonnique-2.mp3",
+source_exemple: "<strong>Emmanuel de Saint-Aubert</strong>, <em>Du lien des êtres aux éléments de l'être : Merleau-Ponty au tournant des années 1945-1951</em>, Vrin, Paris, 2004, p.196.",
+            illustration: "images/...jpg"
+        }
+    ]
   },
   {
     "id": 15,
@@ -310,6 +341,13 @@ exemple_fr: "Je suis à Paris.",
     "nature": "n.",
     "etymologie": "du romani forgača",
     "traduction": "fogache"
+  },
+  {
+    "id": 23450,
+    "mot": "abscons",
+    "nature": "adj.",
+    "etymologie": "de l'hindi गूढ़  <em>Gūḍh</em>, obscur, complexe",
+    "traduction": "gondo"
   },
   {
     "id": 48,
@@ -1246,6 +1284,13 @@ exemple_fr: "Je suis à Paris.",
     "traduction": "(écon.) apralimar ; (gén. cf. Croître) aparivar"
   },
   {
+    "id": 190000000,
+    "mot": "acrolecte",
+    "nature": "n.m.",
+    "etymologie": "de l'hindi उच्च <em>ucca</em>, élevé, et भाषा <em>bhāṣā</em>, langage",
+    "traduction": "ucabaso"
+  },
+  {
     "id": 196,
     "mot": "accroupir",
     "nature": "vb.",
@@ -1511,14 +1556,14 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 237,
-    "mot": "à-côté",
+    "mot": "àccôté",
     "nature": "n.",
     "etymologie": "du romani kald. Petoparco, futilité, accessoire",
     "traduction": "Peoparco"
   },
   {
     "id": 238,
-    "mot": "à-coup",
+    "mot": "àccoup",
     "nature": "n.",
     "etymologie": "du romani kald. śindo, couper",
     "traduction": "chindeo"
@@ -1841,7 +1886,7 @@ exemple_fr: "Je suis à Paris.",
     "mot": "adamantin",
     "nature": "adj.",
     "etymologie": "du romani <em>gemant’iko</em>",
-    "traduction": "guemantino"
+    "traduction": "guemántico"
   },
   {
     "id": 292,
@@ -2528,267 +2573,267 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 402,
-    "mot": "Affamé",
+    "mot": "affamé",
     "nature": "adj.",
     "traduction": "Acarmantado"
   },
   {
     "id": 403,
-    "mot": "Affamer",
+    "mot": "affamer",
     "nature": "vb.",
     "etymologie": "cf. faim",
     "traduction": "Acarmantar"
   },
   {
     "id": 404,
-    "mot": "Affectation",
+    "mot": "affectation",
     "nature": "n.",
     "traduction": "Palabipén"
   },
   {
     "id": 405,
-    "mot": "Affecter",
+    "mot": "affecter",
     "nature": "vb.",
     "etymologie": "de l'ancien calo bajambar",
     "traduction": "Palambar"
   },
   {
     "id": 406,
-    "mot": "Affectif",
+    "mot": "affectif",
     "nature": "adj.",
     "traduction": "Palambivo"
   },
   {
     "id": 407,
-    "mot": "Affection",
+    "mot": "affection",
     "nature": "n.",
     "traduction": "Palaño"
   },
   {
     "id": 408,
-    "mot": "Affectivement",
+    "mot": "affectivement",
     "nature": "adv.",
     "traduction": "Palambiva-mente"
   },
   {
     "id": 409,
-    "mot": "Affectueux",
+    "mot": "affectueux",
     "nature": "adj.",
     "traduction": "Palañoso"
   },
   {
     "id": 410,
-    "mot": "Affectueusement",
+    "mot": "affectueusement",
     "nature": "adv.",
     "traduction": "Palaño-samente"
   },
   {
     "id": 411,
-    "mot": "Affichage",
+    "mot": "affichage",
     "nature": "n.",
     "traduction": "Serguillache"
   },
   {
     "id": 412,
-    "mot": "Affiche",
+    "mot": "affiche",
     "nature": "n.",
     "etymologie": "du rom. sergjia",
     "traduction": "Serguillea"
   },
   {
     "id": 413,
-    "mot": "Afficher",
+    "mot": "afficher",
     "nature": "vb.",
     "traduction": "Serguillar"
   },
   {
     "id": 414,
-    "mot": "Affilée, loc. Adv.",
+    "mot": "affilée",
     "etymologie": "du romani lov. šorom",
     "traduction": "sorome : d’affilée · de sorome"
   },
   {
     "id": 415,
-    "mot": "Affinage",
+    "mot": "affinage",
     "nature": "n.",
     "traduction": "Sanache"
   },
   {
     "id": 416,
-    "mot": "Affiner",
+    "mot": "affiner",
     "nature": "vb.",
     "etymologie": "du rom. Kald. Sañarel",
     "traduction": "Sañar"
   },
   {
     "id": 417,
-    "mot": "Affinité",
+    "mot": "affinité",
     "nature": "n.",
     "etymologie": "du romani prek. ezbelipe, sentiment",
     "traduction": "Ebelima : avoir des affinités avec · ebelimarse con"
   },
   {
     "id": 418,
-    "mot": "Affirmatif",
+    "mot": "affirmatif",
     "nature": "adj.",
     "traduction": "aTolmivo"
   },
   {
     "id": 419,
-    "mot": "Affirmation",
+    "mot": "affirmation",
     "nature": "n.",
     "traduction": "aTolmipén"
   },
   {
     "id": 420,
-    "mot": "Affirmer",
+    "mot": "affirmer",
     "nature": "vb.",
     "etymologie": "de l'ancien calo atrojipar",
     "traduction": "aTolmar"
   },
   {
     "id": 421,
-    "mot": "Affliction",
+    "mot": "affliction",
     "nature": "n.",
     "etymologie": "de l'ancien calo coripen",
     "traduction": "Coripén"
   },
   {
     "id": 422,
-    "mot": "Affligé",
+    "mot": "affligé",
     "nature": "adj.",
     "traduction": "Acorado"
   },
   {
     "id": 423,
-    "mot": "Affligeant",
+    "mot": "affligeant",
     "nature": "adj.",
     "traduction": "Acoranto"
   },
   {
     "id": 424,
-    "mot": "Affliger",
+    "mot": "affliger",
     "nature": "vb.",
     "traduction": "Acorar"
   },
   {
     "id": 425,
-    "mot": "Affluant",
+    "mot": "affluant",
     "nature": "n.",
     "traduction": "folinante"
   },
   {
     "id": 426,
-    "mot": "Affluence",
+    "mot": "affluence",
     "nature": "n.",
     "traduction": "folinea"
   },
   {
     "id": 427,
-    "mot": "Affluer",
+    "mot": "affluer",
     "nature": "vb.",
     "etymologie": "du romani gurv. fojinel",
     "traduction": "folinar"
   },
   {
     "id": 428,
-    "mot": "Afflux, N.",
+    "mot": "afflux",
     "traduction": "folineo"
   },
   {
     "id": 429,
-    "mot": "Affolage",
+    "mot": "affolage",
     "nature": "n.",
     "traduction": "adinelache"
   },
   {
     "id": 430,
-    "mot": "Affolement",
+    "mot": "affolement",
     "nature": "n.",
     "traduction": "adinelani"
   },
   {
     "id": 431,
-    "mot": "Affoler",
+    "mot": "affoler",
     "nature": "vb.",
     "traduction": "adinelar"
   },
   {
     "id": 432,
-    "mot": "Affranchir",
+    "mot": "affranchir",
     "nature": "vb.",
     "etymologie": "cf. franchir",
     "traduction": "apindar"
   },
   {
     "id": 433,
-    "mot": "Affranchissement",
+    "mot": "affranchissement",
     "nature": "n.",
     "traduction": "apindane"
   },
   {
     "id": 434,
-    "mot": "Affreusement",
+    "mot": "affreusement",
     "nature": "adv.",
     "traduction": "vorichosa-mente"
   },
   {
     "id": 435,
-    "mot": "Affreux",
+    "mot": "affreux",
     "nature": "adj.",
     "etymologie": "du rom. Kald. Voriĉoso",
     "traduction": "Vorichoso"
   },
   {
     "id": 436,
-    "mot": "Affront",
+    "mot": "affront",
     "nature": "n.",
     "etymologie": "du rom. Kald. Tulimos",
     "traduction": "tulimeo"
   },
   {
     "id": 437,
-    "mot": "Affrontement",
+    "mot": "affrontement",
     "nature": "n.",
     "traduction": "tulime"
   },
   {
     "id": 438,
-    "mot": "Affronter",
+    "mot": "affronter",
     "nature": "n.",
     "traduction": "tulimar"
   },
   {
     "id": 439,
-    "mot": "Affût",
+    "mot": "affût",
     "nature": "n.",
     "etymologie": "‹1› (tranchant, machine) rusineo ‹2› (endroit) du rom. gurovibe, cachette, planque",
     "traduction": "Govipén : Être à l’affût · Sinelar a la govipén."
   },
   {
     "id": 440,
-    "mot": "Affûter",
+    "mot": "affûter",
     "nature": "vb.",
     "etymologie": "du rom. Brusini",
     "traduction": "rusinar"
   },
   {
     "id": 441,
-    "mot": "Afin",
+    "mot": "afin",
     "nature": "conj.",
     "etymologie": "de l'ancien calo te",
     "traduction": "Ten : Afin de · Ten de ; Afin que · Ten que"
   },
   {
     "id": 442,
-    "mot": "Afistoler",
+    "mot": "afistoler",
     "nature": "vb.",
     "etymologie": "de l'ancien calo cotorar",
     "traduction": "cotonar"
   },
   {
     "id": 443,
-    "mot": "Africain, n. Adj.",
+    "mot": "africain",
     "traduction": "africane ; Africano"
   },
   {
@@ -2799,112 +2844,112 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 445,
-    "mot": "Agaçant",
+    "mot": "agaçant",
     "nature": "adj.",
     "traduction": "roñanto"
   },
   {
     "id": 446,
-    "mot": "Agacer",
+    "mot": "agacer",
     "nature": "vb.",
     "etymologie": "de l'ancien calo norunjar",
     "traduction": "roñar"
   },
   {
     "id": 447,
-    "mot": "Âge",
+    "mot": "âge",
     "nature": "n.",
     "etymologie": "de l'ancien calo berji",
     "traduction": "beri"
   },
   {
     "id": 448,
-    "mot": "Agence",
+    "mot": "agence",
     "nature": "n.",
     "traduction": "empiteo"
   },
   {
     "id": 449,
-    "mot": "Agencement",
+    "mot": "agencement",
     "nature": "n.",
     "traduction": "empetime"
   },
   {
     "id": 450,
-    "mot": "Agencer",
+    "mot": "agencer",
     "nature": "vb.",
     "etymologie": "du rom. Kald. impêtil",
     "traduction": "empetiar"
   },
   {
     "id": 451,
-    "mot": "Agenda",
+    "mot": "agenda",
     "nature": "n.",
     "etymologie": "‹1› (calendrier, journal) du rom.  ramomate, agenda, journal intime",
     "traduction": "ramate ‹2› (programme, dessein) du rom. Slov. sikhaven · cavena"
   },
   {
     "id": 452,
-    "mot": "Agenouillé",
+    "mot": "agenouillé",
     "nature": "adj.",
     "traduction": "Acangado"
   },
   {
     "id": 453,
-    "mot": "Agenouiller",
+    "mot": "agenouiller",
     "nature": "vb.",
     "etymologie": "cf. Genou",
     "traduction": "Acangar"
   },
   {
     "id": 454,
-    "mot": "Agent",
+    "mot": "agent",
     "nature": "n.",
     "traduction": "empite"
   },
   {
     "id": 455,
-    "mot": "Ager",
+    "mot": "âger",
     "nature": "vb.",
     "traduction": "beriar : âgé de · beriado con"
   },
   {
     "id": 456,
-    "mot": "Agglomération",
+    "mot": "agglomération",
     "nature": "n.",
     "etymologie": "de l'ancien calo arrobiñi",
     "traduction": "Aroveni"
   },
   {
     "id": 457,
-    "mot": "Agglomérer",
+    "mot": "agglomérer",
     "nature": "vb.",
     "etymologie": "de l'ancien calo arrobiñar",
     "traduction": "Arovenar"
   },
   {
     "id": 458,
-    "mot": "Agglutinement",
+    "mot": "agglutinement",
     "nature": "n.",
     "traduction": "Cleyani"
   },
   {
     "id": 459,
-    "mot": "(s')Agglutiner",
+    "mot": "(s')agglutiner",
     "nature": "vb.",
     "etymologie": "du rom. Kald. Kleyol pe, s'agglutiner",
     "traduction": "Cleyar(se)"
   },
   {
     "id": 460,
-    "mot": "Agile",
+    "mot": "agile",
     "nature": "adj.",
     "etymologie": "du rom. Sinte Flink",
     "traduction": "Flino"
   },
   {
     "id": 461,
-    "mot": "Agilement",
+    "mot": "agilement",
     "nature": "adv.",
     "traduction": "flinamente"
   },
@@ -2916,840 +2961,835 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 463,
-    "mot": "Agir",
+    "mot": "agir",
     "nature": "vb.",
     "etymologie": "du rom. Prek. ukrepaulinel",
     "traduction": "Epolinar"
   },
   {
     "id": 464,
-    "mot": "Agissement",
+    "mot": "agissement",
     "nature": "n.",
     "traduction": "Epolineo"
   },
   {
     "id": 465,
-    "mot": "Agitation",
+    "mot": "agitation",
     "nature": "n.",
     "traduction": "Chalbani"
   },
   {
     "id": 466,
-    "mot": "Agiter",
+    "mot": "agiter",
     "nature": "vb.",
     "etymologie": "de l'ancien calo chalabear",
     "traduction": "Chalbear"
   },
   {
     "id": 467,
-    "mot": "Agneau",
+    "mot": "agneau",
     "nature": "n.",
     "etymologie": "de l'ancien calo roscorre",
     "traduction": "noscore : la viande d'agneau · (de l'ancien calo braco) nacro"
   },
   {
     "id": 468,
-    "mot": "Agonal",
+    "mot": "agonal",
     "nature": "adj.",
     "etymologie": "cf. compétition",
     "traduction": "Antenal"
   },
   {
     "id": 469,
-    "mot": "Agonie",
+    "mot": "agonie",
     "nature": "n.",
     "traduction": "Xarimea : À l’agonie · A la xarimea"
   },
   {
     "id": 470,
-    "mot": "Agoniser",
+    "mot": "agoniser",
     "nature": "vb.",
     "etymologie": "de l'ancien calo  jeribar",
     "traduction": "Xarimar"
   },
   {
     "id": 471,
-    "mot": "Agonistique, n. Adj.",
+    "mot": "agonistique",
     "traduction": "antenesque ; antenesco"
   },
   {
     "id": 472,
-    "mot": "Agonistiquement",
+    "mot": "agonistiquement",
     "nature": "adv.",
     "traduction": "antenescamente"
   },
   {
     "id": 473,
-    "mot": "Agrafe",
+    "mot": "agrafe",
     "nature": "n.",
     "traduction": "Tequiño"
   },
   {
     "id": 474,
-    "mot": "Agrafer",
+    "mot": "agrafer",
     "nature": "vb.",
     "etymologie": "du rom. Berg. štrikinel",
     "traduction": "Tequinar"
   },
   {
     "id": 475,
-    "mot": "Agrafeuse",
+    "mot": "agrafeuse",
     "nature": "n.",
     "traduction": "Tequinari"
   },
   {
     "id": 476,
-    "mot": "Agraire",
+    "mot": "agraire",
     "nature": "adj.",
     "etymologie": "de l'ancien calo galile, paysan",
     "traduction": "Galisto"
   },
   {
     "id": 477,
-    "mot": "Agrairement",
+    "mot": "agrairement",
     "nature": "adv.",
     "traduction": "Galistamente"
   },
   {
     "id": 478,
-    "mot": "Agrandi",
+    "mot": "agrandi",
     "nature": "adj.",
     "traduction": "Elbarado"
   },
   {
     "id": 479,
-    "mot": "Agrandir",
+    "mot": "agrandir",
     "nature": "vb.",
     "etymologie": "cf. grand",
     "traduction": "Elbarar"
   },
   {
     "id": 480,
-    "mot": "Agrandissement",
+    "mot": "agrandissement",
     "nature": "n.",
     "traduction": "Elbarani"
   },
   {
     "id": 481,
-    "mot": "Agraver",
+    "mot": "agraver",
     "nature": "vb.",
     "etymologie": "cf. Grave",
     "traduction": "Asombear"
   },
   {
     "id": 482,
-    "mot": "Agréable",
+    "mot": "agréable",
     "nature": "adj.",
     "etymologie": "de l'ancien calo aloxe",
     "traduction": "Alecho"
   },
   {
     "id": 483,
-    "mot": "Agréablement",
+    "mot": "agréablement",
     "nature": "adv.",
     "traduction": "Alechamente"
   },
   {
     "id": 484,
-    "mot": "Agréement",
+    "mot": "agréement",
     "nature": "n.",
     "traduction": "Alechani"
   },
   {
     "id": 485,
-    "mot": "Agréer",
+    "mot": "agréer",
     "nature": "vb.",
     "traduction": "Alechar"
   },
   {
     "id": 486,
-    "mot": "Agrégation",
+    "mot": "agrégation",
     "nature": "n.",
     "etymologie": "(concours ; assemblage) Begolani : Une agrégation de lettres",
     "traduction": "ya begolani de pandura."
   },
   {
     "id": 487,
-    "mot": "Agréger",
+    "mot": "agréger",
     "nature": "vb.",
     "etymologie": "de l'ancien calo begelar",
     "traduction": "Begolar"
   },
   {
     "id": 488,
-    "mot": "Agrès",
+    "mot": "agrès",
     "nature": "n.",
     "etymologie": "du rom. aun pašlarel, équiper, adapter",
     "traduction": "aupalare"
   },
   {
     "id": 489,
-    "mot": "Agresser",
+    "mot": "agresser",
     "nature": "vb.",
     "etymologie": "de l'ancien calo orsojañar",
     "traduction": "Osuenar"
   },
   {
     "id": 490,
-    "mot": "Agresseur, n. Adj.",
+    "mot": "agresseur",
     "traduction": "Osuenare ; osuenaro"
   },
   {
     "id": 491,
-    "mot": "Agressif",
+    "mot": "agressif",
     "nature": "adj.",
     "traduction": "Osuenivo"
   },
   {
     "id": 492,
-    "mot": "Agressivement",
+    "mot": "agressivement",
     "nature": "adv.",
     "traduction": "Osuenivamente"
   },
   {
     "id": 493,
-    "mot": "Agressivité",
+    "mot": "agressivité",
     "nature": "n.",
     "traduction": "Osuenivadi"
   },
   {
     "id": 494,
-    "mot": "Agression",
+    "mot": "agression",
     "nature": "n.",
     "traduction": "Osueño"
   },
   {
     "id": 495,
-    "mot": "Agreste",
+    "mot": "agreste",
     "nature": "adj.",
     "traduction": "Galiesto"
   },
   {
     "id": 496,
-    "mot": "Agricole",
+    "mot": "agricole",
     "nature": "adj.",
     "traduction": "Galícolo"
   },
   {
     "id": 497,
-    "mot": "Agricolement",
+    "mot": "agricolement",
     "nature": "adv.",
     "traduction": "Galicolmente"
   },
   {
     "id": 498,
-    "mot": "Agriculteur, n. Adj.",
+    "mot": "agriculteur",
     "traduction": "Galisangare ; galisangaro"
   },
   {
     "id": 499,
-    "mot": "Agriculture",
+    "mot": "agriculture",
     "nature": "n.",
     "traduction": "Galisangro"
   },
   {
     "id": 500,
-    "mot": "Agripper Vostare (vastari, adhérence)",
-    "traduction": ""
+    "mot": "agripper",
+    "traduction": "Vostare (vastari, adhérence)"
   },
   {
     "id": 501,
-    "mot": "Agronome Galonamo",
-    "traduction": ""
+    "mot": "agronome",
+    "traduction": " Galonamo"
   },
   {
     "id": 502,
-    "mot": "Agronomie Galonami",
-    "traduction": ""
+    "mot": "agronomie",
+    "traduction": " Galonami"
   },
   {
     "id": 503,
-    "mot": "Agrume",
+    "mot": "agrume",
     "traduction": "· Cagiore (de l’hindi शशशशशश cakotra, pamplemousse)"
   },
   {
     "id": 504,
-    "mot": "Aguets Ovene (svesno, alerte)",
-    "traduction": ""
+    "mot": "aguets",
+    "traduction": " Ovene (svesno, alerte)"
   },
   {
     "id": 505,
-    "mot": "Aguicher Avelare (hohavel)",
-    "traduction": ""
+    "mot": "aguicher",
+    "traduction": " havar (hohavel)"
   },
   {
     "id": 506,
-    "mot": "Aguicheur Avelero",
-    "traduction": ""
+    "mot": "aguicheur",
+    "traduction": "havarero"
   },
   {
     "id": 507,
-    "mot": "Ah Â",
-    "traduction": ""
+    "mot": "ah",
+    "traduction": "a"
   },
   {
     "id": 508,
-    "mot": "Ahuri Mesiado (mecisarel, étourdir)",
-    "traduction": ""
+    "mot": "ahuri",
+    "traduction": "Mesiado (mecisarel, étourdir)"
   },
   {
     "id": 509,
-    "mot": "Ahurissant Mesiante",
-    "traduction": ""
+    "mot": "ahurissant",
+    "traduction": " Mesiante"
   },
   {
     "id": 510,
-    "mot": "Aidant",
+    "mot": "aidant",
     "traduction": "· Adiante moziante"
   },
   {
     "id": 511,
-    "mot": "Aide",
+    "mot": "aide",
     "traduction": "· Adita, mozine ; éducateur · Adiaspimero ; soignant · Adiastante"
   },
   {
     "id": 512,
-    "mot": "Aider",
+    "mot": "aider",
     "traduction": "· Aditare (adyutisar) Mozinar (pomožini)"
   },
   {
     "id": 513,
-    "mot": "Aïe",
+    "mot": "aïe",
     "traduction": "· Ima (ina)"
   },
   {
     "id": 514,
-    "mot": "Aïeul",
+    "mot": "aïeul",
     "traduction": "· Parinto (parinto)"
   },
   {
     "id": 515,
-    "mot": "Aigle",
+    "mot": "aigle",
     "traduction": "· Guicito (guichito)"
   },
   {
     "id": 516,
-    "mot": "Aiglon",
+    "mot": "aiglon",
     "traduction": "· Guicitolo (guichichobo)"
   },
   {
     "id": 517,
-    "mot": "Aigre",
+    "mot": "aigre",
     "traduction": "· Soro (soro) ; doux · Soro-colio"
   },
   {
     "id": 518,
-    "mot": "Aigreur",
+    "mot": "aigreur",
     "traduction": "· Sorore"
   },
   {
     "id": 519,
-    "mot": "Aigri",
+    "mot": "aigri",
     "traduction": "· Sorado"
   },
   {
     "id": 520,
-    "mot": "Aigrir",
+    "mot": "aigrir",
     "traduction": "· Sorar"
   },
   {
     "id": 521,
-    "mot": "Aigrissement",
+    "mot": "aigrissement",
     "traduction": "· Soramanto"
   },
   {
     "id": 522,
-    "mot": "Aigu",
+    "mot": "aigu",
     "traduction": "· Pesco"
   },
   {
     "id": 523,
-    "mot": "Aiguillage",
+    "mot": "aiguillage",
     "traduction": "· Juntiago"
   },
   {
     "id": 524,
-    "mot": "Aiguille",
+    "mot": "aiguille",
     "traduction": "· Juntia (jutia)"
   },
   {
     "id": 525,
-    "mot": "Aiguiller",
+    "mot": "aiguiller",
     "traduction": "· Juntiare"
   },
   {
     "id": 526,
-    "mot": "Aiguillette",
+    "mot": "aiguillette",
     "traduction": "· Juntila"
   },
   {
     "id": 527,
-    "mot": "Aiguiser",
+    "mot": "aiguiser",
     "traduction": "· Pesquiare (peskhi, acuité)"
   },
   {
     "id": 528,
-    "mot": "Ail",
+    "mot": "ail",
     "traduction": "· Siria (siri, ac, sir, romani, persan)"
   },
   {
     "id": 529,
-    "mot": "Aile",
+    "mot": "aile",
     "traduction": "· Ondina (ondina)"
   },
   {
     "id": 530,
-    "mot": "Ailer",
+    "mot": "ailer",
     "traduction": "· Ondinare"
   },
   {
     "id": 531,
-    "mot": "Aileron Ondino",
-    "traduction": ""
+    "mot": "aileron",
+    "traduction": "ondino"
   },
   {
     "id": 532,
-    "mot": "Ailier Ondinero",
-    "traduction": ""
+    "mot": "ailier",
+    "traduction": "Ondinero"
   },
   {
     "id": 533,
-    "mot": "Ailler",
-    "traduction": "· Siriare"
+    "mot": "ailler",
+    "traduction": "siriar"
   },
   {
     "id": 534,
-    "mot": "Ailette (rom. floslina) flolina, ondinele",
-    "traduction": ""
+    "mot": "ailette",
+    "traduction": " (rom. floslina) flolina, ondinele"
   },
   {
     "id": 535,
-    "mot": "Ailleurs",
-    "traduction": "· Avrime (avrether) : Par ailleurs · Por avrima ; D’ailleurs ·"
-  },
-  {
-    "id": 536,
-    "mot": "D’avrima",
-    "traduction": ""
+    "mot": "ailleurs",
+    "traduction": "avrime (avrether) : Par ailleurs · Por avrima ; D’ailleurs · d'avrima"
   },
   {
     "id": 537,
-    "mot": "Aimable",
+    "mot": "aimable",
     "traduction": "· Camelavio, Amavio"
   },
   {
     "id": 538,
-    "mot": "Aimer",
-    "traduction": "· Camelare, Amare"
+    "mot": "aimer",
+    "traduction": "camelar, amar"
   },
   {
     "id": 539,
-    "mot": "Aine Hila (ila)",
-    "traduction": ""
+    "mot": "aine",
+    "traduction": " Hila (ila)"
   },
   {
     "id": 540,
-    "mot": "Aîné (fraterie) Purando ; (famille) puricanes (purikano)",
-    "traduction": ""
+    "mot": "aîné",
+    "traduction": "(fraterie) Purando ; (famille) puricanes (purikano)"
   },
   {
     "id": 541,
-    "mot": "Ainsi",
-    "traduction": "· Osio (osion)"
+    "mot": "ainsi",
+    "traduction": "osio (osion)"
   },
   {
     "id": 542,
-    "mot": "Aioli Aioli",
-    "traduction": ""
+    "mot": "aioli",
+    "traduction": "aioli"
   },
   {
     "id": 543,
-    "mot": "Air",
-    "traduction": "· Nueno (ac. nem)"
+    "mot": "air",
+    "traduction": "nueno (ac. nem)"
   },
   {
     "id": 544,
-    "mot": "Aire",
-    "traduction": "· Erico (erikato)"
+    "mot": "aire",
+    "traduction": "erico (erikato)"
   },
   {
     "id": 545,
-    "mot": "Airelle Briango (bruxkako)",
-    "traduction": ""
+    "mot": "airelle",
+    "traduction": " Briango (bruxkako)"
   },
   {
     "id": 546,
-    "mot": "Aisance Miriante",
-    "traduction": ""
+    "mot": "aisance",
+    "traduction": "miriante"
   },
   {
     "id": 547,
-    "mot": "Aise Miria (mirnipe, silence, paix, aise)",
-    "traduction": ""
+    "mot": "aise",
+    "traduction": "miria (mirnipe, silence, paix, aise)"
   },
   {
     "id": 548,
-    "mot": "Aisé Miriado",
-    "traduction": ""
+    "mot": "aisé",
+    "traduction": "miriado"
   },
   {
     "id": 549,
-    "mot": "Aisément Miriamante",
-    "traduction": ""
+    "mot": "aisément",
+    "traduction": "miriadame"
   },
   {
     "id": 550,
-    "mot": "Aisselle Pauva (plazuva)",
-    "traduction": ""
+    "mot": "aisselle",
+    "traduction": " pasuma (plazuva)"
   },
   {
     "id": 551,
-    "mot": "Ajourné Adivado",
-    "traduction": ""
+    "mot": "ajourné",
+    "traduction": "adivado"
   },
   {
     "id": 552,
-    "mot": "Ajourner Adivare",
-    "traduction": ""
+    "mot": "ajourner",
+    "traduction": "adivar"
   },
   {
     "id": 553,
-    "mot": "Ajout",
-    "traduction": "· Anedio"
+    "mot": "ajout",
+    "traduction": "anedio"
   },
   {
     "id": 554,
-    "mot": "Ajouter",
-    "traduction": "· Anediare (anadiar)"
+    "mot": "ajouter",
+    "traduction": "anediar (anadiar)"
   },
   {
     "id": 555,
-    "mot": "Ajusté",
-    "traduction": "· Acarmado"
+    "mot": "ajusté",
+    "traduction": "acarmado"
   },
   {
     "id": 556,
-    "mot": "Ajustement",
-    "traduction": "· Acarmansia"
+    "mot": "ajustement",
+    "traduction": "acarmipén"
   },
   {
     "id": 557,
-    "mot": "Ajuster",
-    "traduction": "· Acarmare (caremar)"
+    "mot": "ajuster",
+    "traduction": "acarmar (caremar)"
   },
   {
     "id": 558,
-    "mot": "Alarmant",
-    "traduction": "· Reteñante"
+    "mot": "alarmant",
+    "traduction": "redeñanto"
   },
   {
     "id": 559,
-    "mot": "Alarme",
-    "traduction": "· Reteña (retetena)"
+    "mot": "alarme",
+    "traduction": "redeña (retetena)"
   },
   {
     "id": 560,
-    "mot": "ALARMER, vb. reteñar.",
-    "traduction": ""
+    "mot": "alarmer",
+    "traduction": "redeñar"
   },
   {
     "id": 561,
-    "mot": "Albatros, n. Masamudro (mahasamudra, hindi)",
-    "traduction": ""
+    "mot": "albatros",
+    "traduction": "asamundo (mahasamudra, hindi)"
   },
   {
     "id": 562,
-    "mot": "Albinisme",
-    "traduction": "· Avarnaco (avarnakata, sans couleur)"
+    "mot": "albinisme",
+    "traduction": "avarnaco (avarnakata, sans couleur)"
   },
   {
     "id": 563,
-    "mot": "Albinos Albino ; Avarno",
-    "traduction": ""
+    "mot": "albinos",
+    "traduction": "avarno"
   },
   {
     "id": 564,
-    "mot": "Album Album ; Elbamo (elabama, hindi)",
-    "traduction": ""
+    "mot": "album",
+    "traduction": "elbamo (elabama, hindi)"
   },
   {
     "id": 565,
-    "mot": "Albuminate Parminate",
-    "traduction": ""
+    "mot": "albuminate",
+    "traduction": "parminato"
   },
   {
     "id": 566,
-    "mot": "Albumine Parmina (cf. oeuf)",
-    "traduction": ""
+    "mot": "albumine",
+    "traduction": "parmina (cf. oeuf)"
   },
   {
     "id": 567,
-    "mot": "Albuminer Parminare",
-    "traduction": ""
+    "mot": "albuminer",
+    "traduction": "parminar"
   },
   {
     "id": 568,
-    "mot": "Albuminoïde Parminóido",
-    "traduction": ""
+    "mot": "albuminoïde",
+    "traduction": "parminóido"
   },
   {
     "id": 569,
-    "mot": "Albuminurie Parminuria",
-    "traduction": ""
+    "mot": "albuminurie",
+    "traduction": "parminuria"
   },
   {
     "id": 570,
-    "mot": "Albuminurique Parminúrico",
-    "traduction": ""
+    "mot": "albuminurique",
+    "traduction": "parminúrico"
   },
   {
     "id": 571,
-    "mot": "Alcabala",
-    "traduction": "· Conidolia (cuñipindoja)"
+    "mot": "alcabala",
+    "traduction": "conipia (cuñipindoja)"
   },
   {
     "id": 572,
-    "mot": "Alcade",
-    "traduction": "· Banastero (banastero)"
+    "mot": "alcade",
+    "traduction": "banastero (banastero)"
   },
   {
     "id": 573,
-    "mot": "Alcali quesari",
-    "traduction": ""
+    "mot": "alcali",
+    "traduction": "quesari"
   },
   {
     "id": 574,
-    "mot": "Alcalin quesario",
-    "traduction": "métal alcalin · aye quesario"
+    "mot": "alcalin",
+    "traduction": "quesario > métal alcalin · aye quesario"
   },
   {
     "id": 575,
-    "mot": "Alcaline hi.शशशशशशश ksariya",
-    "traduction": "· quesaría"
+    "mot": "alcaline",
+    "traduction": " hi.शशशशशशश ksariyaquesaría"
   },
   {
     "id": 576,
-    "mot": "Alcool",
-    "traduction": "· Nicara (pañicari)"
+    "mot": "alcool",
+    "traduction": "panica (pañicari)"
   },
   {
     "id": 577,
-    "mot": "Alcoolique",
-    "traduction": "· Nicárico"
+    "mot": "alcoolique",
+    "traduction": "panicaro"
   },
   {
     "id": 578,
-    "mot": "Alcooliser",
-    "traduction": "· Nicarare"
+    "mot": "alcooliser",
+    "traduction": "paniquear"
   },
   {
     "id": 579,
-    "mot": "Alcoolisme",
-    "traduction": "· Nicarismo"
+    "mot": "alcoolisme",
+    "traduction": "paniquismo"
   },
   {
     "id": 580,
-    "mot": "Alcotest Nicatest",
-    "traduction": ""
+    "mot": "alcotest",
+    "traduction": "panicatest"
   },
   {
     "id": 581,
-    "mot": "Alcôve",
-    "traduction": "· Isba (isba)"
+    "mot": "alcôve",
+    "traduction": "isba (isba)"
   },
   {
     "id": 582,
-    "mot": "Aléatoire",
+    "mot": "aléatoire",
     "traduction": "· Elucio (slučajo, hasard)"
   },
   {
     "id": 583,
-    "mot": "Alentour",
+    "mot": "alentour",
     "traduction": "· Ocolino (okolina) : Aux alentours · En le ocoline"
   },
   {
     "id": 584,
-    "mot": "Alerte",
+    "mot": "alerte",
     "traduction": "· (subst.) Acana (acan) ; (adj., p.p.) Acanado"
   },
   {
     "id": 585,
-    "mot": "Alerter",
+    "mot": "alerter",
     "traduction": "· Acanare"
   },
   {
     "id": 586,
-    "mot": "Algèbre",
+    "mot": "algèbre",
     "traduction": "· Biaganita (bijaganita, hindi)"
   },
   {
     "id": 587,
-    "mot": "Algébrique",
+    "mot": "algébrique",
     "traduction": "· Biagánico"
   },
   {
     "id": 588,
-    "mot": "Algérie Algería",
-    "traduction": ""
+    "mot": "Algérie",
+    "traduction": "Alxelia"
   },
   {
     "id": 589,
-    "mot": "Algérien Algeriano",
-    "traduction": ""
+    "mot": "algérien",
+    "traduction": "alxeliano"
   },
   {
     "id": 590,
-    "mot": "Algue Mistaca (mistraca)",
-    "traduction": ""
+    "mot": "algue",
+    "traduction": "mitra(mistraca)"
   },
   {
     "id": 591,
-    "mot": "Alibi Alibi ; Aniata (anyatrataa, hindi)",
-    "traduction": ""
+    "mot": "alibi",
+    "traduction": "añata (anyatrataa, hindi)"
   },
   {
     "id": 592,
-    "mot": "Aliénable",
-    "traduction": "· Vutisongo"
+    "mot": "aliénable",
+    "traduction": "vutisongo"
   },
   {
     "id": 593,
-    "mot": "Aliénation",
-    "traduction": "· Vutisibe"
+    "mot": "aliénation",
+    "traduction": "vutisipén"
   },
   {
     "id": 594,
-    "mot": "Aliéné",
+    "mot": "aliéné",
     "traduction": "· Vutisado"
   },
   {
     "id": 595,
-    "mot": "Aliéner",
-    "traduction": "· Vutisar (vuritsisel)"
+    "mot": "aliéner",
+    "traduction": "vutisar (vuritsisel)"
   },
   {
     "id": 596,
-    "mot": "Alignement Alindamanto",
-    "traduction": ""
+    "mot": "alignement ",
+    "traduction": "alindipén"
   },
   {
     "id": 597,
-    "mot": "Aligner Alindar (cf. ligne)",
-    "traduction": ""
+    "mot": "aligner",
+    "traduction": " Alindar (cf. ligne)"
   },
   {
     "id": 598,
-    "mot": "Aliment",
-    "traduction": "· Murame (muravibe)"
+    "mot": "aliment",
+    "traduction": "muravio (muravibe)"
   },
   {
     "id": 599,
-    "mot": "Alimentaire",
-    "traduction": "· Muramaste"
+    "mot": "alimentaire",
+    "traduction": "muramaste"
   },
   {
     "id": 600,
-    "mot": "Alimentation",
+    "mot": "alimentation",
     "traduction": "· Muramina"
   },
   {
     "id": 601,
-    "mot": "Alimenter",
-    "traduction": "· Muramare"
+    "mot": "alimenter",
+    "traduction": "muramar"
   },
   {
     "id": 602,
-    "mot": "Alinéa Alinda",
-    "traduction": ""
+    "mot": "alinéa",
+    "traduction": "Alinda"
   },
   {
     "id": 603,
-    "mot": "Alioth Angira (angiras, hindi)",
-    "traduction": ""
+    "mot": "allioth",
+    "traduction": "angira (अङ्गिरा angiras, hindi)"
   },
   {
     "id": 604,
-    "mot": "Allah Alâ",
-    "traduction": ""
+    "mot": "Allah",
+    "traduction": "Alá"
   },
   {
     "id": 605,
-    "mot": "Allaitement Asuntima",
-    "traduction": ""
+    "mot": "allaitement",
+    "traduction": "asuntibe"
   },
   {
     "id": 606,
-    "mot": "Allaiter Asuntiare (cf. lait)",
-    "traduction": ""
+    "mot": "allaiter ",
+    "traduction": "asuntiar (cf. lait)"
   },
   {
     "id": 607,
-    "mot": "Alléchant Aliginante",
-    "traduction": ""
+    "mot": "alléchant",
+    "traduction": "alindianto"
   },
   {
     "id": 608,
-    "mot": "Allécher Aliginare (cf. lécher)",
-    "traduction": ""
+    "mot": "allécher",
+    "traduction": "alindiar"
   },
   {
     "id": 609,
-    "mot": "Allée",
-    "traduction": "· Pimela"
+    "mot": "allée",
+    "traduction": "pimela"
   },
   {
     "id": 610,
-    "mot": "Allégation",
-    "traduction": "· Branima"
+    "mot": "allégation",
+    "traduction": "branima"
   },
   {
     "id": 611,
-    "mot": "Allégé Alivado",
-    "traduction": ""
+    "mot": "allégé",
+    "traduction": "alivado"
   },
   {
     "id": 612,
-    "mot": "Alléger Alivare (cf. léger)",
-    "traduction": ""
+    "mot": "alléger",
+    "traduction": "alivar (cf. léger)"
   },
   {
     "id": 613,
-    "mot": "Allégorie Calaña (kahani, histoire, allégorie, hindi)",
-    "traduction": ""
+    "mot": "allégorie",
+    "traduction": " Calaña (kahani, histoire, allégorie, hindi)"
   },
   {
     "id": 614,
-    "mot": "Allègre Logîo, Logioso",
-    "traduction": ""
+    "mot": "allègre",
+    "traduction": "losimo"
   },
   {
     "id": 615,
-    "mot": "Allégrement Logiamante",
-    "traduction": ""
+    "mot": "allégrement",
+    "traduction": "losimame"
   },
   {
     "id": 616,
-    "mot": "Allégresse Logimesa (loša, joie)",
-    "traduction": ""
+    "mot": "allégresse",
+    "traduction": "losima (loša, joie)"
   },
   {
     "id": 617,
-    "mot": "Alléguer",
-    "traduction": "· Branire (branil)"
+    "mot": "alléguer",
+    "traduction": "branar (branil)"
   },
   {
     "id": 618,
     "mot": "Allemagne",
-    "traduction": "· Alemania"
+    "traduction": "Alemaña"
   },
   {
     "id": 619,
-    "mot": "Allemand",
-    "traduction": "· Alemán"
+    "mot": "allemand",
+    "traduction": "alemán"
   },
   {
     "id": 620,
-    "mot": "Aller",
+    "mot": "aller",
     "traduction": "· Pimare (pirar) S’en aller · Pimárseneo ; Y aller : Pimarsa : je ; retour Pima-Limbe"
   },
   {
@@ -3759,128 +3799,128 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 622,
-    "mot": "Allergie Alergía",
-    "traduction": ""
+    "mot": "allergie",
+    "traduction": "alergía"
   },
   {
     "id": 623,
-    "mot": "Allergique Alérgico",
-    "traduction": ""
+    "mot": "allergique",
+    "traduction": " alérgico"
   },
   {
     "id": 624,
-    "mot": "Alliage Adomago",
-    "traduction": ""
+    "mot": "alliage",
+    "traduction": "adomago"
   },
   {
     "id": 625,
-    "mot": "Alliance Adomansa",
-    "traduction": ""
+    "mot": "alliance",
+    "traduction": "Adomansa"
   },
   {
     "id": 626,
-    "mot": "Allié Adomado",
-    "traduction": ""
+    "mot": "allié",
+    "traduction": "Adomado"
   },
   {
     "id": 627,
-    "mot": "Allier Adomare",
-    "traduction": ""
+    "mot": "allier",
+    "traduction": "Adomar"
   },
   {
     "id": 628,
-    "mot": "Allô Mone (mo, more, salut, bonjour)",
-    "traduction": ""
+    "mot": "allô",
+    "traduction": "mone (more, salut, bonjour)"
   },
   {
     "id": 629,
-    "mot": "Allocataire Elicaste",
-    "traduction": ""
+    "mot": "allocataire",
+    "traduction": "Elicaste"
   },
   {
     "id": 630,
-    "mot": "Allocation Eliquima (cf. louer)",
-    "traduction": ""
+    "mot": "allocation",
+    "traduction": "Eliquibe (cf. louer)"
   },
   {
     "id": 631,
-    "mot": "Allocs Elique",
-    "traduction": ""
+    "mot": "allocs",
+    "traduction": "Elique"
   },
   {
     "id": 632,
-    "mot": "Allocutaire",
-    "traduction": "· Naqueraste"
+    "mot": "allocutaire",
+    "traduction": "naqueraste"
   },
   {
     "id": 633,
-    "mot": "Allocuteur",
-    "traduction": "· Naquerero"
+    "mot": "allocuteur",
+    "traduction": "naquerero"
   },
   {
     "id": 634,
-    "mot": "Allocution",
-    "traduction": "· Naqueria (nakheria)"
+    "mot": "allocution",
+    "traduction": "naqueria (nakheria)"
   },
   {
     "id": 635,
-    "mot": "Allocutionner",
-    "traduction": "· Naqueriare"
+    "mot": "allocutionner",
+    "traduction": "naquerear"
   },
   {
     "id": 636,
-    "mot": "Allocutif",
-    "traduction": "· Naquerivo"
+    "mot": "allocutif",
+    "traduction": "naquerivo"
   },
   {
     "id": 637,
-    "mot": "Allonger Alambare",
-    "traduction": ""
+    "mot": "allonger",
+    "traduction": "alambar"
   },
   {
     "id": 638,
-    "mot": "Allumage Avelago",
-    "traduction": ""
+    "mot": "allumage",
+    "traduction": "avelago"
   },
   {
     "id": 639,
-    "mot": "Allume",
+    "mot": "allume",
     "traduction": "cigares Avela-pacare ; gaz Avela-gas"
   },
   {
     "id": 640,
-    "mot": "Allumer Avelare (alavela)",
-    "traduction": ""
+    "mot": "allumer",
+    "traduction": "avelar (alavela)"
   },
   {
     "id": 641,
-    "mot": "Allumette Avelena",
-    "traduction": ""
+    "mot": "allumette",
+    "traduction": "avelilla"
   },
   {
     "id": 642,
-    "mot": "Allure Mavilla (malvavela, attirer)",
-    "traduction": ""
+    "mot": "allure",
+    "traduction": "mavilla (malvavela, attirer)"
   },
   {
     "id": 643,
-    "mot": "Allusion Paduvin (patuv)",
-    "traduction": ""
+    "mot": "allusion",
+    "traduction": "paduvo (patuv)"
   },
   {
     "id": 644,
-    "mot": "Allusionner Paduvinare",
-    "traduction": ""
+    "mot": "allusionner",
+    "traduction": "paduvear"
   },
   {
     "id": 645,
-    "mot": "Alluvion gialca (gialodka, hi)",
-    "traduction": ""
+    "mot": "alluvion",
+    "traduction": "gialca (gialodka, hi)"
   },
   {
     "id": 646,
-    "mot": "Alors",
-    "traduction": "· Almo (apoj) : Alors que · Pure + gérondif (pur) Et alors ? Y"
+    "mot": "alors",
+    "traduction": "poi (apoj) : Alors que · Pure + gérondif (pur) Et alors ? Da poi"
   },
   {
     "id": 647,
@@ -3889,117 +3929,117 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 648,
-    "mot": "Alouette · Galico",
-    "traduction": "ca (gajca)"
+    "mot": "alouette",
+    "traduction": "Galico(gajca)"
   },
   {
     "id": 649,
-    "mot": "Alourdir Aparmare",
-    "traduction": ""
+    "mot": "alourdir",
+    "traduction": "aparmar"
   },
   {
     "id": 650,
-    "mot": "Aloyau",
-    "traduction": "· Fosino (phossin, longe)"
+    "mot": "aloyau",
+    "traduction": "fosino (phossin, longe)"
   },
   {
     "id": 651,
     "mot": "Alpes",
-    "traduction": "· Alpe"
+    "traduction": "Alpes"
   },
   {
     "id": 652,
-    "mot": "Alphabet",
-    "traduction": "· Romerio"
+    "mot": "alphabet",
+    "traduction": "romerio"
   },
   {
     "id": 653,
-    "mot": "Alphabète",
-    "traduction": "· Romanelo"
+    "mot": "alphabète",
+    "traduction": "romerisco"
   },
   {
     "id": 654,
-    "mot": "Alphabétique Románico",
-    "traduction": ""
+    "mot": "Alphabétique",
+    "traduction": "romeriscano"
   },
   {
     "id": 655,
-    "mot": "Alphabétisation",
-    "traduction": "· Romanelime"
+    "mot": "alphabétisation",
+    "traduction": "romerisquime"
   },
   {
     "id": 656,
-    "mot": "Alphabétiser",
-    "traduction": "· Romanelare"
+    "mot": "alphabétiser",
+    "traduction": "romeriscar"
   },
   {
     "id": 657,
-    "mot": "Alpin Alpano",
-    "traduction": ""
+    "mot": "alpin",
+    "traduction": "alpano"
   },
   {
     "id": 658,
-    "mot": "Alpinisme Alpinismo",
-    "traduction": ""
+    "mot": "alpinisme",
+    "traduction": "alpinismo"
   },
   {
     "id": 659,
-    "mot": "Alpiniste Alpinizto",
-    "traduction": ""
+    "mot": "alpiniste",
+    "traduction": "alpinizto"
   },
   {
     "id": 660,
-    "mot": "Alsace Alzas, Alsace",
-    "traduction": ""
+    "mot": "Alsace",
+    "traduction": "Alzas"
   },
   {
     "id": 661,
-    "mot": "Alter ego",
-    "traduction": "· Antamiro (antarang mitr, ami intime)"
+    "mot": "alter ego",
+    "traduction": "antamiro (antarang mitr, ami intime)"
   },
   {
     "id": 662,
-    "mot": "Altération",
-    "traduction": "· Averansia"
+    "mot": "altération",
+    "traduction": "averipén"
   },
   {
     "id": 663,
-    "mot": "Altérer Averare",
-    "traduction": ""
+    "mot": "altérer",
+    "traduction": "averar"
   },
   {
     "id": 664,
-    "mot": "Altérité",
-    "traduction": "· Averafi (cf. autre)"
+    "mot": "altérité",
+    "traduction": "averafi (cf. autre)"
   },
   {
     "id": 665,
-    "mot": "Alternance Begansa",
-    "traduction": ""
+    "mot": "alternance",
+    "traduction": "begansa"
   },
   {
     "id": 666,
-    "mot": "Alternatif",
+    "mot": "alternatif",
     "traduction": "· Bego"
   },
   {
     "id": 667,
-    "mot": "Alternative",
-    "traduction": "· Bega (begai)"
+    "mot": "alternative",
+    "traduction": "bega (begai)"
   },
   {
     "id": 668,
-    "mot": "Alterner Begare",
-    "traduction": ""
+    "mot": "alterner",
+    "traduction": "begar"
   },
   {
     "id": 669,
-    "mot": "Altier Auporo (aupre, haut)",
-    "traduction": ""
+    "mot": "altier",
+    "traduction": "Aupro (aupre, haut)"
   },
   {
     "id": 670,
-    "mot": "Altitude",
+    "mot": "altitude",
     "traduction": "· (f.) Ucilume (uchipen) : Le Mont Blanc a 4808 mètres"
   },
   {
@@ -4009,92 +4049,92 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 672,
-    "mot": "Alumine",
-    "traduction": "· Sfiada"
+    "mot": "alumine",
+    "traduction": "fiada"
   },
   {
     "id": 673,
-    "mot": "Aluminium Sfiadamo (sphaṭayātu)",
-    "traduction": ""
+    "mot": "aluminium",
+    "traduction": "fiadamo (sphaṭayātu"
   },
   {
     "id": 674,
-    "mot": "Alvéolaire Suplinaste",
-    "traduction": ""
+    "mot": "alvéolaire",
+    "traduction": "suplinaste"
   },
   {
     "id": 675,
-    "mot": "Alvéole Suplina (šuplina, cavité)",
-    "traduction": ""
+    "mot": "alvéole",
+    "traduction": "suplina (šuplina, cavité)"
   },
   {
     "id": 676,
-    "mot": "Alvéoler Suplinare",
-    "traduction": ""
+    "mot": "alvéoler",
+    "traduction": "Suplinar"
   },
   {
     "id": 677,
-    "mot": "Amabilité",
-    "traduction": "· Camelafi (cf. aimer)"
+    "mot": "amabilité",
+    "traduction": "camelafi (cf. aimer)"
   },
   {
     "id": 678,
-    "mot": "Amadou",
-    "traduction": "· Llaspari (llaspardi)"
+    "mot": "amadou",
+    "traduction": "yaspari (llaspardi)"
   },
   {
     "id": 679,
-    "mot": "Amadouer",
+    "mot": "amadouer",
     "traduction": "· Soramare (sorabar)"
   },
   {
     "id": 680,
-    "mot": "Amaigrissant",
+    "mot": "amaigrissant",
     "traduction": "· Aquilate (cf. maigre)"
   },
   {
     "id": 681,
-    "mot": "Amalgame",
+    "mot": "amalgame",
     "traduction": "· Everina (keverinel, confondre, mélanger)"
   },
   {
     "id": 682,
-    "mot": "Amalgamer Everinare",
-    "traduction": ""
+    "mot": "amalgamer",
+    "traduction": "everinar"
   },
   {
     "id": 683,
-    "mot": "Amande Maulina (maundlina)",
-    "traduction": ""
+    "mot": "amande",
+    "traduction": " Maulina (maundlina)"
   },
   {
     "id": 684,
-    "mot": "Amandier Maulino",
-    "traduction": ""
+    "mot": "amandier",
+    "traduction": "Maulino"
   },
   {
     "id": 685,
-    "mot": "Amant Luvime (ljubimco)",
-    "traduction": ""
+    "mot": "amant",
+    "traduction": " Luvimo (ljubimco)"
   },
   {
     "id": 686,
-    "mot": "Amarre",
+    "mot": "amarre",
     "traduction": "· Naquia : Jeter les amarres · Piedar las naquias"
   },
   {
     "id": 687,
-    "mot": "Amarrer",
+    "mot": "amarrer",
     "traduction": "· Naquiar (ñakhibar)"
   },
   {
     "id": 688,
-    "mot": "Amas",
+    "mot": "amas",
     "traduction": "· Hamillo"
   },
   {
     "id": 689,
-    "mot": "Amasser",
+    "mot": "amasser",
     "traduction": "· (général) Hameare (hamil) ; (argent) Ordeniare"
   },
   {
@@ -4104,272 +4144,272 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 691,
-    "mot": "Amateur Camelero",
-    "traduction": ""
+    "mot": "amateur",
+    "traduction": " Camelero"
   },
   {
     "id": 692,
-    "mot": "Amazone Amazono ; Amazona",
-    "traduction": ""
+    "mot": "amazone",
+    "traduction": "amazono ; Amazona"
   },
   {
     "id": 693,
-    "mot": "Amazonie Amazonia",
-    "traduction": ""
+    "mot": "Amazonie",
+    "traduction": "Amazonia"
   },
   {
     "id": 694,
-    "mot": "Ambassade Softía (botšoft)",
-    "traduction": ""
+    "mot": "ambassade",
+    "traduction": " Softía (botšoft)"
   },
   {
     "id": 695,
-    "mot": "Ambassadeur Softilloro",
-    "traduction": ""
+    "mot": "ambassadeur",
+    "traduction": " Softilloro"
   },
   {
     "id": 696,
-    "mot": "Ambiance",
+    "mot": "ambiance",
     "traduction": "· Pasilo (pashilo) ; (environnement) Oruno (oryuno)"
   },
   {
     "id": 697,
-    "mot": "Ambiancer",
+    "mot": "ambiancer",
     "traduction": "· Pasilare"
   },
   {
     "id": 698,
-    "mot": "Ambiant Pasilante",
-    "traduction": ""
+    "mot": "ambiant",
+    "traduction": "Pasilante"
   },
   {
     "id": 699,
-    "mot": "Ambigu Suprano (suprotno, opposé)",
-    "traduction": ""
+    "mot": "ambigu",
+    "traduction": " Suprano (suprotno, opposé)"
   },
   {
     "id": 700,
-    "mot": "Ambiguité Supranafi",
-    "traduction": ""
+    "mot": "ambiguité",
+    "traduction": " Supranafi"
   },
   {
     "id": 701,
-    "mot": "Ambitieux Angunoso",
-    "traduction": ""
+    "mot": "ambitieux",
+    "traduction": " Angunoso"
   },
   {
     "id": 702,
-    "mot": "Ambition",
+    "mot": "ambition",
     "traduction": "· Anguño (anguño)"
   },
   {
     "id": 703,
-    "mot": "Ambre Bostuno (burštunos)",
-    "traduction": ""
+    "mot": "ambre",
+    "traduction": " Bostuno (burštunos)"
   },
   {
     "id": 704,
-    "mot": "Ambulance Aruina (zaruritno)",
-    "traduction": ""
+    "mot": "ambulance",
+    "traduction": " Aruina (zaruritno)"
   },
   {
     "id": 705,
-    "mot": "Ambulant Plimbate (plimbol pe, marcher)",
-    "traduction": ""
+    "mot": "ambulant",
+    "traduction": " Plimbate (plimbol pe, marcher)"
   },
   {
     "id": 706,
-    "mot": "Âme",
+    "mot": "âme",
     "traduction": "· Anto"
   },
   {
     "id": 707,
-    "mot": "Amélioration Lacalima",
-    "traduction": ""
+    "mot": "amélioration",
+    "traduction": " Lacalima"
   },
   {
     "id": 708,
-    "mot": "Améliorer Lacalire (lačarla)",
-    "traduction": ""
+    "mot": "améliorer",
+    "traduction": " Lacaliar (lačarla)"
   },
   {
     "id": 709,
-    "mot": "Amen",
+    "mot": "amen",
     "traduction": "· Anara (anarania)"
   },
   {
     "id": 710,
-    "mot": "Aménagement Brazima",
-    "traduction": ""
+    "mot": "aménagement",
+    "traduction": " Brazima"
   },
   {
     "id": 711,
-    "mot": "Aménager Brazire (preobrazizla)",
-    "traduction": ""
+    "mot": "aménager",
+    "traduction": "braziar (preobrazizla)"
   },
   {
     "id": 712,
-    "mot": "Amende Boto (büötos)",
-    "traduction": ""
+    "mot": "amende",
+    "traduction": " Boto (büötos)"
   },
   {
     "id": 713,
-    "mot": "Amener",
-    "traduction": "· Abelare (acabelar) ; (figuré) Arenare (arrelenar)"
+    "mot": "amener",
+    "traduction": "abelar (acabelar) ; (figuré) Arenar (arrelenar)"
   },
   {
     "id": 714,
-    "mot": "Amène",
+    "mot": "amène",
     "traduction": "· Alosio : Un lieu amène · Un gaño alosio"
   },
   {
     "id": 715,
-    "mot": "Aménité",
-    "traduction": "· Alosime (aloxipen)"
+    "mot": "aménité",
+    "traduction": "alosipén (aloxipen)"
   },
   {
     "id": 716,
-    "mot": "Amer Granco (granko)",
-    "traduction": ""
+    "mot": "amer",
+    "traduction": " Granco (granko)"
   },
   {
     "id": 717,
-    "mot": "Américain Americano",
-    "traduction": ""
+    "mot": "américain",
+    "traduction": "americano"
   },
   {
     "id": 718,
-    "mot": "Amérique América",
-    "traduction": ""
+    "mot": "Amérique",
+    "traduction": "América"
   },
   {
     "id": 719,
-    "mot": "Amertume Graníe",
-    "traduction": ""
+    "mot": "amertume",
+    "traduction": "Graníe"
   },
   {
     "id": 720,
-    "mot": "Ameublement Anabitamanto (cf. meuble)",
-    "traduction": ""
+    "mot": "ameublement",
+    "traduction": " Anabitamanto (cf. meuble)"
   },
   {
     "id": 721,
-    "mot": "Ami",
+    "mot": "ami",
     "traduction": "· Monro (monro)"
   },
   {
     "id": 722,
-    "mot": "Amiable Morongo",
-    "traduction": "à l’amiable · de morongo"
+    "mot": "amiable",
+    "traduction": " Morongo - à l’amiable · de morongo"
   },
   {
     "id": 723,
-    "mot": "Amiante Adan (adah, hindi)",
-    "traduction": ""
+    "mot": "amiante",
+    "traduction": " Adan (adah, hindi)"
   },
   {
     "id": 724,
-    "mot": "Amical Morical",
-    "traduction": ""
+    "mot": "amical",
+    "traduction": " Morical"
   },
   {
     "id": 725,
-    "mot": "Amicalement MoricamantiAmict",
-    "traduction": "· Amito (amito)"
+    "mot": "amict",
+    "traduction": "amio (espagnol, amito)"
   },
   {
     "id": 726,
-    "mot": "Amidon",
+    "mot": "amidon",
     "traduction": "· Cobor (skrobo)"
   },
   {
     "id": 727,
-    "mot": "Amincir Agusiare",
-    "traduction": ""
+    "mot": "amincir",
+    "traduction": "Agusiare"
   },
   {
     "id": 728,
-    "mot": "Amincissant Agusiante",
-    "traduction": ""
+    "mot": "amincissant",
+    "traduction": "Agusiante"
   },
   {
     "id": 729,
-    "mot": "Amitié Monría",
-    "traduction": ""
+    "mot": "amitié",
+    "traduction": "Monría"
   },
   {
     "id": 730,
-    "mot": "Ammoniac Amonia",
-    "traduction": ""
+    "mot": "ammoniac",
+    "traduction": "Amonia"
   },
   {
     "id": 731,
-    "mot": "Amnésie Asmeranía (smaraṇ, mémoire, sanskrit)",
-    "traduction": ""
+    "mot": "amnésie",
+    "traduction": "asmeranía (smaraṇ, mémoire, sanskrit)"
   },
   {
     "id": 732,
-    "mot": "Amnésique Asmeranino",
-    "traduction": ""
+    "mot": "amnésique ",
+    "traduction": "Asmeranino"
   },
   {
     "id": 733,
-    "mot": "Amnistie Barima (barmiba)",
-    "traduction": ""
+    "mot": "amnistie",
+    "traduction": "Barima (barmiba)"
   },
   {
     "id": 734,
-    "mot": "Amoindrir",
+    "mot": "amoindrir",
     "traduction": "· Jancare (xancarel)"
   },
   {
     "id": 735,
-    "mot": "Amoindrissement",
+    "mot": "amoindrissement",
     "traduction": "· Jancamanto"
   },
   {
     "id": 736,
-    "mot": "Amonceler Samilire (samliba)",
-    "traduction": ""
+    "mot": "amonceler",
+    "traduction": " Samilire (samliba)"
   },
   {
     "id": 737,
-    "mot": "Amont",
+    "mot": "amont",
     "traduction": "· Ritenso : En amont de · A lo ritenso de"
   },
   {
     "id": 738,
-    "mot": "Amoral Evesto",
-    "traduction": ""
+    "mot": "amoral",
+    "traduction": " Evesto"
   },
   {
     "id": 739,
-    "mot": "Amorce",
+    "mot": "amorce",
     "traduction": "· Mam (mamco)"
   },
   {
     "id": 740,
-    "mot": "Amorcer",
+    "mot": "amorcer",
     "traduction": "· Mamar"
   },
   {
     "id": 741,
-    "mot": "Amortir Serandire (šeranda)",
-    "traduction": ""
+    "mot": "amortir",
+    "traduction": " Serandire (šeranda)"
   },
   {
     "id": 742,
-    "mot": "Amortisseur Serandiro",
-    "traduction": ""
+    "mot": "amortisseur",
+    "traduction": " Serandiro"
   },
   {
     "id": 743,
-    "mot": "Amour",
+    "mot": "amour",
     "traduction": "· Camelo (camelo) ; propre Camelotimuño"
   },
   {
     "id": 744,
-    "mot": "Amoureux",
+    "mot": "amoureux",
     "traduction": "· Cameloso : Magdalena est follement amoureuse de toi ·"
   },
   {
@@ -4379,27 +4419,27 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 746,
-    "mot": "Amovible Mutivio (mutivos, mouvement)",
-    "traduction": ""
+    "mot": "amovible",
+    "traduction": " Mutivio (mutivos, mouvement)"
   },
   {
     "id": 747,
-    "mot": "Amphétamine Anfetamina",
-    "traduction": ""
+    "mot": "amphétamine",
+    "traduction": " Anfetamina"
   },
   {
     "id": 748,
-    "mot": "Amphi Ambi (abhitas, sanskrit)",
-    "traduction": ""
+    "mot": "amphi",
+    "traduction": " Ambi (abhitas, sanskrit)"
   },
   {
     "id": 749,
-    "mot": "Amphibien Ambigîo (abi + gîo, vie)",
-    "traduction": ""
+    "mot": "amphibien",
+    "traduction": " Ambigîo (abi + gîo, vie)"
   },
   {
     "id": 750,
-    "mot": "Amphithéâtre",
+    "mot": "amphithéâtre",
     "nature": "nm.",
     "traduction": "hi. शशशशशशश rangabumi, lieu de réception,"
   },
@@ -4410,523 +4450,523 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 752,
-    "mot": "Ample Costo",
-    "traduction": ""
+    "mot": "ample",
+    "traduction": " Costo"
   },
   {
     "id": 753,
-    "mot": "Ampleur",
+    "mot": "ampleur",
     "traduction": "· Costîa"
   },
   {
     "id": 754,
-    "mot": "Ampli Costa",
-    "traduction": ""
+    "mot": "ampli",
+    "traduction": " Costa"
   },
   {
     "id": 755,
-    "mot": "Amplificateur Costanoro",
-    "traduction": ""
+    "mot": "amplificateur",
+    "traduction": " Costanoro"
   },
   {
     "id": 756,
-    "mot": "Amplification",
+    "mot": "amplification",
     "traduction": "· Costanin"
   },
   {
     "id": 757,
-    "mot": "Amplifier",
+    "mot": "amplifier",
     "traduction": "· Costanare (costunar)"
   },
   {
     "id": 758,
-    "mot": "Amplitude Costalume",
-    "traduction": ""
+    "mot": "amplitude",
+    "traduction": " Costalume"
   },
   {
     "id": 759,
-    "mot": "Ampoule Jalia (sijalica)",
-    "traduction": ""
+    "mot": "ampoule",
+    "traduction": " Jalia (sijalica)"
   },
   {
     "id": 760,
-    "mot": "Amputation",
+    "mot": "amputation",
     "traduction": "· Redicansia"
   },
   {
     "id": 761,
-    "mot": "Amputer",
+    "mot": "amputer",
     "traduction": "· Redicare (retrechinar)"
   },
   {
     "id": 762,
-    "mot": "Amuir",
+    "mot": "amuir",
     "traduction": "· Amusilare (cf. muet)"
   },
   {
     "id": 763,
-    "mot": "Amuissement",
+    "mot": "amuissement",
     "traduction": "· Amusilamanto"
   },
   {
     "id": 764,
-    "mot": "Amulette",
+    "mot": "amulette",
     "traduction": "· Cavia (chavi)"
   },
   {
     "id": 765,
-    "mot": "Amusant Biavate",
-    "traduction": ""
+    "mot": "amusant",
+    "traduction": " Biavate"
   },
   {
     "id": 766,
-    "mot": "Amuse",
+    "mot": "amuse",
     "traduction": "gueule Biava-mua"
   },
   {
     "id": 767,
-    "mot": "Amusement",
+    "mot": "amusement",
     "traduction": "· Biavamanto"
   },
   {
     "id": 768,
-    "mot": "Amuser",
+    "mot": "amuser",
     "traduction": "· Biavar (zebava, amusement, rom)"
   },
   {
     "id": 769,
-    "mot": "Amygdale",
+    "mot": "amygdale",
     "traduction": "· Yacama (yacamu)"
   },
   {
     "id": 770,
-    "mot": "Amyloïde",
+    "mot": "amyloïde",
     "traduction": "· Cobróido (cf. amidon)"
   },
   {
     "id": 771,
-    "mot": "An",
+    "mot": "an",
     "traduction": "· Bergue (berje)"
   },
   {
     "id": 772,
-    "mot": "Anachronique Vulsamesco (bhul, erreur, samaya, temps, sanskrit)",
-    "traduction": ""
+    "mot": "anachronique",
+    "traduction": " Vulsamesco (bhul, erreur, samaya, temps, sanskrit)"
   },
   {
     "id": 773,
-    "mot": "Anachronisme Vulsamizmo",
-    "traduction": ""
+    "mot": "anachronisme",
+    "traduction": " Vulsamizmo"
   },
   {
     "id": 774,
-    "mot": "Anagramme Navipario (varṇaviparyās, hindi)",
-    "traduction": ""
+    "mot": "anagramme",
+    "traduction": " Navipario (varṇaviparyās, hindi)"
   },
   {
     "id": 775,
-    "mot": "Anal Buyal (bul, bullate)",
-    "traduction": ""
+    "mot": "anal",
+    "traduction": " Buyal (bul, bullate)"
   },
   {
     "id": 776,
-    "mot": "Anagésie",
+    "mot": "anagésie",
     "traduction": "· Avianaba (vyatha ka abhaav, absence de douleur, hindi)"
   },
   {
     "id": 777,
-    "mot": "Analgésique Avianábico",
-    "traduction": ""
+    "mot": "analgésique",
+    "traduction": " Avianábico"
   },
   {
     "id": 778,
-    "mot": "Analogie Adesía",
-    "traduction": ""
+    "mot": "analogie",
+    "traduction": " Adesía"
   },
   {
     "id": 779,
-    "mot": "Analogue Adeso (saadrshy, hindi)",
-    "traduction": ""
+    "mot": "analogue",
+    "traduction": " Adeso (saadrshy, hindi)"
   },
   {
     "id": 780,
-    "mot": "Analphabète",
+    "mot": "analphabète",
     "traduction": "· Aromanelo"
   },
   {
     "id": 781,
-    "mot": "Analphabétisation",
+    "mot": "analphabétisation",
     "traduction": "· Aromanelime"
   },
   {
     "id": 782,
-    "mot": "Analphabétiser",
+    "mot": "analphabétiser",
     "traduction": "· Aromanelare"
   },
   {
     "id": 783,
-    "mot": "Analyse",
+    "mot": "analyse",
     "traduction": "· Atelisa (ateléri)"
   },
   {
     "id": 784,
-    "mot": "Analyser",
+    "mot": "analyser",
     "traduction": "· Atelisare"
   },
   {
     "id": 785,
-    "mot": "Analytique",
+    "mot": "analytique",
     "traduction": "· Atelítico"
   },
   {
     "id": 786,
-    "mot": "Analytiquement",
+    "mot": "analytiquement",
     "traduction": "· Ateliticamanti"
   },
   {
     "id": 787,
-    "mot": "Analyste Atelisto",
-    "traduction": ""
+    "mot": "analyste",
+    "traduction": " Atelisto"
   },
   {
     "id": 788,
-    "mot": "Analyste",
+    "mot": "analyste",
     "traduction": "programmeur Atelisto-programero"
   },
   {
     "id": 789,
-    "mot": "Ananas Ananas",
-    "traduction": ""
+    "mot": "ananas",
+    "traduction": "ananas"
   },
   {
     "id": 790,
-    "mot": "Anarchie Arejanía (arājaka, sans roi, sanskrit)",
-    "traduction": ""
+    "mot": "anarchie",
+    "traduction": " Arejanía (arājaka, sans roi, sanskrit)"
   },
   {
     "id": 791,
-    "mot": "Anarchique Arejánico",
-    "traduction": ""
+    "mot": "anarchique",
+    "traduction": " Arejánico"
   },
   {
     "id": 792,
-    "mot": "Anarchisme Arejayano",
-    "traduction": ""
+    "mot": "anarchisme",
+    "traduction": " Arejayano"
   },
   {
     "id": 793,
-    "mot": "Anarchiste Arejanizto",
-    "traduction": ""
+    "mot": "anarchiste",
+    "traduction": " Arejanizto"
   },
   {
     "id": 794,
-    "mot": "Anatomie ĉaneri (shaareerikee, hindi)",
-    "traduction": ""
+    "mot": "anatomie",
+    "traduction": " ĉaneri (shaareerikee, hindi)"
   },
   {
     "id": 795,
-    "mot": "Anatomique ĉanerino",
-    "traduction": ""
+    "mot": "anatomique",
+    "traduction": " ĉanerino"
   },
   {
     "id": 796,
-    "mot": "Ancestral",
+    "mot": "ancestral",
     "traduction": "· aSuncal"
   },
   {
     "id": 797,
-    "mot": "Ancêtre",
+    "mot": "ancêtre",
     "traduction": "· aSunco (sunaco, ascendant)"
   },
   {
     "id": 798,
-    "mot": "Anchois Ancovia",
-    "traduction": ""
+    "mot": "anchois",
+    "traduction": " Ancovia"
   },
   {
     "id": 799,
-    "mot": "Ancien",
+    "mot": "ancien",
     "traduction": "· Purano, Ansiano (puro)"
   },
   {
     "id": 800,
-    "mot": "Ancienneté Puranîa",
-    "traduction": ""
+    "mot": "ancienneté",
+    "traduction": " Puranîa"
   },
   {
     "id": 801,
-    "mot": "Ancre Sidro",
-    "traduction": ""
+    "mot": "ancre",
+    "traduction": " Sidro"
   },
   {
     "id": 802,
-    "mot": "Andorre Andora",
-    "traduction": ""
+    "mot": "Andorre",
+    "traduction": " Andora"
   },
   {
     "id": 803,
-    "mot": "Andouille Orango (ćoragodakero) ; Sugica (sudžuk)",
-    "traduction": ""
+    "mot": "andouille",
+    "traduction": " Orango (ćoragodakero) ; Sugica (sudžuk)"
   },
   {
     "id": 804,
-    "mot": "Andouillette Orangino",
-    "traduction": ""
+    "mot": "andouillette",
+    "traduction": " Orangino"
   },
   {
     "id": 805,
-    "mot": "Âne",
+    "mot": "âne",
     "traduction": "· Mallo (mallo)"
   },
   {
     "id": 806,
-    "mot": "Anéantir Aciecare (cf. néant)",
-    "traduction": ""
+    "mot": "anéantir",
+    "traduction": " Aciecar (cf. néant)"
   },
   {
     "id": 807,
-    "mot": "Anecdote Torneto (törtineto)",
-    "traduction": ""
+    "mot": "anecdote",
+    "traduction": " Torneto (törtineto)"
   },
   {
     "id": 808,
-    "mot": "Anecdotique Tornético",
-    "traduction": ""
+    "mot": "anecdotique",
+    "traduction": " Tornético"
   },
   {
     "id": 809,
-    "mot": "Anémie Atalpa (raktalpata, hindi)",
-    "traduction": ""
+    "mot": "anémie",
+    "traduction": " Atalpa (raktalpata, hindi)"
   },
   {
     "id": 810,
-    "mot": "Anémique Atálpico",
-    "traduction": ""
+    "mot": "anémique",
+    "traduction": "Atálpico"
   },
   {
     "id": 811,
-    "mot": "Anémone Ranagio (ratnajyoti, hindi)",
-    "traduction": ""
+    "mot": "anémone",
+    "traduction": " Ranagio (ratnajyoti, hindi)"
   },
   {
     "id": 812,
-    "mot": "Anerie Mayanía",
-    "traduction": ""
+    "mot": "ânerie",
+    "traduction": " Mayanía"
   },
   {
     "id": 813,
-    "mot": "Ânesse",
+    "mot": "ânesse",
     "traduction": "· Maya"
   },
   {
     "id": 814,
-    "mot": "Anesthésie Sanjina (sanjnahinata, hindi)",
-    "traduction": ""
+    "mot": "anesthésie",
+    "traduction": " Sanjina (sanjnahinata, hindi)"
   },
   {
     "id": 815,
-    "mot": "Anesthésier Sanjinare",
-    "traduction": ""
+    "mot": "anesthésier",
+    "traduction": " Sanjinare"
   },
   {
     "id": 816,
-    "mot": "Anesthésiste Sanjinizto",
-    "traduction": ""
+    "mot": "anesthésiste",
+    "traduction": " Sanjinizto"
   },
   {
     "id": 817,
-    "mot": "Ange",
+    "mot": "ange",
     "traduction": "· (biblique) Anfaro, (fig.) Mavarilo (manfariel)"
   },
   {
     "id": 818,
-    "mot": "Angélique",
+    "mot": "angélique",
     "traduction": "· Anfárico ; Mavarílico"
   },
   {
     "id": 819,
-    "mot": "Angine",
+    "mot": "angine",
     "traduction": "· Guilosa (cf. gilća, tonsille)"
   },
   {
     "id": 820,
-    "mot": "Angineux",
+    "mot": "angineux",
     "traduction": "· Guilosoro"
   },
   {
     "id": 821,
-    "mot": "Anglais Inglano",
-    "traduction": ""
+    "mot": "anglais",
+    "traduction": " inglayo"
   },
   {
     "id": 822,
-    "mot": "Angle",
+    "mot": "angle",
     "traduction": "· Anere (depanari)"
   },
   {
     "id": 823,
-    "mot": "Angleterre Inglaterra",
-    "traduction": ""
+    "mot": "Angleterre",
+    "traduction": "Inglatera"
   },
   {
     "id": 824,
-    "mot": "Anglophone Inglivano",
-    "traduction": ""
+    "mot": "anglophone",
+    "traduction": "inglavano"
   },
   {
     "id": 825,
-    "mot": "Anglo",
-    "traduction": "saxon Inglosásono"
+    "mot": "anglosaxon",
+    "traduction": "inglasásono"
   },
   {
     "id": 826,
-    "mot": "Angoissant Ampoñoso",
-    "traduction": ""
+    "mot": "angoissant",
+    "traduction": "Ampoñoso"
   },
   {
     "id": 827,
-    "mot": "Angoisse",
+    "mot": "angoisse",
     "traduction": "· Ampoño"
   },
   {
     "id": 828,
-    "mot": "Angoisser",
+    "mot": "angoisser",
     "traduction": "· Amponare (emposunar)"
   },
   {
     "id": 829,
-    "mot": "Angola Ângola",
-    "traduction": ""
+    "mot": "Angola",
+    "traduction": "Ângola"
   },
   {
     "id": 830,
-    "mot": "Angora Angora",
-    "traduction": ""
+    "mot": "angora",
+    "traduction": "Angora"
   },
   {
     "id": 831,
-    "mot": "Anguille Yêgulo,a (jegula, rom)",
-    "traduction": ""
+    "mot": "anguille",
+    "traduction": " Yêgulo,a (jegula, rom)"
   },
   {
     "id": 832,
-    "mot": "Angulaire",
+    "mot": "angulaire",
     "traduction": "· Anaste"
   },
   {
     "id": 833,
-    "mot": "Anguleux Aneroso",
-    "traduction": ""
+    "mot": "anguleux",
+    "traduction": " Aneroso"
   },
   {
     "id": 834,
-    "mot": "Anicroche Oria (korča)",
-    "traduction": ""
+    "mot": "anicroche",
+    "traduction": " Oria (korča)"
   },
   {
     "id": 835,
-    "mot": "Animal",
+    "mot": "animal",
     "traduction": "· ac. Bustron - burón"
   },
   {
     "id": 836,
-    "mot": "Animalier",
+    "mot": "animalier",
     "traduction": "·  buronesco"
   },
   {
     "id": 837,
-    "mot": "Animaliser",
+    "mot": "animaliser",
     "traduction": "·  buronelar"
   },
   {
     "id": 838,
-    "mot": "Animalité",
+    "mot": "animalité",
     "traduction": "· (f.)  buronali"
   },
   {
     "id": 839,
-    "mot": "Animateur",
+    "mot": "animateur",
     "traduction": "· Antoro"
   },
   {
     "id": 840,
-    "mot": "Animation",
+    "mot": "animation",
     "traduction": "· Antime"
   },
   {
     "id": 841,
-    "mot": "Animé",
+    "mot": "animé",
     "traduction": "· Antado : Les dessins animés · Le resañe antade"
   },
   {
     "id": 842,
-    "mot": "Animer",
+    "mot": "animer",
     "traduction": "· Antare"
   },
   {
     "id": 843,
-    "mot": "Animosité Antimesa",
-    "traduction": ""
+    "mot": "animosité",
+    "traduction": " Antimesa"
   },
   {
     "id": 844,
-    "mot": "Anis Samfa (saumph, penjabi)",
-    "traduction": ""
+    "mot": "anis",
+    "traduction": " Samfa (saumph, penjabi)"
   },
   {
     "id": 845,
-    "mot": "Ankyloser Anquilosare",
-    "traduction": ""
+    "mot": "ankyloser",
+    "traduction": "anquilosar"
   },
   {
     "id": 846,
-    "mot": "Annales Beriade",
-    "traduction": ""
+    "mot": "annales",
+    "traduction": "bergalas"
   },
   {
     "id": 847,
-    "mot": "Anneau",
+    "mot": "anneau",
     "traduction": "· Anguila (angui)"
   },
   {
     "id": 848,
-    "mot": "Année Bergadi (cf. an)",
-    "traduction": ""
+    "mot": "année",
+    "traduction": "bergana (cf. an)"
   },
   {
     "id": 849,
-    "mot": "Année",
-    "traduction": "lumière Beriada-duce"
+    "mot": "année-lumière",
+    "traduction": "bergana-duce"
   },
   {
     "id": 850,
-    "mot": "Annexe",
+    "mot": "annexe",
     "traduction": "· Posino"
   },
   {
     "id": 851,
-    "mot": "Annexer",
-    "traduction": "· Posinare (potsinel)"
+    "mot": "annexer",
+    "traduction": "· Posinar (potsinel)"
   },
   {
     "id": 852,
-    "mot": "Annexion",
+    "mot": "annexion",
     "traduction": "· Posinima"
   },
   {
     "id": 853,
-    "mot": "Annihilation",
+    "mot": "annihilation",
     "traduction": "· Analipin"
   },
   {
     "id": 854,
-    "mot": "Annihiler",
+    "mot": "annihiler",
     "traduction": "· Analipar (najipar)"
   },
   {
     "id": 855,
-    "mot": "Anniversaire Osedane (rodžendano)",
-    "traduction": "Joyeux anniversaire · Osedane"
+    "mot": "anniversaire",
+    "traduction": " Osedane (rodžendano) - Joyeux anniversaire · Osedane viamo"
   },
   {
     "id": 856,
@@ -4935,98 +4975,98 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 857,
-    "mot": "Annonce",
+    "mot": "annonce",
     "traduction": "· Fema"
   },
   {
     "id": 858,
-    "mot": "Annoncer",
-    "traduction": "· Femare (famiar)"
+    "mot": "annoncer",
+    "traduction": "· Femar (famiar)"
   },
   {
     "id": 859,
-    "mot": "Annonceur Femoro",
-    "traduction": ""
+    "mot": "annonceur",
+    "traduction": "Femoro"
   },
   {
     "id": 860,
-    "mot": "Annotation Anivin",
-    "traduction": ""
+    "mot": "annotation",
+    "traduction": "Anivin"
   },
   {
     "id": 861,
-    "mot": "Annoter Anivar (cf. noter)",
-    "traduction": ""
+    "mot": "annoter",
+    "traduction": " Anivar (cf. noter)"
   },
   {
     "id": 862,
-    "mot": "Annuaire Anuaste",
-    "traduction": ""
+    "mot": "annuaire",
+    "traduction": "Anuaste"
   },
   {
     "id": 863,
-    "mot": "Annuel",
-    "traduction": "· Berial"
+    "mot": "annuel",
+    "traduction": "· Bergal"
   },
   {
     "id": 864,
-    "mot": "Annuellement",
-    "traduction": "· Berialmanti"
+    "mot": "annuellement",
+    "traduction": "· Berialme"
   },
   {
     "id": 865,
-    "mot": "Annulation",
+    "mot": "annulation",
     "traduction": "· Anelin"
   },
   {
     "id": 866,
-    "mot": "Annuler",
+    "mot": "annuler",
     "traduction": "· Anelar (cf. nul)"
   },
   {
     "id": 867,
-    "mot": "Anodin Navito (navitesi)",
-    "traduction": ""
+    "mot": "anodin",
+    "traduction": " Navito (navitesi)"
   },
   {
     "id": 868,
-    "mot": "Anomalie Sorta (sorta)",
-    "traduction": ""
+    "mot": "anomalie",
+    "traduction": " Sorta (sorta)"
   },
   {
     "id": 869,
-    "mot": "Anonymat Anemato",
-    "traduction": ""
+    "mot": "anonymat",
+    "traduction": "anemato"
   },
   {
     "id": 870,
-    "mot": "Anonyme",
+    "mot": "anonyme",
     "traduction": "· Anemal (binao, sans nom)"
   },
   {
     "id": 871,
-    "mot": "Anonymement",
+    "mot": "anonymement",
     "traduction": "· Anemalmanti"
   },
   {
     "id": 872,
-    "mot": "Anorak Anorak",
-    "traduction": ""
+    "mot": "anorak",
+    "traduction": "Anorak"
   },
   {
     "id": 873,
-    "mot": "Anorexie Arusía (aruci, hindi)",
-    "traduction": ""
+    "mot": "anorexie",
+    "traduction": " Arusía (aruci, hindi)"
   },
   {
     "id": 874,
-    "mot": "Anorexique Arúsico",
-    "traduction": ""
+    "mot": "anorexique",
+    "traduction": " Arúsico"
   },
   {
     "id": 875,
-    "mot": "Anormal Nalomo (halome)",
-    "traduction": ""
+    "mot": "anormal",
+    "traduction": " Nalomo (halome)"
   },
   {
     "id": 876,
@@ -5035,33 +5075,33 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 877,
-    "mot": "Anse Ango (anglo)",
-    "traduction": ""
+    "mot": "anse",
+    "traduction": " Ango (anglo)"
   },
   {
     "id": 878,
-    "mot": "antagonique pradanino",
-    "traduction": ""
+    "mot": "antagonique",
+    "traduction": " pradanino"
   },
   {
     "id": 879,
-    "mot": "antagoniste pradanedo",
-    "traduction": ""
+    "mot": "antagoniste",
+    "traduction": " pradanedo"
   },
   {
     "id": 880,
-    "mot": "Antarctique Antártico",
-    "traduction": ""
+    "mot": "Antarctique",
+    "traduction": " Antártico"
   },
   {
     "id": 881,
-    "mot": "Antécédent Antuno (anglatuno)",
-    "traduction": ""
+    "mot": "antécédent",
+    "traduction": " Antuno (anglatuno)"
   },
   {
     "id": 882,
-    "mot": "Antenne (marine, technique) Pata (patta, espar) ; (insecte) Lepicio",
-    "traduction": ""
+    "mot": "antenne",
+    "traduction": " (marine, technique) Pata (patta, espar) ; (insecte) Lepicio (slepiči, appendice)"
   },
   {
     "id": 883,
@@ -5070,517 +5110,519 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 884,
-    "mot": "Antenne",
+    "mot": "antenne",
     "traduction": "relais PataAntérieur Antunero"
   },
   {
     "id": 885,
-    "mot": "Antériorité Antunerafi",
-    "traduction": ""
+    "mot": "antériorité",
+    "traduction": " Antunerafi"
   },
   {
     "id": 886,
-    "mot": "Anthologie Anguería (sangraha, collection)",
-    "traduction": ""
+    "mot": "anthologie",
+    "traduction": " Anguería (sangraha, collection)"
   },
   {
     "id": 887,
-    "mot": "Anthropologie Manovenía (voir. préfixes)",
-    "traduction": ""
+    "mot": "anthropologie",
+    "traduction": " Manovenía (voir. préfixes)"
   },
   {
     "id": 888,
-    "mot": "Anthropologique Manovénico",
-    "traduction": ""
+    "mot": "anthropologique",
+    "traduction": "Manovénico"
   },
   {
     "id": 889,
-    "mot": "Anthropologue Manoveno",
-    "traduction": ""
+    "mot": "anthropologue",
+    "traduction": "Manoveno"
   },
   {
     "id": 890,
-    "mot": "Antiacarien Pandequero (voir. préfixes)",
-    "traduction": ""
+    "mot": "antiacarien",
+    "traduction": " Pandequero (voir. préfixes)"
   },
   {
     "id": 891,
-    "mot": "Anti",
+    "mot": "anti",
     "traduction": "âge Pandepumaño ; mondialisation Pande-lumalisin ; mondialiste Pande-lumalizto"
   },
   {
     "id": 892,
-    "mot": "Antibactérien Pande",
-    "traduction": "givano"
+    "mot": "antibactérien",
+    "traduction": "pandegivano"
   },
   {
     "id": 893,
-    "mot": "Antibiotique Pandebiótico",
-    "traduction": ""
+    "mot": "antibiotique",
+    "traduction": "pandebiótico"
   },
   {
     "id": 894,
-    "mot": "Antibrouillard Pandecoedia",
-    "traduction": ""
+    "mot": "antibrouillard",
+    "traduction": "pandecoedia"
   },
   {
     "id": 895,
-    "mot": "Antibruit Panderugio",
-    "traduction": ""
+    "mot": "antibruit",
+    "traduction": "Panderugio"
   },
   {
     "id": 896,
     "mot": "Anticipation",
-    "traduction": "· Sujenima"
+    "traduction": "sujenipén"
   },
   {
     "id": 897,
-    "mot": "Anticiper",
-    "traduction": "· Sujenare (sujelar)"
+    "mot": "anticiper",
+    "traduction": "· Sujenar (sujelar)"
   },
   {
     "id": 898,
-    "mot": "Anticorps Pandalbo",
-    "traduction": ""
+    "mot": "anticorps",
+    "traduction": "Pandalbo"
   },
   {
     "id": 899,
-    "mot": "Anticyclone Pandivenoga",
-    "traduction": ""
+    "mot": "anticyclone",
+    "traduction": "Pandivenoga"
   },
   {
     "id": 900,
-    "mot": "Anticyclonique Pandivenógico",
-    "traduction": ""
+    "mot": "anticyclonique",
+    "traduction": "Pandivenógico"
   },
   {
     "id": 901,
-    "mot": "Antidépresseur Pande",
-    "traduction": "laconiero"
+    "mot": "antidépresseur",
+    "traduction": "Pandelaconiero"
   },
   {
     "id": 902,
-    "mot": "Antidote Pandeoto",
-    "traduction": ""
+    "mot": "antidote",
+    "traduction": "Pandeoto"
   },
   {
     "id": 903,
-    "mot": "Antigel Pandepaolio",
-    "traduction": ""
+    "mot": "antigel",
+    "traduction": "Pandepaolio"
   },
   {
     "id": 904,
-    "mot": "Antillais Antilaio",
-    "traduction": ""
+    "mot": "antillais",
+    "traduction": "Antillano"
   },
   {
     "id": 905,
-    "mot": "Antilles Antille",
-    "traduction": ""
+    "mot": "Antilles",
+    "traduction": "Antille"
   },
   {
     "id": 906,
-    "mot": "Antilope Harino (harina)",
-    "traduction": ""
+    "mot": "antilope",
+    "traduction": "Harino (harina)"
   },
   {
     "id": 907,
-    "mot": "Antimite Pandequerma",
-    "traduction": ""
+    "mot": "antimite",
+    "traduction": "Pandequerma"
   },
   {
     "id": 908,
-    "mot": "Antiope Antíope",
-    "traduction": ""
+    "mot": "antiope",
+    "traduction": "Antíope"
   },
   {
     "id": 909,
-    "mot": "Antipathie Pandesinata",
-    "traduction": ""
+    "mot": "antipathie",
+    "traduction": "Pandesinata"
   },
   {
     "id": 910,
-    "mot": "Antipathique Pandesinático",
-    "traduction": ""
+    "mot": "antipathique",
+    "traduction": "Pandesinático"
   },
   {
     "id": 911,
-    "mot": "Antipode Pandepodo",
-    "traduction": ""
+    "mot": "antipode",
+    "traduction": "Pandepodo"
   },
   {
     "id": 912,
-    "mot": "Antiquaire Dumanaste",
-    "traduction": ""
+    "mot": "antiquaire",
+    "traduction": "Dumanaste"
   },
   {
     "id": 913,
-    "mot": "Antique",
+    "mot": "antique",
     "traduction": "· Dumano (dumultano)"
   },
   {
     "id": 914,
-    "mot": "Antiquité",
+    "mot": "antiquité",
     "traduction": "· Dumanafi"
   },
   {
     "id": 915,
-    "mot": "Antirides Pandagostini",
-    "traduction": ""
+    "mot": "antirides",
+    "traduction": "Pandagostini"
   },
   {
     "id": 916,
-    "mot": "Antirouille Pandiguria",
-    "traduction": ""
+    "mot": "antirouille",
+    "traduction": "Pandiguria"
   },
   {
     "id": 917,
-    "mot": "Antisémite Pandisémito",
-    "traduction": ""
+    "mot": "antisémite",
+    "traduction": "Pandisémito"
   },
   {
     "id": 918,
-    "mot": "Antisémitisme Pandisemitazi",
-    "traduction": ""
+    "mot": "antisémitisme",
+    "traduction": "Pandisemitazi"
   },
   {
     "id": 919,
-    "mot": "Antiseptique Pandesético",
-    "traduction": ""
+    "mot": "antiseptique",
+    "traduction": "Pandesético"
   },
   {
     "id": 920,
-    "mot": "Antislash Pandeslash",
-    "traduction": ""
+    "mot": "antislash",
+    "traduction": "Pandeslash"
   },
   {
     "id": 921,
-    "mot": "Antithèse Pandeprase",
-    "traduction": ""
+    "mot": "antithèse",
+    "traduction": "Pandeprase"
   },
   {
     "id": 922,
-    "mot": "Antitranspirant Pandesodimiante",
-    "traduction": ""
+    "mot": "antitranspirant",
+    "traduction": "Pandesodimiante"
   },
   {
     "id": 923,
-    "mot": "Antiviral Antivirano ; Pandevirano",
-    "traduction": ""
+    "mot": "antiviral",
+    "traduction": "Pandevirano"
   },
   {
     "id": 924,
-    "mot": "Antivirus Antiviruso ; Pandeviruso",
-    "traduction": ""
+    "mot": "antivirus",
+    "traduction": "Pandeviruso"
   },
   {
     "id": 925,
-    "mot": "Antivol Pandecioro",
-    "traduction": ""
+    "mot": "antivol",
+    "traduction": "Pandechoro"
   },
   {
     "id": 926,
-    "mot": "Antre",
+    "mot": "antre",
     "traduction": "· Catesca (catesca)"
   },
   {
     "id": 927,
-    "mot": "Anus",
+    "mot": "anus",
     "traduction": "· (m.) Bullate (bullate)"
   },
   {
     "id": 928,
-    "mot": "Anxiété",
+    "mot": "anxiété",
     "traduction": "· Pancía"
   },
   {
     "id": 929,
-    "mot": "Anxieux",
+    "mot": "anxieux",
     "traduction": "· Pancinoso (panchini)"
   },
   {
     "id": 930,
-    "mot": "AOC BPP (Bartelimo de Parama Preyada)",
-    "traduction": ""
+    "mot": "AOC",
+    "traduction": " BPP (Bartelimo de Parama Preyada)"
   },
   {
     "id": 931,
-    "mot": "Août yeroso (querosto)",
-    "traduction": ""
+    "mot": "août",
+    "traduction": "querosto (querosto)"
   },
   {
     "id": 932,
-    "mot": "Aoûtien Querosano",
-    "traduction": ""
+    "mot": "aoûtien ",
+    "traduction": "Querostano"
   },
   {
     "id": 933,
-    "mot": "Apaiser Apaciare",
-    "traduction": ""
+    "mot": "apaiser",
+    "traduction": "Apachar"
   },
   {
     "id": 934,
-    "mot": "Aparté",
+    "mot": "aparté",
     "traduction": "· Riogo (cf. détourner) : En aparté · En riogo"
   },
   {
     "id": 935,
-    "mot": "Apartheid Aparteid",
-    "traduction": ""
+    "mot": "apartheid",
+    "traduction": "aparteid"
   },
   {
     "id": 936,
-    "mot": "Apathie",
+    "mot": "apathie",
     "traduction": "· Usinata (udasinata, ud + sinata, hindi)"
   },
   {
     "id": 937,
-    "mot": "Apatique Usinático",
-    "traduction": ""
+    "mot": "apatique",
+    "traduction": "Usinático"
   },
   {
     "id": 938,
-    "mot": "Apatride",
+    "mot": "apatride",
     "traduction": "· Anedemo (cf. pays)"
   },
   {
     "id": 939,
-    "mot": "Apercevoir",
+    "mot": "apercevoir",
     "traduction": "· Apisare (aprisar)"
   },
   {
     "id": 940,
-    "mot": "Aperçu",
+    "mot": "aperçu",
     "traduction": "· Apisa"
   },
   {
     "id": 941,
-    "mot": "Apéritif aperitivo",
-    "traduction": ""
+    "mot": "apéritif",
+    "traduction": "aperitivo"
   },
   {
     "id": 942,
-    "mot": "Apesanteur (f.) Anestoga",
-    "traduction": "En apesanteur · A l’anestoga"
+    "mot": "apesanteur",
+    "traduction": " (f.) Anestoga En apesanteur · A l’anestoga"
   },
   {
     "id": 943,
-    "mot": "Apeuré Anesparado",
-    "traduction": ""
+    "mot": "apeuré",
+    "traduction": "Anesparado"
   },
   {
     "id": 944,
-    "mot": "Aphone Avano",
-    "traduction": ""
+    "mot": "aphone",
+    "traduction": "Avano"
   },
   {
     "id": 945,
-    "mot": "Aphrodisiaque Afrodisiático",
-    "traduction": ""
+    "mot": "aphrodisiaque ",
+    "traduction": "Afrodisiático"
   },
   {
     "id": 946,
-    "mot": "Aphte Afinoco (finočoj, aphte, ulcère)",
-    "traduction": ""
+    "mot": "aphte",
+"nature": "n.m.",
+"etymologie": "du romani <em>finočoj</em>, aphte, ulcère",
+    "traduction": "finoco"
   },
   {
     "id": 947,
-    "mot": "Apiculteur Madisancoro",
-    "traduction": ""
+    "mot": "apiculteur",
+    "traduction": "Madisancoro"
   },
   {
     "id": 948,
-    "mot": "Apiculture",
+    "mot": "apiculture",
     "traduction": "· Madisancro (sanskrti, culture)"
   },
   {
     "id": 949,
-    "mot": "Apitoiement Milunima",
-    "traduction": ""
+    "mot": "apitoiement",
+    "traduction": "Milunima"
   },
   {
     "id": 950,
-    "mot": "Apitoyer Milunare (smilujil pe, s’appitoyer)",
-    "traduction": ""
+    "mot": "apitoyer",
+    "traduction": "Milunar (smilujil pe, s’appitoyer)"
   },
   {
     "id": 951,
-    "mot": "Aplanir",
+    "mot": "aplanir",
     "traduction": "· Acovilar"
   },
   {
     "id": 952,
-    "mot": "Aplatir Acovilar",
-    "traduction": ""
+    "mot": "aplatir",
+    "traduction": "Acovilar"
   },
   {
     "id": 953,
-    "mot": "Aplomb Apengo (cf. plomb)",
-    "traduction": ""
+    "mot": "aplomb",
+    "traduction": "Apengo (cf. plomb)"
   },
   {
     "id": 954,
-    "mot": "APN CPE (Catesia de le Prome Esique)",
-    "traduction": ""
+    "mot": "APN",
+    "traduction": "CPE (Catesia de le Prome Esique)"
   },
   {
     "id": 955,
-    "mot": "Apocalypse Apocalisia",
-    "traduction": ""
+    "mot": "Apocalypse",
+    "traduction": "Apocalisia"
   },
   {
     "id": 956,
-    "mot": "Apocalyptique Apocalítico",
-    "traduction": ""
+    "mot": "apocalyptique",
+    "traduction": "Apocalítico"
   },
   {
     "id": 957,
-    "mot": "Apocope",
+    "mot": "apocope",
     "traduction": ""
   },
   {
     "id": 958,
-    "mot": "Apogée Emucho (emučo)",
-    "traduction": ""
+    "mot": "apogée",
+    "traduction": " Emucho (emučo)"
   },
   {
     "id": 959,
-    "mot": "Apolitique Amayero",
-    "traduction": ""
+    "mot": "apolitique ",
+    "traduction": "Amayero"
   },
   {
     "id": 960,
-    "mot": "Apologie Apovenía",
-    "traduction": ""
+    "mot": "apologie ",
+    "traduction": "Apovenía"
   },
   {
     "id": 961,
-    "mot": "Apostolique",
+    "mot": "apostolique",
     "traduction": "· Rebustólico (reburdorico)"
   },
   {
     "id": 962,
-    "mot": "Apostrophable",
+    "mot": "apostrophable",
     "traduction": "· Apostofáblino"
   },
   {
     "id": 963,
-    "mot": "Apostrophe",
+    "mot": "apostrophe",
     "traduction": "· Apôstrofe"
   },
   {
     "id": 964,
-    "mot": "Apostropher",
+    "mot": "apostropher",
     "traduction": "· Apostrofare"
   },
   {
     "id": 965,
-    "mot": "Apothéose Poliosa (pūjā, vénération)",
-    "traduction": ""
+    "mot": "apothéose",
+    "traduction": " Poliosa (pūjā, vénération)"
   },
   {
     "id": 966,
-    "mot": "Apothicaire Ferminibe",
-    "traduction": ""
+    "mot": "apothicaire",
+    "traduction": "Ferminibe"
   },
   {
     "id": 967,
-    "mot": "Apôtre",
-    "traduction": "· Rebusto"
+    "mot": "apôtre",
+    "traduction": "rebusto"
   },
   {
     "id": 968,
-    "mot": "Apparaître",
+    "mot": "apparaître",
     "traduction": "· Amilar (cf. paraître)"
   },
   {
     "id": 969,
-    "mot": "Appareil",
+    "mot": "appareil",
     "traduction": "· (m.) Mone (monjare)"
   },
   {
     "id": 970,
-    "mot": "Appareillage",
+    "mot": "appareillage",
     "traduction": "· Monusto"
   },
   {
     "id": 971,
-    "mot": "Appareiller",
-    "traduction": "· Monare"
+    "mot": "appareiller",
+    "traduction": "· Monar"
   },
   {
     "id": 972,
-    "mot": "Apparemment",
-    "traduction": "· Amilmanti"
+    "mot": "apparemment",
+    "traduction": "· mezatame"
   },
   {
     "id": 973,
-    "mot": "Apparence Mezolinte",
-    "traduction": ""
+    "mot": "apparence",
+    "traduction": "mezipén"
   },
   {
     "id": 974,
-    "mot": "Apparent Mezolite",
-    "traduction": ""
+    "mot": "apparent",
+    "traduction": "mezato"
   },
   {
     "id": 975,
-    "mot": "Apprenter",
-    "traduction": "· Mezolir(se) (meiazol)"
+    "mot": "apprenter",
+    "traduction": "· mezar(se) (meiazol)"
   },
   {
     "id": 976,
-    "mot": "Apparition",
+    "mot": "apparition",
     "traduction": "· Amilibe"
   },
   {
     "id": 977,
-    "mot": "Appartement",
-    "traduction": "· Londilla (londila)"
+    "mot": "appartement",
+    "traduction": "mondilla (londila)"
   },
   {
     "id": 978,
-    "mot": "Appartenance",
+    "mot": "appartenance",
     "traduction": "· Pasabelin"
   },
   {
     "id": 979,
-    "mot": "Appartenir",
+    "mot": "appartenir",
     "traduction": "· Pasabelar (pajabelar)"
   },
   {
     "id": 980,
-    "mot": "Appât Giba (xaxiba)",
-    "traduction": ""
+    "mot": "appât",
+    "traduction": " Giba (xaxiba)"
   },
   {
     "id": 981,
-    "mot": "Appauvrir",
+    "mot": "appauvrir",
     "traduction": "· Acombrar"
   },
   {
     "id": 982,
-    "mot": "Appauvrissement",
+    "mot": "appauvrissement",
     "traduction": "· Acombramanto"
   },
   {
     "id": 983,
-    "mot": "Appel",
+    "mot": "appel",
     "traduction": "· Anema"
   },
   {
     "id": 984,
-    "mot": "Appelatif",
+    "mot": "appelatif",
     "traduction": "· Anemativo ; Bartelivo"
   },
   {
     "id": 985,
-    "mot": "Appellation",
+    "mot": "appellation",
     "traduction": "· Anemansia ; Bartelimo"
   },
   {
     "id": 986,
-    "mot": "Appeler",
+    "mot": "appeler",
     "traduction": "· (pour une personne) Anemar (asnabar) ; (pour une"
   },
   {
@@ -5590,7 +5632,7 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 988,
-    "mot": "Appendice (texte) Umpero, Predeme (dino upridir ; predepe) ;",
+    "mot": "appendice (texte) Umpero, Predeme (dino upridir ; predepe) ;",
     "traduction": ""
   },
   {
@@ -5600,267 +5642,267 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 990,
-    "mot": "Appendicite Paresíe",
-    "traduction": ""
+    "mot": "appendicite",
+    "traduction": "Paresíe"
   },
   {
     "id": 991,
-    "mot": "Appesantir",
+    "mot": "appesantir",
     "traduction": "· Anestogare (cf. peser)"
   },
   {
     "id": 992,
-    "mot": "Appéter",
+    "mot": "appéter",
     "traduction": "· Angelare (angelar)"
   },
   {
     "id": 993,
-    "mot": "Appétissant",
+    "mot": "appétissant",
     "traduction": "· Angelate"
   },
   {
     "id": 994,
-    "mot": "Appétit",
+    "mot": "appétit",
     "traduction": "· Angelo : Bon appétit · Viam angelo ; Bon app’ · Viam an !"
   },
   {
     "id": 995,
-    "mot": "Applaudir Tapisare",
-    "traduction": ""
+    "mot": "applaudir",
+    "traduction": "Tapisar"
   },
   {
     "id": 996,
-    "mot": "Applaudissement Tapiso (tapšos)",
-    "traduction": ""
+    "mot": "applaudissement",
+    "traduction": " Tapiso (tapšos)"
   },
   {
     "id": 997,
-    "mot": "Application",
+    "mot": "application",
     "traduction": "· Todansia"
   },
   {
     "id": 998,
-    "mot": "Applique Toda",
-    "traduction": ""
+    "mot": "applique",
+    "traduction": " Toda"
   },
   {
     "id": 999,
-    "mot": "Appliquer",
+    "mot": "appliquer",
     "traduction": "· Todere (thodar)"
   },
   {
     "id": 1000,
-    "mot": "Appoint Dopotino",
-    "traduction": ""
+    "mot": "appoint",
+    "traduction": " Dopotino"
   },
   {
     "id": 1001,
-    "mot": "Appointer Dopotinere (dopotinel)",
-    "traduction": ""
+    "mot": "appointer",
+    "traduction": "dopotinar (dopotinel)"
   },
   {
     "id": 1002,
-    "mot": "Apport",
+    "mot": "apport",
     "traduction": "· Anelo"
   },
   {
     "id": 1003,
-    "mot": "Apporter",
-    "traduction": "· Anelare (lanelar)"
+    "mot": "apporter",
+    "traduction": "· Anelar (lanelar)"
   },
   {
     "id": 1004,
-    "mot": "Apposition",
-    "traduction": "· Apiansa"
+    "mot": "apposition",
+    "traduction": "· Apiana"
   },
   {
     "id": 1005,
-    "mot": "Apposer",
-    "traduction": "· Apiare"
+    "mot": "apposer",
+    "traduction": "· Apiar"
   },
   {
     "id": 1006,
-    "mot": "Appostille",
+    "mot": "appostille",
     "traduction": "· Nucaria (uchari)"
   },
   {
     "id": 1007,
-    "mot": "Apposiller",
-    "traduction": "· Nucare (uchar)"
+    "mot": "apposiller",
+    "traduction": "· Nucar (uchar)"
   },
   {
     "id": 1008,
-    "mot": "Appréciable",
+    "mot": "appréciable",
     "traduction": "· Amonelongo"
   },
   {
     "id": 1009,
-    "mot": "Appréciation",
+    "mot": "appréciation",
     "traduction": "· Amonelansia"
   },
   {
     "id": 1010,
-    "mot": "Apprécier",
+    "mot": "apprécier",
     "traduction": "· Amonelare (amolelar)"
   },
   {
     "id": 1011,
-    "mot": "Appréhender",
+    "mot": "appréhender",
     "traduction": "· Apiolare (apiolar)"
   },
   {
     "id": 1012,
-    "mot": "Appréhension Apiolima",
-    "traduction": ""
+    "mot": "appréhension",
+    "traduction": " Apiolima"
   },
   {
     "id": 1013,
-    "mot": "Apprenant",
+    "mot": "apprenant",
     "traduction": "· Andremanto"
   },
   {
     "id": 1014,
-    "mot": "Apprendre",
+    "mot": "apprendre",
     "traduction": "· Andremare (entrevar) ; aquelinare (kegenar)"
   },
   {
     "id": 1015,
-    "mot": "Apprentissage",
+    "mot": "apprentissage",
     "traduction": "· Andremusto"
   },
   {
     "id": 1016,
-    "mot": "Apprenti Andremano",
-    "traduction": ""
+    "mot": "apprenti",
+    "traduction": " Andremano"
   },
   {
     "id": 1017,
-    "mot": "(S’)apprêter",
+    "mot": "(s’)apprêter",
     "traduction": "· Sarmunarse (sarmuñarse)"
   },
   {
     "id": 1018,
-    "mot": "Apprivoiser",
+    "mot": "apprivoiser",
     "traduction": "· Cerimare (chirijar)"
   },
   {
     "id": 1019,
-    "mot": "Approbateur Golicoro",
-    "traduction": ""
+    "mot": "approbateur",
+    "traduction": " Golicoro"
   },
   {
     "id": 1020,
-    "mot": "Approbation Golice (goliche)",
-    "traduction": ""
+    "mot": "approbation",
+    "traduction": " Golice (goliche)"
   },
   {
     "id": 1021,
-    "mot": "Approche",
+    "mot": "approche",
     "traduction": "· Arolima"
   },
   {
     "id": 1022,
-    "mot": "Approchement",
+    "mot": "approchement",
     "traduction": "· Arolibe"
   },
   {
     "id": 1023,
-    "mot": "Approcher",
+    "mot": "approcher",
     "traduction": "· Arolimare (rujemar)"
   },
   {
     "id": 1024,
-    "mot": "Approfondissement Amelina",
-    "traduction": ""
+    "mot": "approfondissement",
+    "traduction": " Amelina"
   },
   {
     "id": 1025,
-    "mot": "Approfondir Amelinare",
-    "traduction": ""
+    "mot": "approfondir",
+    "traduction": " Amelinar"
   },
   {
     "id": 1026,
-    "mot": "Appropriation",
+    "mot": "appropriation",
     "traduction": "· Ciomina"
   },
   {
     "id": 1027,
-    "mot": "Approprier",
+    "mot": "approprier",
     "traduction": "· Ciomar (ciomard)"
   },
   {
     "id": 1028,
-    "mot": "Approuver",
+    "mot": "approuver",
     "traduction": "· Alumonare (cf. preuve) ; Goliciare"
   },
   {
     "id": 1029,
-    "mot": "Approvisionnement Amatunima",
-    "traduction": ""
+    "mot": "approvisionnement",
+    "traduction": " Amatunima"
   },
   {
     "id": 1030,
-    "mot": "Approvisionner Amatunare (maturnar)",
-    "traduction": ""
+    "mot": "approvisionner",
+    "traduction": " Amatunar (maturnar)"
   },
   {
     "id": 1031,
-    "mot": "Approximatif Apolivo",
-    "traduction": ""
+    "mot": "approximatif",
+    "traduction": " apolivo"
   },
   {
     "id": 1032,
-    "mot": "Approximativement Apolivmanti",
-    "traduction": ""
+    "mot": "approximativement",
+    "traduction": "apolivame"
   },
   {
     "id": 1033,
-    "mot": "Approximer",
+    "mot": "approximer",
     "traduction": "· Apoliar (arpujar)"
   },
   {
     "id": 1034,
-    "mot": "Appui",
+    "mot": "appui",
     "traduction": "· Adara ; tête Adara-mensa"
   },
   {
     "id": 1035,
-    "mot": "Appuyer",
+    "mot": "appuyer",
     "traduction": "· Adarare (hadarar)"
   },
   {
     "id": 1036,
-    "mot": "Âpre Bexo (berji)",
-    "traduction": ""
+    "mot": "âpre",
+    "traduction": " Bexo (berji)"
   },
   {
     "id": 1037,
-    "mot": "Âpreté Bexía",
-    "traduction": ""
+    "mot": "apreté",
+    "traduction": " Bexía"
   },
   {
     "id": 1038,
-    "mot": "Après",
+    "mot": "après",
     "traduction": "· Palio (palal) ; demain Palio-teara ; midi Paliombacibe ; rasage Paliombusto ; shampooing Palio-sampono ; ski Paliasmucia"
   },
   {
     "id": 1039,
-    "mot": "APRILIN",
+    "mot": "aprilin",
     "traduction": "· Alpandiño : Un vent aprilin · Un bamano alpandiño"
   },
   {
     "id": 1040,
-    "mot": "A priori",
+    "mot": "apriori",
     "traduction": "· Nigamane (nigamanaatmak, déduction)"
   },
   {
     "id": 1041,
-    "mot": "APTE",
+    "mot": "apte",
     "traduction": "· Ampo (amtipo)"
   },
   {
     "id": 1042,
-    "mot": "APTITUDE",
+    "mot": "aptitude",
     "traduction": "· Ampilume : Il n’a aucune aptitude · Non ha neta"
   },
   {
@@ -5870,262 +5912,262 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1044,
-    "mot": "AQUARELLE Rozmaneli (rosmakhela, colorier, paindre)",
-    "traduction": ""
+    "mot": "aquarelle",
+    "traduction": " Rozmaneli (rosmakhela, colorier, paindre)"
   },
   {
     "id": 1045,
-    "mot": "AQUARELLER Rozmanelar",
-    "traduction": ""
+    "mot": "aquareller",
+    "traduction": " Rozmanelar"
   },
   {
     "id": 1046,
-    "mot": "AQUARELLISER Rozmanelisare",
-    "traduction": ""
+    "mot": "aquarelliser",
+    "traduction": " Rozmanelisar"
   },
   {
     "id": 1047,
-    "mot": "AQUARELLISTE Rozmanelizto",
-    "traduction": ""
+    "mot": "aquarelliste",
+    "traduction": "Rozmanelizto"
   },
   {
     "id": 1048,
-    "mot": "Aquarium Paniamo",
-    "traduction": ""
+    "mot": "aquarium",
+    "traduction": "Paniamo"
   },
   {
     "id": 1049,
-    "mot": "Aquatique",
+    "mot": "aquatique",
     "traduction": "· Clarino ; Jalino"
   },
   {
     "id": 1050,
-    "mot": "Aqueduc Jalinite",
-    "traduction": ""
+    "mot": "aqueduc",
+    "traduction": "Jalinite"
   },
   {
     "id": 1051,
-    "mot": "Aqueux",
+    "mot": "aqueux",
     "traduction": "· Clarioso ; Pañoso"
   },
   {
     "id": 1052,
-    "mot": "Aqueusement",
+    "mot": "aqueusement",
     "traduction": "· Clariozmanti ; Pañozmanti"
   },
   {
     "id": 1053,
-    "mot": "Aquiéter",
+    "mot": "aquiéter",
     "traduction": "· Aquiamare"
   },
   {
     "id": 1054,
-    "mot": "Aquilin",
+    "mot": "aquilin",
     "traduction": "· Bangio (bang)"
   },
   {
     "id": 1055,
-    "mot": "Arabe Árabo",
-    "traduction": ""
+    "mot": "arabe",
+    "traduction": "árabo"
   },
   {
     "id": 1056,
-    "mot": "Arabesque Arabesca",
-    "traduction": ""
+    "mot": "arabesque",
+    "traduction": "arabesca"
   },
   {
     "id": 1057,
-    "mot": "Arabie Árabia",
-    "traduction": ""
+    "mot": "Arabie ",
+    "traduction": "Árabia"
   },
   {
     "id": 1058,
-    "mot": "Arachide Mungafia (mumgaphali)",
-    "traduction": ""
+    "mot": "arachide",
+    "traduction": " Mungafia (mumgaphali)"
   },
   {
     "id": 1059,
-    "mot": "Arachnide Mangarice (makaree ka, hindi, araignée)",
-    "traduction": ""
+    "mot": "arachnide",
+    "traduction": " Mangarice (makaree ka, hindi, araignée)"
   },
   {
     "id": 1060,
-    "mot": "Araignée",
+    "mot": "araignée",
     "traduction": "· Arica (arica)"
   },
   {
     "id": 1061,
-    "mot": "Arbitrage Afinusto",
-    "traduction": ""
+    "mot": "arbitrage",
+    "traduction": " Afinusto"
   },
   {
     "id": 1062,
-    "mot": "Arbitre",
+    "mot": "arbitre",
     "traduction": "· Afinoro"
   },
   {
     "id": 1063,
-    "mot": "Arbitrer",
-    "traduction": "· Afinare"
+    "mot": "arbitrer",
+    "traduction": "· Afinar"
   },
   {
     "id": 1064,
-    "mot": "Arbitraire",
+    "mot": "arbitraire",
     "traduction": "· Afinaste"
   },
   {
     "id": 1065,
-    "mot": "Arbitrairement",
+    "mot": "arbitrairement",
     "traduction": "· Afinazmanti"
   },
   {
     "id": 1066,
-    "mot": "Arboré",
+    "mot": "arboré",
     "traduction": "· Castelado"
   },
   {
     "id": 1067,
-    "mot": "Arborer",
-    "traduction": "· Castelare"
+    "mot": "arborer",
+    "traduction": "· Castelar"
   },
   {
     "id": 1068,
-    "mot": "Arborescence",
+    "mot": "arborescence",
     "traduction": "· Catepisente"
   },
   {
     "id": 1069,
-    "mot": "Arborescent",
+    "mot": "arborescent",
     "traduction": "· Catepisetio"
   },
   {
     "id": 1070,
-    "mot": "Arboriculture Castelisancro",
-    "traduction": ""
+    "mot": "arboriculture",
+    "traduction": " Castelisancro"
   },
   {
     "id": 1071,
-    "mot": "Arbre",
+    "mot": "arbre",
     "traduction": "· Caste (caste)"
   },
   {
     "id": 1072,
-    "mot": "Arbuste Sarpini (sarpini, sanskrit)",
-    "traduction": ""
+    "mot": "arbuste",
+    "traduction": "sarpino (sarpini, sanskrit)"
   },
   {
     "id": 1073,
-    "mot": "Arc Volvio (cf. arquer)",
-    "traduction": ""
+    "mot": "arc",
+    "traduction": " Volvio (cf. arquer)"
   },
   {
     "id": 1074,
-    "mot": "Arcade Volvinida",
-    "traduction": ""
+    "mot": "arcade",
+    "traduction": " Volvinida"
   },
   {
     "id": 1075,
-    "mot": "Arcane",
+    "mot": "arcane",
     "traduction": "· Arcofuno (arcofune)"
   },
   {
     "id": 1076,
-    "mot": "Arc",
+    "mot": "arc",
     "traduction": "boutant Volvinea ; boutement Volvinema ; bouter Volvineare ; en-ciel Volbolima ; Azumia (razuma)"
   },
   {
     "id": 1077,
-    "mot": "Archaïque Dolmuto (dolmutano)",
-    "traduction": ""
+    "mot": "archaïque",
+    "traduction": " Dolmuto (dolmutano)"
   },
   {
     "id": 1078,
-    "mot": "Archaïsme Dolmutiano",
-    "traduction": ""
+    "mot": "archaïsme",
+    "traduction": " Dolmutiano"
   },
   {
     "id": 1079,
-    "mot": "Archange Arcánfaro",
-    "traduction": ""
+    "mot": "archange",
+    "traduction": " Arcánfaro"
   },
   {
     "id": 1080,
-    "mot": "Archangélique Arcanfárico",
-    "traduction": ""
+    "mot": "archangélique",
+    "traduction": " Arcanfárico"
   },
   {
     "id": 1081,
-    "mot": "Arche Volvia",
-    "traduction": ""
+    "mot": "arche",
+    "traduction": " Volvia"
   },
   {
     "id": 1082,
-    "mot": "Archéologie Arqueovenía",
-    "traduction": ""
+    "mot": "archéologie",
+    "traduction": " Arqueovenía"
   },
   {
     "id": 1083,
-    "mot": "Archéologique Arqueovénico",
-    "traduction": ""
+    "mot": "archéologique",
+    "traduction": " Arqueovénico"
   },
   {
     "id": 1084,
-    "mot": "Archéologue Arqueoveno",
-    "traduction": ""
+    "mot": "archéologue",
+    "traduction": " Arqueoveno"
   },
   {
     "id": 1085,
-    "mot": "Archet Arlo (harlo)",
-    "traduction": ""
+    "mot": "archet",
+    "traduction": " Arlo (harlo)"
   },
   {
     "id": 1086,
-    "mot": "Archevêché",
+    "mot": "archevêché",
     "traduction": "· Nisola (nisolpa)"
   },
   {
     "id": 1087,
-    "mot": "Archevêque",
+    "mot": "archevêque",
     "traduction": "· Nisoloro"
   },
   {
     "id": 1088,
-    "mot": "Archipel",
+    "mot": "archipel",
     "traduction": "· Insielo (buteinzielo)"
   },
   {
     "id": 1089,
-    "mot": "Archipélique",
+    "mot": "archipélique",
     "traduction": "· Insiélico"
   },
   {
     "id": 1090,
-    "mot": "Archipélagique",
+    "mot": "archipélagique",
     "traduction": "· Insielústico"
   },
   {
     "id": 1091,
-    "mot": "Archipelisation",
+    "mot": "archipelisation",
     "traduction": "· Insielasin"
   },
   {
     "id": 1092,
-    "mot": "Archipéliser",
-    "traduction": "· Insielare"
+    "mot": "archipéliser",
+    "traduction": "· Insielar"
   },
   {
     "id": 1093,
-    "mot": "Architecte",
+    "mot": "architecte",
     "traduction": "· Astucoro (vāstukār, faiseur d’édifices)"
   },
   {
     "id": 1094,
-    "mot": "Architectural",
+    "mot": "architectural",
     "traduction": "· Astuqueral"
   },
   {
     "id": 1095,
-    "mot": "Architecture",
+    "mot": "architecture",
     "traduction": "· Astuquería : L’architecture française · L’astuquería"
   },
   {
@@ -6135,67 +6177,67 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1097,
-    "mot": "Archive",
+    "mot": "archive",
     "traduction": "· Astelia (asteli)"
   },
   {
     "id": 1098,
-    "mot": "Archiver Asteliar",
-    "traduction": ""
+    "mot": "archiver",
+    "traduction": "Asteliar"
   },
   {
     "id": 1099,
-    "mot": "Arçon",
+    "mot": "arçon",
     "traduction": "· Arzon (arzón) ; Carjama (carjama)"
   },
   {
     "id": 1100,
-    "mot": "Arçonner",
+    "mot": "arçonner",
     "traduction": "· Arzonar ; Carjamare"
   },
   {
     "id": 1101,
-    "mot": "Arctique Ártico",
-    "traduction": ""
+    "mot": "arctique",
+    "traduction": "Ártico"
   },
   {
     "id": 1102,
-    "mot": "Ardemment Quiedamante",
-    "traduction": ""
+    "mot": "ardemment",
+    "traduction": " quiedamante"
   },
   {
     "id": 1103,
-    "mot": "Ardent",
+    "mot": "ardent",
     "traduction": "· Quiedante (cf. brûler)"
   },
   {
     "id": 1104,
-    "mot": "Ardeur",
+    "mot": "ardeur",
     "traduction": "· (chaleur) Quiedora ; (difficulté) Elvidora"
   },
   {
     "id": 1105,
-    "mot": "Ardoise Alacia (slača)",
-    "traduction": ""
+    "mot": "ardoise",
+    "traduction": " Alacia (slača)"
   },
   {
     "id": 1106,
-    "mot": "Ardu Élvido (ejvda)",
-    "traduction": ""
+    "mot": "ardu",
+    "traduction": " Élvido (ejvda)"
   },
   {
     "id": 1107,
-    "mot": "Arènes Bancari (akhara, arène, sanskrit)",
-    "traduction": ""
+    "mot": "arènes",
+    "traduction": " Bancari (akhara, arène, sanskrit)"
   },
   {
     "id": 1108,
-    "mot": "Arête Greno (grebeno)",
-    "traduction": ""
+    "mot": "arête",
+    "traduction": " Greno (grebeno)"
   },
   {
     "id": 1109,
-    "mot": "Argent",
+    "mot": "argent",
     "traduction": "· (monnaie) Parno (parne) ; (couleur) Golto (güeltre) ;"
   },
   {
@@ -6205,282 +6247,282 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1111,
-    "mot": "Argenté Parnado ; Goltado ; Polmado",
-    "traduction": ""
+    "mot": "argenté",
+    "traduction": " Parnado ; Goltado ; Polmado"
   },
   {
     "id": 1112,
-    "mot": "Argenter",
+    "mot": "argenter",
     "traduction": "· Parnare ; Goltare ; Plomare"
   },
   {
     "id": 1113,
-    "mot": "Argenterie Parnanía ; Golanía ; Plomanía",
-    "traduction": ""
+    "mot": "argenterie",
+    "traduction": " Parnanía ; Golanía ; Plomanía"
   },
   {
     "id": 1114,
-    "mot": "Argentin Argentino",
-    "traduction": ""
+    "mot": "argentin",
+    "traduction": "argentino"
   },
   {
     "id": 1115,
-    "mot": "Argentine Argentina",
-    "traduction": ""
+    "mot": "Argentine",
+    "traduction": "Argentina"
   },
   {
     "id": 1116,
-    "mot": "Argile",
+    "mot": "argile",
     "traduction": "· Bujolia (bujuli)"
   },
   {
     "id": 1117,
-    "mot": "Argileux Bujolioso",
-    "traduction": ""
+    "mot": "argileux",
+    "traduction": " Bujolioso"
   },
   {
     "id": 1118,
-    "mot": "Argot Cimbacio (cimba + choro, mendiant, pauvre)",
-    "traduction": ""
+    "mot": "argot",
+    "traduction": "chimbacho (cimba + choro, mendiant, pauvre)"
   },
   {
     "id": 1119,
-    "mot": "Argoter Cimbaciare",
-    "traduction": ""
+    "mot": "argoter",
+    "traduction": "chimbaciar"
   },
   {
     "id": 1120,
-    "mot": "Argotique Cimbácito",
-    "traduction": ""
+    "mot": "argotique",
+    "traduction": "chimbacharo"
   },
   {
     "id": 1121,
-    "mot": "Argument",
+    "mot": "argument",
     "traduction": "· Ambrano"
   },
   {
     "id": 1122,
-    "mot": "Argumenter",
-    "traduction": "· Ambranere (branil)"
+    "mot": "argumenter",
+    "traduction": "· ambranar (branil)"
   },
   {
     "id": 1123,
-    "mot": "Argus Argus",
-    "traduction": ""
+    "mot": "argus",
+    "traduction": "argus"
   },
   {
     "id": 1124,
-    "mot": "Aride",
-    "traduction": "· Bipaño (bipañoso)"
+    "mot": "aride",
+    "traduction": "bipaño (bipañoso)"
   },
   {
     "id": 1125,
-    "mot": "Aridité",
+    "mot": "aridité",
     "traduction": "· Bipanafi"
   },
   {
     "id": 1126,
-    "mot": "Aristocrate Vasiĉanto",
-    "traduction": ""
+    "mot": "aristocrate",
+    "traduction": " Vasiĉanto"
   },
   {
     "id": 1127,
-    "mot": "Aristocratie Vasiĉantia",
-    "traduction": ""
+    "mot": "aristocratie",
+    "traduction": " Vasiĉantia"
   },
   {
     "id": 1128,
-    "mot": "Arithmétique Ganito (ankganit)",
-    "traduction": ""
+    "mot": "arithmétique",
+    "traduction": " Ganito (ankganit)"
   },
   {
     "id": 1129,
-    "mot": "Armateur Pandetero",
-    "traduction": ""
+    "mot": "armateur",
+    "traduction": "Pandetero"
   },
   {
     "id": 1130,
-    "mot": "Armature Pandetura",
-    "traduction": ""
+    "mot": "armature",
+    "traduction": "Pandetura"
   },
   {
     "id": 1131,
-    "mot": "Arme",
+    "mot": "arme",
     "traduction": "· (m.) Pande (pandukhe)"
   },
   {
     "id": 1132,
-    "mot": "Armée",
+    "mot": "armée",
     "traduction": "· Argana (argandi)"
   },
   {
     "id": 1133,
-    "mot": "Armement",
+    "mot": "armement",
     "traduction": "· Pandemanto"
   },
   {
     "id": 1134,
-    "mot": "Arménie Armenía",
-    "traduction": ""
+    "mot": "Arménie",
+    "traduction": "Armenía"
   },
   {
     "id": 1135,
-    "mot": "Arménien Armeniano",
-    "traduction": ""
+    "mot": "arménien",
+    "traduction": "armeniano"
   },
   {
     "id": 1136,
-    "mot": "Armer",
-    "traduction": "· Pandare"
+    "mot": "armer",
+    "traduction": "pandar"
   },
   {
     "id": 1137,
-    "mot": "Armistice Lotafredi (xlottako freediba, trêve)",
-    "traduction": ""
+    "mot": "armistice",
+    "traduction": "lotafredi (xlottako freediba, trêve)"
   },
   {
     "id": 1138,
-    "mot": "Armoire",
-    "traduction": "· Almara (almar)"
+    "mot": "armoire",
+    "traduction": "almara (almar)"
   },
   {
     "id": 1139,
-    "mot": "Armoirerie",
-    "traduction": "· Almarani"
+    "mot": "armoirerie",
+    "traduction": "almarerani"
   },
   {
     "id": 1140,
-    "mot": "Armoiries Almaranis",
-    "traduction": ""
+    "mot": "armoiries",
+    "traduction": "almarani"
   },
   {
     "id": 1141,
-    "mot": "Armura Pandura",
-    "traduction": ""
+    "mot": "armure",
+    "traduction": "Pandura"
   },
   {
     "id": 1142,
-    "mot": "Arnaque Birilla (birla)",
-    "traduction": ""
+    "mot": "arnaque",
+    "traduction": "Berilla (birla)"
   },
   {
     "id": 1143,
-    "mot": "Arnaquer Birillare",
-    "traduction": ""
+    "mot": "arnaquer",
+    "traduction": "Berillar"
   },
   {
     "id": 1144,
-    "mot": "Arnaqueur Birilloro",
-    "traduction": ""
+    "mot": "arnaqueur",
+    "traduction": "Berillaro"
   },
   {
     "id": 1145,
-    "mot": "Aromate Aroco",
-    "traduction": ""
+    "mot": "aromate",
+    "traduction": "Aroco"
   },
   {
     "id": 1146,
-    "mot": "Aromatiser",
+    "mot": "aromatiser",
     "traduction": "· Aroselare"
   },
   {
     "id": 1147,
-    "mot": "Arôme",
+    "mot": "arôme",
     "traduction": "· Arosio (aroschi)"
   },
   {
     "id": 1148,
-    "mot": "Arpenter",
+    "mot": "arpenter",
     "traduction": "· Pironare (pinronar)"
   },
   {
     "id": 1149,
-    "mot": "Arqué Volvinedo",
-    "traduction": ""
+    "mot": "arqué",
+    "traduction": " Volvinedo"
   },
   {
     "id": 1150,
-    "mot": "Arquer Volvinere (völbinel)",
-    "traduction": ""
+    "mot": "arquer",
+    "traduction": " Volvinar (völbinel)"
   },
   {
     "id": 1151,
-    "mot": "Arracher",
-    "traduction": "· Rimbare (rimbayar)"
+    "mot": "arracher",
+    "traduction": "· Rimbar (rimbayar)"
   },
   {
     "id": 1152,
-    "mot": "Arrangeant Adojate",
-    "traduction": ""
+    "mot": "arrangeant",
+    "traduction": "Adojate"
   },
   {
     "id": 1153,
-    "mot": "Arrangement",
+    "mot": "arrangement",
     "traduction": "· Adojime"
   },
   {
     "id": 1154,
-    "mot": "Arranger",
+    "mot": "arranger",
     "traduction": "· Adojar (adojar)"
   },
   {
     "id": 1155,
-    "mot": "Arrestation Entima",
-    "traduction": ""
+    "mot": "arrestation",
+    "traduction": "entipén"
   },
   {
     "id": 1156,
-    "mot": "Arrêt",
-    "traduction": "· Ento"
+    "mot": "arrêt",
+    "traduction": "ento"
   },
   {
     "id": 1157,
-    "mot": "Arrêter",
-    "traduction": "· Entisare (entrisar)"
+    "mot": "arrêter",
+    "traduction": "entisar (entrisar)"
   },
   {
     "id": 1158,
-    "mot": "Arrhes Uplata (uplata)",
-    "traduction": ""
+    "mot": "arrhes",
+    "traduction": " Uplata (uplata)"
   },
   {
     "id": 1159,
-    "mot": "Arrière Apale (apala)",
-    "traduction": ""
+    "mot": "arrière",
+    "traduction": " Apale (apala)"
   },
   {
     "id": 1160,
-    "mot": "Arrière",
+    "mot": "arrière",
     "traduction": "boutique Palibolti ; goût Palpesquite ; grand-mère Palbárina ; grand-père Palbárino ; grands-parents Palbárines ; pensée Palsombri ; plan Palcante ; saison Paltomi"
   },
   {
     "id": 1161,
-    "mot": "Arrimage Tovinusto",
-    "traduction": ""
+    "mot": "arrimage",
+    "traduction": "tovinusto"
   },
   {
     "id": 1162,
-    "mot": "Arrimer Tovinire (zagotovini, sécuriser)",
-    "traduction": ""
+    "mot": "arrimer",
+    "traduction": "Tovinar (zagotovini, sécuriser)"
   },
   {
     "id": 1163,
-    "mot": "Arrimeur Tovinoro",
-    "traduction": ""
+    "mot": "arrimeur",
+    "traduction": " Tovinoro"
   },
   {
     "id": 1164,
-    "mot": "Arrivage Aupusto ; Anazusto ; Naquelusto ; Amatizusto",
-    "traduction": ""
+    "mot": "arrivage",
+    "traduction": " Aupusto ; Anazusto ; Naquelusto ; Amatizusto"
   },
   {
     "id": 1165,
-    "mot": "Arrivée Auprada ; Anasada ; Naquelada ; Amatisada",
-    "traduction": ""
+    "mot": "arrivée",
+    "traduction": " Auprada ; Anasada ; Naquelada ; Amatisada"
   },
   {
     "id": 1166,
-    "mot": "Arriver",
+    "mot": "arriver",
     "traduction": "· (gén.) Auprar (auprar) ; (se passer) Anasar (anacer) ;"
   },
   {
@@ -6490,157 +6532,157 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1168,
-    "mot": "Arrivisme Aupriano ; Naqueliano ; Anasiano ; Amatiano",
-    "traduction": ""
+    "mot": "arrivisme",
+    "traduction": " Aupriano ; Naqueliano ; Anasiano ; Amatiano"
   },
   {
     "id": 1169,
-    "mot": "Arriviste Auprizto ; Naquelizto ; Anasizto ; Amatizto",
-    "traduction": ""
+    "mot": "arriviste",
+    "traduction": " Auprizto ; Naquelizto ; Anasizto ; Amatizto"
   },
   {
     "id": 1170,
-    "mot": "Arrogance",
+    "mot": "arrogance",
     "traduction": "· Gonfatia"
   },
   {
     "id": 1171,
-    "mot": "Arrogant",
+    "mot": "arrogant",
     "traduction": "· Gónfano (gonfañe)"
   },
   {
     "id": 1172,
-    "mot": "Arroger",
+    "mot": "arroger",
     "traduction": "· Enturarse (enturel pe)"
   },
   {
     "id": 1173,
-    "mot": "Arrondir",
-    "traduction": "· Arendare"
+    "mot": "arrondir",
+    "traduction": "arendar"
   },
   {
     "id": 1174,
-    "mot": "Arrondissement Jalimo (krujalipe, quartier)",
-    "traduction": ""
+    "mot": "arrondissement",
+    "traduction": "Jalimo (krujalipe, quartier)"
   },
   {
     "id": 1175,
-    "mot": "Arrosage Revusto",
-    "traduction": ""
+    "mot": "arrosage",
+    "traduction": "Revusto"
   },
   {
     "id": 1176,
-    "mot": "Arroser Revere (reveril)",
-    "traduction": ""
+    "mot": "arroser",
+    "traduction": "Revear (reveril)"
   },
   {
     "id": 1177,
-    "mot": "Arrosoir Revorio",
-    "traduction": ""
+    "mot": "arrosoir",
+    "traduction": "Revorio"
   },
   {
     "id": 1178,
-    "mot": "Arsenal Arsenal",
-    "traduction": ""
+    "mot": "arsenal",
+    "traduction": "Arsenal"
   },
   {
     "id": 1179,
-    "mot": "Arsenic Arsénico",
-    "traduction": ""
+    "mot": "arsenic",
+    "traduction": "Arsénico"
   },
   {
     "id": 1180,
-    "mot": "Art",
+    "mot": "art",
     "traduction": "· (m.) Hume (umetnost) : les gueyanes humes · les beaux-arts"
   },
   {
     "id": 1181,
-    "mot": "Artère",
+    "mot": "artère",
     "traduction": "· Terada (trajata)"
   },
   {
     "id": 1182,
-    "mot": "Artériel",
+    "mot": "artériel",
     "traduction": "· Teradal"
   },
   {
     "id": 1183,
-    "mot": "Arthrite Artite",
-    "traduction": ""
+    "mot": "arthrite",
+    "traduction": "Artite"
   },
   {
     "id": 1184,
-    "mot": "Arthrose Artozia",
-    "traduction": ""
+    "mot": "arthrose",
+    "traduction": "Artozia"
   },
   {
     "id": 1185,
-    "mot": "Artichaut",
+    "mot": "artichaut",
     "traduction": "· Canima (cañipumi)"
   },
   {
     "id": 1186,
-    "mot": "Article",
+    "mot": "article",
     "traduction": "· (gramm.) pusco (prušuk ) ; (presse) rom. lekh leque"
   },
   {
     "id": 1187,
-    "mot": "ARTICULABLE",
+    "mot": "articulable",
     "nature": "adj.",
     "traduction": "Anuciongo"
   },
   {
     "id": 1188,
-    "mot": "ARTICULATION",
+    "mot": "articulation",
     "nature": "n.f.",
     "traduction": "Anucima"
   },
   {
     "id": 1189,
-    "mot": "ARTICULER",
+    "mot": "articuler",
     "nature": "vb.",
     "traduction": "Anuciare"
   },
   {
     "id": 1190,
-    "mot": "Artifice Albia (albiriji)",
-    "traduction": ""
+    "mot": "artifice",
+    "traduction": " Albia (albiriji)"
   },
   {
     "id": 1191,
-    "mot": "Artificiel Albial",
-    "traduction": ""
+    "mot": "artificiel",
+    "traduction": "Albial"
   },
   {
     "id": 1192,
-    "mot": "ARTILLERIE",
+    "mot": "artillerie",
     "nature": "nf.",
     "traduction": "Abiganía"
   },
   {
     "id": 1193,
-    "mot": "ARTILLEUR",
+    "mot": "artilleur",
     "nature": "n. adj.",
     "traduction": "Abigero ‹ DE L’ANCIEN CALO arbijunde ›"
   },
   {
     "id": 1194,
-    "mot": "Artisan Ornico (obrtniko)",
-    "traduction": ""
+    "mot": "artisan",
+    "traduction": "Ornico (obrtniko)"
   },
   {
     "id": 1195,
-    "mot": "Artisanal Ornical",
-    "traduction": ""
+    "mot": "artisanal",
+    "traduction": "Ornical"
   },
   {
     "id": 1196,
-    "mot": "Artisanat Ornicato",
-    "traduction": ""
+    "mot": "artisanat",
+    "traduction": "Ornicato"
   },
   {
     "id": 1197,
-    "mot": "ARTISTE",
+    "mot": "artiste",
     "nature": "n. adj.",
     "traduction": "omiste : Antonio Solario est connu comme étant"
   },
@@ -6656,12 +6698,12 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1200,
-    "mot": "ARTISTIQUE",
+    "mot": "artistique",
     "traduction": "· Homiztino"
   },
   {
     "id": 1201,
-    "mot": "ARTISTIQUEMENT",
+    "mot": "artistiquement",
     "traduction": "· Homiztiname"
   },
   {
@@ -6671,62 +6713,62 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1203,
-    "mot": "ASCENDANCE",
+    "mot": "ascendance",
     "traduction": "· Sunacansa"
   },
   {
     "id": 1204,
-    "mot": "ASCENDANT",
+    "mot": "ascendant",
     "traduction": "· Sunacante (sunacar, monter)"
   },
   {
     "id": 1205,
-    "mot": "ASCENSEUR",
-    "traduction": "· Sunaquero"
+    "mot": "ascenseur",
+    "traduction": "sunaquero"
   },
   {
     "id": 1206,
-    "mot": "ASCENSION",
-    "traduction": "· Sunaquimo"
+    "mot": "ascension",
+    "traduction": "sunaquimo"
   },
   {
     "id": 1207,
-    "mot": "Aseptiser Jalovare (jalovo, stérile)",
-    "traduction": ""
+    "mot": "aseptiser",
+    "traduction": "Jalovar (jalovo, stérile)"
   },
   {
     "id": 1208,
-    "mot": "Asiatique Asiático",
-    "traduction": ""
+    "mot": "asiatique",
+    "traduction": "Asiático"
   },
   {
     "id": 1209,
-    "mot": "Asie Asia",
-    "traduction": ""
+    "mot": "Asie",
+    "traduction": "Asia"
   },
   {
     "id": 1210,
-    "mot": "Asile Begenco (bježjenco)",
-    "traduction": "Asile politique · Begenco mayero"
+    "mot": "asile",
+    "traduction": "begenco (bježjenco) Asile politique · Begenco mayero"
   },
   {
     "id": 1211,
-    "mot": "Asocial Afarado (cf. société)",
-    "traduction": ""
+    "mot": "asocial",
+    "traduction": " Afarado (cf. société)"
   },
   {
     "id": 1212,
-    "mot": "ASPE",
+    "mot": "aspe",
     "traduction": "· Cozamia (cosdami)"
   },
   {
     "id": 1213,
-    "mot": "ASPECT",
+    "mot": "aspect",
     "traduction": "· Fila (fila)"
   },
   {
     "id": 1214,
-    "mot": "ASPERGE",
+    "mot": "asperge",
     "nature": "nf.",
     "traduction": "Enejera ‹ DE L’ANCIEN CALO encrejeri › Les"
   },
@@ -6742,73 +6784,73 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1217,
-    "mot": "Aspérités Abexi (cf. âpre)",
-    "traduction": ""
+    "mot": "aspérités",
+    "traduction": "abexillas (cf. âpre)"
   },
   {
     "id": 1218,
-    "mot": "Asphalte Asvalto",
-    "traduction": ""
+    "mot": "asphalte",
+    "traduction": "Asvalto"
   },
   {
     "id": 1219,
-    "mot": "Asphyxie Savaría (svasavarodha)",
-    "traduction": ""
+    "mot": "asphyxie",
+    "traduction": " Savaría (svasavarodha)"
   },
   {
     "id": 1220,
-    "mot": "Asphyxier Savariare",
-    "traduction": ""
+    "mot": "asphyxier",
+    "traduction": "Savariare"
   },
   {
     "id": 1221,
-    "mot": "Aspirant",
+    "mot": "aspirant",
     "traduction": "· Aristante"
   },
   {
     "id": 1222,
-    "mot": "Aspirateur",
+    "mot": "aspirateur",
     "traduction": "· Aristero"
   },
   {
     "id": 1223,
-    "mot": "Aspirer",
+    "mot": "aspirer",
     "traduction": "· Aristare (arispar)"
   },
   {
     "id": 1224,
-    "mot": "Aspirine Aspirina",
-    "traduction": ""
+    "mot": "aspirine",
+    "traduction": "Aspirina"
   },
   {
     "id": 1225,
-    "mot": "Assagir Aĉandar (cf. sage)",
-    "traduction": ""
+    "mot": "assagir",
+    "traduction": "achandar (cf. sage)"
   },
   {
     "id": 1226,
-    "mot": "Assaillant Orcatante",
-    "traduction": ""
+    "mot": "assaillant",
+    "traduction": "Orcatante"
   },
   {
     "id": 1227,
-    "mot": "Assailleur",
+    "mot": "assailleur",
     "traduction": "· Orcatero"
   },
   {
     "id": 1228,
-    "mot": "Assaillir",
-    "traduction": "· Orcatare (orcatar)"
+    "mot": "assaillir",
+    "traduction": "· Orcatar (orcatar)"
   },
   {
     "id": 1229,
-    "mot": "Assainir Anestillare (cf. sain)",
-    "traduction": ""
+    "mot": "assainir",
+    "traduction": "Anestillar (cf. sain)"
   },
   {
     "id": 1230,
-    "mot": "Assainissement Anestilina",
-    "traduction": "L’assainissement des eaux · L’anestilina"
+    "mot": "assainissement",
+    "traduction": "AnestilinaL’assainissement des eaux · L’anestilina"
   },
   {
     "id": 1231,
@@ -6817,673 +6859,673 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1232,
-    "mot": "Assaisonnement Belvima (cf. condiment)",
-    "traduction": ""
+    "mot": "assaisonnement",
+    "traduction": "Belvima (cf. condiment)"
   },
   {
     "id": 1233,
-    "mot": "Assaisonner Belviare",
-    "traduction": ""
+    "mot": "assaisonner",
+    "traduction": "Belviar"
   },
   {
     "id": 1234,
-    "mot": "Assassin",
+    "mot": "assassin",
     "traduction": "· Encorvoro"
   },
   {
     "id": 1235,
-    "mot": "Assassinat",
+    "mot": "assassinat",
     "traduction": "· Encorvado"
   },
   {
     "id": 1236,
-    "mot": "Assassiner",
+    "mot": "assassiner",
     "traduction": "· Encorvare (encorvar)"
   },
   {
     "id": 1237,
-    "mot": "Assaut",
+    "mot": "assaut",
     "traduction": "· Sicobo (sicobo)"
   },
   {
     "id": 1238,
-    "mot": "Asséchement Aĉucamanto",
-    "traduction": ""
+    "mot": "asséchement",
+    "traduction": "achucamanto"
   },
   {
     "id": 1239,
-    "mot": "Assécher Aĉucar (cf. sec)",
-    "traduction": ""
+    "mot": "assécher",
+    "traduction": "achucar (cf. sec)"
   },
   {
     "id": 1240,
-    "mot": "Assemblage",
+    "mot": "assemblage",
     "traduction": "· Catesiusto"
   },
   {
     "id": 1241,
-    "mot": "Assemblée",
+    "mot": "assemblée",
     "traduction": "· Catesia (catesca)"
   },
   {
     "id": 1242,
-    "mot": "Assembler",
-    "traduction": "· Catesiare"
+    "mot": "assembler",
+    "traduction": "· Catesiar"
   },
   {
     "id": 1243,
-    "mot": "Assener Malavare (malavel, coup)",
-    "traduction": ""
+    "mot": "asséner",
+    "traduction": "malavar (malavel, coup)"
   },
   {
     "id": 1244,
-    "mot": "Assentiment Apremanto",
-    "traduction": ""
+    "mot": "assentiment",
+    "traduction": " Apremanto"
   },
   {
     "id": 1245,
-    "mot": "Asseoir",
-    "traduction": "· Albestare (bestar)"
+    "mot": "asseoir",
+    "traduction": "albestar (bestar)"
   },
   {
     "id": 1246,
-    "mot": "Assermenté Asolaxado (cf. serment)",
-    "traduction": ""
+    "mot": "assermenté",
+    "traduction": " Asolaxado (cf. serment)"
   },
   {
     "id": 1247,
-    "mot": "Assertif",
+    "mot": "assertif",
     "traduction": "· Afimivo"
   },
   {
     "id": 1248,
-    "mot": "Assertion",
+    "mot": "assertion",
     "traduction": "· Afimansia ; Afinime"
   },
   {
     "id": 1249,
-    "mot": "Assertir",
+    "mot": "assertir",
     "traduction": "· Aflimare (aflisarel)"
   },
   {
     "id": 1250,
-    "mot": "Assertivement",
+    "mot": "assertivement",
     "traduction": "· Afimivamante"
   },
   {
     "id": 1251,
-    "mot": "Asservir",
+    "mot": "asservir",
     "traduction": "· Granear (grañorear)"
   },
   {
     "id": 1252,
-    "mot": "Asservissement",
+    "mot": "asservissement",
     "traduction": "· Graneamanto"
   },
   {
     "id": 1253,
-    "mot": "Assesseur",
+    "mot": "assesseur",
     "traduction": "· Sombeno (sombeshno)"
   },
   {
     "id": 1254,
-    "mot": "Assessorat",
+    "mot": "assessorat",
     "traduction": "· Sombenado"
   },
   {
     "id": 1255,
-    "mot": "Assez Doste (dosta)",
-    "traduction": ""
+    "mot": "assez",
+    "traduction": "Doste (dosta)"
   },
   {
     "id": 1256,
-    "mot": "Assidu Prino (pridno)",
-    "traduction": ""
+    "mot": "assidu",
+    "traduction": "Prino (pridno)"
   },
   {
     "id": 1257,
-    "mot": "Assiduité Prinafi",
-    "traduction": ""
+    "mot": "assiduité",
+    "traduction": "Prinafi"
   },
   {
     "id": 1258,
-    "mot": "Assiéger Astanare",
-    "traduction": ""
+    "mot": "assiéger",
+    "traduction": "Astanar"
   },
   {
     "id": 1259,
-    "mot": "Assiette",
+    "mot": "assiette",
     "traduction": "· Anole (hanol)"
   },
   {
     "id": 1260,
-    "mot": "Assignation",
+    "mot": "assignation",
     "traduction": "· Vuransia"
   },
   {
     "id": 1261,
-    "mot": "Assigner",
-    "traduction": "· Vuriare (vurixarel)"
+    "mot": "assigner",
+    "traduction": "vuriar (vurixarel)"
   },
   {
     "id": 1262,
-    "mot": "Assimilation Nicombina",
-    "traduction": ""
+    "mot": "assimilation",
+    "traduction": "Nicombo"
   },
   {
     "id": 1263,
-    "mot": "Assimiler Nicombare (nichobar)",
-    "traduction": ""
+    "mot": "assimiler",
+    "traduction": " Nicombar (nichobar)"
   },
   {
     "id": 1264,
-    "mot": "Assis Albestado",
-    "traduction": ""
+    "mot": "assis",
+    "traduction": "Albestado"
   },
   {
     "id": 1265,
-    "mot": "Assise",
+    "mot": "assise",
     "traduction": "· Esmisa ; Ambestisa"
   },
   {
     "id": 1266,
-    "mot": "Assistanat",
+    "mot": "assistanat",
     "traduction": "· Catanado"
   },
   {
     "id": 1267,
-    "mot": "Assistance",
-    "traduction": "· Catanansa"
+    "mot": "assistance",
+    "traduction": "catanansa"
   },
   {
     "id": 1268,
-    "mot": "Assistant",
-    "traduction": "· Catanate"
+    "mot": "assistant",
+    "traduction": "catanato"
   },
   {
     "id": 1269,
-    "mot": "Assister",
-    "traduction": "· Catanare (catanar)"
+    "mot": "assister",
+    "traduction": "catanar (catanar)"
   },
   {
     "id": 1270,
-    "mot": "Association",
-    "traduction": "· Imbirina"
+    "mot": "association",
+    "traduction": "imbiana"
   },
   {
     "id": 1271,
-    "mot": "Associé Imbido",
-    "traduction": ""
+    "mot": "associé",
+    "traduction": "imbido"
   },
   {
     "id": 1272,
-    "mot": "Associer",
-    "traduction": "· Imbire (khimbil)"
+    "mot": "associer",
+    "traduction": "imbiar (khimbil)"
   },
   {
     "id": 1273,
-    "mot": "Assombrir Aparinare (cf. sombre)",
-    "traduction": ""
+    "mot": "assombrir",
+    "traduction": "Aparinar (cf. sombre)"
   },
   {
     "id": 1274,
-    "mot": "Assombrissement Aparinamanto",
-    "traduction": ""
+    "mot": "assombrissement",
+    "traduction": "aparinamanto"
   },
   {
     "id": 1275,
-    "mot": "Assommer Lisanare (zalisarel)",
-    "traduction": ""
+    "mot": "assommer",
+    "traduction": "Lisanare (zalisarel)"
   },
   {
     "id": 1276,
-    "mot": "Assommoir Lisenero",
-    "traduction": ""
+    "mot": "assommoir",
+    "traduction": "Lisenero"
   },
   {
     "id": 1277,
-    "mot": "Assorti Campasinido",
-    "traduction": ""
+    "mot": "assorti",
+    "traduction": " Campasinido"
   },
   {
     "id": 1278,
-    "mot": "Assortiment Campasino",
-    "traduction": ""
+    "mot": "assortiment",
+    "traduction": " Campasino"
   },
   {
     "id": 1279,
-    "mot": "Assortir Campasinare (cam pasinel)",
-    "traduction": ""
+    "mot": "assortir",
+    "traduction": "campasinar (cam pasinel)"
   },
   {
     "id": 1280,
-    "mot": "Assoupi Cuquiado",
-    "traduction": ""
+    "mot": "assoupi",
+    "traduction": " Cuquiado"
   },
   {
     "id": 1281,
-    "mot": "Assoupir Cuquiare (kukuisarela)",
-    "traduction": ""
+    "mot": "assoupir",
+    "traduction": "Cuquiar (kukuisarela)"
   },
   {
     "id": 1282,
-    "mot": "Assouplir",
+    "mot": "assouplir",
     "traduction": "· Afontar (cf. souple)"
   },
   {
     "id": 1283,
-    "mot": "Assouplissant",
+    "mot": "assouplissant",
     "traduction": "· (subst.) Afotelanto ; (adj.) afotelante"
   },
   {
     "id": 1284,
-    "mot": "Assouplissement",
+    "mot": "assouplissement",
     "traduction": "· Afotelansia"
   },
   {
     "id": 1285,
-    "mot": "Assouplisseur Afontero",
-    "traduction": ""
+    "mot": "assouplisseur",
+    "traduction": "Afontero"
   },
   {
     "id": 1286,
-    "mot": "Assourdir Caĉucar",
-    "traduction": ""
+    "mot": "assourdir",
+    "traduction": "cachucar"
   },
   {
     "id": 1287,
-    "mot": "Assourdissement Caĉucamanto",
-    "traduction": ""
+    "mot": "assourdissement",
+    "traduction": "cachucamanto"
   },
   {
     "id": 1288,
-    "mot": "Assouvir Gosere (khosel)",
-    "traduction": ""
+    "mot": "assouvir",
+    "traduction": "Gosar (khosel)"
   },
   {
     "id": 1289,
-    "mot": "Assouvissement Gosemanto",
-    "traduction": ""
+    "mot": "assouvissement",
+    "traduction": " Gosemanto"
   },
   {
     "id": 1290,
-    "mot": "Assumer Pasare (prachar)",
-    "traduction": ""
+    "mot": "assumer",
+    "traduction": "pasar (prachar)"
   },
   {
     "id": 1291,
-    "mot": "Assurance",
+    "mot": "assurance",
     "traduction": "· Adimensa ; vie Adimosia (adimensa + amosia)"
   },
   {
     "id": 1292,
-    "mot": "Assurer",
+    "mot": "assurer",
     "traduction": "· Adimar (atrojipar)"
   },
   {
     "id": 1293,
-    "mot": "Astérisque Asterisco",
-    "traduction": ""
+    "mot": "astérisque",
+    "traduction": " Asterisco"
   },
   {
     "id": 1294,
-    "mot": "Asthmatique Asmático",
-    "traduction": ""
+    "mot": "asthmatique",
+    "traduction": "Asmático"
   },
   {
     "id": 1295,
-    "mot": "Asthme Asma",
-    "traduction": ""
+    "mot": "asthme",
+    "traduction": "Asma"
   },
   {
     "id": 1296,
-    "mot": "Asticot Cermo (čermo)",
-    "traduction": ""
+    "mot": "asticot",
+    "traduction": "chermo (čermo)"
   },
   {
     "id": 1297,
-    "mot": "Astiquer Polisare (polerisarel)",
-    "traduction": ""
+    "mot": "astiquer",
+    "traduction": "Polisar (polerisarel)"
   },
   {
     "id": 1298,
-    "mot": "Astral",
-    "traduction": "· Cediliano"
+    "mot": "astral",
+    "traduction": "chediliano"
   },
   {
     "id": 1299,
-    "mot": "Astre",
-    "traduction": "· chedia (cherdilli)"
+    "mot": "astre",
+    "traduction": "chedilla (cherdilli)"
   },
   {
     "id": 1300,
-    "mot": "Astreignant Silavante",
-    "traduction": ""
+    "mot": "astreignant",
+    "traduction": " Silavante"
   },
   {
     "id": 1301,
-    "mot": "Astreindre Silavere (siilavela)",
-    "traduction": ""
+    "mot": "astreindre",
+    "traduction": "silavar (siilavela)"
   },
   {
     "id": 1302,
-    "mot": "Astrologie",
-    "traduction": "· ĉedisandrîa"
+    "mot": "astrologie",
+    "traduction": "chedisandrîa"
   },
   {
     "id": 1303,
-    "mot": "Astrologue",
-    "traduction": "· ĉedisandro"
+    "mot": "astrologue",
+    "traduction": "chedisandro"
   },
   {
     "id": 1304,
-    "mot": "Astronaute ĉedinavo",
-    "traduction": ""
+    "mot": "astronaute",
+    "traduction": "chedinavo"
   },
   {
     "id": 1305,
-    "mot": "Astronome ĉedinamo",
-    "traduction": ""
+    "mot": "astronome",
+    "traduction": "chedinamo"
   },
   {
     "id": 1306,
-    "mot": "Astronomie ĉedinamía",
-    "traduction": ""
+    "mot": "astronomie",
+    "traduction": "chedinamía"
   },
   {
     "id": 1307,
-    "mot": "Astronomique chedinomesco ; (bcp) Almasino (hatalmašno)",
-    "traduction": ""
+    "mot": "astronomique",
+    "traduction": " chedinomesco ; (bcp) Almasino (hatalmašno)"
   },
   {
     "id": 1308,
-    "mot": "Astuce",
+    "mot": "astuce",
     "traduction": "· Carnamo (Xaranomos)"
   },
   {
     "id": 1309,
-    "mot": "Astucieux",
+    "mot": "astucieux",
     "traduction": "· Carnamoso"
   },
   {
     "id": 1310,
-    "mot": "Atelier Canaverio (kakaveria)",
-    "traduction": ""
+    "mot": "atelier",
+    "traduction": "Canaverio (kakaveria)"
   },
   {
     "id": 1311,
-    "mot": "Athée Ateo, adevo (A + devo, dieu)",
-    "traduction": ""
+    "mot": "athée",
+    "traduction": "adevo (A + devo, dieu)"
   },
   {
     "id": 1312,
-    "mot": "Athénée Atenea",
-    "traduction": ""
+    "mot": "athénée",
+    "traduction": "Atenea"
   },
   {
     "id": 1313,
-    "mot": "Athènes Atena",
-    "traduction": ""
+    "mot": "Athènes",
+    "traduction": "Atena"
   },
   {
     "id": 1314,
-    "mot": "Athlète Guilate (khilāṛī)",
-    "traduction": ""
+    "mot": "athlète",
+    "traduction": " Guilate (khilāṛī)"
   },
   {
     "id": 1315,
-    "mot": "Athlétique Guilatino",
-    "traduction": ""
+    "mot": "athlétique",
+    "traduction": "Guilatino"
   },
   {
     "id": 1316,
-    "mot": "Athlétisme Guilatazi",
-    "traduction": ""
+    "mot": "athlétisme",
+    "traduction": "Guilatazi"
   },
   {
     "id": 1317,
-    "mot": "Atlantique Atlántico",
-    "traduction": ""
+    "mot": "Atlantique",
+    "traduction": "Atlántico"
   },
   {
     "id": 1318,
-    "mot": "Atlas",
-    "traduction": "· Mansilia (māncitrāvlī)"
+    "mot": "atlas",
+    "traduction": "mansilia (māncitrāvlī)"
   },
   {
     "id": 1319,
-    "mot": "Atmosphère",
-    "traduction": "· Varanama (vatavaranam)"
+    "mot": "atmosphère",
+    "traduction": "varanama (vatavaranam)"
   },
   {
     "id": 1320,
-    "mot": "Atmosphérique Varanámico",
-    "traduction": ""
+    "mot": "atmosphérique",
+    "traduction": " Varanámico"
   },
   {
     "id": 1321,
-    "mot": "Atome Parmano (paramanu)",
-    "traduction": ""
+    "mot": "atome",
+    "traduction": "Parmano (paramanu)"
   },
   {
     "id": 1322,
-    "mot": "Atomique Parmánico",
-    "traduction": ""
+    "mot": "atomique",
+    "traduction": "Parmánico"
   },
   {
     "id": 1323,
-    "mot": "Atomiser Parmanare",
-    "traduction": ""
+    "mot": "atomiser",
+    "traduction": "Parmanar"
   },
   {
     "id": 1324,
-    "mot": "Atomiseur Parmanoro",
-    "traduction": ""
+    "mot": "atomiseur",
+    "traduction": "Parmanoro"
   },
   {
     "id": 1325,
-    "mot": "Atout Dábito (dobitko)",
-    "traduction": ""
+    "mot": "atout",
+    "traduction": "Dábito (dobitko)"
   },
   {
     "id": 1326,
-    "mot": "Atrium",
+    "mot": "atrium",
     "traduction": "· Pragamo (prago)"
   },
   {
     "id": 1327,
-    "mot": "Atroce Daravio (daravno)",
-    "traduction": ""
+    "mot": "atroce",
+    "traduction": "Daravio (daravno)"
   },
   {
     "id": 1328,
-    "mot": "Atrocité Daravafi",
-    "traduction": ""
+    "mot": "atrocité",
+    "traduction": "daravilla"
   },
   {
     "id": 1329,
-    "mot": "Atrophie",
+    "mot": "atrophie",
     "traduction": "· Apustia (apusti)"
   },
   {
     "id": 1330,
-    "mot": "Atrophier",
-    "traduction": "· Apustiare"
+    "mot": "atrophier",
+    "traduction": "apustiar"
   },
   {
     "id": 1331,
-    "mot": "Attabler Amesaliare",
-    "traduction": ""
+    "mot": "attabler",
+    "traduction": "amesaliar"
   },
   {
     "id": 1332,
-    "mot": "Attachant Apodante ; Dinovante",
-    "traduction": ""
+    "mot": "attachant",
+    "traduction": " Apodante ; Dinovante"
   },
   {
     "id": 1333,
-    "mot": "Attachement",
+    "mot": "attachement",
     "traduction": "· Apodamanto ; Dinovimo"
   },
   {
     "id": 1334,
-    "mot": "Attacher",
+    "mot": "attacher",
     "traduction": "· Apodar (putrar) ; (sentiment) Diñovare (diñovar)"
   },
   {
     "id": 1335,
-    "mot": "Attaquable Barostongo",
-    "traduction": ""
+    "mot": "attaquable",
+    "traduction": "Barostongo"
   },
   {
     "id": 1336,
-    "mot": "Attaquant Barostate",
-    "traduction": ""
+    "mot": "attaquant",
+    "traduction": "Barostate"
   },
   {
     "id": 1337,
-    "mot": "Attaque Barosta",
-    "traduction": "À l’attaque · A la barosta!"
+    "mot": "attaque",
+    "traduction": "Barosta : À l’attaque · A la barosta!"
   },
   {
     "id": 1338,
-    "mot": "Attaquer",
+    "mot": "attaquer",
     "traduction": "· Barostar (baraustar)"
   },
   {
     "id": 1339,
-    "mot": "Attarder Anampare",
-    "traduction": ""
+    "mot": "attarder",
+    "traduction": "Anampare"
   },
   {
     "id": 1340,
-    "mot": "Atteindre",
+    "mot": "atteindre",
     "traduction": "· Alcorare (alcoravisar)"
   },
   {
     "id": 1341,
-    "mot": "Atteinte",
+    "mot": "atteinte",
     "traduction": "· Alcuera"
   },
   {
     "id": 1342,
-    "mot": "Attelage Sipligagio ; Lipisago",
-    "traduction": ""
+    "mot": "attelage",
+    "traduction": " Sipligagio ; Lipisago"
   },
   {
     "id": 1343,
-    "mot": "Atteler Sipligare ; Lipisare (lipisarel, attacher)",
-    "traduction": ""
+    "mot": "atteler",
+    "traduction": " Sepligare ; Lipisare (lipisarel, attacher)"
   },
   {
     "id": 1344,
-    "mot": "Attelle Sipliga (cipliga)",
-    "traduction": ""
+    "mot": "attelle",
+    "traduction": "sepliga (cipliga)"
   },
   {
     "id": 1345,
-    "mot": "attendant (en) ... Mirinda mali (de l'ac. Mirinda, mientas, et aromali, tanto, calqué sur l'espagnol mientras tanto)",
-    "traduction": ""
+    "mot": "attendant",
+    "traduction": " (en) ... Mirinda mali (de l'ac. Mirinda, mientas, et aromali, tanto, calqué sur l'espagnol mientras tanto)"
   },
   {
     "id": 1346,
-    "mot": "Attendre",
+    "mot": "attendre",
     "traduction": "· Agramare (agrabar) ; (objectif) Sinisare (sinisar)"
   },
   {
     "id": 1347,
-    "mot": "Attendrir",
-    "traduction": "· Asolbare (cf. tendre)"
+    "mot": "attendrir",
+    "traduction": "· Asolbar (cf. tendre)"
   },
   {
     "id": 1348,
-    "mot": "Attendrissant Asolbante",
-    "traduction": ""
+    "mot": "attendrissant",
+    "traduction": "Asolbante"
   },
   {
     "id": 1349,
-    "mot": "Attentat Probinato",
-    "traduction": ""
+    "mot": "attentat",
+    "traduction": "Probinato"
   },
   {
     "id": 1350,
-    "mot": "Attentat",
-    "traduction": "suicide Probinato-suicidio"
+    "mot": "attentat-suicide",
+    "traduction": "probinato-suicidio"
   },
   {
     "id": 1351,
-    "mot": "Attente",
+    "mot": "attente",
     "traduction": "· Agramio"
   },
   {
     "id": 1352,
-    "mot": "Attenter Probinere (posprobinel)",
-    "traduction": ""
+    "mot": "attenter",
+    "traduction": " Probinar (posprobinel)"
   },
   {
     "id": 1353,
-    "mot": "Attentif Orlangivo",
-    "traduction": ""
+    "mot": "attentif",
+    "traduction": "Orlangivo"
   },
   {
     "id": 1354,
-    "mot": "Attention",
+    "mot": "attention",
     "traduction": "· (soin) Orlango (orlango) ; (impératif) Sama (sama)"
   },
   {
     "id": 1355,
-    "mot": "Attentionné Orlangado",
-    "traduction": ""
+    "mot": "attentionné",
+    "traduction": "Orlangado"
   },
   {
     "id": 1356,
-    "mot": "Attentivement Orlangivamante ; Samivamante",
-    "traduction": ""
+    "mot": "attentivement",
+    "traduction": " Orlangivamante ; Samivamante"
   },
   {
     "id": 1357,
-    "mot": "Atténuable",
-    "traduction": "· Atenuavio"
+    "mot": "atténuable",
+    "traduction": "atenuago"
   },
   {
     "id": 1358,
-    "mot": "Atténuation",
-    "traduction": "· Atenuansia"
+    "mot": "atténuation",
+    "traduction": "atenuipén"
   },
   {
     "id": 1359,
-    "mot": "Atténuer",
-    "traduction": "· Atenuare (attenuare)"
+    "mot": "atténuer",
+    "traduction": "atenuar (attenuare)"
   },
   {
     "id": 1360,
-    "mot": "Atterrir Ajoliare",
-    "traduction": ""
+    "mot": "atterrir",
+    "traduction": "ajoliar"
   },
   {
     "id": 1361,
-    "mot": "Atterrissage Ajoliago",
-    "traduction": ""
+    "mot": "atterrissage",
+    "traduction": "Ajoliago"
   },
   {
     "id": 1362,
-    "mot": "Attestation Ovatima",
-    "traduction": ""
+    "mot": "attestation",
+    "traduction": "Ovatima"
   },
   {
     "id": 1363,
-    "mot": "Attester Ovatar (obšvatkinel)",
-    "traduction": ""
+    "mot": "attester",
+    "traduction": "Ovatar (obšvatkinel)"
   },
   {
     "id": 1364,
-    "mot": "Atticisme aticazi",
-    "traduction": ""
+    "mot": "atticisme",
+    "traduction": "aticazi"
   },
   {
     "id": 1365,
-    "mot": "Atticiste atiquizto",
-    "traduction": ""
+    "mot": "atticiste",
+    "traduction": "atiquizto"
   },
   {
     "id": 1366,
@@ -7494,112 +7536,114 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1367,
-    "mot": "Attiquement atiquemeAttirail Coco (cocco)",
-    "traduction": ""
+    "mot": "attiquement",
+    "traduction": " atiquemeAttirail Coco (cocco)"
   },
   {
     "id": 1368,
-    "mot": "Attirance",
+    "mot": "attirance",
     "traduction": "· Asembansa"
   },
   {
     "id": 1369,
-    "mot": "Attirant",
+    "mot": "attirant",
     "traduction": "· Asembante"
   },
   {
     "id": 1370,
-    "mot": "Attirer",
-    "traduction": "· Asembare"
+    "mot": "attirer",
+    "traduction": "· Asembar"
   },
   {
     "id": 1371,
-    "mot": "Attiser Yaguerare (jagengeri, fioul)",
-    "traduction": ""
+    "mot": "attiser",
+    "traduction": "yaguerar (jagengeri, fioul)"
   },
   {
     "id": 1372,
-    "mot": "Attitré Avinado",
-    "traduction": ""
+    "mot": "attitré",
+    "traduction": "Avinado"
   },
   {
     "id": 1373,
-    "mot": "Attitude Anquelume (ankheripe)",
-    "traduction": ""
+    "mot": "attitude",
+    "traduction": " Anquelume (ankheripe)"
   },
   {
     "id": 1374,
-    "mot": "Attraction Asembin",
-    "traduction": ""
+    "mot": "attraction",
+    "traduction": "asembin"
   },
   {
     "id": 1375,
-    "mot": "Attrait Asembe",
-    "traduction": ""
+    "mot": "attrait",
+    "traduction": "asembe"
   },
   {
     "id": 1376,
-    "mot": "Attrape",
-    "traduction": "nigaud Atolipostevano"
+    "mot": "attrape-nigaud",
+"nature": "n.m.",
+"etymologie": "du sanskrit कपट <em>kapaṭa</em> , fraude",
+    "traduction": "campata"
   },
   {
     "id": 1377,
-    "mot": "Attraper",
+    "mot": "attraper",
     "traduction": "· Atolipar (atrojipar)"
   },
   {
     "id": 1378,
-    "mot": "Attrayant Asembivo",
-    "traduction": ""
+    "mot": "attrayant",
+    "traduction": "Asembivo"
   },
   {
     "id": 1379,
-    "mot": "Attribuer",
+    "mot": "attribuer",
     "traduction": "· Negradir (nagradizla, rom)"
   },
   {
     "id": 1380,
-    "mot": "Attribut",
+    "mot": "attribut",
     "traduction": "· Negrade"
   },
   {
     "id": 1381,
-    "mot": "Attribution",
+    "mot": "attribution",
     "traduction": "· Negradime"
   },
   {
     "id": 1382,
-    "mot": "Attrister Afañare",
-    "traduction": ""
+    "mot": "attrister",
+    "traduction": "Afañar"
   },
   {
     "id": 1383,
-    "mot": "Attroupement Abatipólima",
-    "traduction": ""
+    "mot": "attroupement",
+    "traduction": "Abatipólima"
   },
   {
     "id": 1384,
-    "mot": "Attrouper Abatipoliare",
-    "traduction": ""
+    "mot": "attrouper",
+    "traduction": " Abatipoliar"
   },
   {
     "id": 1385,
-    "mot": "Atypique acépico chaap hindi, type",
-    "traduction": ""
+    "mot": "atypique",
+    "traduction": " acépico chaap hindi, type"
   },
   {
     "id": 1386,
-    "mot": "Aubaine Cuopa (cüöpos)",
-    "traduction": ""
+    "mot": "aubaine",
+    "traduction": " Cuopa (cüöpos)"
   },
   {
     "id": 1387,
-    "mot": "Aube",
+    "mot": "aube",
     "traduction": "· Clárico (clarico) : A l’aube de · Al caliore de (callico)"
   },
   {
     "id": 1388,
-    "mot": "Auberge",
+    "mot": "auberge",
     "traduction": "· Tavona (talona) : Auberge de jeunesse · Tavona de"
   },
   {
@@ -7609,187 +7653,187 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1390,
-    "mot": "Aubergine Borona (borroñona)",
-    "traduction": ""
+    "mot": "aubergine",
+    "traduction": "Borona (borroñona)"
   },
   {
     "id": 1391,
-    "mot": "Aubergiste",
+    "mot": "aubergiste",
     "traduction": "· Tavonero"
   },
   {
     "id": 1392,
-    "mot": "Auburn Luliacio (lulio, rouge, et facio, brun)",
-    "traduction": ""
+    "mot": "auburn",
+    "traduction": "luliacho (lulio, rouge, et facho, brun)"
   },
   {
     "id": 1393,
-    "mot": "Aucun",
+    "mot": "aucun",
     "traduction": "· Neto (necaute)"
   },
   {
     "id": 1394,
-    "mot": "Aucunement",
+    "mot": "aucunement",
     "traduction": "· Netamante"
   },
   {
     "id": 1395,
-    "mot": "Audace",
+    "mot": "audace",
     "traduction": "· Tenari (ternerri)"
   },
   {
     "id": 1396,
-    "mot": "Audacieusement",
+    "mot": "audacieusement",
     "traduction": "· Tenarosame"
   },
   {
     "id": 1397,
-    "mot": "Audacieux",
+    "mot": "audacieux",
     "traduction": "· Tenaroso"
   },
   {
     "id": 1398,
-    "mot": "Au",
+    "mot": "au",
     "traduction": "delà Al medalo ; dessous Adalione (cf. dessous) ; dessus Adombre (cf. dessus)"
   },
   {
     "id": 1399,
-    "mot": "Audible asunogio",
-    "traduction": ""
+    "mot": "audible",
+    "traduction": " asunogio"
   },
   {
     "id": 1400,
-    "mot": "Audience Amejato (džamejati)",
-    "traduction": ""
+    "mot": "audience",
+    "traduction": "Amejato (džamejati)" 
   },
   {
     "id": 1401,
-    "mot": "Audimat Dicuno (dikhutno)",
-    "traduction": ""
+    "mot": "audimat",
+    "traduction": " Dicuno (dikhutno)"
   },
   {
     "id": 1402,
-    "mot": "Audionumérique",
+    "mot": "audionumérique",
     "traduction": "· Suarodigital (svara, audio)"
   },
   {
     "id": 1403,
-    "mot": "Audiovisuel",
+    "mot": "audiovisuel",
     "traduction": "· Suarodostal (dŕṣṭi, vision)"
   },
   {
     "id": 1404,
-    "mot": "Audit Asune",
-    "traduction": ""
+    "mot": "audit",
+    "traduction": "Asune"
   },
   {
     "id": 1405,
-    "mot": "Auditeur",
+    "mot": "auditeur",
     "traduction": "· Asunero (asunel, entendre)"
   },
   {
     "id": 1406,
-    "mot": "Audition",
+    "mot": "audition",
     "traduction": "· Asunelime"
   },
   {
     "id": 1407,
-    "mot": "Auditionner",
+    "mot": "auditionner",
     "traduction": "· Asunelar"
   },
   {
     "id": 1408,
-    "mot": "Auditoire Asunelario",
-    "traduction": ""
+    "mot": "auditoire",
+    "traduction": " Asunelario"
   },
   {
     "id": 1409,
-    "mot": "Auditorium Asunoramo",
-    "traduction": ""
+    "mot": "auditorium",
+    "traduction": "asunoramo"
   },
   {
     "id": 1410,
-    "mot": "Auge Corito (korito)",
-    "traduction": ""
+    "mot": "auge",
+    "traduction": " Corito (korito)"
   },
   {
     "id": 1411,
-    "mot": "Augmentation",
+    "mot": "augmentation",
     "traduction": "· (fig.) Sinime (potsinipe)"
   },
   {
     "id": 1412,
-    "mot": "Augmenter",
+    "mot": "augmenter",
     "traduction": "· Sinimar"
   },
   {
     "id": 1413,
-    "mot": "Augure Semino (sêmno)",
-    "traduction": ""
+    "mot": "augure",
+    "traduction": "semeno (sêmno)"
   },
   {
     "id": 1414,
-    "mot": "Augurer Seminar",
-    "traduction": ""
+    "mot": "augurer",
+    "traduction": "semenar"
   },
   {
     "id": 1415,
-    "mot": "Aujourd’hui",
+    "mot": "aujourd’hui",
     "traduction": "· Adive (cf. jour)"
   },
   {
     "id": 1416,
-    "mot": "Aumône",
+    "mot": "aumône",
     "traduction": "· Tello"
   },
   {
     "id": 1417,
-    "mot": "Aumônier",
-    "traduction": "· Tellore (tellore)"
+    "mot": "aumônier",
+    "traduction": "tellore (tellore)"
   },
   {
     "id": 1418,
-    "mot": "Auparavant Sigile (sigide)",
-    "traduction": ""
+    "mot": "auparavant",
+    "traduction": "sigile (sigide)"
   },
   {
     "id": 1419,
-    "mot": "Auprès Paso (pašo)",
-    "traduction": ""
+    "mot": "auprès",
+    "traduction": "paso (pašo)"
   },
   {
     "id": 1420,
-    "mot": "Auréole Dacuesta (doscuetaña)",
-    "traduction": ""
+    "mot": "auréole",
+    "traduction": "dacuesta (doscuetaña)"
   },
   {
     "id": 1421,
-    "mot": "Auréoler Dacuestare",
-    "traduction": ""
+    "mot": "auréoler",
+    "traduction": "dacuestar"
   },
   {
     "id": 1422,
-    "mot": "Auriculaire Auriculario, Canista (kaniṣṭhā)",
-    "traduction": ""
+    "mot": "auriculaire",
+    "traduction": "canista (kaniṣṭhā)"
   },
   {
     "id": 1423,
-    "mot": "Aurore Janiva (jahive)",
-    "traduction": ""
+    "mot": "aurore",
+    "traduction": "yaniva (jahive)"
   },
   {
     "id": 1424,
-    "mot": "Auscultation Auscultima , Pariavana (parisravana)",
-    "traduction": ""
+    "mot": "auscultation",
+    "traduction": "pariavana (parisravana)"
   },
   {
     "id": 1425,
-    "mot": "Ausculter Auscultare, Pariavare",
-    "traduction": ""
+    "mot": "ausculter",
+    "traduction": "pariavar"
   },
   {
     "id": 1426,
-    "mot": "Aussi",
+    "mot": "aussi",
     "traduction": "· Tramisto (tramisto) ; Nina (niina)"
   },
   {
@@ -7799,88 +7843,88 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1427,
-    "mot": "Aussitôt Valene (vale ka)",
-    "traduction": ""
+    "mot": "aussitôt",
+    "traduction": " Valene (vale ka)"
   },
   {
     "id": 1428,
-    "mot": "Austère",
+    "mot": "austère",
     "traduction": "· Maticio (miticho)"
   },
   {
     "id": 1429,
-    "mot": "Austérité",
+    "mot": "austérité",
     "traduction": "· Matisafi"
   },
   {
     "id": 1430,
-    "mot": "Austral Austral, Dasina (daksina)",
-    "traduction": ""
+    "mot": "Austral",
+    "traduction": "Dasina (daksina)"
   },
   {
     "id": 1431,
-    "mot": "Australie Australia",
-    "traduction": ""
+    "mot": "Australie",
+    "traduction": "Australia"
   },
   {
     "id": 1432,
-    "mot": "Australien Australiano",
-    "traduction": ""
+    "mot": "australien",
+    "traduction": "Australiano"
   },
   {
     "id": 1433,
-    "mot": "Autant Tan",
-    "traduction": "pour autant · por lo tan : comme, autant : tan sande"
+    "mot": "autant",
+    "traduction": "Tan pour autant · palotan : comme, autant : tansande"
   },
   {
     "id": 1434,
-    "mot": "Autarcie Autarsia, Ecandra (ektantra, autocratie)",
-    "traduction": ""
+    "mot": "autarcie",
+    "traduction": "Ecandra (ektantra, autocratie)"
   },
   {
     "id": 1435,
-    "mot": "Autel",
+    "mot": "autel",
     "traduction": "· Calorgo (chalorgar)"
   },
   {
     "id": 1436,
-    "mot": "Auteur pesquior (poreskero, ac)",
-    "traduction": ""
+    "mot": "auteur",
+    "traduction": "pesquior (poreskero, ac)"
   },
   {
     "id": 1437,
-    "mot": "authenticité taćafi",
-    "traduction": ""
+    "mot": "authenticité",
+    "traduction": "taćafi"
   },
   {
     "id": 1438,
-    "mot": "Authentique Tacio (tačo)",
-    "traduction": ""
+    "mot": "authentique",
+    "traduction": "Tacio (tačo)"
   },
   {
     "id": 1439,
-    "mot": "Autisme Autismo, Valinismo (svalinata)",
-    "traduction": ""
+    "mot": "autisme",
+    "traduction": "Valinismo (svalinata)"
   },
   {
     "id": 1440,
-    "mot": "Autiste Valinizte",
-    "traduction": "izto"
+    "mot": "autiste",
+    "traduction": "Valinizte, izto"
   },
   {
     "id": 1441,
-    "mot": "Auto Auto, Sua",
-    "traduction": ""
+    "mot": "auto",
+    "traduction": "sua"
   },
   {
     "id": 1442,
-    "mot": "Autobiographie Sŭabardia (cf. préfixe)",
-    "traduction": ""
+    "mot": "autobiographie",
+    "traduction": " Sŭabardia (cf. préfixe)"
   },
   {
     "id": 1443,
-    "mot": "Autobiographique Suabardino",
-    "traduction": "Un roman autobiographique · Un"
+    "mot": "autobiographique",
+    "traduction": " Suabardino Un roman autobiographique · Un"
   },
   {
     "id": 1444,
@@ -7889,163 +7933,165 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1445,
-    "mot": "Autobronzant Suabrunante, Suabrunante",
-    "traduction": ""
+    "mot": "autobronzant",
+    "traduction": " Suabrunante, Suabrunante"
   },
   {
     "id": 1446,
-    "mot": "Autobus Autobus, Suabus",
-    "traduction": ""
+    "mot": "autobus",
+"nature": "n.m.",
+    "traduction": "suabus"
   },
   {
     "id": 1447,
-    "mot": "Autocar Autocar, Suacar",
-    "traduction": ""
+    "mot": "autocar",
+"nature": "n.m.",
+    "traduction": "suacar"
   },
   {
     "id": 1448,
-    "mot": "Autochtone Adivario (adivasi, peuple autochone indien)",
-    "traduction": ""
+    "mot": "autochtone",
+    "traduction": "adivario (adivasi, peuple autochone indien)"
   },
   {
     "id": 1449,
-    "mot": "Autocollant Suacleante",
-    "traduction": ""
+    "mot": "autocollant",
+    "traduction": "suacleante"
   },
   {
     "id": 1450,
-    "mot": "Autocouchette Suabedelino",
-    "traduction": ""
+    "mot": "autocouchette",
+    "traduction": "suabedelino"
   },
   {
     "id": 1451,
-    "mot": "Autocritique Suacomasco",
-    "traduction": ""
+    "mot": "autocritique",
+    "traduction": "suacomasco"
   },
   {
     "id": 1452,
-    "mot": "Autocuiseur Suaperiero",
-    "traduction": ""
+    "mot": "autocuiseur",
+    "traduction": " suaperiero"
   },
   {
     "id": 1453,
-    "mot": "Autodéfense Suabrania",
-    "traduction": ""
+    "mot": "autodéfense",
+    "traduction": "suabrania"
   },
   {
     "id": 1454,
-    "mot": "Autodidacte Suadidato",
-    "traduction": ""
+    "mot": "autodidacte",
+    "traduction": "Suadidato"
   },
   {
     "id": 1455,
-    "mot": "Auto",
+    "mot": "auto",
     "traduction": "école Suavidala ; focus Suadiano (dhyān, concentration) ; stop Suatedo"
   },
   {
     "id": 1456,
-    "mot": "Autographe suapede, suapedo",
-    "traduction": ""
+    "mot": "autographe",
+    "traduction": " suapede, suapedo"
   },
   {
     "id": 1457,
-    "mot": "Automate",
+    "mot": "automate",
     "traduction": "· suagate"
   },
   {
     "id": 1458,
-    "mot": "Automatique",
+    "mot": "automatique",
     "traduction": "· suagatino"
   },
   {
     "id": 1459,
-    "mot": "Automatiquement",
+    "mot": "automatiquement",
     "traduction": "· Suagatinome"
   },
   {
     "id": 1460,
-    "mot": "Automatiser Suagatizar",
-    "traduction": ""
+    "mot": "automatiser",
+    "traduction": "Suagatizar"
   },
   {
     "id": 1461,
-    "mot": "Automatisme",
-    "traduction": "· Suagatazi"
+    "mot": "automatisme",
+    "traduction": "suagatazi"
   },
   {
     "id": 1462,
-    "mot": "Automnal temnal",
-    "traduction": ""
+    "mot": "automnal ",
+    "traduction": "temnal"
   },
   {
     "id": 1463,
-    "mot": "Automne tomeno (temna, rom.)",
-    "traduction": ""
+    "mot": "automne",
+    "traduction": " tomeno (temna, rom.)"
   },
   {
     "id": 1464,
-    "mot": "Automobile Suamacino",
-    "traduction": ""
+    "mot": "automobile",
+    "traduction": "suamachino"
   },
   {
     "id": 1465,
-    "mot": "Automobiliste Suamacinisto",
-    "traduction": ""
+    "mot": "automobiliste",
+    "traduction": "suamachinisto"
   },
   {
     "id": 1466,
-    "mot": "Autonettoyant Sualimpiante",
-    "traduction": ""
+    "mot": "autonettoyant",
+    "traduction": "sualimpiante"
   },
   {
     "id": 1467,
-    "mot": "Autonome Nayodiso (rom. najodvisno)",
-    "traduction": ""
+    "mot": "autonome",
+    "traduction": " Nayodiso (rom. najodvisno)"
   },
   {
     "id": 1468,
-    "mot": "Autonomie",
+    "mot": "autonomie",
     "traduction": "· Nayodisani"
   },
   {
     "id": 1469,
-    "mot": "Autopsie Autopsía, ĉamparia (śavparīkṣā)",
-    "traduction": ""
+    "mot": "autopsie",
+    "traduction": " Autopsía, ĉamparia (śavparīkṣā)"
   },
   {
     "id": 1470,
-    "mot": "Autoradio Autoradio, Amoradio",
-    "traduction": ""
+    "mot": "autoradio",
+    "traduction": " Autoradio, Amoradio"
   },
   {
     "id": 1471,
-    "mot": "Autorisation",
+    "mot": "autorisation",
     "traduction": "· Solansia"
   },
   {
     "id": 1472,
-    "mot": "Autoriser",
+    "mot": "autoriser",
     "traduction": "· Solar"
   },
   {
     "id": 1473,
-    "mot": "Autoritaire",
+    "mot": "autoritaire",
     "traduction": "· Seraño (aeraño)"
   },
   {
     "id": 1474,
-    "mot": "Autorité",
+    "mot": "autorité",
     "traduction": "· Solarefi (solar)"
   },
   {
     "id": 1475,
-    "mot": "Autoroute Suadrome (baro drom, grande route)",
-    "traduction": ""
+    "mot": "autoroute",
+    "traduction": "barome (contraction de baro drom, grande route)"
   },
   {
     "id": 1476,
-    "mot": "Autour Rete (retre)",
-    "traduction": "autour de · rete a : (oiseau) Cragulio (kragulji,"
+    "mot": "autour",
+    "traduction": " Rete (retre) autour de · rete a : (oiseau) Cragulio (kragulji,"
   },
   {
     "id": 1477,
@@ -8054,58 +8100,58 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1478,
-    "mot": "Autre",
+    "mot": "autre",
     "traduction": "· Avo (abero)"
   },
   {
     "id": 1479,
-    "mot": "Autrefois",
+    "mot": "autrefois",
     "traduction": "· Aganto (agunutno)"
   },
   {
     "id": 1480,
-    "mot": "Autrement",
+    "mot": "autrement",
     "traduction": "· Avamante"
   },
   {
     "id": 1481,
-    "mot": "Autriche Austria",
-    "traduction": ""
+    "mot": "Autriche",
+    "traduction": "Austria"
   },
   {
     "id": 1482,
-    "mot": "Autrichien Austriano",
-    "traduction": ""
+    "mot": "autrichien",
+    "traduction": "austriano"
   },
   {
     "id": 1483,
-    "mot": "Autruche Ruceno, na (ručuni)",
-    "traduction": ""
+    "mot": "autruche",
+    "traduction": " Ruceno, na (ručuni)"
   },
   {
     "id": 1484,
-    "mot": "Autrui Avero",
-    "traduction": ""
+    "mot": "autrui",
+    "traduction": "Avero"
   },
   {
     "id": 1485,
-    "mot": "Auvent Sofero (šofro)",
-    "traduction": ""
+    "mot": "auvent",
+    "traduction":  "Sofero (šofro)"
   },
   {
     "id": 1486,
-    "mot": "Auvergnat Avergnato",
-    "traduction": ""
+    "mot": "auvergnat",
+    "traduction": "avergnato"
   },
   {
     "id": 1487,
-    "mot": "Auvergne Avergna",
-    "traduction": ""
+    "mot": "Auvergne",
+    "traduction": "Avergna"
   },
   {
     "id": 1488,
-    "mot": "Auxiliaire Ausiliaro, Sahamo (sahaya, auxiliaire)",
-    "traduction": "Les auxiliaires"
+    "mot": "auxiliaire",
+    "traduction": " shamo (sahaya, auxiliaire)Les auxiliaires"
   },
   {
     "id": 1489,
@@ -8114,57 +8160,57 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1490,
-    "mot": "Avachi Langiado (langi, être mou)",
-    "traduction": ""
+    "mot": "avachi",
+    "traduction": " Langiado (langi, être mou)"
   },
   {
     "id": 1491,
-    "mot": "Avachir Langiare",
-    "traduction": ""
+    "mot": "avachir",
+    "traduction": "Langiar"
   },
   {
     "id": 1492,
-    "mot": "Avachissement Langiamanto",
-    "traduction": ""
+    "mot": "avachissement",
+    "traduction": " Langiamanto"
   },
   {
     "id": 1493,
-    "mot": "Aval Piepa (piepeeriben)",
-    "traduction": ""
+    "mot": "aval",
+    "traduction": "piepa (piepeeriben)"
   },
   {
     "id": 1494,
-    "mot": "Avalanche Hivona (cf. neige) ; Folina (tel fojinel, couler)",
-    "traduction": ""
+    "mot": "avalanche",
+    "traduction": " Hivona (cf. neige) ; Folina (tel fojinel, couler)"
   },
   {
     "id": 1495,
-    "mot": "Avaler Gutinare (gutnini)",
-    "traduction": ""
+    "mot": "avaler",
+    "traduction": " Gutinar (gutnini)"
   },
   {
     "id": 1496,
-    "mot": "Avance",
+    "mot": "avance",
     "traduction": "· Antedicada (ante + dicada), Barma"
   },
   {
     "id": 1497,
-    "mot": "Avancée",
+    "mot": "avancée",
     "traduction": "· Barmela"
   },
   {
     "id": 1498,
-    "mot": "Avancement",
+    "mot": "avancement",
     "traduction": "· Barmane"
   },
   {
     "id": 1499,
-    "mot": "Avancer",
+    "mot": "avancer",
     "traduction": "· Barmar (barevar)"
   },
   {
     "id": 1500,
-    "mot": "Avant",
+    "mot": "avant",
     "traduction": "· Angue (angle) : Avant toute chose, premièrement · Većinome ; bras Angomusio ; centre Angelomasco ; dernier Angelésino ; garde Angelamátea ; goût Angepesquito ; hier Angelacibe ; première Angeloproma ; projet Angelo-yogana ; propos · Palnarone ; toit · Queron (kheron) ; veille Angelo-covio"
   },
   {
@@ -8174,77 +8220,77 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1502,
-    "mot": "Avantage",
+    "mot": "avantage",
     "traduction": "· Fura (furune)"
   },
   {
     "id": 1503,
-    "mot": "Avantager",
+    "mot": "avantager",
     "traduction": "· Furar"
   },
   {
     "id": 1504,
-    "mot": "Avantageux",
+    "mot": "avantageux",
     "traduction": "· Furoso"
   },
   {
     "id": 1505,
-    "mot": "Avare",
+    "mot": "avare",
     "traduction": "· Ganso"
   },
   {
     "id": 1506,
-    "mot": "Avarice",
+    "mot": "avarice",
     "traduction": "· Gansime (gancibe)"
   },
   {
     "id": 1507,
-    "mot": "Avarie Nafelina (nafejipe)",
-    "traduction": ""
+    "mot": "avarie",
+    "traduction": " Nafelina (nafejipe)"
   },
   {
     "id": 1508,
-    "mot": "Avarié Carnado (kernardo) ; Nafelinado",
-    "traduction": ""
+    "mot": "avarié",
+    "traduction": "carnado (kernardo) ; Nafelinado"
   },
   {
     "id": 1509,
-    "mot": "Avarier Nafelinare",
-    "traduction": ""
+    "mot": "avarier",
+    "traduction": "nafelinar"
   },
   {
     "id": 1510,
-    "mot": "Avatar Ávatar",
-    "traduction": ""
+    "mot": "avatar",
+    "traduction": " Ávatar"
   },
   {
     "id": 1511,
-    "mot": "Avec Con, Sandi (satha)",
-    "traduction": ""
+    "mot": "avec",
+    "traduction": "Con, Sandi (satha)"
   },
   {
     "id": 1512,
-    "mot": "Avenir",
+    "mot": "avenir",
     "traduction": "· Balia (baji)"
   },
   {
     "id": 1513,
-    "mot": "Aventure",
+    "mot": "aventure",
     "traduction": "· Bianura (bisnajura)"
   },
   {
     "id": 1514,
-    "mot": "Aventureux",
+    "mot": "aventureux",
     "traduction": "· Bianuroso"
   },
   {
     "id": 1515,
-    "mot": "Aventurier",
+    "mot": "aventurier",
     "traduction": "· Bianurero"
   },
   {
     "id": 1516,
-    "mot": "Avenue",
+    "mot": "avenue",
     "traduction": "· Siña (sisni) : L’Avenue des Champs-Elysées · La Siña de le"
   },
   {
@@ -8254,53 +8300,53 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1518,
-    "mot": "Avérer Rodare (xortol)",
-    "traduction": ""
+    "mot": "avérer",
+    "traduction":  "rodar (xortol)"
   },
   {
     "id": 1519,
-    "mot": "Averse",
+    "mot": "averse",
     "traduction": "· Panibario (pañibari)"
   },
   {
     "id": 1520,
-    "mot": "Aversion",
+    "mot": "aversion",
     "traduction": "· Verocia (berrochi)"
   },
   {
     "id": 1521,
-    "mot": "Avertir",
+    "mot": "avertir",
     "traduction": "· Apusar (apusar)"
   },
   {
     "id": 1522,
-    "mot": "Avertissement",
+    "mot": "avertissement",
     "traduction": "· Apusimatin"
   },
   {
     "id": 1523,
-    "mot": "Aveu Sanaveo (cf. avouer)",
-    "traduction": ""
+    "mot": "aveu",
+    "traduction": "Sanaveo (cf. avouer)"
   },
   {
     "id": 1524,
-    "mot": "Aveugle",
+    "mot": "aveugle",
     "traduction": "· Anublado (anublado)"
   },
   {
     "id": 1525,
-    "mot": "Aveuglément Anubladamanti",
-    "traduction": ""
+    "mot": "aveuglément ",
+    "traduction": "anubladame"
   },
   {
     "id": 1526,
-    "mot": "Aveugler Anublar",
-    "traduction": ""
+    "mot": "aveugler",
+    "traduction": "anublar"
   },
   {
     "id": 1527,
-    "mot": "Aveuglette Anublina",
-    "traduction": ""
+    "mot": "aveuglette",
+    "traduction": "Anublina"
   },
   {
     "id": 1528,
@@ -8309,68 +8355,68 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1529,
-    "mot": "Aviation Espirima",
-    "traduction": ""
+    "mot": "aviation",
+    "traduction": "espirima"
   },
   {
     "id": 1530,
-    "mot": "Avide Aveto (vneto)",
-    "traduction": ""
+    "mot": "avide",
+    "traduction": "Aveto (vneto)"
   },
   {
     "id": 1531,
-    "mot": "Avidité Avetafi",
-    "traduction": ""
+    "mot": "avidité",
+    "traduction": "Avetia"
   },
   {
     "id": 1532,
-    "mot": "Avilir Marinere (magarinel)",
-    "traduction": ""
+    "mot": "avilir",
+    "traduction": "marinar (magarinel)"
   },
   {
     "id": 1533,
-    "mot": "Avilissement Marinerin",
-    "traduction": ""
+    "mot": "avilissement",
+    "traduction": " Marinipén"
   },
   {
     "id": 1534,
-    "mot": "Avion",
-    "traduction": "· Espiro (bispiri)"
+    "mot": "avion",
+    "traduction": "espiro (bispiri)"
   },
   {
     "id": 1535,
-    "mot": "Aviron Ciuno (čuno)",
-    "traduction": ""
+    "mot": "aviron",
+    "traduction": "cuno (čuno)"
   },
   {
     "id": 1536,
-    "mot": "Avis",
-    "traduction": "· Asueme (arsope)"
+    "mot": "avis",
+    "traduction": "asueme (arsope)"
   },
   {
     "id": 1537,
-    "mot": "Avisé Asuemado",
-    "traduction": ""
+    "mot": "avisé",
+    "traduction": "Asuemado"
   },
   {
     "id": 1538,
-    "mot": "Aviser",
-    "traduction": "· Asuemare"
+    "mot": "aviser",
+    "traduction": "asuemar"
   },
   {
     "id": 1539,
-    "mot": "avitailler amosinar (cf. vivre)",
-    "traduction": ""
+    "mot": "avitailler",
+    "traduction": " amosinar (cf. vivre)"
   },
   {
     "id": 1540,
-    "mot": "Aviver Avivare (cf. vivre)",
-    "traduction": ""
+    "mot": "aviver",
+    "traduction": " avivar (cf. vivre)"
   },
   {
     "id": 1541,
-    "mot": "Avocat (métier) Figaroso (fišgaroši) ; (fruit) Mancapo (makkhanphal,",
-    "traduction": ""
+    "mot": "avocat",
+    "traduction": " (métier) Figaroso (fišgaroši) ; (fruit) Mancapo (makkhanphal,"
   },
   {
     "id": 1542,
@@ -8379,88 +8425,88 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1543,
-    "mot": "avocatier Mancaplino",
-    "traduction": ""
+    "mot": "avocatier",
+    "traduction": "Mancaplino"
   },
   {
     "id": 1544,
-    "mot": "Avoine",
+    "mot": "avoine",
     "traduction": "· Adoria (lardori)"
   },
   {
     "id": 1545,
-    "mot": "Avoir",
+    "mot": "avoir",
     "traduction": "· (aux.) Ainar (aisnar) ; (posséder) Telar (terelar) : Avoir lieu"
   },
   {
     "id": 1546,
-    "mot": "Avoirs",
-    "traduction": "· Teleas"
+    "mot": "avoirs",
+    "traduction": "teleas"
   },
   {
     "id": 1547,
-    "mot": "Avoisinant Aconticante",
-    "traduction": ""
+    "mot": "avoisinant",
+    "traduction": "aconticanto"
   },
   {
     "id": 1548,
-    "mot": "Avoisiner",
-    "traduction": "· Aconticar"
+    "mot": "avoisiner",
+    "traduction": "aconticar"
   },
   {
     "id": 1549,
-    "mot": "Avortement Taderio",
-    "traduction": ""
+    "mot": "avortement",
+    "traduction": "Taderio"
   },
   {
     "id": 1550,
-    "mot": "Avorter Tadere (tel tradel)",
-    "traduction": ""
+    "mot": "avorter",
+    "traduction": "tadear (tel tradel)"
   },
   {
     "id": 1551,
-    "mot": "Avorton Taderôn",
-    "traduction": ""
+    "mot": "avorton",
+    "traduction": "Taderôn"
   },
   {
     "id": 1552,
-    "mot": "Avouable Sanavongo",
-    "traduction": ""
+    "mot": "avouable",
+    "traduction": "sanaveago"
   },
   {
     "id": 1553,
-    "mot": "Avouer Sanavere (sannavela)",
-    "traduction": ""
+    "mot": "avouer",
+    "traduction": "sanavear (sannavela)"
   },
   {
     "id": 1554,
-    "mot": "Avril",
+    "mot": "avril",
     "traduction": "· Almande (alpandi)"
   },
   {
     "id": 1555,
-    "mot": "Axe Osa (oša)",
-    "traduction": ""
+    "mot": "axe",
+    "traduction": "Osa (oša)"
   },
   {
     "id": 1556,
-    "mot": "Axer Osar",
-    "traduction": ""
+    "mot": "axer",
+    "traduction": "Osar"
   },
   {
     "id": 1557,
-    "mot": "Azimut Azimut",
-    "traduction": ""
+    "mot": "azimut",
+    "traduction": "azimut"
   },
   {
     "id": 1558,
-    "mot": "Azote Azote, Bollo (bhuyati)",
-    "traduction": ""
+    "mot": "azote",
+    "traduction": "Bollo (bhuyati)"
   },
   {
     "id": 1559,
-    "mot": "Azur Avino (ravnos, ciel) La Côte d’Azur",
-    "traduction": "· La Bala d’Avino 013552"
+    "mot": "azur",
+    "traduction": " Avino (ravnos, ciel) La Côte d’Azur · La Bala d’Avino 013552"
   },
   {
     "id": 1560,
@@ -8474,7 +8520,7 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1562,
-    "mot": "BABA",
+    "mot": "baba",
     "traduction": "· Mirido, mirida : Elle en est complètement baba · Ne é"
   },
   {
@@ -8484,12 +8530,12 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1564,
-    "mot": "BABILLER",
+    "mot": "babiller",
     "traduction": "· Gingar (gingiimos, babil)"
   },
   {
     "id": 1565,
-    "mot": "BABINE",
+    "mot": "babine",
     "traduction": "· Vos (voš) : C’est à s’en lécher les babines · E pa"
   },
   {
@@ -8499,7 +8545,7 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1567,
-    "mot": "BABIOLE",
+    "mot": "babiole",
     "traduction": "· Deluca (dželuca) : Laisse tes babioles dans ta"
   },
   {
@@ -8509,7 +8555,7 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1569,
-    "mot": "1. Bâbord",
+    "mot": "bâbord",
     "traduction": "· Bayamo (bayam, gauche) : Terre à bâbord !"
   },
   {
@@ -8519,112 +8565,114 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1571,
-    "mot": "2. Babouche",
+    "mot": "babouche",
     "traduction": "· Babuca (babucha)"
   },
   {
     "id": 1572,
-    "mot": "3. Babouchka",
+    "mot": "babouchka",
     "traduction": "· Babuĉca (babouchka)"
   },
   {
     "id": 1573,
-    "mot": "4. Babouin",
+    "mot": "babouin",
     "traduction": "· Babuino (babuino)"
   },
   {
     "id": 1574,
-    "mot": "5. Bac",
+    "mot": "bac",
     "traduction": "· Binga (binga)"
   },
   {
     "id": 1575,
-    "mot": "6. Baccalauréat",
+    "mot": "baccalauréat",
     "traduction": "· Banicio (banitche) :"
   },
   {
     "id": 1576,
-    "mot": "7. Baccara",
+    "mot": "baccara",
     "traduction": "· Bácara (baccara)"
   },
   {
     "id": 1577,
-    "mot": "8. Baccarat",
+    "mot": "baccarat",
     "traduction": "· Bacara (baccarat)"
   },
   {
     "id": 1578,
-    "mot": "9. Bacchanale",
+    "mot": "bacchanale",
     "traduction": "· Bacanal"
   },
   {
     "id": 1579,
-    "mot": "10. Bacchante",
+    "mot": "bacchante",
     "traduction": "· Bacante"
   },
   {
     "id": 1580,
-    "mot": "11. Bacchus",
+    "mot": "Bacchus",
     "traduction": "· Baco"
   },
   {
     "id": 1581,
-    "mot": "12. Bâche",
+    "mot": "bâche",
     "traduction": "· Seradi (cerada)"
   },
   {
     "id": 1582,
-    "mot": "13. Bachelier",
+    "mot": "bachelier",
     "traduction": "· Banicero"
   },
   {
     "id": 1583,
-    "mot": "14. Bachoter",
+    "mot": "bachoter",
     "traduction": "· Gulinire (gulini)"
   },
   {
     "id": 1584,
-    "mot": "15. Bacile",
+    "mot": "bacile",
     "traduction": "· Basilo (bacilo)"
   },
   {
     "id": 1585,
-    "mot": "16. Bâcle",
+    "mot": "bâcle",
     "traduction": "· Ambla (amblal)"
   },
   {
     "id": 1586,
-    "mot": "17. Bâcler",
+    "mot": "bâcler",
     "traduction": "· Osinar (odčhinel)"
   },
   {
     "id": 1587,
-    "mot": "18. Bacon",
+    "mot": "bacon",
     "traduction": "· Lanina (slanina)"
   },
   {
     "id": 1588,
-    "mot": "19. Bactérie",
-    "traduction": "· Givana (jeevaanu)"
+    "mot": "bactérie",
+"nature": "n.f.",
+"etymologie": "de l'hindi जीवाणु <em>jīvāṇu</em>, bactérie",
+    "traduction": "guivana"
   },
   {
     "id": 1589,
-    "mot": "20. Badaboum",
+    "mot": "badaboum",
     "traduction": "· Catacá"
   },
   {
     "id": 1590,
-    "mot": "21. Badamier",
+    "mot": "badamier",
     "traduction": "· Badamino (badam)"
   },
   {
     "id": 1591,
-    "mot": "22. Badaud",
+    "mot": "badaud",
     "traduction": "· Otalo (zotvalo)"
   },
   {
     "id": 1592,
-    "mot": "23. Baderne",
+    "mot": "baderne",
     "traduction": "· (tresse) Baderna (baderna) ; (hum.) Husco"
   },
   {
@@ -8634,22 +8682,22 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1594,
-    "mot": "24. Badge",
+    "mot": "badge",
     "traduction": "· Zaca (značka)"
   },
   {
     "id": 1595,
-    "mot": "25. Badigeonner",
+    "mot": "badigeonner",
     "traduction": "· Amegiar (mêžil)"
   },
   {
     "id": 1596,
-    "mot": "26. Badine",
+    "mot": "badine",
     "traduction": "· Sarda (zarda)"
   },
   {
     "id": 1597,
-    "mot": "27. Badiner",
+    "mot": "badiner",
     "traduction": "· Dielire (chelol) : On ne badine pas avec"
   },
   {
@@ -8659,74 +8707,74 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1599,
-    "mot": "28. Bael Bilvino (bilva, sanskrit)",
-    "traduction": ""
+    "mot": "bael",
+    "traduction": " Bilvino (bilva, sanskrit)"
   },
   {
     "id": 1600,
-    "mot": "29. Baffe",
+    "mot": "baffe",
     "traduction": "· Dabo (dab)"
   },
   {
     "id": 1601,
-    "mot": "30. Baffle",
+    "mot": "baffle",
     "traduction": "· Baflo (baffle)"
   },
   {
     "id": 1602,
-    "mot": "31. Bafouer",
+    "mot": "bafouer",
     "traduction": "· Belinire (velinil)"
   },
   {
     "id": 1603,
-    "mot": "32. Bafouiller",
+    "mot": "bafouiller",
     "traduction": "· Bolgire (bulguil)"
   },
   {
     "id": 1604,
-    "mot": "33. Bâfrer",
+    "mot": "bâfrer",
     "traduction": "· Femire (teminel)"
   },
   {
     "id": 1605,
-    "mot": "34. Bagage",
+    "mot": "bagage",
     "traduction": "· Cuferio (cuferi)"
   },
   {
     "id": 1606,
-    "mot": "35. Bagarre",
+    "mot": "bagarre",
     "traduction": "· Pelifona (pelivoniya)"
   },
   {
     "id": 1607,
-    "mot": "36. Bagarrer",
+    "mot": "bagarrer",
     "traduction": "· Pelifonare"
   },
   {
     "id": 1608,
-    "mot": "37. Bagasse",
+    "mot": "bagasse",
     "traduction": "· Bagaso (bagazo) ; Coí (kho’i)"
   },
   {
     "id": 1609,
-    "mot": "38. Bagatelle",
+    "mot": "bagatelle",
     "traduction": "· Serla (čerčelo)"
   },
   {
     "id": 1610,
-    "mot": "39. Bagne",
+    "mot": "bagne",
     "traduction": "· Repipoce (repipoche, ac)"
   },
   {
     "id": 1611,
-    "mot": "40. Bagnole",
+    "mot": "bagnole",
     "traduction": "· Valina (razvalina)"
   },
   {
     "id": 1612,
-    "mot": "BAGOUT, nf. ROMANI",
-    "etymologie": "DUMAKERO. Dumaro : Avoir du bagout",
-    "traduction": ""
+    "mot": "bagout",
+    "etymologie": "du romani <em> dumakero</em>",
+    "traduction": "dumaro"
   },
   {
     "id": 1613,
@@ -8735,13 +8783,15 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1614,
-    "mot": "BAGUAGE, nm. Alierago",
-    "traduction": ""
+    "mot": "baguage",
+    "traduction": "aliegayo"
   },
   {
     "id": 1615,
-    "mot": "BAGUE, nf. A.C.",
-    "traduction": "ALJERGA. Aliera"
+    "mot": "bague",
+"nature": "n.f.",
+"etymologie": "de l'ancien calo <em>aljerga</em>",
+    "traduction": "aliega"
   },
   {
     "id": 1616,
@@ -8750,22 +8800,25 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1617,
-    "mot": "BAGOUSE, nf. Cacobi",
-    "traduction": ""
+    "mot": "bagouse",
+"nature": "n.f.",
+    "traduction": "cacobi"
   },
   {
     "id": 1618,
-    "mot": "BAGUETTE, nf. ROM.",
-    "traduction": "RAN. Rama"
+    "mot": "baguette",
+"nature": "n.f.",
+"etymologie": "du romani <em>ran</em>",
+    "traduction": "rama"
   },
   {
     "id": 1619,
-    "mot": "41. Bah",
-    "traduction": "· Ba (ba)"
+    "mot": "bah",
+    "traduction": "ba (ba)"
   },
   {
     "id": 1620,
-    "mot": "42. Bahut",
+    "mot": "bahut",
     "traduction": "· (école) Vusco (vuškoala) ; (meuble) Descapo"
   },
   {
@@ -8775,32 +8828,32 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1622,
-    "mot": "43. Bai",
+    "mot": "bai",
     "traduction": "· Sargo (šargo)"
   },
   {
     "id": 1623,
-    "mot": "44. Baie",
+    "mot": "baie",
     "traduction": "· Alvo (zalivo)"
   },
   {
     "id": 1624,
-    "mot": "45. Baigner",
+    "mot": "baigner",
     "traduction": "· Barmar"
   },
   {
     "id": 1625,
-    "mot": "46. Baigneur",
+    "mot": "baigneur",
     "traduction": "· Barmero"
   },
   {
     "id": 1626,
-    "mot": "47. Baignoire",
+    "mot": "baignoire",
     "traduction": "· Barmorio – salle de bain : barmelea"
   },
   {
     "id": 1627,
-    "mot": "48. Bail",
+    "mot": "bail",
     "traduction": "· (contrat) Destana (stanarija) ; (truc) Dol (dolga) :"
   },
   {
@@ -8810,27 +8863,27 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1629,
-    "mot": "49. Baille",
+    "mot": "baille",
     "traduction": "· Vadra (vadra)"
   },
   {
     "id": 1630,
-    "mot": "50. Bailler",
+    "mot": "bailler",
     "traduction": "· Xastiar (xaščel)"
   },
   {
     "id": 1631,
-    "mot": "51. Bailli",
+    "mot": "bailli",
     "traduction": "· Lori (lurriboskiero)"
   },
   {
     "id": 1632,
-    "mot": "52. Bâillonner",
+    "mot": "bâillonner",
     "traduction": "· Muscare (mucosarel)"
   },
   {
     "id": 1633,
-    "mot": "53. Bain",
+    "mot": "bain",
     "traduction": "· Barma (barmejia) : Maillot de bain · Copalco"
   },
   {
@@ -8840,7 +8893,7 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1635,
-    "mot": "54. Bain",
+    "mot": "bain marie",
     "traduction": "marie · Barmaría (baño María) : Laissez cuire six"
   },
   {
@@ -8855,27 +8908,27 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1638,
-    "mot": "55. Baïonnette",
+    "mot": "baïonnette",
     "traduction": "· Baioneta (Bayonne), Sangina (sangina)"
   },
   {
     "id": 1639,
-    "mot": "56. Baise",
+    "mot": "baise",
     "traduction": "· Regia (reji)"
   },
   {
     "id": 1640,
-    "mot": "57. Baise",
+    "mot": "baise-main",
     "traduction": "main · Lindiolevío"
   },
   {
     "id": 1641,
-    "mot": "58. Baisement",
+    "mot": "baisement",
     "traduction": "· Lindiamanto"
   },
   {
     "id": 1642,
-    "mot": "59. Baiser",
+    "mot": "baiser",
     "traduction": "· (embrasser) Lindiare, ciolindare (chumendiar) ;"
   },
   {
@@ -8885,32 +8938,32 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1644,
-    "mot": "60. Baisoter",
+    "mot": "baisoter",
     "traduction": "· Lindielar"
   },
   {
     "id": 1645,
-    "mot": "61. Baisse",
+    "mot": "baisse",
     "traduction": "· Stelia"
   },
   {
     "id": 1646,
-    "mot": "62. Baisser",
+    "mot": "baisser",
     "traduction": "· (théâtre, économie) oStear (cf. abaisser)"
   },
   {
     "id": 1647,
-    "mot": "63. Baissier",
+    "mot": "baissier",
     "traduction": "· Stelero"
   },
   {
     "id": 1648,
-    "mot": "64. Bajoue",
+    "mot": "bajoue",
     "traduction": "· Falca (falka)"
   },
   {
     "id": 1649,
-    "mot": "65. Bakchich",
+    "mot": "bakchich",
     "traduction": "· (pot-de-vin) Mita (mita) ; (pourboire) Spico"
   },
   {
@@ -8920,67 +8973,67 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1651,
-    "mot": "66. Baklava",
+    "mot": "baklava",
     "traduction": "· Baclava (baklava)"
   },
   {
     "id": 1652,
-    "mot": "67. Bal",
+    "mot": "bal",
     "traduction": "· Baldo (baldo)"
   },
   {
     "id": 1653,
-    "mot": "68. Balade",
+    "mot": "balade",
     "traduction": "· Alina"
   },
   {
     "id": 1654,
-    "mot": "69. Balader",
+    "mot": "balader",
     "traduction": "· Alinare (šétálínel)"
   },
   {
     "id": 1655,
-    "mot": "70. Baladeur",
+    "mot": "baladeur",
     "traduction": "· Casco (cascos)"
   },
   {
     "id": 1656,
-    "mot": "71. Baladeuse",
+    "mot": "baladeuse",
     "traduction": "· Liguerera (cf. porter)"
   },
   {
     "id": 1657,
-    "mot": "72. Baladin",
+    "mot": "baladin",
     "traduction": "· Formano (cf. farce)"
   },
   {
     "id": 1658,
-    "mot": "73. Balafon",
+    "mot": "balafon",
     "traduction": "· Balafon (balafón)"
   },
   {
     "id": 1659,
-    "mot": "74. Balafre",
+    "mot": "balafre",
     "traduction": "· (m.) Sínimo (śinimos)"
   },
   {
     "id": 1660,
-    "mot": "75. Balafrer",
+    "mot": "balafrer",
     "traduction": "· Sinimare"
   },
   {
     "id": 1661,
-    "mot": "76. Balai",
+    "mot": "balai",
     "traduction": "· Ambal (julaballi)"
   },
   {
     "id": 1662,
-    "mot": "77. Balai",
+    "mot": "balai-brosse",
     "traduction": "brosse · Labala-siela"
   },
   {
     "id": 1663,
-    "mot": "78. Balan",
+    "mot": "balan",
     "traduction": "· Manco (manconi) : Etre dans deux balans ·"
   },
   {
@@ -8990,12 +9043,12 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1665,
-    "mot": "79. Balance",
+    "mot": "balance",
     "traduction": "· Quinta"
   },
   {
     "id": 1666,
-    "mot": "80. Balancelle",
+    "mot": "balancelle",
     "traduction": "· (jardin) Quintela ; (navig.) Balansela"
   },
   {
@@ -9005,127 +9058,127 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1668,
-    "mot": "81. Balancement",
+    "mot": "balancement",
     "traduction": "· Quintemanto"
   },
   {
     "id": 1669,
-    "mot": "82. Balancer",
+    "mot": "balancer",
     "traduction": "· Quintare (kintari)"
   },
   {
     "id": 1670,
-    "mot": "83. Balancier",
+    "mot": "balancier",
     "traduction": "· Quintero"
   },
   {
     "id": 1671,
-    "mot": "84. Balancine",
+    "mot": "balancine",
     "traduction": "· Quintina"
   },
   {
     "id": 1672,
-    "mot": "85. Balançoire",
+    "mot": "balançoire",
     "traduction": "· Quintoria"
   },
   {
     "id": 1673,
-    "mot": "86. Balane",
+    "mot": "balane",
     "traduction": "· Bálano (bálano), Sipimacio (sip ki machali)"
   },
   {
     "id": 1674,
-    "mot": "87. Balanite",
+    "mot": "balanite",
     "traduction": "· Balanide (balanitis), Sipimacía"
   },
   {
     "id": 1675,
-    "mot": "88. Balayage",
+    "mot": "balayage",
     "traduction": "· Ambaliago"
   },
   {
     "id": 1676,
-    "mot": "89. Balayer",
+    "mot": "balayer",
     "traduction": "· Ambaliar"
   },
   {
     "id": 1677,
-    "mot": "90. Balayette",
+    "mot": "balayette",
     "traduction": "· Ambalilla"
   },
   {
     "id": 1678,
-    "mot": "91. Balayeur",
+    "mot": "balayeur",
     "traduction": "· Ambalero"
   },
   {
     "id": 1679,
-    "mot": "92. Balayures",
+    "mot": "balayure",
     "traduction": "· Ambaluri"
   },
   {
     "id": 1680,
-    "mot": "93. Balbutiant",
-    "traduction": "· Limbusiante"
+    "mot": "balbutiant",
+    "traduction": "limbusianto"
   },
   {
     "id": 1681,
-    "mot": "94. Balbutiement",
-    "traduction": "· Limbusimanto"
+    "mot": "balbutiement",
+    "traduction": "limbusimanto"
   },
   {
     "id": 1682,
-    "mot": "95. Balbutier",
-    "traduction": "· Limbusire (limbucîl)"
+    "mot": "balbutier",
+    "traduction": "limbusiar (limbucîl)"
   },
   {
     "id": 1683,
-    "mot": "96. Balbuzard",
-    "traduction": "· Limbosarco"
+    "mot": "balbuzard",
+    "traduction": "limbosarco"
   },
   {
     "id": 1684,
-    "mot": "97. Balcon",
-    "traduction": "· Dicandio (dicandiskhero)"
+    "mot": "balcon",
+    "traduction": "dicandio (dicandiskhero)"
   },
   {
     "id": 1685,
-    "mot": "98. Balconnet",
+    "mot": "balconnet",
     "traduction": "· Liebino (cf. soutien-gorge)"
   },
   {
     "id": 1686,
-    "mot": "99. Baldaquin",
+    "mot": "baldaquin",
     "traduction": "· Baldaquino (baldaquino)"
   },
   {
     "id": 1687,
-    "mot": "100. Baleine",
+    "mot": "baleine",
     "traduction": "· Vala (val)"
   },
   {
     "id": 1688,
-    "mot": "101. Baleineau",
+    "mot": "baleineau",
     "traduction": "· Valillo"
   },
   {
     "id": 1689,
-    "mot": "102. Baleiné",
+    "mot": "baleiné",
     "traduction": "· Envalado"
   },
   {
     "id": 1690,
-    "mot": "103. Baleinier",
+    "mot": "baleinier",
     "traduction": "· Valero"
   },
   {
     "id": 1691,
-    "mot": "104. Baleinoptère",
+    "mot": "baleinoptère",
     "traduction": "· Valóptero"
   },
   {
     "id": 1692,
-    "mot": "105. Balèvre",
+    "mot": "balèvre",
     "traduction": "· (art) Televusta (telêduno vušt) ; (phys.)"
   },
   {
@@ -9135,27 +9188,27 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 1694,
-    "mot": "106. Balisage",
-    "traduction": "· Balisago"
+    "mot": "balisage",
+    "traduction": "siacago"
   },
   {
     "id": 1695,
-    "mot": "107. Balise",
-    "traduction": "· Balisa, Siaco"
+    "mot": "balise",
+    "traduction": "siaco"
   },
   {
     "id": 1696,
-    "mot": "108. Baliser",
-    "traduction": "· Balisar (balizar), Siacare (cihnaka, marqueur)"
+    "mot": "baliser",
+    "traduction": "siacar (cihnaka, marqueur)"
   },
   {
     "id": 1697,
-    "mot": "109. Baliseur",
-    "traduction": "· Balisero, Siaquero"
+    "mot": "baliseur",
+    "traduction": "siaquero"
   },
   {
     "id": 1698,
-    "mot": "110. Balisier",
+    "mot": "balisier",
     "traduction": "· Quepôn (cf. canne)"
   },
   {
@@ -10722,6 +10775,13 @@ exemple_fr: "Je suis à Paris.",
     "id": 2011,
     "mot": "394. Bas",
     "traduction": "rouge · Cono-lulio"
+  },
+  {
+    "id": 1960001,
+    "mot": "basilecte",
+    "nature": "n.m.",
+    "etymologie": "de l'hindi निम्न <em>nimna</em>, bas, et भाषा <em>bhāṣā</em>, langage",
+    "traduction": "nimbaso"
   },
   {
     "id": 2012,
@@ -13156,8 +13216,8 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 2498,
-    "mot": "a nettoyé la maison ? C’est bibi ! Quen ha alimpiado la",
-    "traduction": ""
+    "mot": "bibi",
+    "traduction": "manino"
   },
   {
     "id": 2499,
@@ -55437,7 +55497,7 @@ exemple_fr: "Je suis à Paris.",
   {
     "id": 10934,
     "mot": "LÉCHER",
-    "traduction": "· liginar (lidžinel)"
+    "traduction": "lindiar (lidžinel)"
   },
   {
     "id": 10935,
@@ -57313,7 +57373,7 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 11309,
-    "mot": "A LA RODEANI DEL VEAME OBIADO",
+    "mot": "LA RODEANI DEL VEAME OBIADO",
     "traduction": ""
   },
   {
@@ -57333,7 +57393,7 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 11313,
-    "mot": "A LA RECHERCHE DU TEMPS PERDU",
+    "mot": "LA RECHERCHE DU TEMPS PERDU",
     "traduction": ""
   },
   {
@@ -60272,6 +60332,13 @@ exemple_fr: "Je suis à Paris.",
     "id": 11898,
     "mot": "mésaventure",
     "traduction": "· mabianura"
+  },
+  {
+    "id": 1960002,
+    "mot": "mésolecte",
+    "nature": "n.m.",
+    "etymologie": "de l'hindi मध्य <em>madiya</em>, moyen, et भाषा <em>bhāṣā</em>, langage",
+    "traduction": "madibaso"
   },
   {
     "id": 11899,
@@ -75382,7 +75449,7 @@ exemple_fr: "Je suis à Paris.",
     "id": 14503,
     "mot": "PREAMBULAIRE",
     "nature": "adj.",
-    "traduction": "paldeanto"
+    "traduction": "paldéico"
   },
   {
     "id": 14504,
@@ -75393,13 +75460,13 @@ exemple_fr: "Je suis à Paris.",
   {
     "id": 14505,
     "mot": "tahall, marcher",
-    "traduction": "· palideal"
+    "traduction": "· palidea"
   },
   {
     "id": 14506,
     "mot": "PREAMBULER",
     "nature": "vb.",
-    "traduction": "paldeanar"
+    "traduction": "paldear"
   },
   {
     "id": 14507,
@@ -75762,7 +75829,7 @@ exemple_fr: "Je suis à Paris.",
     "id": 14566,
     "mot": "PRÉFIXE",
     "nature": "nm.",
-    "traduction": "palenque"
+    "traduction": "palenque - able -ayo (योग्य, yogya, capable) abilité -yada (ता ta) ablement -yame (-es, ancien calo) abilisme - yadivo (वाद, vad) abiliste - yadico (कार, car, qui fait)"
   },
   {
     "id": 14567,
@@ -75780,7 +75847,7 @@ exemple_fr: "Je suis à Paris.",
     "id": 14569,
     "mot": "PRÉHISTORIQUE",
     "nature": "adj.",
-    "traduction": "palhetino"
+    "traduction": "palhético"
   },
   {
     "id": 14570,
@@ -93083,7 +93150,7 @@ exemple_fr: "Je suis à Paris.",
     "id": 17419,
     "mot": "standard",
     "nature": "n. adj.",
-    "traduction": "hi. शशशश manak · manage, manago"
+    "traduction": "hi. शशशश manak · manague, manago"
   },
   {
     "id": 17420,
@@ -99808,32 +99875,46 @@ exemple_fr: "Je suis à Paris.",
   },
   {
     "id": 18546,
-    "mot": "un, une, art.",
-    "traduction": "esp. un, una"
+    "mot": "un",
+"nature": "art.",
+"audio": "yo.mp3",
+"etymologie": "de l'ancien caló <em>yek, yeque</em>, un",
+    "traduction": "yo"
   },
   {
     "id": 18547,
     "mot": "unanime",
     "nature": "adj.",
-    "etymologie": "formé à partir de yek, un, et albaño, souffle",
-    "traduction": ""
+"audio": "yalbano.mp3",
+    "etymologie": "formé à partir de <em>yek</em>, un, et <em>albaño</em>, souffle",
+    "traduction": "yalbano"
   },
   {
     "id": 18548,
-    "mot": "yalbaño",
+    "mot": "",
     "traduction": ""
   },
   {
     "id": 18549,
     "mot": "unanimement",
     "nature": "adv.",
-    "traduction": "yalbanome"
+"audio": "yalbaname.mp3",
+    "traduction": "yalbaname"
   },
   {
     "id": 18550,
     "mot": "unanimité",
     "nature": "nf.",
-    "traduction": "yalbanafi"
+"audio": "yalbanda.mp3",
+    "traduction": "yalbanda"
+  },
+  {
+    "id": 18546,
+    "mot": "une",
+"nature": "art.",
+"audio": "ya.mp3",
+"etymologie": "de l'ancien caló <em>yequi</em>",
+    "traduction": "ya"
   },
   {
     "id": 18551,

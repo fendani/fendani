@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fendani – Index alphabétique</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:ital,wght@0,6..72,400;0,6..72,700;1,6..72,400;1,6..72,700&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+    --primary: #1b4332;
+    --accent: #2d6a4f;
+    --warning: #52b788;
+    --bg: #f1f8f3;
+    --card: #ffffff;
+    --text: #112217;
+    --muted: #6b8273;
+    --border: #d8ebd9;
+    --shadow: 0 8px 28px rgba(27,67,50,.06);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Crimson Pro", serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+header {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 42px 20px 55px;
+    border-radius: 0 0 30px 30px;
+}
+
+header h1 {
+    font: 700 clamp(32px,5vw,48px) "Newsreader",serif;
+    margin: 0;
+}
+
+header p {
+    opacity: .8;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.container {
+    width: min(100% - 32px, 1000px);
+    margin: -25px auto 50px;
+    position: relative;
+}
+
+/* Recherche */
+
+.search-box {
+    background: white;
+    padding: 8px;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    margin-bottom: 18px;
+}
+
+#search {
+    width: 100%;
+    border: 0;
+    outline: none;
+    font-family: "Crimson Pro", serif;
+    padding: 13px;
+    background: #f4f8f5;
+    border-radius: 10px;
+    font: 13px "Crimson Pro";
+    color: var(--text);
+}
+
+#search::placeholder {
+    font-family: "Newsreader", serif;
+    font-style: italic;
+}
+
+/* Alphabet */
+
+.alphabet {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    background: white;
+    padding: 15px;
+    border-radius: 14px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+}
+
+.alphabet button {
+    border: 0;
+    background: #e2ece4;
+    color: var(--primary);
+    border-radius: 7px;
+    padding: 8px 11px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: inherit;
+}
+
+.alphabet button:hover,
+.alphabet button.active {
+    background: var(--accent);
+    color: white;
+}
+
+.alphabet button:disabled {
+    opacity: .25;
+    cursor: default;
+}
+
+/* Informations */
+
+.counter {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 22px;
+}
+
+/* Index */
+
+.index-section {
+    margin-bottom: 28px;
+    scroll-margin-top: 20px;
+}
+
+.letter-title {
+    font: 700 32px "Newsreader",serif;
+    color: var(--primary);
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+.prefix-list {
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 12px;
+}
+
+.prefix-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 17px;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: .2s;
+}
+
+.prefix-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+}
+
+.prefix-name {
+    font: 700 23px "Newsreader",serif;
+    color: var(--primary);
+}
+
+.prefix-translation {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--accent);
+    margin-top: 4px;
+}
+
+.prefix-meaning {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 8px;
+    line-height: 1.5;
+}
+
+/* Fiche détaillée */
+
+#detail {
+    display: none;
+}
+
+.back {
+    border: 0;
+    background: var(--primary);
+    color: white;
+    padding: 12px 18px;
+    font-family: "Crimson Pro", serif;
+    border-radius: 10px;
+    margin-bottom: 18px;
+    cursor: pointer;
+    font: 600 14px "Crimson Pro";
+}
+
+.detail-card {
+    background: white;
+    border-radius: 20px;
+    padding: clamp(20px,4vw,38px);
+    border-top: 5px solid var(--accent);
+    box-shadow: var(--shadow);
+}
+
+.detail-name {
+    font: 700 42px "Newsreader",serif;
+    color: var(--primary);
+}
+
+.detail-translation {
+    font: 600 22px "Newsreader",serif;
+    color: var(--accent);
+    margin: 5px 0 20px;
+}
+
+.detail-section {
+    background: #f7fbf8;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    padding: 17px;
+    margin-top: 17px;
+    line-height: 1.7;
+}
+
+.detail-title {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .7px;
+    margin-bottom: 8px;
+}
+
+.example {
+    border-left: 4px solid var(--warning);
+    background: #f4fcf6;
+}
+
+.example-word {
+    font: 700 19px "Newsreader",serif;
+    color: var(--primary);
+}
+
+.example-translation {
+    color: var(--accent);
+    margin-top: 5px;
+}
+
+.empty {
+    text-align: center;
+    padding: 35px;
+    color: var(--muted);
+}
+
+@media(max-width:600px) {
+    .prefix-list {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        padding: 35px 16px 45px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Index alphabétique</h1>
+    <p>Fendani · Préfixes et suffixes du caló moderne</p>
+</header>
+
+<div class="container">
+
+    <div id="index">
+
+        <div class="search-box">
+            <input
+                id="search"
+                type="search"
+                placeholder="Rechercher : anti-, -aire, -oir..."
+            >
+        </div>
+
+        <div class="alphabet" id="alphabet"></div>
+
+        <div class="counter" id="counter"></div>
+
+        <div id="prefix-list"></div>
+
+    </div>
+
+    <div id="detail">
+
+        <button class="back" onclick="retour()">
+            ← Retour à l'index
+        </button>
+
+        <div class="detail-card" id="detail-content"></div>
+
+    </div>
+
+</div>
+
+<script src="prefixes.js"></script>
+
+<script>
+
+// Sécurisation du texte
+function echapper(texte) {
+    return String(texte ?? "").replace(/[&<>"']/g, c => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+    })[c]);
+}
+
+// Autorise uniquement em et strong
+function afficherTexte(texte) {
+    return echapper(texte)
+        .replace(/&lt;em&gt;/g, "<em>")
+        .replace(/&lt;\/em&gt;/g, "</em>")
+        .replace(/&lt;strong&gt;/g, "<strong>")
+        .replace(/&lt;\/strong&gt;/g, "</strong>");
+}
+
+// Détermine la lettre de classement
+function obtenirLettre(p) {
+
+    let nom = p.prefixe
+        .replace(/^-+/, "")
+        .replace(/-+$/, "")
+        .trim();
+
+    return nom.charAt(0)
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toUpperCase();
+}
+
+// Tri alphabétique français
+function trierPrefixes(a, b) {
+
+    const nomA = a.prefixe.replace(/^-/, "");
+    const nomB = b.prefixe.replace(/^-/, "");
+
+    return nomA.localeCompare(
+        nomB,
+        "fr",
+        { sensitivity: "base" }
+    );
+}
+
+// Affichage de l'alphabet
+function afficherAlphabet(donnees) {
+
+    const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+
+    const lettresDisponibles = [
+        ...new Set(donnees.map(obtenirLettre))
+    ];
+
+    document.getElementById("alphabet").innerHTML =
+        alphabet.map(lettre => `
+            <button
+                ${lettresDisponibles.includes(lettre) ? "" : "disabled"}
+                onclick="allerALettre('${lettre}')"
+                id="lettre-${lettre}"
+            >
+                ${lettre}
+            </button>
+        `).join("");
+}
+
+// Navigation vers une lettre
+function allerALettre(lettre) {
+
+    const section = document.getElementById("section-" + lettre);
+
+    if (!section) return;
+
+    document.querySelectorAll(".alphabet button")
+        .forEach(b => b.classList.remove("active"));
+
+    document.getElementById("lettre-" + lettre)
+        ?.classList.add("active");
+
+    section.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+}
+
+// Affichage de l'index
+function afficherIndex(donnees) {
+
+    const triees = [...donnees].sort(trierPrefixes);
+
+    const recherche = document
+        .getElementById("search")
+        .value.trim()
+        .toLowerCase();
+
+    const filtrees = triees.filter(p => {
+
+        const contenu = [
+            p.prefixe,
+            p.traduction,
+            p.signification,
+            p.origine,
+            p.fonction,
+            ...(p.exemples || []).flatMap(e => [
+                e.mot,
+                e.traduction,
+                e.traduction_fr
+            ])
+        ].join(" ").toLowerCase();
+
+        return contenu.includes(recherche);
+    });
+
+    afficherAlphabet(filtrees);
+
+    document.getElementById("counter").textContent =
+        filtrees.length + " morphème(s) trouvé(s)";
+
+    const groupes = {};
+
+    filtrees.forEach(p => {
+
+        const lettre = obtenirLettre(p);
+
+        if (!groupes[lettre]) {
+            groupes[lettre] = [];
+        }
+
+        groupes[lettre].push(p);
+
+    });
+
+    const lettres = Object.keys(groupes).sort();
+
+    document.getElementById("prefix-list").innerHTML =
+        lettres.length
+        ? lettres.map(lettre => `
+
+            <section
+                class="index-section"
+                id="section-${lettre}"
+            >
+
+                <h2 class="letter-title">${lettre}</h2>
+
+                <div class="prefix-list">
+
+                    ${groupes[lettre].map(p => `
+
+                        <article
+                            class="prefix-card"
+                            onclick="ouvrir('${encodeURIComponent(p.prefixe)}')"
+                        >
+
+                            <div class="prefix-name">
+                                ${afficherTexte(p.prefixe)}
+                            </div>
+
+                            ${p.traduction ? `
+                                <div class="prefix-translation">
+                                    ${afficherTexte(p.traduction)}
+                                </div>
+                            ` : ""}
+
+                            ${p.signification ? `
+                                <div class="prefix-meaning">
+                                    ${afficherTexte(p.signification)}
+                                </div>
+                            ` : ""}
+
+                        </article>
+
+                    `).join("")}
+
+                </div>
+
+            </section>
+
+        `).join("")
+        : `<div class="empty">
+            Aucun préfixe ou suffixe trouvé.
+           </div>`;
+}
+
+// Ouverture d'une fiche
+function ouvrir(valeur) {
+
+    const nom = decodeURIComponent(valeur);
+
+    const p = prefixes.find(x => x.prefixe === nom);
+
+    if (!p) return;
+
+    document.getElementById("index").style.display = "none";
+    document.getElementById("detail").style.display = "block";
+
+    document.title = p.prefixe + " - Fendani";
+
+    let html = `
+
+        <div class="detail-name">
+            ${afficherTexte(p.prefixe)}
+        </div>
+
+        ${p.traduction ? `
+            <div class="detail-translation">
+                ${afficherTexte(p.traduction)}
+            </div>
+        ` : ""}
+
+        ${p.origine ? `
+            <div class="detail-section">
+                <span class="detail-title">Origine étymologique</span>
+                ${afficherTexte(p.origine)}
+            </div>
+        ` : ""}
+
+        ${p.signification ? `
+            <div class="detail-section">
+                <span class="detail-title">Signification</span>
+                ${afficherTexte(p.signification)}
+            </div>
+        ` : ""}
+
+        ${p.fonction ? `
+            <div class="detail-section">
+                <span class="detail-title">Fonction morphologique</span>
+                ${afficherTexte(p.fonction)}
+            </div>
+        ` : ""}
+
+        ${p.exemples?.length ? `
+            <div class="detail-section example">
+
+                <span class="detail-title">
+                    Exemples de formation
+                </span>
+
+                ${p.exemples.map(e => `
+                    <div style="margin-bottom:18px">
+
+                        <div class="example-word">
+                            ${afficherTexte(e.mot)}
+                        </div>
+
+                        ${e.decomposition ? `
+                            <div style="font-size:14px;color:var(--muted)">
+                                ${afficherTexte(e.decomposition)}
+                            </div>
+                        ` : ""}
+
+                        ${e.traduction_fr ? `
+                            <div style="font-size:14px;margin-top:5px">
+                                ${afficherTexte(e.traduction_fr)}
+                            </div>
+                        ` : ""}
+
+                        ${e.traduction ? `
+                            <div class="example-translation">
+                                ➔ ${afficherTexte(e.traduction)}
+                            </div>
+                        ` : ""}
+
+                    </div>
+                `).join("")}
+
+            </div>
+        ` : ""}
+
+        ${p.remarques ? `
+            <div class="detail-section">
+                <span class="detail-title">Remarques</span>
+                ${afficherTexte(p.remarques)}
+            </div>
+        ` : ""}
+
+    `;
+
+    document.getElementById("detail-content").innerHTML = html;
+
+    window.location.hash = "/prefixe/" + encodeURIComponent(nom);
+
+    window.scrollTo({top:0, behavior:"smooth"});
+}
+
+// Retour à l'index
+function retour() {
+
+    window.location.hash = "";
+
+    document.getElementById("detail").style.display = "none";
+    document.getElementById("index").style.display = "block";
+
+    afficherIndex(prefixes);
+
+}
+
+// Gestion de la navigation
+function gererNavigation() {
+
+    const hash = window.location.hash;
+
+    if (hash.startsWith("#/prefixe/")) {
+
+        ouvrir(hash.slice("#/prefixe/".length));
+
+    } else {
+
+        document.getElementById("detail").style.display = "none";
+        document.getElementById("index").style.display = "block";
+
+    }
+
+}
+
+window.addEventListener("hashchange", gererNavigation);
+
+// Initialisation
+document.addEventListener("DOMContentLoaded", () => {
+
+    if (typeof prefixes === "undefined") {
+
+        document.getElementById("prefix-list").innerHTML =
+            '<div class="empty">Erreur : impossible de charger prefixes.js.</div>';
+
+        return;
+    }
+
+    document.getElementById("search")
+        .addEventListener("input", () => afficherIndex(prefixes));
+
+    afficherIndex(prefixes);
+
+    gererNavigation();
+
+});
+
+</script>
+
+</body>
+</html>

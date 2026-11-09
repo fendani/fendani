@@ -305,6 +305,50 @@ font-family: 'Newsreader', Georgia, serif;
             opacity: 0.5;
         }
 
+/* --- MENU HAUT-DROITE --- */
+header {
+    position: relative; /* Indispensable pour positionner les enfants en absolute par rapport au header */
+}
+
+.top-nav {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.top-nav a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    transition: all 0.2s ease;
+}
+
+.top-nav a:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Adaptation pour les petits écrans (smartphones) */
+@media (max-width: 600px) {
+    .top-nav {
+        top: 12px;
+        right: 12px;
+        gap: 8px;
+    }
+    .top-nav a {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+}
+
         .hidden { display: none !important; }
         @media (max-width: 600px) { .letter-btn { padding: 6px 8px; font-size: 12px; } }
 .image-mot {
@@ -828,13 +872,18 @@ font-family: 'Newsreader';
     </style>
 </head>
 <body>
-    <header>
+   <header>
+    <!-- Menu de navigation en haut à droite -->
+    <nav class="top-nav">
+        <a href="indexencyclopedie.html">Encyclopédie</a>
+        <a href="prefixes.html">Grammaire</a>
+    </nav>
+
     <h1 class="logo-home">
-    <img src="logofendani.png" alt="Fendani"
-         style="width:300px; height:90px; object-fit:contain;">
-</h1>
-        <p>Dictionnaire bilingue français-caló</p>
-    </header>
+        <img src="logofendani.png" alt="Fendani" style="width:300px; height:90px; object-fit:contain;">
+    </h1>
+    <p>Dictionnaire bilingue français-caló</p>
+</header>
     <div class="container">
         <div id="view-search">
             <div class="search-box"><input type="text" id="search-input"

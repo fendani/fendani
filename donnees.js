@@ -31456,7 +31456,7 @@ source_exemple: "<strong>Emmanuel de Saint-Aubert</strong>, <em>Du lien des êtr
   },
   {
     "id": 6142,
-    "mot": "abhivyakti + suffixe",
+    "mot": "अभिव्यक्ति abhivyakti + suffixe",
     "traduction": "aro)"
   },
   {
@@ -47953,7 +47953,7 @@ source_exemple: "<strong>Emmanuel de Saint-Aubert</strong>, <em>Du lien des êtr
   {
     "id": 9430,
     "mot": "HEY",
-    "traduction": "· Mo, more (mo, more) ; Mari (ori)"
+    "traduction": "· Mo, more (mo, more) ; Mari (ori, de l'hindi arré, exclamation)"
   },
   {
     "id": 9431,
